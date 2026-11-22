@@ -1,3 +1,7 @@
+# Coloured-scalar example: a 1.5 TeV sextet and a 1.2 TeV triplet.
+# Run from the package directory to integrate only pp -> x1 and save ranking.csv.
+#   ./run.sh rates input/my_model.txt --selected C0004 --page-size 5
+
 # Edit coefficients and switches below; init replaces this file without a backup.
 # Masses and mixings are derived. Disabled rows do not enter the Lagrangian.
 # Electroweak vacuum is fixed: unmixed 125 GeV Higgs, zero VEVs for new scalars.
@@ -65,4 +69,4 @@ explicit_decays = {'history_ids': [], 'bwcutoff': 15.0, 'cut_decays': False}
 output = '../output'
 
 # Managed operator details; keep the companion folder with this file.
-_metadata = '.model_metadata/f654f1562a01384fe39cca46afcbb04528fe3da0eead30f826d89909d18d32e8.json'
+_metadata = '.model_metadata/a4802641da83fe42d7323774aa69b56ba239703bde486b2f6f7f3e7cbcab0a22.json'
