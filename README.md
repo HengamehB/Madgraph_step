@@ -71,6 +71,8 @@ If the kernel is missing, point `mathematica` under `[tools]` in the package's `
 ./run.sh rates input/my_model.txt --selected C0004 --page-size 5
 ```
 
+If you prefer a single file you can move, download the same model as [triplet_sextet.txt](https://github.com/HengamehB/Madgraph_step/releases/download/v0.1.0/triplet_sextet.txt). This copy includes its operator bindings and writes to an `output/` directory beside the file. Run the command above with its path in place of `input/my_model.txt`.
+
 For this model, `C0004` is `p p > x1`. In the reference run, the corresponding CSV entry for `x1 → u u` had the following values. The integration errors are Monte Carlo uncertainties.
 
 | Quantity | Reference result |
