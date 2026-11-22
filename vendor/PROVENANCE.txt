@@ -1,0 +1,30 @@
+Portable Madgraph_step upstream source provenance
+
+FeynRules 2.3.49 (29 September 2021)
+Upstream: https://github.com/FeynRules/FeynRules
+Commit: b3357d64ac3dfa3de97d7536dcff5ba92d04f086
+Source: https://codeload.github.com/FeynRules/FeynRules/tar.gz/b3357d64ac3dfa3de97d7536dcff5ba92d04f086
+Archive SHA256: 4810c2113f4c9019e4f4e427a73a96bcda72f6e92050a9221c05ff173abdbd99
+License: FeynRules/LICENSE (GPL-3.0).
+This distribution includes the FeynRules runtime and SM model used by the benchmark.
+Ancillary upstream files are omitted. The checksum identifies the upstream archive.
+
+MadGraph5_aMC@NLO 3.7.3 (1 September 2026)
+Upstream: https://github.com/mg5amcnlo/mg5amcnlo
+Tag: v3.7.3
+Source: https://codeload.github.com/mg5amcnlo/mg5amcnlo/tar.gz/refs/tags/v3.7.3
+Archive SHA256: cd143868efb4bdd044745407e05d0d134858c2e52233cbe5a27774300fad51eb
+License: MG5_aMC/LICENSE; bundled vendor licenses retained in their directories.
+Built-in PDF tables retained in Template/LO/lib/Pdfdata and Template/NLO/lib/Pdfdata.
+This distribution includes the MadGraph source, templates and model data used
+by the package. Upstream tests and ancillary files are omitted. The checksum
+identifies the upstream archive. Project-specific input/mg5_configuration.txt
+disables update checks, notifications, and automatic browser opening and selects
+local execution. Runtime-generated files may appear after calculations.
+
+offline_guard/sitecustomize.py is project-owned, not an upstream source file.
+It blocks remote Python sockets when MADGRAPH_STEP_OFFLINE=1. The public runner
+also uses only the bundled model/PDF paths and never calls MadGraph install.
+
+Downloaded 10 November 2026. No conda, pip, or Mathematica package installation
+was performed to obtain these source distributions.

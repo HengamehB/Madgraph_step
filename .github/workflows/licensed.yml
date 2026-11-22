@@ -1,0 +1,127 @@
+name: Licensed platform benchmarks
+
+on: workflow_dispatch
+
+permissions:
+  contents: read
+
+# Only one licensed run may use the entitlement at a time, across all dispatches.
+concurrency:
+  group: licensed-platform-benchmarks
+  cancel-in-progress: false
+
+jobs:
+  benchmark:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    name: Licensed benchmark on ${{ matrix.platform }}
+    environment: licensed-benchmarks
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        include:
+          - platform: linux
+            host: ubuntu-24.04
+            shell: bash
+          - platform: macos
+            host: macos-15
+            shell: bash
+          - platform: windows-wsl2
+            host: windows-2025
+            shell: wsl-bash {0}
+    runs-on: ${{ matrix.host }}
+    timeout-minutes: 90
+    steps:
+      - name: Check that an entitlement is configured
+        shell: bash
+        env:
+          HAS_ENTITLEMENT: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID != '' }}
+        run: |
+          if [[ $HAS_ENTITLEMENT != true ]]; then
+            echo 'Configure WOLFRAMSCRIPT_ENTITLEMENTID in the licensed-benchmarks environment.' >&2
+            exit 1
+          fi
+      - if: runner.os != 'Windows'
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - if: runner.os != 'Windows'
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.11.14'
+      - if: runner.os != 'Windows'
+        name: Install the native toolchain and Wolfram Engine
+        run: bash .github/workflows/prepare-host.sh licensed
+
+      - if: runner.os == 'Windows'
+        name: Install Ubuntu 24.04 on WSL2
+        uses: Vampire/setup-wsl@d1da7f2c0322a5ee4f24975344f67fc0f5baf364 # v7.0.0
+        with:
+          distribution: Ubuntu-24.04
+          wsl-version: 2
+          wsl-shell-user: benchmark
+          use-cache: false
+      - if: runner.os == 'Windows'
+        name: Verify WSL2 and download the exact source revision
+        shell: pwsh
+        env:
+          SOURCE_TOKEN: ${{ github.token }}
+        run: |
+          $distros = (wsl.exe --list --verbose | Out-String).Replace([string][char]0, '')
+          if ($LASTEXITCODE -ne 0 -or $distros -notmatch '(?m)^\s*\*?\s*Ubuntu-24\.04\s+\S+\s+2\s*$') {
+            throw "Expected Ubuntu-24.04 running under WSL version 2. Found $distros"
+          }
+          Write-Host $distros
+          $source = "$env:GITHUB_API_URL/repos/$env:GITHUB_REPOSITORY/tarball/$env:GITHUB_SHA"
+          $headers = @{ Authorization = "Bearer $env:SOURCE_TOKEN"; Accept = "application/vnd.github+json" }
+          Invoke-WebRequest -Uri $source -Headers $headers -OutFile (Join-Path $env:RUNNER_TEMP 'release.tar.gz')
+      - if: runner.os == 'Windows'
+        name: Prepare the project and scientific toolchain inside WSL2
+        shell: wsl-bash -u root {0}
+        env:
+          WSLENV: RUNNER_TEMP/p
+        run: |
+          cat /proc/sys/kernel/osrelease
+          grep -qi 'WSL2' /proc/sys/kernel/osrelease
+          source /etc/os-release
+          [[ $ID == ubuntu && $VERSION_ID == '24.04' ]]
+          install -d /opt/madgraph-ci/source
+          tar -xzf "$RUNNER_TEMP/release.tar.gz" -C /opt/madgraph-ci/source --strip-components=1
+          rm -f -- "$RUNNER_TEMP/release.tar.gz"
+          chown -R benchmark /opt/madgraph-ci/source
+          cd /opt/madgraph-ci/source
+          bash .github/workflows/prepare-host.sh licensed
+
+      - name: Export, compute widths, and integrate with the local kernel
+        shell: ${{ matrix.shell }}
+        timeout-minutes: 60
+        env:
+          ENTITLEMENT: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID }}
+          BENCHMARK_ARTIFACTS: ${{ github.workspace }}/ci-artifacts
+          WSLENV: ENTITLEMENT/u:BENCHMARK_ARTIFACTS/p:GITHUB_SHA/u:GITHUB_RUN_ID/u
+        run: |
+          set -euo pipefail
+          export PATH="/tmp/madgraph-ci-tools:$PATH"
+          if [[ -d /opt/madgraph-ci/venv ]]; then
+            export PATH="/opt/madgraph-ci/venv/bin:$PATH"
+            cd /opt/madgraph-ci/source
+          fi
+          # Wolfram's raw-kernel licensing arguments apply to both -run and -script.
+          export WOLFRAMINIT="-pwfile !cloudlm.wolfram.com -entitlement ${ENTITLEMENT:?Missing entitlement}"
+          unset ENTITLEMENT
+          python ci/run_benchmark.py --mode licensed
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          report = Path(os.environ["BENCHMARK_ARTIFACTS"]) / "benchmark-licensed.json"
+          entitlement = os.environ["WOLFRAMINIT"].rsplit(" ", 1)[1].encode()
+          if entitlement in report.read_bytes():
+              raise SystemExit("The benchmark report contains license information.")
+          PY
+      - name: Save benchmark summary
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: licensed-${{ matrix.platform }}
+          path: ci-artifacts/benchmark-licensed.json
+          if-no-files-found: error
+          retention-days: 14

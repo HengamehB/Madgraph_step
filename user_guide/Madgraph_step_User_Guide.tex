@@ -1,0 +1,175 @@
+% Editable source for Madgraph_step_User_Guide.pdf.
+% Rebuild here with latexmk -pdf -interaction=nonstopmode -halt-on-error Madgraph_step_User_Guide.tex
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.78in,top=0.68in,bottom=0.67in,footskip=24pt]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{array,booktabs,tabularx}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{ink}{HTML}{263846}
+\definecolor{navy}{HTML}{193348}
+\definecolor{muted}{HTML}{526879}
+\definecolor{teal}{HTML}{147078}
+\definecolor{pale}{HTML}{F0F5F7}
+\definecolor{line}{HTML}{D5E1E7}
+
+\renewcommand{\familydefault}{\sfdefault}
+\color{ink}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\renewcommand{\arraystretch}{1.21}
+\DisableLigatures{encoding = T1, family = lmtt}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titleformat{\section}[hang]{\large\bfseries\color{navy}}{\color{teal}\thesection.}{0.45em}{}
+\titlespacing*{\section}{0pt}{12pt plus 2pt}{4pt}
+\hypersetup{pdftitle={Madgraph\_step User Guide},pdfsubject={Terminal workflow and saved results}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\footnotesize\color{muted}Madgraph\_step User Guide}
+\fancyfoot[R]{\footnotesize\color{muted}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\lstset{
+  basicstyle=\ttfamily\small\color{navy},
+  backgroundcolor=\color{pale},rulecolor=\color{line},
+  frame=single,framerule=0.4pt,framesep=5pt,xleftmargin=5pt,xrightmargin=5pt,
+  aboveskip=7pt,belowskip=6pt,columns=fullflexible,keepspaces=true,
+  showstringspaces=false,upquote=true
+}
+
+\begin{document}
+
+{\Huge\bfseries\color{navy}Madgraph\_step\par}
+\vspace{3pt}
+{\large\color{muted}A step-by-step terminal guide\par}
+\vspace{6pt}
+To use your existing \code{input/my_model.txt}, set up the tools in step~1,
+then go straight to step~4.
+
+\section{Activate the environment and check the tools}
+
+\begin{lstlisting}
+cd "/path/to/Madgraph_step"
+conda activate projAI
+./run.sh configure-tools
+./run.sh check
+\end{lstlisting}
+Replace the example path with your package folder. Run \code{configure-tools}
+on first use or when tool paths change. Review the proposed paths and type
+\code{y} to save them to \code{.config}, or \code{edit} to correct them.
+The package uses Python 3.11 with NumPy and SciPy, a licensed Mathematica
+kernel and the tools listed by \code{check}.
+
+\section{Define particles and generate the model}
+
+Edit \code{input/particles.txt}. Set \code{X} and optionally \code{Y}.
+Use \code{Y = None} for a single new multiplet. The file includes
+representation examples.
+
+\begin{lstlisting}
+./run.sh init input/particles.txt
+\end{lstlisting}
+This generates \code{input/my_model.txt} with the allowed operators and
+starts with diagonal kinetic and mass terms enabled.
+\textbf{Running \code{init} again replaces the destination and its edits without a backup.}
+
+\section{Choose operators and coefficients}
+
+In \code{input/my_model.txt}, set \code{enabled} to \code{True} for the operators
+you want and supply their coefficients. Edit \code{stable_particles} only for
+states you intend to treat as stable. The package derives masses and mixings
+using a 125 GeV Higgs and zero VEVs for new scalars.
+Use this command to check coefficient units and array order.
+
+\begin{lstlisting}
+./run.sh inputs input/my_model.txt
+\end{lstlisting}
+
+\section{Validate, list channels and calculate rates}
+
+\begin{lstlisting}
+./run.sh validate input/my_model.txt
+./run.sh channels input/my_model.txt
+./run.sh run input/my_model.txt --selected C0001
+\end{lstlisting}
+\code{validate} checks the model and derives its spectrum. \code{channels}
+exports or reuses the UFO and lists the allowed production channels.
+Replace \code{C0001} with an ID from that list. To integrate all listed
+production channels, omit \code{--selected}.
+The run calculates widths, builds decay histories and saves the ranked rates.
+
+\newpage
+
+{\LARGE\bfseries\color{navy}Find and manage your results\par}
+
+\section{Open the run folder}
+
+Copy the exact path printed next to \textbf{Run files}. With
+\lstinline|output = '../output'| in a model inside \code{input/}, the layout is
+\code{output/<model_name>/<run-id>/}.
+
+\begin{tabularx}{\linewidth}{@{}p{0.39\linewidth}Y@{}}
+\toprule
+\textbf{File} & \textbf{What to look for} \\
+\midrule
+\code{report.html} & Open in a browser for the run summary and links. \\
+\code{ranking.csv} & Decay histories ranked by production cross section $\times$ cascade branching probability, in pb. \\
+\code{production_channels.csv} & The available production channels and their IDs. \\
+\code{cross_sections.csv} & Integrated production channels and their numerical errors. \\
+\code{total_widths.csv}, \code{decays.csv} & Total widths, decay modes and branching fractions. \\
+\code{manifest.json} & Completion status. Check \code{requested_complete} for the selected run. \\
+\bottomrule
+\end{tabularx}
+
+A blank rate means its production channel has no completed integration.
+These are tree-level, narrow-width estimates. Keep overlapping histories
+separate and check the report for omitted decay contributions.
+
+\section*{Use a different input filename}
+
+For a \textbf{new model}, choose the generated filename with \code{--model}.
+You can also pass a renamed particle source in place of \code{input/particles.txt}.
+
+\begin{lstlisting}
+./run.sh init input/particles.txt --model "input/my scan.txt"
+\end{lstlisting}
+To \textbf{keep an existing model's edits}, rename the TXT file directly.
+Leave its \code{_metadata} line and the adjacent \code{.model_metadata/}
+folder in place. If moving to another folder, bring the metadata folder too.
+
+\begin{lstlisting}
+mv -i input/my_model.txt "input/my scan.txt"
+./run.sh channels "input/my scan.txt"
+\end{lstlisting}
+Pass the chosen filename to each model command, or edit \code{model = input/my scan.txt}
+under \code{[project]} in \code{.config} to make it the default.
+To name the results subfolder, set \code{model_name} inside the TXT file.
+A relative \code{output} in that file starts beside the TXT file.
+Use \code{--output "scan results"} on a run command to override it for that run.
+A relative path in this option starts in the terminal's current folder.
+
+\section*{Inspect, stop or resume}
+
+\begin{lstlisting}
+./run.sh decays input/my_model.txt
+./run.sh histories input/my_model.txt --page-size 20
+\end{lstlisting}
+\code{decays} calculates widths and branching fractions. \code{histories}
+also builds the cascade catalogue without integrating production.
+\code{--page-size} limits the display only. A selected production run may
+still build histories for all discovered channels. To restrict production
+to at most two outgoing new particles, set \code{max_final} to \code{2}
+and \code{new_particles_only} to \code{True} in \code{collider}.
+These settings apply before decay.
+
+Press \textbf{Ctrl+C} to stop and repeat the same command to resume from
+verified checkpoints. If the package flags stale coefficient bindings,
+run \code{./run.sh setup input/my_model.txt} and review the values it requests.
+
+\end{document}

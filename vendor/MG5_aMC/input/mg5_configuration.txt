@@ -1,0 +1,7 @@
+# Project-local configuration. Do not store host-specific paths here.
+auto_update = 0
+automatic_html_opening = False
+notification_center = False
+run_mode = 0
+web_browser = None
+lhapdf = None

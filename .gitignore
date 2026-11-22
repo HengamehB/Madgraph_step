@@ -1,0 +1,9 @@
+/.config
+/..config.lock
+/output/
+/runs/
+/ci-artifacts/
+__pycache__/
+*.py[cod]
+.DS_Store
+/input/.*.lock

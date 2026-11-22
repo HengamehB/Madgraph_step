@@ -1,0 +1,750 @@
+{
+  "metadata": {
+    "$dict": [
+      [
+        "_input_bindings",
+        {
+          "$dict": [
+            [
+              "schema",
+              "operator-table-bindings-v1"
+            ],
+            [
+              "context",
+              "d8026fdd8f8774e010e8523a8da4c2f593ee2e262f3d59fcb22343553d06d851"
+            ],
+            [
+              "compiler_fingerprint",
+              "a15bda2685d72d40a99931ab988184c309a5c50780be866c73812f4754ef78b5"
+            ],
+            [
+              "catalogue_fingerprint",
+              "e4bcc582959c69886d10d083eb9eae751d1488d5d67c04b8012c8ce9cb42fda6"
+            ],
+            [
+              "operator_ids",
+              {
+                "$dict": [
+                  [
+                    "O0001",
+                    "X X†"
+                  ],
+                  [
+                    "O0002",
+                    "Y Y†"
+                  ],
+                  [
+                    "O0003",
+                    "H H† X X†"
+                  ],
+                  [
+                    "O0004",
+                    "H H† Y Y†"
+                  ],
+                  [
+                    "O0005",
+                    "L Q Y†"
+                  ],
+                  [
+                    "O0006",
+                    "Q^2 X†"
+                  ],
+                  [
+                    "O0007",
+                    "Q^2 Y"
+                  ],
+                  [
+                    "O0008",
+                    "X X† Y Y†"
+                  ],
+                  [
+                    "O0009",
+                    "X X†^2 Y†"
+                  ],
+                  [
+                    "O0010",
+                    "X^2 X†^2"
+                  ],
+                  [
+                    "O0011",
+                    "X^2 Y^2"
+                  ],
+                  [
+                    "O0012",
+                    "Y dc† uc†"
+                  ],
+                  [
+                    "O0013",
+                    "Y ec uc"
+                  ],
+                  [
+                    "O0014",
+                    "Y^2 Y†^2"
+                  ],
+                  [
+                    "O0015",
+                    "D(X) D(X†)"
+                  ],
+                  [
+                    "O0016",
+                    "D(Y) D(Y†)"
+                  ]
+                ]
+              }
+            ],
+            [
+              "coefficients",
+              {
+                "$dict": [
+                  [
+                    "X X†",
+                    "bed4578055b11b19ebb3d76d12d0fff432be553cece84cee8ac6ef55fb86977c"
+                  ],
+                  [
+                    "Y Y†",
+                    "3bcab0635a72277dccd7f6eef16ba83539e844863817fdc406b8a05fdd402f4a"
+                  ],
+                  [
+                    "H H† X X†",
+                    "c274406963574a7bf3a7ce0376faba6fe70bd9e43b1956afa489491fedddacdb"
+                  ],
+                  [
+                    "H H† Y Y†",
+                    "0e647b6464411813000796b59394178e1646f9503356a1c38d33162366def070"
+                  ],
+                  [
+                    "L Q Y†",
+                    "214dac0299602a54f9f417b7acde810a95f0e712e84ac64ecea289d219a91883"
+                  ],
+                  [
+                    "Q^2 X†",
+                    "4c5dfc4016a553dbfaada6d407345222c1a2a5376d3dd7ff78eeac1dfb486c91"
+                  ],
+                  [
+                    "Q^2 Y",
+                    "b2770ac6bb974bcb9041e26236fc98578681d515b1039f9b74786d9ac7d17ada"
+                  ],
+                  [
+                    "X X† Y Y†",
+                    "84c3de2eef713317457f78bf1375cb68563d2e6d6747cd9e2477340381b1e50d"
+                  ],
+                  [
+                    "X X†^2 Y†",
+                    "6854092f1cba1f92f33afe1b9887d912506a85afbdb9de97e1e0c97bd1b85b5a"
+                  ],
+                  [
+                    "X^2 X†^2",
+                    "623996600107ede3925297e3707f28e07cf38f7a645009c4f6391332b9b5d97f"
+                  ],
+                  [
+                    "X^2 Y^2",
+                    "3f6f7d2405ba770d84a1a3d3bd81d209b5646c9f2e447fb894a2785a1c7696df"
+                  ],
+                  [
+                    "Y dc† uc†",
+                    "4f7b1f2634015d12348a339025af60626c007b94fbd613981adb99e55cec0021"
+                  ],
+                  [
+                    "Y ec uc",
+                    "4e0903ed78e5197fe62cf5eb4a55aedd5aeb4a0132ca72644369a30d899a203d"
+                  ],
+                  [
+                    "Y^2 Y†^2",
+                    "0f1c5ff23549ec54e2f5d0dc51635d168450ceba352339d6a5157c71864c020a"
+                  ],
+                  [
+                    "D(X) D(X†)",
+                    "b18cb8cb1d01506afbd6be292cb4379c7d181cc3eb008bcb82380bd54474cf08"
+                  ],
+                  [
+                    "D(Y) D(Y†)",
+                    "ff3767af2a610bfc706aef7812363c5701cd3d22c0e120ab2aad95ba1ab5ef25"
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      [
+        "_input_provenance",
+        {
+          "$dict": [
+            [
+              "schema",
+              "model-input-origins-v1"
+            ],
+            [
+              "profile",
+              "coefficient-seeds-v1"
+            ],
+            [
+              "coefficients",
+              {
+                "$dict": [
+                  [
+                    "X X†^2 Y†",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "interaction"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          null
+                        ],
+                        [
+                          "reason",
+                          "compiler gap: joint invariant construction failed: Joint weak-colour Bose-symmetrized rank 0 differs from exact catalogue multiplicity 1; no incomplete basis is returned"
+                        ],
+                        [
+                          "origin",
+                          "unresolved"
+                        ],
+                        [
+                          "binding",
+                          "6854092f1cba1f92f33afe1b9887d912506a85afbdb9de97e1e0c97bd1b85b5a"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "X^2 Y^2",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "quartic"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          -0.01
+                        ],
+                        [
+                          "reason",
+                          "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "3f6f7d2405ba770d84a1a3d3bd81d209b5646c9f2e447fb894a2785a1c7696df"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "L Q Y†",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "interaction"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          null
+                        ],
+                        [
+                          "reason",
+                          "compiler gap: this nonzero fermion or derivative family needs joint Lorentz lowering"
+                        ],
+                        [
+                          "origin",
+                          "unresolved"
+                        ],
+                        [
+                          "binding",
+                          "214dac0299602a54f9f417b7acde810a95f0e712e84ac64ecea289d219a91883"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "Q^2 Y",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "interaction"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          null
+                        ],
+                        [
+                          "reason",
+                          "compiler gap: this nonzero fermion or derivative family needs joint Lorentz lowering"
+                        ],
+                        [
+                          "origin",
+                          "unresolved"
+                        ],
+                        [
+                          "binding",
+                          "b2770ac6bb974bcb9041e26236fc98578681d515b1039f9b74786d9ac7d17ada"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "Y dc† uc†",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "interaction"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          null
+                        ],
+                        [
+                          "reason",
+                          "compiler gap: this nonzero fermion or derivative family needs joint Lorentz lowering"
+                        ],
+                        [
+                          "origin",
+                          "unresolved"
+                        ],
+                        [
+                          "binding",
+                          "4f7b1f2634015d12348a339025af60626c007b94fbd613981adb99e55cec0021"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "X X†",
+                    {
+                      "$dict": [
+                        [
+                          "origin",
+                          "explicit"
+                        ],
+                        [
+                          "binding",
+                          "bed4578055b11b19ebb3d76d12d0fff432be553cece84cee8ac6ef55fb86977c"
+                        ],
+                        [
+                          "value",
+                          -2246968.7715682564
+                        ],
+                        [
+                          "units",
+                          "GeV^2"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "Y Y†",
+                    {
+                      "$dict": [
+                        [
+                          "origin",
+                          "explicit"
+                        ],
+                        [
+                          "binding",
+                          "3bcab0635a72277dccd7f6eef16ba83539e844863817fdc406b8a05fdd402f4a"
+                        ],
+                        [
+                          "value",
+                          -1436968.7715682564
+                        ],
+                        [
+                          "units",
+                          "GeV^2"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "H H† X X†",
+                    {
+                      "$dict": [
+                        [
+                          "origin",
+                          "explicit"
+                        ],
+                        [
+                          "binding",
+                          "c274406963574a7bf3a7ce0376faba6fe70bd9e43b1956afa489491fedddacdb"
+                        ],
+                        [
+                          "value",
+                          [
+                            -0.1,
+                            0.0
+                          ]
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "H H† Y Y†",
+                    {
+                      "$dict": [
+                        [
+                          "origin",
+                          "explicit"
+                        ],
+                        [
+                          "binding",
+                          "0e647b6464411813000796b59394178e1646f9503356a1c38d33162366def070"
+                        ],
+                        [
+                          "value",
+                          -0.1
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "Q^2 X†",
+                    {
+                      "$dict": [
+                        [
+                          "origin",
+                          "explicit"
+                        ],
+                        [
+                          "binding",
+                          "4c5dfc4016a553dbfaada6d407345222c1a2a5376d3dd7ff78eeac1dfb486c91"
+                        ],
+                        [
+                          "value",
+                          [
+                            0.1,
+                            0,
+                            0,
+                            0.1,
+                            0,
+                            0.1
+                          ]
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "X X† Y Y†",
+                    {
+                      "$dict": [
+                        [
+                          "origin",
+                          "explicit"
+                        ],
+                        [
+                          "binding",
+                          "84c3de2eef713317457f78bf1375cb68563d2e6d6747cd9e2477340381b1e50d"
+                        ],
+                        [
+                          "value",
+                          [
+                            -0.043333333333333335,
+                            -0.02
+                          ]
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "X^2 X†^2",
+                    {
+                      "$dict": [
+                        [
+                          "origin",
+                          "explicit"
+                        ],
+                        [
+                          "binding",
+                          "623996600107ede3925297e3707f28e07cf38f7a645009c4f6391332b9b5d97f"
+                        ],
+                        [
+                          "value",
+                          [
+                            0.0,
+                            0.0,
+                            -0.1,
+                            0.0,
+                            0.0
+                          ]
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "Y ec uc",
+                    {
+                      "$dict": [
+                        [
+                          "origin",
+                          "explicit"
+                        ],
+                        [
+                          "binding",
+                          "4e0903ed78e5197fe62cf5eb4a55aedd5aeb4a0132ca72644369a30d899a203d"
+                        ],
+                        [
+                          "value",
+                          [
+                            0.1,
+                            0,
+                            0,
+                            0,
+                            0.1,
+                            0,
+                            0,
+                            0,
+                            0.1
+                          ]
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "Y^2 Y†^2",
+                    {
+                      "$dict": [
+                        [
+                          "origin",
+                          "explicit"
+                        ],
+                        [
+                          "binding",
+                          "0f1c5ff23549ec54e2f5d0dc51635d168450ceba352339d6a5157c71864c020a"
+                        ],
+                        [
+                          "value",
+                          -0.1
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "D(X) D(X†)",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "kinetic"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          1.0
+                        ],
+                        [
+                          "reason",
+                          "Canonical scalar norm projected onto the displayed invariant basis."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "b18cb8cb1d01506afbd6be292cb4379c7d181cc3eb008bcb82380bd54474cf08"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "D(Y) D(Y†)",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "kinetic"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          1.0
+                        ],
+                        [
+                          "reason",
+                          "Canonical scalar norm projected onto the displayed invariant basis."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "ff3767af2a610bfc706aef7812363c5701cd3d22c0e120ab2aad95ba1ab5ef25"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "unresolved",
+              {
+                "$dict": []
+              }
+            ]
+          ]
+        }
+      ],
+      [
+        "operator_reference",
+        "# Operator conventions and suggested values\n# This reference is managed with the generated model metadata.\n# Only literals and finite arithmetic are parsed; the model file is never executed.\n# Only canonical diagonal kinetic and mass terms start enabled. All interactions,\n# inter-particle/chiral mixing and holomorphic mass additions start disabled.\n# Suggestions are starting inputs, not fitted physics or a guarantee of export support.\n# The fixed SM vacuum assumes a 125 GeV unmixed Higgs and zero new scalar VEVs.\n# No potential minimization or global-stability test is performed.\n\n# O0001: X X†; operator dimension 2; coefficient units: GeV^2.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[3][c1])*(X†[3][c2])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[3][c1])*(X†[3][c2]))])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Reference mass 200 GeV before VEV shifts/mixing; actual masses are derived.\n\n# O0002: Y Y†; operator dimension 2; coefficient units: GeV^2.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1.\n# ((((1)*IndexDelta[Index[Colour,c1],Index[Colour,c2]]*(Y[1][c1])*(Y†[1][c2])))+HC[((1)*IndexDelta[Index[Colour,c1],Index[Colour,c2]]*(Y[1][c1])*(Y†[1][c2]))])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Reference mass 600 GeV before VEV shifts/mixing; actual masses are derived.\n\n# O0003: H H† X X†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (2):\n# 1.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[3][c1])*(X†[3][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[3][c1])*(X†[3][c2])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[3][c1])*(X†[3][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[3][c1])*(X†[3][c2]))])/2\n# 2.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[2][c1])*(X†[2][c2])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[3][c1])*(X†[3][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[2])*(X[2][c1])*(X†[1][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[2])*(X[3][c1])*(X†[2][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[1])*(X[1][c1])*(X†[2][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[1])*(X[2][c1])*(X†[3][c2])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[2][c1])*(X†[2][c2])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[2][c1])*(X†[2][c2])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[3][c1])*(X†[3][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[2])*(X[2][c1])*(X†[1][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[2])*(X[3][c1])*(X†[2][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[1])*(X[1][c1])*(X†[2][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[1])*(X[2][c1])*(X†[3][c2])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[2][c1])*(X†[2][c2]))])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.\n\n# O0004: H H† Y Y†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1.\n# ((((1)*IndexDelta[Index[Colour,c1],Index[Colour,c2]]*(H[1])*(H†[1])*(Y[1][c1])*(Y†[1][c2])+(1)*IndexDelta[Index[Colour,c1],Index[Colour,c2]]*(H[2])*(H†[2])*(Y[1][c1])*(Y†[1][c2])))+HC[((1)*IndexDelta[Index[Colour,c1],Index[Colour,c2]]*(H[1])*(H†[1])*(Y[1][c1])*(Y†[1][c2])+(1)*IndexDelta[Index[Colour,c1],Index[Colour,c2]]*(H[2])*(H†[2])*(Y[1][c1])*(Y†[1][c2]))])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.\n\n# O0005: L Q Y†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Automatic export unresolved: compiler gap: this nonzero fermion or derivative family needs joint\n# Lorentz lowering. No contraction ordering is assumed. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (9):\n# 1. invariant 1\n# 2. invariant 2\n# 3. invariant 3\n# 4. invariant 4\n# 5. invariant 5\n# 6. invariant 6\n# 7. invariant 7\n# 8. invariant 8\n# 9. invariant 9\n# Limitations: compiler gap: this nonzero fermion or derivative family needs joint Lorentz lowering\n# Suggested value: compiler gap: this nonzero fermion or derivative family needs joint Lorentz lowering\n\n# O0006: Q^2 X†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: One half times the full symmetric complex matrix Y_QQ[i,j], with normalized sextet colour\n# Clebsches and i sigma2 sigmaA in the weak triplet. In descending T3 order the weak bilinears are sqrt(2) u_i\n# u_j, u_i d'_j + d'_i u_j, sqrt(2) d'_i d'_j, where d'_i = sum_k CKM[i,k] d_k. Quarks are left-handed. Add the\n# Hermitian conjugate. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (6):\n# 1. Y_QQ[1,1]\n# 2. Y_QQ[1,2]\n# 3. Y_QQ[1,3]\n# 4. Y_QQ[2,2]\n# 5. Y_QQ[2,3]\n# 6. Y_QQ[3,3]\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small real seed for each independent complex flavour coupling in the stated order.\n\n# O0007: Q^2 Y; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Automatic export unresolved: compiler gap: this nonzero fermion or derivative family needs joint\n# Lorentz lowering. No contraction ordering is assumed. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (6):\n# 1. invariant 1\n# 2. invariant 2\n# 3. invariant 3\n# 4. invariant 4\n# 5. invariant 5\n# 6. invariant 6\n# Limitations: compiler gap: this nonzero fermion or derivative family needs joint Lorentz lowering\n# Suggested value: compiler gap: this nonzero fermion or derivative family needs joint Lorentz lowering\n\n# O0008: X X† Y Y†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (2):\n# 1.\n# ((((1)*IndexDelta[Index[Colour,c3],Index[Colour,c4]]*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[1][c1])*(X†[1][c2])*(Y[1][c3])*(Y†[1][c4])+(1)*IndexDelta[Index[Colour,c3],Index[Colour,c4]]*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[2][c1])*(X†[2][c2])*(Y[1][c3])*(Y†[1][c4])+(1)*IndexDelta[Index[Colour,c3],Index[Colour,c4]]*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[3][c1])*(X†[3][c2])*(Y[1][c3])*(Y†[1][c4])))+HC[((1)*IndexDelta[Index[Colour,c3],Index[Colour,c4]]*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[1][c1])*(X†[1][c2])*(Y[1][c3])*(Y†[1][c4])+(1)*IndexDelta[Index[Colour,c3],Index[Colour,c4]]*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[2][c1])*(X†[2][c2])*(Y[1][c3])*(Y†[1][c4])+(1)*IndexDelta[Index[Colour,c3],Index[Colour,c4]]*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[3][c1])*(X†[3][c2])*(Y[1][c3])*(Y†[1][c4]))])/2\n# 2.\n# ((((1)*K6[c1,c4,c5]*K6bar[c2,c3,c5]*(X[1][c1])*(X†[1][c2])*(Y[1][c3])*(Y†[1][c4])+(1)*K6[c1,c4,c5]*K6bar[c2,c3,c5]*(X[2][c1])*(X†[2][c2])*(Y[1][c3])*(Y†[1][c4])+(1)*K6[c1,c4,c5]*K6bar[c2,c3,c5]*(X[3][c1])*(X†[3][c2])*(Y[1][c3])*(Y†[1][c4])))+HC[((1)*K6[c1,c4,c5]*K6bar[c2,c3,c5]*(X[1][c1])*(X†[1][c2])*(Y[1][c3])*(Y†[1][c4])+(1)*K6[c1,c4,c5]*K6bar[c2,c3,c5]*(X[2][c1])*(X†[2][c2])*(Y[1][c3])*(Y†[1][c4])+(1)*K6[c1,c4,c5]*K6bar[c2,c3,c5]*(X[3][c1])*(X†[3][c2])*(Y[1][c3])*(Y†[1][c4]))])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.\n\n# O0009: X X†^2 Y†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Automatic export unresolved: compiler gap: joint invariant construction failed: Joint weak-colour\n# Bose-symmetrized rank 0 differs from exact catalogue multiplicity 1; no incomplete basis is returned. No\n# contraction ordering is assumed. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (1):\n# 1. invariant 1\n# Limitations: compiler gap: joint invariant construction failed: Joint weak-colour Bose-symmetrized rank 0\n# differs from exact catalogue multiplicity 1; no incomplete basis is returned\n# Suggested value: compiler gap: joint invariant construction failed: Joint weak-colour Bose-symmetrized rank 0\n# differs from exact catalogue multiplicity 1; no incomplete basis is returned\n\n# O0010: X^2 X†^2; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (5):\n# 1.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4]))])/2\n# 2.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[2][c3])*(X†[1][c4])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[1][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[3][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[2][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[2][c3])*(X†[1][c4])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[1][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[3][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[2][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4]))])/2\n# 3.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[1][c2])*(X†[1][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[3][c2])*(X†[3][c3])*(X†[3][c4])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[1][c2])*(X†[1][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[3][c2])*(X†[3][c3])*(X†[3][c4]))])/2\n# 4.\n# ((((1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])))+HC[((1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4]))])/2\n# 5.\n# ((((1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[1][c2])*(X†[1][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[3][c2])*(X†[3][c3])*(X†[3][c4])))+HC[((1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[1][c2])*(X†[1][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[3][c2])*(X†[3][c3])*(X†[3][c4]))])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.\n\n# O0011: X^2 Y^2; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (1):\n# 1.\n# ((1)*K6[c1,c10,c11]*K6[c2,c12,c13]*K6[c5,c14,c15]*Eps[c10,c12,c14]*Eps[c11,c13,c15]*K6bar[c5,c3,c4]*(X[1][c1])*(X[3][c2])*(Y[1][c3])*(Y[1][c4])+(-1)*K6[c1,c10,c11]*K6[c2,c12,c13]*K6[c5,c14,c15]*Eps[c10,c12,c14]*Eps[c11,c13,c15]*K6bar[c5,c3,c4]*(X[2][c1])*(X[2][c2])*(Y[1][c3])*(Y[1][c4])+(1)*K6[c1,c10,c11]*K6[c2,c12,c13]*K6[c5,c14,c15]*Eps[c10,c12,c14]*Eps[c11,c13,c15]*K6bar[c5,c3,c4]*(X[3][c1])*(X[1][c2])*(Y[1][c3])*(Y[1][c4]))\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.\n\n# O0012: Y dc† uc†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Automatic export unresolved: compiler gap: this nonzero fermion or derivative family needs joint\n# Lorentz lowering. No contraction ordering is assumed. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (9):\n# 1. invariant 1\n# 2. invariant 2\n# 3. invariant 3\n# 4. invariant 4\n# 5. invariant 5\n# 6. invariant 6\n# 7. invariant 7\n# 8. invariant 8\n# 9. invariant 9\n# Limitations: compiler gap: this nonzero fermion or derivative family needs joint Lorentz lowering\n# Suggested value: compiler gap: this nonzero fermion or derivative family needs joint Lorentz lowering\n\n# O0013: Y ec uc; operator dimension 4; coefficient units: dimensionless.\n# Normalization: lambda_R[i,j] S_a ubar_i^a P_L C(lbar_j)^T plus its Hermitian conjugate; the colour contraction\n# is the identity. Both physical fermions are right-handed. Row-major order: up-quark generation i, charged-lepton\n# generation j. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (9):\n# 1. lambda_R[1,1]\n# 2. lambda_R[1,2]\n# 3. lambda_R[1,3]\n# 4. lambda_R[2,1]\n# 5. lambda_R[2,2]\n# 6. lambda_R[2,3]\n# 7. lambda_R[3,1]\n# 8. lambda_R[3,2]\n# 9. lambda_R[3,3]\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small real seed for each independent complex flavour coupling in the stated order.\n\n# O0014: Y^2 Y†^2; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1.\n# ((((1)*IndexDelta[Index[Colour,c1],Index[Colour,c3]]*IndexDelta[Index[Colour,c2],Index[Colour,c4]]*(Y[1][c1])*(Y[1][c2])*(Y†[1][c3])*(Y†[1][c4])))+HC[((1)*IndexDelta[Index[Colour,c1],Index[Colour,c3]]*IndexDelta[Index[Colour,c2],Index[Colour,c4]]*(Y[1][c1])*(Y[1][c2])*(Y†[1][c3])*(Y†[1][c4]))])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.\n\n# O0015: D(X) D(X†); operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[3][c1])*(X†[3][c2])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[3][c1])*(X†[3][c2]))])/2\n# Limitations: Local contractions before IBP/Bianchi/EOM; derivative rows can be redundant or total derivatives.\n# Suggested value: Canonical scalar norm projected onto the displayed invariant basis.\n\n# O0016: D(Y) D(Y†); operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1.\n# ((((1)*IndexDelta[Index[Colour,c1],Index[Colour,c2]]*(Y[1][c1])*(Y†[1][c2])))+HC[((1)*IndexDelta[Index[Colour,c1],Index[Colour,c2]]*(Y[1][c1])*(Y†[1][c2]))])/2\n# Limitations: Local contractions before IBP/Bianchi/EOM; derivative rows can be redundant or total derivatives.\n# Suggested value: Canonical scalar norm projected onto the displayed invariant basis.\n\n"
+      ]
+    ]
+  },
+  "schema": "madgraph-step-model-metadata-v1",
+  "sha256": "f654f1562a01384fe39cca46afcbb04528fe3da0eead30f826d89909d18d32e8"
+}

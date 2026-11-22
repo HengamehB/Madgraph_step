@@ -1,0 +1,56 @@
+# Particle declarations for: ./run.sh init input/particles.txt
+# This source is unchanged by init. The generated model is input/my_model.txt.
+# X is required; set Y = None or remove Y for one new multiplet. Gauge inputs are the SU(2)
+# representation dimension, SU(3) label or Dynkin pair, and hypercharge.
+
+X = {'spin': 'scalar', 'su2': 3, 'su3': '6',
+     'hypercharge': '1/3', 'boson_kind': 'complex'}
+
+Y = {'spin': 'scalar', 'su2': 1, 'su3': '3',
+     'hypercharge': '-1/3', 'boson_kind': 'complex'}
+
+# Common representation examples (these comments do not select a model)
+# Change the values in X or Y above using a row below.
+# Name                       | spin    | su2 | su3    | hypercharge | kind
+# Real scalar singlet        | scalar  | 1   | '1'    | '0'         | real
+# Complex scalar singlet     | scalar  | 1   | '1'    | '0'         | complex
+# Higgs-like scalar doublet  | scalar  | 2   | '1'    | '1/2'       | complex
+# Real scalar weak triplet   | scalar  | 3   | '1'    | '0'         | real
+# Type-II scalar triplet     | scalar  | 3   | '1'    | '1'         | complex
+# Real colour-octet scalar   | scalar  | 1   | '8'    | '0'         | real
+# S1 scalar leptoquark       | scalar  | 1   | '3bar' | '1/3'       | complex
+# R2 scalar leptoquark       | scalar  | 2   | '3'    | '7/6'       | complex
+# Singlet Majorana fermion   | fermion | 1   | '1'    | '0'         | majorana
+# Weak-triplet Majorana      | fermion | 3   | '1'    | '0'         | majorana
+# Vectorlike up-type quark   | fermion | 1   | '3'    | '2/3'       | dirac
+# Vectorlike down-type quark | fermion | 1   | '3'    | '-1/3'      | dirac
+# Vectorlike quark doublet   | fermion | 2   | '3'    | '1/6'       | dirac
+# Neutral singlet vector     | vector  | 1   | '1'    | '0'         | real
+#
+# For scalars/vectors, put kind in 'boson_kind'; for fermions use 'fermion_kind'.
+# Example replacements for X (use only one; the examples stay commented):
+# X = {'spin': 'scalar', 'su2': 2, 'su3': '1', 'hypercharge': '1/2', 'boson_kind': 'complex'}
+# X = {'spin': 'fermion', 'su2': 1, 'su3': '1', 'hypercharge': '0', 'fermion_kind': 'majorana'}
+#
+# Conventions:
+# - su2 is dimension: 1 = singlet, 2 = doublet, 3 = triplet, 4 = quartet, 5 = quintet.
+# - su3: '1' = singlet, '3'/'3bar' = triplet/antitriplet, '6'/'6bar' = sextets,
+#   '8' = octet. A colour triplet is not the same as a weak (su2) triplet.
+# - Electric charge Q = T3 + hypercharge; the Higgs has hypercharge '1/2'.
+#   Some references use Q = T3 + Y/2: halve that Y to enter hypercharge here.
+# - Keep hypercharges exact: write '1/2' or '1/3', not 0.5 or 0.3333.
+# - Real/Majorana requires zero hypercharge, odd su2 dimension and a real colour
+#   representation (e.g. '1' or '8'). Real does not mean all components are neutral.
+#
+# Representations alone do not fix interactions, masses, mixing or stability.
+# Choose operators/coefficients and physical assumptions in the generated model.
+# All representations use the SM electroweak vacuum: 125 GeV Higgs, zero new scalar VEVs.
+# Vectors also require vector_specifications; a representation is not a full gauge theory.
+# Leptoquark conventions: https://arxiv.org/abs/1603.04993 (Table 1).
+# Vectorlike-quark reference: https://arxiv.org/abs/2304.10561.
+# After editing X/Y, ./run.sh init input/particles.txt replaces input/my_model.txt.
+
+# Optional catalogue choices: scenario, exact_dimension, sm_generations,
+# compiler_limits. Choices containing 'any' require an explicit scenario.
+sm_generations = 3
+compiler_limits = {}
