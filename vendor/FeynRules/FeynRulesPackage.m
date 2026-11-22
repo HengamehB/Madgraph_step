@@ -1,5 +1,7 @@
 (* ::Package:: *)
 
+(* Madgraph_step, 2026-11-22: use the public FeynRules mixing accessor on all Wolfram versions. *)
+
 (* ::Title:: *)
 (*The FeynRules package*)
 
@@ -1281,7 +1283,7 @@ FR$MassMatrices::usage="List with the mass matrix names";
 
 MassMatrix::usage="Convert a mass matrix name ot the corresponding analytical matrix";
 
-MatrixSymbol::usage="Get the symbol used for a mixing matrix";
+FeynRules`MatrixSymbol::usage="Get the symbol used for a mixing matrix";
 
 MixMatrix::usage="Get the predefined value of a mixing matrix";
 

@@ -1,5 +1,7 @@
 (* ::Package:: *)
 
+(* Madgraph_step, 2026-11-22: use the public FeynRules mixing accessor on all Wolfram versions. *)
+
 (* ::Section:: *)
 (*Useful tools*)
 
@@ -305,10 +307,10 @@ CheckValue[matname_,Val_,blockname_,len_]:=Block[{bname=blockname,tmpdecl,IsInte
 PutMatrixIndex[id_]:=Block[{gaugeindlist,massindlist,ind,list},
   (*Initialization*)
   list=Which[
-    PRIVATE`Type[id]==="FLR",List[{GaugeBasis[id,"L"],MassBasis[id],MatrixSymbol[id,"L"]},{GaugeBasis[id,"R"],MassBasis[id],MatrixSymbol[id,"R"]}],
-    PRIVATE`Type[id]==="CWeyl",List[{GaugeBasis[id][[1]],MassBasis[id][[1]],MatrixSymbol[id][[1]]},{GaugeBasis[id][[2]],MassBasis[id][[2]],MatrixSymbol[id][[2]]}],
-    PRIVATE`Type[id]==="SPS",List[{GaugeBasis[id],MassBasis[id,"S"],MatrixSymbol[id,"S"]},{GaugeBasis[id],MassBasis[id,"PS"],MatrixSymbol[id,"PS"]}],
-    True,List[{GaugeBasis[id],MassBasis[id],MatrixSymbol[id]}]];
+    PRIVATE`Type[id]==="FLR",List[{GaugeBasis[id,"L"],MassBasis[id],FeynRules`MatrixSymbol[id,"L"]},{GaugeBasis[id,"R"],MassBasis[id],FeynRules`MatrixSymbol[id,"R"]}],
+    PRIVATE`Type[id]==="CWeyl",List[{GaugeBasis[id][[1]],MassBasis[id][[1]],FeynRules`MatrixSymbol[id][[1]]},{GaugeBasis[id][[2]],MassBasis[id][[2]],FeynRules`MatrixSymbol[id][[2]]}],
+    PRIVATE`Type[id]==="SPS",List[{GaugeBasis[id],MassBasis[id,"S"],FeynRules`MatrixSymbol[id,"S"]},{GaugeBasis[id],MassBasis[id,"PS"],FeynRules`MatrixSymbol[id,"PS"]}],
+    True,List[{GaugeBasis[id],MassBasis[id],FeynRules`MatrixSymbol[id]}]];
   (If[#[[3]]==="No matrix symbol found.",Return[]];
    gaugeindlist=$IndList/@(#[[1]]/.a_?(FieldQ[#]&)[___]:>a);
    massindlist=$IndList/@(#[[2]]/.a_?(FieldQ[#]&)[___]:>a);
@@ -1325,26 +1327,26 @@ BlockName[id_] := Block[{resu,mmix},
 (*Getting back a matrix symbol*)
 
 
-MatrixSymbol[id_,S]:=MatrixSymbol[id,"S"];
-MatrixSymbol[id_,PS]:=MatrixSymbol[id,"PS"];
+FeynRules`MatrixSymbol[id_,S]:=FeynRules`MatrixSymbol[id,"S"];
+FeynRules`MatrixSymbol[id_,PS]:=FeynRules`MatrixSymbol[id,"PS"];
 
-MatrixSymbol[id_,L]:=MatrixSymbol[id,"L"];
-MatrixSymbol[id_,R]:=MatrixSymbol[id,"R"];
-
-
-MatrixSymbol[id_,"S"] := ((MixingMatrix/.FR$MixingRules[Mix[id]])/.MixingMatrix->{"No matrix symbol found.","No matrix symbol found."})[[1]];
-
-MatrixSymbol[id_,"PS"] := ((MixingMatrix/.FR$MixingRules[Mix[id]])/.MixingMatrix->{"No matrix symbol found.","No matrix symbol found."})[[2]];
+FeynRules`MatrixSymbol[id_,L]:=FeynRules`MatrixSymbol[id,"L"];
+FeynRules`MatrixSymbol[id_,R]:=FeynRules`MatrixSymbol[id,"R"];
 
 
-MatrixSymbol[id_,letter_?(#==="L" || #==="R"&)] := Block[{resu,num},
+FeynRules`MatrixSymbol[id_,"S"] := ((MixingMatrix/.FR$MixingRules[Mix[id]])/.MixingMatrix->{"No matrix symbol found.","No matrix symbol found."})[[1]];
+
+FeynRules`MatrixSymbol[id_,"PS"] := ((MixingMatrix/.FR$MixingRules[Mix[id]])/.MixingMatrix->{"No matrix symbol found.","No matrix symbol found."})[[2]];
+
+
+FeynRules`MatrixSymbol[id_,letter_?(#==="L" || #==="R"&)] := Block[{resu,num},
   If[letter==="L", num=1, num=2];
   resu = MixingMatrix/.FR$MixingRules[Mix[id]]/.Blank->MR$Null/.MR$Null[]->"No matrix symbol found.";
   If[resu===MixingMatrix, Return["No matrix symbol found."], Return[resu[[num]]]];
 ]; 
 
 
-MatrixSymbol[id_] := Block[{resu},
+FeynRules`MatrixSymbol[id_] := Block[{resu},
   If[Type[id]==="SPS", Message[MassDiag::GBSPS]; Abort[]];
   If[Type[id]==="FLR", Message[MassDiag::GBFLR]; Abort[]];
   If[Type[id]==="F4", Message[MassDiag::GBFLR]; Abort[]];
@@ -1388,13 +1390,13 @@ MixMatrix[id_,R]:=MixMatrix[id,"R"];
 
 MixMatrix[id_,"S"] := Block[{val},
   val=(Value/.FR$MixingRules[Mix[id]]);
-  If[NoCompute[MatrixSymbol[id,"S"]]===True, Return["This matrix must be given as an external parameter by the user."]];
+  If[NoCompute[FeynRules`MatrixSymbol[id,"S"]]===True, Return["This matrix must be given as an external parameter by the user."]];
   If[val===Value, Return["Please use the numerical code."], Return[val[[1]]/.Value->"Please use the numerical code."]];
 ];
 
 MixMatrix[id_, "PS"] := Block[{val},
   val=(Value/.FR$MixingRules[Mix[id]]);
-  If[NoCompute[MatrixSymbol[id,"PS"]]===True, Return["This matrix must be given as an external parameter by the user."]];
+  If[NoCompute[FeynRules`MatrixSymbol[id,"PS"]]===True, Return["This matrix must be given as an external parameter by the user."]];
   If[val===Value, Return["Please use the numerical code."], Return[val[[2]]/.Value->"Please use the numerical code."]];
 ];
 
@@ -1402,10 +1404,10 @@ MixMatrix[id_, "PS"] := Block[{val},
 MixMatrix[id_,letter_?(#==="L" || #==="R"&)] := Block[{resu,num},
   If[letter==="L", num=1, num=2];
   resu = Value/.FR$MixingRules[Mix[id]];
-  If[NoCompute[MatrixSymbol[id,letter]]===True, Return["This matrix must be given as an external parameter by the user."]];
+  If[NoCompute[FeynRules`MatrixSymbol[id,letter]]===True, Return["This matrix must be given as an external parameter by the user."]];
   If[resu===Value, Return["Please use the numerical code."],resu=resu[[num]]];    
   If[And@@(MatchQ[#,Rule[_,_]]&/@ resu),
-    Return[Table[MatrixSymbol[id,letter][iii,jjj],{iii,Length[MassBasis[id]]},{jjj,Length[MassBasis[id]]}]/.resu],
+    Return[Table[FeynRules`MatrixSymbol[id,letter][iii,jjj],{iii,Length[MassBasis[id]]},{jjj,Length[MassBasis[id]]}]/.resu],
     Return[resu]
   ];
 ]; 
@@ -1416,10 +1418,10 @@ MixMatrix[id_] := Block[{resu},
   If[Type[id]==="FLR", Message[MassDiag::GBFLR]; Abort[]];
   If[Type[id]==="F4", Message[MassDiag::GBFLR]; Abort[]];
   resu = Value/.FR$MixingRules[Mix[id]];
-  If[NoCompute[MatrixSymbol[id]]===True, Return["This matrix must be given as an external parameter by the user."]];
+  If[NoCompute[FeynRules`MatrixSymbol[id]]===True, Return["This matrix must be given as an external parameter by the user."]];
   If[resu===Value, Return["Please use the numerical code."]];  
   If[And@@(MatchQ[#,Rule[_,_]]&/@ resu),
-    Return[Table[MatrixSymbol[id][iii,jjj],{iii,Length[MassBasis[id]]},{jjj,Length[MassBasis[id]]}]/.resu],
+    Return[Table[FeynRules`MatrixSymbol[id][iii,jjj],{iii,Length[MassBasis[id]]},{jjj,Length[MassBasis[id]]}]/.resu],
     Return[resu]
   ];
 ];  
@@ -1437,12 +1439,12 @@ MixingSummary[sbl_String]:=Block[{},
     Print["Gauge basis = ",GaugeBasis[sbl]];
     Print["Scalar sector"];
     Print["***************************************************"];
-    Print["  Mass basis = ", MassBasis[sbl,"S"], "\n  Block = ", BlockName[sbl,"S"], "\n  Symbol = ",MatrixSymbol[sbl,"S"]];
+    Print["  Mass basis = ", MassBasis[sbl,"S"], "\n  Block = ", BlockName[sbl,"S"], "\n  Symbol = ",FeynRules`MatrixSymbol[sbl,"S"]];
     Print["  Squared mass matrix = ", MatrixForm[MassMatrix[sbl, "S"]]];
     Print["  Mixing matrix = ", MatrixForm[MixMatrix[sbl, "S"]]];
     Print["Pseudoscalar sector"];
     Print["***************************************************"];
-    Print["  Mass basis = ", MassBasis[sbl,"PS"], "\n  Block = ", BlockName[sbl,"PS"], "\n  Symbol = ",MatrixSymbol[sbl,"PS"]];
+    Print["  Mass basis = ", MassBasis[sbl,"PS"], "\n  Block = ", BlockName[sbl,"PS"], "\n  Symbol = ",FeynRules`MatrixSymbol[sbl,"PS"]];
     Print["  Squared mass matrix = ", MatrixForm[MassMatrix[sbl, "PS"]]];
     Print["  Mixing matrix = ", MatrixForm[MixMatrix[sbl, "PS"]]];
     Return[];
@@ -1453,12 +1455,12 @@ MixingSummary[sbl_String]:=Block[{},
     Print["Left-handed fermions"];
     Print["****************************************************"];    
     Print["  Gauge basis = ",GaugeBasis[sbl, "L"]];
-    Print["  Block = ", BlockName[sbl,"L"], "\n  Symbol = ",MatrixSymbol[sbl,"L"]];    
+    Print["  Block = ", BlockName[sbl,"L"], "\n  Symbol = ",FeynRules`MatrixSymbol[sbl,"L"]];
     Print["  Mixing matrix = ", MatrixForm[MixMatrix[sbl, "L"]]];    
     Print["Right-handed fermions"];
     Print["****************************************************"];
     Print["  Gauge basis = ",GaugeBasis[sbl, "R"]];
-    Print["  Block = ", BlockName[sbl,"R"], "\n  Symbol = ",MatrixSymbol[sbl,"R"]];
+    Print["  Block = ", BlockName[sbl,"R"], "\n  Symbol = ",FeynRules`MatrixSymbol[sbl,"R"]];
     Print["  Mixing matrix = ", MatrixForm[MixMatrix[sbl, "R"]]];
     Return[];
   ];
@@ -1468,11 +1470,11 @@ MixingSummary[sbl_String]:=Block[{},
     Print["Mass matrix = ", MatrixForm[MassMatrix[sbl]]];
     Print["Left-handed fermions"];
     Print["****************************************************"];
-    Print["  Block = ", BlockName[sbl,"L"], "\n  Symbol = ",MatrixSymbol[sbl,"L"]];    
+    Print["  Block = ", BlockName[sbl,"L"], "\n  Symbol = ",FeynRules`MatrixSymbol[sbl,"L"]];
     Print["  Mixing matrix = ", MatrixForm[MixMatrix[sbl, "L"]]];
     Print["Right-handed fermions"];
     Print["****************************************************"];
-    Print["  Block = ", BlockName[sbl,"R"], "\n  Symbol = ",MatrixSymbol[sbl,"R"]];
+    Print["  Block = ", BlockName[sbl,"R"], "\n  Symbol = ",FeynRules`MatrixSymbol[sbl,"R"]];
     Print["  Mixing matrix = ", MatrixForm[MixMatrix[sbl, "R"]]];
     Return[];
   ];
@@ -1482,18 +1484,18 @@ MixingSummary[sbl_String]:=Block[{},
     Print["****************************************************"];    
     Print["  Mass basis = ", MassBasis[sbl][[1]]];    
     Print["  Gauge basis = ",GaugeBasis[sbl][[1]]];
-    Print["  Block = ", BlockName[sbl][[1]], "\n  Symbol = ",MatrixSymbol[sbl][[1]]];
+    Print["  Block = ", BlockName[sbl][[1]], "\n  Symbol = ",FeynRules`MatrixSymbol[sbl][[1]]];
     Print["  Mixing matrix = ", MatrixForm[MixMatrix[sbl, "L"]]];
     Print["Second basis of charged Weyl fermions"];
     Print["****************************************************"];    
     Print["  Mass basis = ", MassBasis[sbl][[2]]];    
     Print["  Gauge basis = ",GaugeBasis[sbl][[2]]];
-    Print["  Block = ", BlockName[sbl][[2]], "\n  Symbol = ",MatrixSymbol[sbl][[2]]];
+    Print["  Block = ", BlockName[sbl][[2]], "\n  Symbol = ",FeynRules`MatrixSymbol[sbl][[2]]];
     Print["  Mixing matrix = ", MatrixForm[MixMatrix[sbl, "R"]]];    
     Return[];
   ];
   Print["Gauge basis = ",GaugeBasis[sbl]];
-  Print["Mass basis = ", MassBasis[sbl], "\nBlock = ", BlockName[sbl], "\nSymbol = ",MatrixSymbol[sbl]];
+  Print["Mass basis = ", MassBasis[sbl], "\nBlock = ", BlockName[sbl], "\nSymbol = ",FeynRules`MatrixSymbol[sbl]];
   Print["Squared mass matrix = ", MatrixForm[MassMatrix[sbl]]];
   Print["The mixing matrix = ", MatrixForm[MixMatrix[sbl]]];
   Return[];

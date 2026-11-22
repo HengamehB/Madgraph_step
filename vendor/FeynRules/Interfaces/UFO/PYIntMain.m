@@ -260,7 +260,7 @@ WriteUFO[lagrangians___, OptionsPattern[]] := Block[{lags = {lagrangians}, verti
    eparams = EParamList, iparams = IParamList, masslist = MassList, widthlist = WidthList,
    plist,
    (* Particles *)
-    partlist = PartList,
+    partlist = PartList, cachedParticleSpin,
     simplifydecays = OptionValue[SimplifyDecays],
    (* form factors*)
     formfactors,
@@ -527,7 +527,18 @@ If[$Debug,
    (* Simplify Colour-Eps[i,j,k], and remove possible zeroes *)
    vertices = DeleteCases[vertices /. {Eps[Index[Colour, i_], Index[Colour, j_], Index[Colour, k_]] :> OrderEps[Eps[Index[Colour, i], Index[Colour, j], Index[Colour, k]]]}, {_, 0}];
    (* Then, we make all particles outgoing *)
-   vertices = MakeOutgoingParticles /@ vertices;
+   (* Compare both leg lists while the matching ingoing vertex is available.
+      Cache by field for this export only, including for the Lorentz writer. *)
+   cachedParticleSpin[field_] := cachedParticleSpin[field] = ParticleToSpin[field];
+   vertices = MapIndexed[Function[{incoming, position},
+     With[{outgoing = MakeOutgoingParticles[incoming]},
+       If[MemberQ[cachedParticleSpin /@ outgoing[[1, All, 1]], 0],
+         PYReportUnknownLegs[First[position], First[incoming], First[outgoing], cachedParticleSpin];
+         ResetDirectory[];
+         Abort[]
+       ];
+       outgoing
+     ]], vertices];
 
    formfactors = If[FR$FormFactors =!= {},
                     MatchFormFactorsToVertexList[vertices, Ingoing -> False],
@@ -536,7 +547,7 @@ If[$Debug,
 
    (* We now separate into Lorentz, color and coupling structures , anmd create PY$LorentzObjects and PY$CouplObjects*)
    Print["    - Splitting vertices into building blocks."];
-   vertices = PYSplitVertices[vertices];
+   vertices = PYSplitVertices[vertices, cachedParticleSpin];
 (*Print["after split"];
 Print[InputForm[vertices]];*)
 

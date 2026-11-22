@@ -8,6 +8,10 @@ Archive SHA256: 4810c2113f4c9019e4f4e427a73a96bcda72f6e92050a9221c05ff173abdbd99
 License: FeynRules/LICENSE (GPL-3.0).
 This distribution includes the FeynRules runtime and SM model used by the benchmark.
 Ancillary upstream files are omitted. The checksum identifies the upstream archive.
+Local Wolfram 15 compatibility changes qualify the public FeynRules MatrixSymbol
+accessor and give its private field commutator a distinct name. The UFO writer
+now records the incoming and outgoing fields of the first unclassified vertex
+in unknown_vertex_fields.json and aborts before writing invalid Python.
 
 MadGraph5_aMC@NLO 3.7.3 (1 September 2026)
 Upstream: https://github.com/mg5amcnlo/mg5amcnlo

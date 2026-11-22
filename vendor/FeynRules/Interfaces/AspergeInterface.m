@@ -1,5 +1,7 @@
 (* ::Package:: *)
 
+(* Madgraph_step, 2026-11-22: use the public FeynRules mixing accessor on all Wolfram versions. *)
+
 M$InterfaceVersion=0.8.1;
 $ASperGeDir = "";
 
@@ -351,7 +353,7 @@ DefineMassMatrices[]:=Block[{tmpdef,cppstream,hppstream,mainstream,matrixelement
  tmpdef=Which[
     (*Dirac Fermions*)
     Type[#]==="FLR",
-      matrixsymbol=ToString[MatrixSymbol[#,"L"]];
+      matrixsymbol=ToString[FeynRules`MatrixSymbol[#,"L"]];
       blockname=ToString/@List[BlockName[#,"L"],BlockName[#,"R"]];
       massmatrix=DefinitionsToStrings/@((Expand[List[MassMatrix[#].ConjugateTranspose[MassMatrix[#]], ConjugateTranspose[MassMatrix[#]].MassMatrix[#] ]]/.n_?(NumericQ[#]&)*pars__:>N[n,30]*pars)/.Index[typ_,num_]:>num);
       pdgids=ToString/@(Sort/@List[CalculatePDGFLR/@MassBasis[#],CalculatePDGFLR/@MassBasis[#]]); 
@@ -360,7 +362,7 @@ DefineMassMatrices[]:=Block[{tmpdef,cppstream,hppstream,mainstream,matrixelement
 
 (*Charged Weyls*)
    Type[#]==="CWeyl",
-      matrixsymbol=ToString/@(List[MatrixSymbol[#][[1]],MatrixSymbol[#][[2]]]);
+      matrixsymbol=ToString/@(List[FeynRules`MatrixSymbol[#][[1]],FeynRules`MatrixSymbol[#][[2]]]);
       blockname =ToString/@List[BlockName[#][[1]],BlockName[#][[2]]];
       massmatrix=DefinitionsToStrings/@((Expand[List[MassMatrix[#].ConjugateTranspose[MassMatrix[#]],ConjugateTranspose[MassMatrix[#]].MassMatrix[#]]]/.n_?(NumericQ[#]&)*pars__:>N[n,30]*pars)/.Index[typ_,num_]:>num);
       pdgids=ToString/@(List[Sort[CalculatePDGWeyl/@MassBasis[#][[1]]],-Sort[CalculatePDGWeyl/@MassBasis[#][[2]]]]);
@@ -369,7 +371,7 @@ DefineMassMatrices[]:=Block[{tmpdef,cppstream,hppstream,mainstream,matrixelement
       Sequence@@List[liste[[All,1]],liste[[All,2]]],
     (*Scalars and pseudo scalars*)
     Type[#]==="SPS",
-      matrixsymbol=ToString/@(List[MatrixSymbol[#,"S"],MatrixSymbol[#,"PS"]]);
+      matrixsymbol=ToString/@(List[FeynRules`MatrixSymbol[#,"S"],FeynRules`MatrixSymbol[#,"PS"]]);
       blockname=ToString/@List[BlockName[#,"S"],BlockName[#,"PS"]];
       massmatrix=DefinitionsToStrings/@((Expand[List[MassMatrix[#,"S"], MassMatrix[#,"PS"]]]/.n_?(NumericQ[#]&)*pars__:>N[n,30]*pars)/.Index[typ_,num_]:>num);
       pdgids=ToString/@(Sort/@List[CalculatePDGFLR/@MassBasis[#,"S"],CalculatePDGFLR/@MassBasis[#,"PS"]]);
@@ -380,14 +382,14 @@ DefineMassMatrices[]:=Block[{tmpdef,cppstream,hppstream,mainstream,matrixelement
     True,
 (*It could be a neutral Weyl*)
       If[WeylFieldQ[First[MassBasis[#]]]===True,
-        matrixsymbol=ToString[MatrixSymbol[#]];
+        matrixsymbol=ToString[FeynRules`MatrixSymbol[#]];
         blockname=ToString[BlockName[#]];
         massmatrix=DefinitionsToStrings[(Expand[MassMatrix[#]]/.n_?(NumericQ[#]&)*pars__:>N[n,30]*pars)/.Index[typ_,num_]:>num];
         pdgids=ToString[Sort[CalculatePDGWeyl/@MassBasis[#]]];
         massbasis=ToString/@(MassBasis[#]/.part_[n_Integer,_]:>part[n]);
         liste=List[matrixsymbol,blockname,ToString[Length[massbasis]],massmatrix,pdgids,massbasis,"nsq"],
 (*or a vector field*)
-        matrixsymbol=ToString[MatrixSymbol[#]];
+        matrixsymbol=ToString[FeynRules`MatrixSymbol[#]];
         blockname=ToString[BlockName[#]];
         massmatrix=DefinitionsToStrings[Expand[MassMatrix[#]]/.Index[typ_,num_]:>num];
         pdgids=ToString[Sort[CalculatePDGFLR/@MassBasis[#]]];

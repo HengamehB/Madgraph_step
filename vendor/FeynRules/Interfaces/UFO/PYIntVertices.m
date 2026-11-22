@@ -42,7 +42,43 @@ PrependToLines[matrix_List, elem_] := ({LorentzObject @@ Prepend[#, elem]})& /@ 
 (*It also builds the lists PY$LorentzObjects and PY$CouplObjects.*)
 
 
-PYSplitVertices[vertices_] := Block[{
+(* Keep a bounded report of the actual legs; never serialize the full amplitude.
+   Using an empty context path exposes context collisions in compound fields. *)
+PYTraceSymbolName[s_Symbol] := Context[s] <> SymbolName[s];
+PYTraceSymbolName[expr_] := PYTraceSymbolName[Head[expr]];
+
+PYTraceFieldText[expr_] := Block[{$Context = "MadgraphStepTrace`", $ContextPath = {}},
+  If[ByteCount[expr] > 16384,
+    "<expression exceeds 16384 bytes; head=" <> PYTraceSymbolName[expr] <> ">",
+    StringTake[ToString[expr, InputForm, PageWidth -> Infinity], UpTo[1024]]
+  ]
+];
+
+PYReportUnknownLegs[index_, incoming_List, outgoing_List, spinFunction_] := Module[
+  {bad, shown, rows, report, file = "unknown_vertex_fields.json"},
+  bad = Select[Range[Length[outgoing]], spinFunction[outgoing[[#, 1]]] === 0 &];
+  (* Include the first unknown legs even if they lie beyond the initial sample. *)
+  shown = Union[Range[Min[12, Length[outgoing]]], Take[bad, UpTo[12]]];
+  rows = Table[
+    <|"position" -> i,
+      "incoming_leg_id" -> PYTraceFieldText[incoming[[i, 2]]],
+      "incoming_field" -> PYTraceFieldText[incoming[[i, 1]]],
+      "incoming_symbol_or_head" -> PYTraceSymbolName[incoming[[i, 1]]],
+      "incoming_spin_code" -> spinFunction[incoming[[i, 1]]],
+      "outgoing_leg_id" -> PYTraceFieldText[outgoing[[i, 2]]],
+      "outgoing_field" -> PYTraceFieldText[outgoing[[i, 1]]],
+      "outgoing_symbol_or_head" -> PYTraceSymbolName[outgoing[[i, 1]]],
+      "outgoing_spin_code" -> spinFunction[outgoing[[i, 1]]]|>, {i, shown}];
+  report = <|"stage" -> "MakeOutgoingParticles", "vertex_index" -> index,
+    "number_of_legs" -> Length[outgoing], "unclassified_outgoing_legs" -> Length[bad],
+    "legs" -> rows|>;
+  Export[file, report, "RawJSON"];
+  Print["PORTABLE_UFO_UNKNOWN_FIELD vertex ", index, ", leg ", First[bad], ": ",
+    PYTraceFieldText[incoming[[First[bad], 1]]], " -> ", PYTraceFieldText[outgoing[[First[bad], 1]]],
+    ". See ", file, " in the UFO output directory."]
+];
+
+PYSplitVertices[vertices_, spinFunction_:ParticleToSpin] := Block[{
     verts = vertices, particles = vertices[[All, 1]],
     split1, split2,
     colorstruc, lorentzstruc, couplstruc,
@@ -125,7 +161,7 @@ PYSplitVertices[vertices_] := Block[{
     couplstruc = CoupleList[verts];*)
 
     (* we add the particles spins to the Lorentz structures, and we tag Lorentz and couplings as LorentzObjects and CouplingObjects respectively*)
-    lorentzstruc = StrictInner[PrependToLines, lorentzstruc, (ParticleToSpin[#1]& @@@ #)& /@ particles, List];
+    lorentzstruc = StrictInner[PrependToLines, lorentzstruc, (spinFunction[#1]& @@@ #)& /@ particles, List];
     couplstruc = ({CouplingObject[#]}& @@@ #)& /@ couplstruc;
 
     (* We convolve them back into an object {colors, lorentzes, couplings} per vertex *)
