@@ -151,7 +151,15 @@ class ToolConfigurationTests(unittest.TestCase):
         self.assertTrue(any('Invalid mathematica' in item for item in self.messages))
 
     def test_existing_current_values_need_no_prompt_or_backup(self):
-        self.path.write_text('[tools]\nmathematica = ' + str(self.tool) + '\n')
+        # This case covers a fully configured host. Missing tools have a
+        # separate interactive path so users can enter custom locations.
+        settings = ['[tools]']
+        for name, key in configuration.CONFIG_KEYS.items():
+            path = self.root / name
+            self.discovery['tools'][name].update(selected=str(path), reason=None)
+            value = name if name in {'madgraph', 'feynrules'} else str(path)
+            settings.append(f'{key} = {value}')
+        self.path.write_text('\n'.join(settings) + '\n')
         result = configuration.configure_tools(self.path, input_fn=lambda _: self.fail('No changes require no prompt'), output_fn=self.messages.append)
         self.assertFalse(result['saved'])
         self.assertFalse(result['cancelled'])
