@@ -14,6 +14,6 @@ import os
 from pathlib import Path
 report = Path(os.environ["BENCHMARK_ARTIFACTS"]) / "benchmark-licensed.json"
 entitlement = os.environ["WOLFRAMINIT"].rsplit(" ", 1)[1].encode()
-if entitlement in report.read_bytes():
+if any(entitlement in path.read_bytes() for path in (report, report.with_name("ranking.csv"))):
     raise SystemExit("The benchmark report contains license information.")
 PY

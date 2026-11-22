@@ -3,7 +3,7 @@
 
 fast: Python-only catalogue, binding, spectrum and compiler checks.
 licensed: those checks plus fresh FeynRules export, MadWidth and one integration.
-Only the small curated JSON summary is written to BENCHMARK_ARTIFACTS. Raw
+A JSON summary and the licensed benchmark ranking CSV are written to BENCHMARK_ARTIFACTS. Raw
 logs, local paths, tool configuration and generated executables stay temporary.
 """
 from __future__ import annotations
@@ -19,6 +19,8 @@ import math
 import os
 from pathlib import Path
 import platform
+import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -196,6 +198,11 @@ class Benchmark:
                 'Active operator selection changed')
         selected = read_json(run / 'selected_operators.json')
         selected_ids = {row['id'] for row in selected}
+        expected_symbols = {int(operator_id[1:]) for operator_id in selected_ids}
+        for filename in ('lagrangian_expression.tex', 'lagrangian.tex'):
+            expression = (run / filename).read_text(encoding='utf-8')
+            symbols = {int(i) for i in re.findall(r'c_\{(\d+)(?:,a)?\}', expression)}
+            require(symbols == expected_symbols, filename + ' disagrees with the selected terms')
         require({document.definition.coefficient_key(identity) for identity in selected_ids} == set(active),
                 'Saved Lagrangian does not match enabled operators')
         contractions = read_json(run / 'contractions.json')
@@ -451,6 +458,7 @@ def main():
             run = benchmark.fast()
             if args.mode == 'licensed':
                 benchmark.licensed(run)
+                shutil.copyfile(run / 'ranking.csv', destination / 'ranking.csv')
         report['status'] = 'passed'
     except (Exception, KeyboardInterrupt) as exc:
         code = 130 if isinstance(exc, KeyboardInterrupt) else 1
