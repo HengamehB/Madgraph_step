@@ -1,5 +1,4 @@
 """Check the model a new user receives against the licensed two-body benchmark."""
-import json
 import os
 from pathlib import Path
 import subprocess
@@ -10,27 +9,10 @@ import unittest
 from numpy.testing import assert_allclose
 
 from ci.run_benchmark import COEFFICIENTS, ROOT, read_json
-from model_metadata import load_metadata, publish_metadata
-from tex_inputs import operator_bindings, read_inputs
+from tex_inputs import read_inputs
 
 
 EXAMPLE = ROOT / "input" / "my_model.txt"
-
-
-def binding_diagnostic(model, scratch):
-    """Describe a candidate refresh for review. Never modify a shipped input."""
-    document = read_inputs(model)
-    expected = operator_bindings(document.definition)
-    current = document.assignments["_metadata"]
-    metadata, _, _ = load_metadata(model, current)
-    metadata["_input_bindings"] = expected
-    proposed = publish_metadata(scratch / model.name, metadata)
-    lines = [f"SAMPLE_METADATA current {current}", f"SAMPLE_METADATA proposed {proposed}"]
-    for key, value in expected.items():
-        values = ([key, k, v] for k, v in value.items()) if isinstance(value, dict) else [[key, value]]
-        for entry in values:
-            lines.append("SAMPLE_BINDING " + json.dumps(entry, ensure_ascii=False))
-    return "\n".join(lines)
 
 
 class ShippedExampleTests(unittest.TestCase):
@@ -47,11 +29,7 @@ class ShippedExampleTests(unittest.TestCase):
                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                 text=True, encoding="utf-8", timeout=180, check=False,
             )
-            if result.returncode:
-                reason = result.stdout
-                if "stale active operator bindings" in reason:
-                    reason += "\n" + binding_diagnostic(EXAMPLE, scratch)
-                self.fail(reason)
+            self.assertEqual(result.returncode, 0, result.stdout)
 
             validations = list(output.glob("*/*/validation.json"))
             self.assertEqual(len(validations), 1, result.stdout)
