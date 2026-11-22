@@ -1,0 +1,45 @@
+name: Prepare Ubuntu on Windows
+description: Start WSL2, unpack the exact revision on its Linux filesystem and provision the benchmark
+inputs:
+  mode:
+    description: fast or licensed
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Install Ubuntu 24.04 on WSL2
+      uses: Vampire/setup-wsl@d1da7f2c0322a5ee4f24975344f67fc0f5baf364 # v7.0.0
+      with:
+        distribution: Ubuntu-24.04
+        wsl-version: 2
+        wsl-shell-user: benchmark
+        use-cache: false
+    - name: Verify WSL2 and download the exact source revision
+      shell: pwsh
+      env:
+        SOURCE_TOKEN: ${{ github.token }}
+      run: |
+        $distros = (wsl.exe --list --verbose | Out-String).Replace([string][char]0, '')
+        if ($LASTEXITCODE -ne 0 -or $distros -notmatch '(?m)^\s*\*?\s*Ubuntu-24\.04\s+\S+\s+2\s*$') {
+          throw "Expected Ubuntu-24.04 running under WSL version 2. Found $distros"
+        }
+        Write-Host $distros
+        $source = "$env:GITHUB_API_URL/repos/$env:GITHUB_REPOSITORY/tarball/$env:GITHUB_SHA"
+        $headers = @{ Authorization = "Bearer $env:SOURCE_TOKEN"; Accept = "application/vnd.github+json" }
+        Invoke-WebRequest -Uri $source -Headers $headers -OutFile (Join-Path $env:RUNNER_TEMP 'release.tar.gz')
+    - name: Prepare the project and scientific toolchain inside WSL2
+      shell: wsl-bash -u root {0}
+      env:
+        BENCHMARK_MODE: ${{ inputs.mode }}
+        WSLENV: RUNNER_TEMP/p:BENCHMARK_MODE/u
+      run: |
+        cat /proc/sys/kernel/osrelease
+        grep -qi 'WSL2' /proc/sys/kernel/osrelease
+        source /etc/os-release
+        [[ $ID == ubuntu && $VERSION_ID == '24.04' ]]
+        install -d /opt/madgraph-ci/source
+        tar -xzf "$RUNNER_TEMP/release.tar.gz" -C /opt/madgraph-ci/source --strip-components=1
+        rm -f -- "$RUNNER_TEMP/release.tar.gz"
+        chown -R benchmark /opt/madgraph-ci/source
+        cd /opt/madgraph-ci/source
+        bash .github/workflows/prepare-host.sh "$BENCHMARK_MODE"

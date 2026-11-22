@@ -42,3 +42,33 @@ jobs:
           path: ci-artifacts/benchmark-fast.json
           if-no-files-found: error
           retention-days: 14
+
+  windows-wsl:
+    name: Fast checks on Windows Server 2025 with WSL2
+    runs-on: windows-2025
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/actions/prepare-wsl
+      - uses: ./.github/actions/prepare-wsl
+        with:
+          mode: fast
+      - name: Run regressions and build the benchmark model inside WSL2
+        shell: wsl-bash {0}
+        env:
+          BENCHMARK_ARTIFACTS: ${{ github.workspace }}/ci-artifacts
+          WSLENV: BENCHMARK_ARTIFACTS/p
+        run: |
+          set -euo pipefail
+          export PATH="/opt/madgraph-ci/venv/bin:/tmp/madgraph-ci-tools:$PATH"
+          cd /opt/madgraph-ci/source
+          python -m unittest discover -s tests
+          python ci/run_benchmark.py --mode fast
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: fast-windows-wsl2
+          path: ci-artifacts/benchmark-fast.json
+          if-no-files-found: error
+          retention-days: 14

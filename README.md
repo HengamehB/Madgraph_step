@@ -41,6 +41,6 @@ The supplied benchmark uses 13.6 TeV, two-body decays, dynamical scale choice 3,
 
 ## Testing new machines
 
-GitHub Actions runs the regression suite and validates newly generated models on Ubuntu and macOS. The **Licensed platform benchmarks** workflow is launched manually. It runs the complete input-to-CSV benchmark once per platform on Ubuntu, macOS and Windows Server using WSL2. A WSL2 result covers the Linux kernel and Linux tools inside Windows.
+GitHub Actions runs the regression suite and validates newly generated models on Ubuntu, macOS, and Windows Server using WSL2. The **Licensed platform benchmarks** workflow is launched manually. It runs the complete input-to-CSV benchmark once per platform on Ubuntu, macOS and Windows Server using WSL2. A WSL2 result covers the Linux kernel and Linux tools inside Windows.
 
 Only that hosted workflow uses the repository's `WOLFRAMSCRIPT_ENTITLEMENTID` Actions secret for Wolfram licensing. Ordinary users run with their local license. Each licensed run generates its own UFO, calculates two-body widths, integrates one selected channel, verifies the ranked CSV and checks resume. See [Actions runs](../../actions) for platform results and downloadable summaries.
