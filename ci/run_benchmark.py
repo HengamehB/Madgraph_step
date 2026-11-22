@@ -3,8 +3,10 @@
 
 fast: Python-only catalogue, binding, spectrum and compiler checks.
 licensed: those checks plus fresh FeynRules export, MadWidth and one integration.
-A JSON summary and the licensed benchmark ranking CSV are written to BENCHMARK_ARTIFACTS. Raw
-logs, local paths, tool configuration and generated executables stay temporary.
+--trace-original-fields adds one export-only run with the original FeynRules
+namespace definitions and the same field diagnostic, before the repaired run.
+Summaries, bounded field diagnostics and the licensed ranking CSV are written
+to BENCHMARK_ARTIFACTS. Raw logs, local paths and tool configuration stay temporary.
 """
 from __future__ import annotations
 
@@ -29,6 +31,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from ci import trace_ufo
 
 FREE = {'X X†', 'Y Y†', 'D(X) D(X†)', 'D(Y) D(Y†)'}
 INVENTORY = FREE | {
@@ -133,8 +136,6 @@ class Benchmark:
         self.metadata_digest = None
 
     def cli(self, action, *extra, source=None):
-        label = action + (' ' + ' '.join(extra) if extra else '')
-        print('Benchmark:', label, flush=True)
         command = [str(ROOT / 'run.sh'), action, str(source or self.model), *extra]
         if self.config:
             command.extend(['--config', self.config])
@@ -145,6 +146,7 @@ class Benchmark:
         if '--model' in record['arguments']:
             index = record['arguments'].index('--model') + 1
             record['arguments'][index] = Path(record['arguments'][index]).name
+        print('Benchmark:', action, *record['arguments'], flush=True)
         self.report['commands'].append(record)
         environment = {**os.environ, 'PYTHON': sys.executable, 'PYTHONUNBUFFERED': '1', 'PYTHONDONTWRITEBYTECODE': '1'}
         with log.open('wb') as stream:
@@ -154,17 +156,17 @@ class Benchmark:
                                         timeout=1800 if self.mode == 'licensed' else 600)
             except subprocess.TimeoutExpired:
                 record.update(status='timed_out', elapsed_seconds=round(time.monotonic() - started, 2))
+                record['failure'] = trace_ufo.cli_failure(log, 'CLI timed out')
+                print('CLI timeout:', json.dumps(record['failure'], ensure_ascii=False), file=sys.stderr, flush=True)
                 raise RuntimeError('CLI ' + action + ' exceeded its benchmark timeout') from None
         record.update(status='passed' if result.returncode == 0 else 'failed',
                       exit_code=result.returncode, elapsed_seconds=round(time.monotonic() - started, 2))
         if result.returncode:
-            diagnostic = log.read_bytes()[-4096:].decode('utf-8', errors='replace')
-            license_args = os.environ.get('WOLFRAMINIT', '').split()
-            if '-entitlement' in license_args:
-                for token in license_args[license_args.index('-entitlement') + 1:]:
-                    diagnostic = diagnostic.replace(token, '[redacted]')
-            print(diagnostic, file=sys.stderr, flush=True)
-            raise AssertionError('CLI ' + action + ' failed')
+            record['diagnostic_identifiers'] = trace_ufo.log_events(log)
+            record['failure'] = trace_ufo.cli_failure(log, f'CLI exited with status {result.returncode}')
+            print('CLI exit', result.returncode, json.dumps(record['failure'], ensure_ascii=False),
+                  file=sys.stderr, flush=True)
+            raise AssertionError('CLI ' + action + ' failed: ' + record['failure']['reason'])
         with log.open('rb') as stream:
             stream.seek(max(0, log.stat().st_size - 65536))
             tail = stream.read().decode('utf-8', errors='replace')
@@ -330,6 +332,7 @@ class Benchmark:
     def ranking(self, run, selected, sigma, error, uu_br):
         # Stream the full CSV, including rows hidden by display cutoffs.
         calculated = uncalculated = uu = 0
+        uu_row = None
         previous = math.inf
         ids = hashlib.sha256()
         with (run / 'ranking.csv').open(newline='', encoding='utf-8') as stream:
@@ -353,19 +356,31 @@ class Benchmark:
                 if json.loads(row['final_pdgs']) == [2, 2]:
                     require(math.isclose(br, uu_br, rel_tol=1e-12), 'Saved uu branching ratio differs from MadWidth')
                     uu += 1
+                    uu_row = {'history_id': row['history_id'], 'branching_ratio': br,
+                              'rate_pb': value, 'error_pb': float(row['error_pb'])}
                 previous = value
                 calculated += 1
         require(calculated > 0 and uncalculated > 0 and uu == 1, 'Missing selected or uncalculated histories')
-        return {'calculated': calculated, 'uncalculated': uncalculated, 'history_ids_sha256': ids.hexdigest()}
+        return {'calculated': calculated, 'uncalculated': uncalculated,
+                'history_ids_sha256': ids.hexdigest(), 'x1_to_uu': uu_row}
 
-    def licensed(self, run):
-        self.cli('check')
-        self.cli('ufo')
+    def licensed(self, run, record_export):
+        try:
+            self.cli('check')
+            self.cli('ufo')
+        finally:
+            # Capture a failed export before its isolated working directory is removed.
+            record_export(trace_ufo.export_evidence(self))
         validation = read_json(run / 'validation.json')
         require(validation['status'] == 'ufo_validated' and validation['external_export_validated'],
                 'Fresh FeynRules/MadGraph UFO export did not pass validation')
         require(Path(validation['ufo']).resolve().is_relative_to(self.output.resolve()),
                 'Benchmark reused a UFO outside its fresh temporary outputs')
+        vertices = trace_ufo.vertex_checks(Path(validation['ufo']))
+        self.report['ufo_vertices'] = vertices
+        require(vertices['vertices'] == vertices['reference_vertices'] and vertices['max_vertex_legs'] == 4
+                and all(vertices['representative_vertices'].values()),
+                'Saved UFO vertex count, arity or coloured benchmark vertices disagree with the reference')
         self.cli('channels')
         channels = read_json(run / 'production_channels.json')
         selected = [row['id'] for row in channels if row['process'] == 'p p > x1']
@@ -436,10 +451,59 @@ class Benchmark:
         self.report['checks'].append({'name': 'fresh licensed export, widths, rate, ranking and resume', 'status': 'passed'})
 
 
+def trace_original(candidate, trace, target):
+    original = None
+    trace['original'] = {'baseline_commit': trace_ufo.ORIGINAL, 'status': 'started',
+                         'restored_sources': list(trace_ufo.FR_SOURCES),
+                         'model_sha256': digest(candidate.model),
+                         'metadata_sha256': candidate.metadata_digest}
+    trace_ufo.save_json(target, trace)
+    print('Tracing original FeynRules export (one export, no integration)', flush=True)
+    evidence = {'observation': 'inconclusive'}
+    phase = 'prepare_isolated_source'
+    try:
+        root = candidate.root / 'original export sandbox'
+        root.mkdir()
+        original = Benchmark(root, 'licensed', {'commands': []})
+        trace_ufo.configure_original(ROOT, original, candidate)
+        trace['original']['isolated_config_verified'] = True
+        phase = 'run_instrumented_export'
+        try:
+            original.cli('ufo')
+        finally:
+            evidence = trace_ufo.export_evidence(original)
+    except Exception as exc:
+        # An instrumented rejection is expected. Preserve any other obstruction
+        # separately; it must never skip the independent repaired benchmark.
+        trace['original'].update(exception_type=type(exc).__name__, exception_phase=phase)
+        if phase == 'prepare_isolated_source':
+            trace['original']['reason'] = ('Pinned original FeynRules Git blob unavailable'
+                                           if isinstance(exc, subprocess.CalledProcessError)
+                                           else trace_ufo.safe_reason(str(exc)))
+    status = {'guard_reproduced_unknown_fields': 'reproduced',
+              'export_passed_without_unknown_fields': 'not_reproduced',
+              'inconclusive': 'blocked'}[evidence['observation']]
+    if status == 'reproduced' and evidence['fields']['match_level'] == 'first_unclassified':
+        status = 'blocked'
+        trace['original']['trace_error'] = 'Original export did not activate the signature replay'
+    if 'fields' in evidence and 'matching_vertices_at_selected_level' in evidence['fields']:
+        trace['original']['reference_association'] = {
+            'match_level': evidence['fields']['match_level'],
+            'matching_vertices': evidence['fields']['matching_vertices_at_selected_level'],
+            'historical_coupling_id_verified': False}
+    trace['original'].update(evidence, status=status, commands=original.report['commands'] if original else [])
+    trace_ufo.save_json(target, trace)
+    print('Original export trace:', status, flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--mode', choices=('fast', 'licensed'), required=True)
+    parser.add_argument('--trace-original-fields', action='store_true',
+                        help='Compare the original instrumented export with the repaired licensed export')
     args = parser.parse_args()
+    if args.trace_original_fields and args.mode != 'licensed':
+        parser.error('--trace-original-fields requires --mode licensed')
     destination = Path(os.environ.get('BENCHMARK_ARTIFACTS', ROOT / 'ci-artifacts')).resolve()
     destination.mkdir(parents=True, exist_ok=True)
     report = {'schema': 'madgraph-step-ci-benchmark-v1', 'mode': args.mode, 'status': 'running',
@@ -451,14 +515,31 @@ def main():
                              'Monte Carlo agreement does not include perturbative/PDF uncertainty.']}
     started = time.monotonic()
     code = 0
+    trace = {'schema': 'madgraph-step-ufo-field-trace-v1',
+             'original': {'status': 'pending' if args.trace_original_fields else 'not_requested'},
+             'candidate': {'observation': 'not_started'}}
+    trace_path = destination / 'field-trace.json'
     try:
         report['python_packages'] = {name: importlib.metadata.version(name) for name in ('numpy', 'scipy')}
         with tempfile.TemporaryDirectory(prefix='madgraph release benchmark ') as temporary:
             benchmark = Benchmark(Path(temporary), args.mode, report)
             run = benchmark.fast()
             if args.mode == 'licensed':
-                benchmark.licensed(run)
+                if args.trace_original_fields:
+                    trace_original(benchmark, trace, trace_path)
+
+                def record_export(evidence):
+                    trace['candidate'] = evidence
+                    trace_ufo.save_json(trace_path, trace)
+
+                benchmark.licensed(run, record_export)
                 shutil.copyfile(run / 'ranking.csv', destination / 'ranking.csv')
+                report['candidate_physics'] = 'passed'
+                require(trace['candidate']['observation'] == 'export_passed_without_unknown_fields',
+                        'Candidate export diagnostics were inconclusive')
+                if args.trace_original_fields:
+                    require(trace['original']['status'] == 'reproduced',
+                            'Candidate benchmark passed but the original unidentified field was not verified')
         report['status'] = 'passed'
     except (Exception, KeyboardInterrupt) as exc:
         code = 130 if isinstance(exc, KeyboardInterrupt) else 1
@@ -472,11 +553,13 @@ def main():
         if isinstance(exc, AssertionError):
             print(str(exc), flush=True)
     finally:
+        if args.mode == 'licensed':
+            report['field_trace'] = {'file': trace_path.name, 'original': trace['original']['status'],
+                                     'candidate': trace['candidate']['observation']}
+            trace_ufo.save_json(trace_path, trace)
         report['elapsed_seconds'] = round(time.monotonic() - started, 2)
         target = destination / ('benchmark-' + args.mode + '.json')
-        temporary = target.with_suffix('.json.tmp')
-        temporary.write_text(json.dumps(report, indent=2, sort_keys=True) + '\n', encoding='utf-8')
-        os.replace(temporary, target)
+        trace_ufo.save_json(target, report)
     print('Benchmark', report['status'], '(' + args.mode + ')', flush=True)
     return code
 

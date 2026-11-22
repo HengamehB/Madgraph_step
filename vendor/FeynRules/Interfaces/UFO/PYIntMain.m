@@ -530,15 +530,21 @@ If[$Debug,
    (* Compare both leg lists while the matching ingoing vertex is available.
       Cache by field for this export only, including for the Lorentz writer. *)
    cachedParticleSpin[field_] := cachedParticleSpin[field] = ParticleToSpin[field];
-   vertices = MapIndexed[Function[{incoming, position},
-     With[{outgoing = MakeOutgoingParticles[incoming]},
-       If[MemberQ[cachedParticleSpin /@ outgoing[[1, All, 1]], 0],
-         PYReportUnknownLegs[First[position], First[incoming], First[outgoing], cachedParticleSpin];
-         ResetDirectory[];
-         Abort[]
-       ];
-       outgoing
-     ]], vertices];
+   If[TrueQ[PRIVATE`PY$TraceSixLegSignature],
+     (* Only a replay copy enables this scan. When no leg is rejected the
+        ordinary outgoing amplitude transformation still runs exactly once. *)
+     If[PYTraceSixLegReplay[vertices], ResetDirectory[]; Abort[]];
+     vertices = MakeOutgoingParticles /@ vertices,
+     vertices = MapIndexed[Function[{incoming, position},
+       With[{outgoing = MakeOutgoingParticles[incoming]},
+         If[MemberQ[cachedParticleSpin /@ outgoing[[1, All, 1]], 0],
+           PYReportUnknownLegs[First[position], First[incoming], First[outgoing], cachedParticleSpin];
+           ResetDirectory[];
+           Abort[]
+         ];
+         outgoing
+       ]], vertices]
+   ];
 
    formfactors = If[FR$FormFactors =!= {},
                     MatchFormFactorsToVertexList[vertices, Ingoing -> False],
