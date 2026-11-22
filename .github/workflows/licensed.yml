@@ -12,18 +12,20 @@ concurrency:
 
 jobs:
   benchmark:
-    # The normal dispatch tests the default branch. Only the repository owner
-    # can request the single-runner repair trace, and only from its named branch.
-    if: >-
-      github.ref == format('refs/heads/{0}', github.event.repository.default_branch) ||
-      (github.ref == 'refs/heads/single-runner/wolfram15-ufo' && github.actor == github.repository_owner)
+    # This verification branch exercises the patched candidate on the two remaining hosts.
+    if: github.ref == 'refs/heads/single-runner/verify-macos-wsl2' && github.actor == github.repository_owner
     name: Licensed benchmark on ${{ matrix.platform }}
     environment: licensed-benchmarks
     strategy:
       max-parallel: 1
       fail-fast: false
       matrix:
-        include: ${{ fromJSON(github.ref == 'refs/heads/single-runner/wolfram15-ufo' && '[{"platform":"linux","host":"ubuntu-24.04"}]' || '[{"platform":"linux","host":"ubuntu-24.04"},{"platform":"macos","host":"macos-15"},{"platform":"windows-wsl2","host":"windows-2025"}]') }}
+        include:
+          - platform: macos
+            host: macos-15
+          - platform: windows-wsl2
+            host: windows-2025
+
     runs-on: ${{ matrix.host }}
     timeout-minutes: 90
     steps:
