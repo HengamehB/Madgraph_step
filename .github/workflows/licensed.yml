@@ -12,20 +12,18 @@ concurrency:
 
 jobs:
   benchmark:
-    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    # The normal dispatch tests the default branch. Only the repository owner
+    # can request the single-runner repair trace, and only from its named branch.
+    if: >-
+      github.ref == format('refs/heads/{0}', github.event.repository.default_branch) ||
+      (github.ref == 'refs/heads/single-runner/wolfram15-ufo' && github.actor == github.repository_owner)
     name: Licensed benchmark on ${{ matrix.platform }}
     environment: licensed-benchmarks
     strategy:
       max-parallel: 1
       fail-fast: false
       matrix:
-        include:
-          - platform: linux
-            host: ubuntu-24.04
-          - platform: macos
-            host: macos-15
-          - platform: windows-wsl2
-            host: windows-2025
+        include: ${{ fromJSON(github.ref == 'refs/heads/single-runner/wolfram15-ufo' && '[{"platform":"linux","host":"ubuntu-24.04"}]' || '[{"platform":"linux","host":"ubuntu-24.04"},{"platform":"macos","host":"macos-15"},{"platform":"windows-wsl2","host":"windows-2025"}]') }}
     runs-on: ${{ matrix.host }}
     timeout-minutes: 90
     steps:
@@ -42,6 +40,7 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           persist-credentials: false
+          fetch-depth: 0
       - if: runner.os != 'Windows'
         uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
         with:
@@ -66,6 +65,7 @@ jobs:
         timeout-minutes: 60
         env:
           ENTITLEMENT: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID }}
+          TRACE_ORIGINAL_FIELDS: ${{ github.ref == 'refs/heads/single-runner/wolfram15-ufo' }}
           BENCHMARK_ARTIFACTS: ${{ github.workspace }}/ci-artifacts
           WSLENV: ENTITLEMENT/u:BENCHMARK_ARTIFACTS/p:GITHUB_SHA/u:GITHUB_RUN_ID/u
         run: bash .github/workflows/run-licensed.sh
@@ -79,11 +79,13 @@ jobs:
           WSLENV: ENTITLEMENT/u:BENCHMARK_ARTIFACTS/p:GITHUB_SHA/u:GITHUB_RUN_ID/u
         run: bash /opt/madgraph-ci/source/.github/workflows/run-licensed.sh
       - name: Save benchmark summary
+        if: ${{ !cancelled() && hashFiles('ci-artifacts/.safe-to-publish') != '' }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: licensed-${{ matrix.platform }}
           path: |
             ci-artifacts/benchmark-licensed.json
             ci-artifacts/ranking.csv
+            ci-artifacts/field-trace.json
           if-no-files-found: error
           retention-days: 14

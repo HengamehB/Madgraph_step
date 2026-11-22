@@ -48,6 +48,30 @@ class CompilerResolutionError(ModelResolutionError, CompilerError):
     category = 'compiler_failure'
 
 
+def _check_unknown_ufo_fields(ufo, log, log_text):
+    """Report the first rejected field even when the kernel exits via Abort[]."""
+    tag = 'PORTABLE_UFO_UNKNOWN_FIELD'
+    trace = ufo / 'unknown_vertex_fields.json'
+    if tag not in log_text and not trace.exists():
+        return
+    try:
+        with trace.open('rb') as stream:
+            data = stream.read(1024 * 1024 + 1)
+        if len(data) > 1024 * 1024:
+            raise ValueError('field trace exceeds 1 MiB')
+        report = json.loads(data)
+        leg = next(row for row in report['legs'] if row['outgoing_spin_code'] == 0)
+        detail = (f"vertex {report['vertex_index']}, leg {leg['position']}: "
+                  f"{str(leg['incoming_field'])[:180]} -> {str(leg['outgoing_field'])[:180]}")
+    except (OSError, ValueError, TypeError, KeyError, StopIteration) as exc:
+        # Export itself can fail (for example on a full disk). Preserve the
+        # leg that FeynRules printed even if the JSON could not be recovered.
+        marker = re.search(r'PORTABLE_UFO_UNKNOWN_FIELD[^\n]{0,500}', log_text)
+        detail = marker.group(0)[len(tag):].strip() if marker else 'no logged field'
+        detail += f' (unreadable field trace: {exc})'
+    raise CompilerResolutionError(f'{tag} {detail}. Field trace: {trace}. FeynRules log: {log}.')
+
+
 def backend_preflight(fields):
     """Reject true generator limits before FeynRules can discard particles.
 
@@ -524,6 +548,7 @@ class PreparedModel:
         except subprocess.TimeoutExpired as exc:
             raise RuntimeError(f"FeynRules timed out; source and log retained in {output}.") from exc
         log_text = log.read_text(errors='replace')
+        _check_unknown_ufo_fields(ufo, log, log_text)
         # Wolfram can return exit status zero after aborting evaluation at a
         # resource limit. Preserve its actual diagnostic instead of treating
         # the missing export marker as a physics or generic execution failure.
@@ -664,6 +689,12 @@ def _internal(name, value, *, order=False, qed_order=0):
             + f'Description -> {_wl(name)}}}')
 
 
+def _ufo_syntax_location(number, column, line):
+    column = column or 1
+    excerpt = line.rstrip('\r\n')[max(0, column - 81):column + 100].strip()
+    return f'line {number}, column {column}, source {excerpt!r}'
+
+
 def _python3_ufo(ufo):
     """Convert the pinned UFO template's remaining Python-2 raise statements.
 
@@ -675,17 +706,39 @@ def _python3_ufo(ufo):
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", DeprecationWarning)
         from lib2to3.refactor import RefactoringTool
+        from lib2to3.pgen2.parse import ParseError
+        from lib2to3.pgen2.tokenize import TokenError
     fixer = None
     for path in Path(ufo).glob("*.py"):
         text = path.read_text()
         try:
             ast.parse(text, filename=str(path))
-        except SyntaxError:
+        except SyntaxError as original:
             if fixer is None:
                 fixer = RefactoringTool(["lib2to3.fixes.fix_raise", "lib2to3.fixes.fix_except",
                                          "lib2to3.fixes.fix_print", "lib2to3.fixes.fix_exec"])
-            text = str(fixer.refactor_string(text, str(path)))
-            ast.parse(text, filename=str(path))
+            try:
+                text = str(fixer.refactor_string(text, str(path)))
+                ast.parse(text, filename=str(path))
+            except (ParseError, TokenError, SyntaxError) as exc:
+                # lib2to3 often omits the filename. Keep the original Python
+                # diagnostic and the source at its offending column, including
+                # when the offending line is a long generated vertex.
+                location = _ufo_syntax_location(original.lineno, original.offset, original.text or '')
+                if isinstance(exc, SyntaxError):
+                    second_location = _ufo_syntax_location(exc.lineno, exc.offset, exc.text or '')
+                else:
+                    # A legacy print/raise can precede a separate broken
+                    # vertex. lib2to3's parser reports zero-based columns.
+                    number, offset = exc.context[1] if isinstance(exc, ParseError) else exc.args[1]
+                    with path.open() as source:
+                        line = next((line for i, line in enumerate(source, 1) if i == number), '')
+                    second_location = _ufo_syntax_location(number, offset + 1, line)
+                extra = f' ({second_location})' if second_location != location else ''
+                raise CompilerResolutionError(
+                    f'Invalid generated UFO Python in {path}, {location}: {original.msg}. '
+                    f'Conversion diagnostic: {str(exc)[:240]}{extra}'
+                ) from None
             path.write_text(text)
 
 

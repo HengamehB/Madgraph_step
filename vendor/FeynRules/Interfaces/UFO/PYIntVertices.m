@@ -42,7 +42,76 @@ PrependToLines[matrix_List, elem_] := ({LorentzObject @@ Prepend[#, elem]})& /@ 
 (*It also builds the lists PY$LorentzObjects and PY$CouplObjects.*)
 
 
-PYSplitVertices[vertices_] := Block[{
+(* Keep a bounded report of the actual legs; never serialize the full amplitude.
+   Using an empty context path exposes context collisions in compound fields. *)
+PYTraceSymbolName[s_Symbol] := Context[s] <> SymbolName[s];
+PYTraceSymbolName[expr_] := PYTraceSymbolName[Head[expr]];
+
+PYTraceFieldText[expr_] := Block[{$Context = "MadgraphStepTrace`", $ContextPath = {}},
+  If[ByteCount[expr] > 16384,
+    "<expression exceeds 16384 bytes; head=" <> PYTraceSymbolName[expr] <> ">",
+    StringTake[ToString[expr, InputForm, PageWidth -> Infinity], UpTo[1024]]
+  ]
+];
+
+PYReportUnknownLegs[index_, incoming_List, outgoing_List, spinFunction_, replay_:<||>] := Module[
+  {bad, shown, rows, report, file = "unknown_vertex_fields.json"},
+  bad = Select[Range[Length[outgoing]], spinFunction[outgoing[[#, 1]]] === 0 &];
+  (* Include the first unknown legs even if they lie beyond the initial sample. *)
+  shown = Union[Range[Min[12, Length[outgoing]]], Take[bad, UpTo[12]]];
+  rows = Table[
+    <|"position" -> i,
+      "incoming_leg_id" -> PYTraceFieldText[incoming[[i, 2]]],
+      "incoming_field" -> PYTraceFieldText[incoming[[i, 1]]],
+      "incoming_symbol_or_head" -> PYTraceSymbolName[incoming[[i, 1]]],
+      "incoming_spin_code" -> spinFunction[incoming[[i, 1]]],
+      "outgoing_leg_id" -> PYTraceFieldText[outgoing[[i, 2]]],
+      "outgoing_field" -> PYTraceFieldText[outgoing[[i, 1]]],
+      "outgoing_symbol_or_head" -> PYTraceSymbolName[outgoing[[i, 1]]],
+      "outgoing_spin_code" -> spinFunction[outgoing[[i, 1]]]|>, {i, shown}];
+  report = Join[<|"stage" -> "MakeOutgoingParticles", "vertex_index" -> index,
+    "first_unclassified_vertex_index" -> index, "match_level" -> "first_unclassified",
+    "number_of_legs" -> Length[outgoing], "unclassified_outgoing_legs" -> Length[bad],
+    "legs" -> rows|>, replay];
+  Export[file, report, "RawJSON"];
+  Print["PORTABLE_UFO_UNKNOWN_FIELD vertex ", index, ", leg ", First[bad], ": ",
+    PYTraceFieldText[incoming[[First[bad], 1]]], " -> ", PYTraceFieldText[outgoing[[First[bad], 1]]],
+    ". See ", file, " in the UFO output directory."]
+];
+
+(* Diagnostic replay of the original Windows spin signature. Only one leg list
+   is retained. Count every matching vertex so a repeated signature is visible.
+   No amplitudes or coupling labels are needed to classify outgoing fields. *)
+PYTraceSixLegReplay[vertices_List] := Module[
+  {first = 0, selected = 0, selectedOutgoing, level = "first_unclassified_fallback",
+   ordered = 0, multiset = 0, incoming, outgoing, spins, index},
+  Do[
+    incoming = vertices[[index, 1]];
+    If[first != 0 && Length[incoming] =!= 6, Continue[]];
+    outgoing = PYOutgoingLegs[incoming];
+    spins = ParticleToSpin /@ outgoing[[All, 1]];
+    If[!MemberQ[spins, 0], Continue[]];
+    If[first == 0, first = index; selected = index; selectedOutgoing = outgoing];
+    If[Length[spins] === 6 && Count[spins, 0] === 5 && MemberQ[spins, 1],
+      multiset++;
+      If[spins === {0, 0, 0, 0, 1, 0},
+        ordered++;
+        If[ordered === 1, selected = index; selectedOutgoing = outgoing;
+          level = "exact_ordered_signature"],
+        If[multiset === 1, selected = index; selectedOutgoing = outgoing;
+          level = "six_leg_multiset"]
+      ]
+    ],
+    {index, Length[vertices]}];
+  If[first === 0, Return[False]];
+  PYReportUnknownLegs[selected, vertices[[selected, 1]], selectedOutgoing, ParticleToSpin,
+    <|"match_level" -> level, "first_unclassified_vertex_index" -> first,
+      "ordered_signature_match_count" -> ordered, "six_leg_multiset_match_count" -> multiset,
+      "vertices_in_replay" -> Length[vertices]|>];
+  True
+];
+
+PYSplitVertices[vertices_, spinFunction_:ParticleToSpin] := Block[{
     verts = vertices, particles = vertices[[All, 1]],
     split1, split2,
     colorstruc, lorentzstruc, couplstruc,
@@ -125,7 +194,7 @@ PYSplitVertices[vertices_] := Block[{
     couplstruc = CoupleList[verts];*)
 
     (* we add the particles spins to the Lorentz structures, and we tag Lorentz and couplings as LorentzObjects and CouplingObjects respectively*)
-    lorentzstruc = StrictInner[PrependToLines, lorentzstruc, (ParticleToSpin[#1]& @@@ #)& /@ particles, List];
+    lorentzstruc = StrictInner[PrependToLines, lorentzstruc, (spinFunction[#1]& @@@ #)& /@ particles, List];
     couplstruc = ({CouplingObject[#]}& @@@ #)& /@ couplstruc;
 
     (* We convolve them back into an object {colors, lorentzes, couplings} per vertex *)
@@ -1192,13 +1261,15 @@ WritePYCouplings[list_] := Block[{outfile},
 (*MakeOutgoingParticles[vertex] takes a  vertex as an input, and changes the convention from ingoing to outgoing, i.e., all particles are replaced by their anitparticles, and  FV  ->  -FV, SlashedP  ->  -SlahedP. Note that SP ->  SP.*)
 
 
+PYOutgoingLegs[particles_List] := MapAt[anti[MakeIdenticalFermions[#]]&, #, 1]& /@ particles;
+
 MakeOutgoingParticles[vertex_] := Block[{
    particles = vertex[[1]],
    expr = vertex[[2]]
    },
 
    (* Replace Particles by antiparticles *)
-   particles = MapAt[anti[MakeIdenticalFermions[#]]&, #, 1]& /@ particles;
+   particles = PYOutgoingLegs[particles];
 
    (* Reverse momenta *)
 

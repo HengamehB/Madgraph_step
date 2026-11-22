@@ -1,5 +1,7 @@
 (* ::Package:: *)
 
+(* Madgraph_step, 2026-11-22: keep the internal field commutator separate from Wolfram System symbols. *)
+
 (* ::Title:: *)
 (*Functions for vertex calculations*)
 
@@ -107,7 +109,7 @@ OperatorChain[_crea, ___] := 0;
 OperatorChain[___,0,___] = 0
 
 OperatorChain[x___,field1_,cr_crea,y___] := (*FermionSign[field1, cr[[1]]]*) OperatorChain[x, cr, field1,y] + 
-            Commutator[field1,cr] OperatorChain[x,y] /; FieldQ[field1];
+            PRIVATE`FRVertexCommutator[field1,cr] OperatorChain[x,y] /; FieldQ[field1];
 
 OperatorChain[x___, b_, cr_crea, y___] := OperatorChain[x, cr, b, y] /; Not[FieldQ[b]];
 
@@ -129,10 +131,10 @@ ToCheckOperatorChain[expr_] := Module[{output,temp},
 (*Commutation relations*)
 
 
-Commutator[del[psi_,mu_], aa_] := delCom[Commutator[psi, aa], mu];
+PRIVATE`FRVertexCommutator[del[psi_,mu_], aa_] := delCom[PRIVATE`FRVertexCommutator[psi, aa], mu];
 
 
-Commutator[psi1_, crea[psi2_, inds_, i_]] := KronDelta[psi1, psi2, inds] * uwave[psi2, i] /; 
+PRIVATE`FRVertexCommutator[psi1_, crea[psi2_, inds_, i_]] := KronDelta[psi1, psi2, inds] * uwave[psi2, i] /;
       FieldQ[psi1] && FreeQ[psi1, del];
 
 

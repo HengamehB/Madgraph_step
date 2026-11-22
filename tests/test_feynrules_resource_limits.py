@@ -6,14 +6,14 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
-from feynrules_export import PreparedModel, CompilerResolutionError
+from feynrules_export import PreparedModel, CompilerResolutionError, _python3_ufo
 from workflow_errors import ResourceLimitError, error_category
 from compiler_limits import DEFAULTS, normalize_limits
 from workflow_errors import PhysicalInputError
 
 
 class WolframResourceLimitTests(unittest.TestCase):
-    def export_failure(self, message, expected, returncode=0, limits=None):
+    def export_failure(self, message, expected, returncode=0, limits=None, trace=None):
         with TemporaryDirectory() as temporary:
             root=Path(temporary);kernel=root/'WolframKernel';kernel.touch()
             fr=root/'FeynRules';fr.mkdir();(fr/'FeynRules.m').touch()
@@ -24,6 +24,10 @@ class WolframResourceLimitTests(unittest.TestCase):
                                 compiler=SimpleNamespace(write_sources=sources, masses={"H": 125.0}))
             def run(command,**kwargs):
                 kwargs['stdout'].write(message)
+                if trace is not None:
+                    ufo = root / 'export' / (model.model_name + '_UFO')
+                    ufo.mkdir()
+                    (ufo / 'unknown_vertex_fields.json').write_text(trace)
                 return SimpleNamespace(returncode=returncode)
             paths={'wolfram_kernel':str(kernel),'feynrules':str(fr)}
             with patch('portable_runtime.resolve_runtime',return_value=paths),patch('portable_runtime.environment',return_value={}),patch('feynrules_export.subprocess.run',side_effect=run):
@@ -83,6 +87,70 @@ class WolframResourceLimitTests(unittest.TestCase):
     def test_unrecognized_external_failure_keeps_execution_category(self):
         error=self.export_failure('Kernel failed to load its license.\n',RuntimeError,returncode=1)
         self.assertEqual(error_category(error),'execution_failure')
+
+    def test_export_surfaces_first_unclassified_leg_even_if_kernel_returns_zero(self):
+        report = {'vertex_index': 32, 'legs': [
+            {'outgoing_spin_code': 1, 'position': 1},
+            {'outgoing_spin_code': 0, 'position': 2, 'incoming_field': 'Global`inputField',
+             'outgoing_field': 'PRIVATE`outputField'}]}
+        error = self.export_failure('PORTABLE_EXPORT_SUCCESS\n', CompilerResolutionError,
+                                    trace=json.dumps(report))
+        self.assertEqual(error_category(error), 'compiler_failure')
+        self.assertIn('PORTABLE_UFO_UNKNOWN_FIELD vertex 32, leg 2: Global`inputField -> PRIVATE`outputField',
+                      str(error))
+        self.assertIn('unknown_vertex_fields.json', str(error))
+
+    def test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken(self):
+        for trace in (None, '{'):
+            with self.subTest(trace=trace):
+                error = self.export_failure('PORTABLE_UFO_UNKNOWN_FIELD vertex 8, leg 2: raw -> outgoing\n',
+                                            CompilerResolutionError, returncode=18, trace=trace)
+                self.assertIn('vertex 8, leg 2: raw -> outgoing', str(error))
+                self.assertIn('unreadable field trace', str(error))
+
+
+class UFOExportDiagnosticsTests(unittest.TestCase):
+    def test_legacy_python_syntax_conversion_is_preserved(self):
+        with TemporaryDirectory() as temporary:
+            path = Path(temporary) / 'object_library.py'
+            path.write_text('raise ValueError, "invalid parameter"\n')
+            _python3_ufo(path.parent)
+            self.assertIn('raise ValueError("invalid parameter")', path.read_text())
+
+    def test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print(self):
+        with TemporaryDirectory() as temporary:
+            path = Path(temporary) / 'vertices.py'
+            for prefix in ('# UFO header\n', 'print "legacy header"\n'):
+                with self.subTest(prefix=prefix):
+                    original = prefix + 'lorentz = (ConvertSpinToString + )\n'
+                    path.write_text(original)
+                    with self.assertRaises(CompilerResolutionError) as caught:
+                        _python3_ufo(path.parent)
+                    self.assertIn(str(path), str(caught.exception))
+                    self.assertIn('line 2, column', str(caught.exception))
+                    self.assertIn('lorentz = (ConvertSpinToString + )', str(caught.exception))
+                    self.assertEqual(path.read_text(), original)
+
+    def test_feynrules_tool_fingerprint_includes_contraction_and_ufo_sources(self):
+        from pipeline import Pipeline
+        with TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            names = ('FeynRulesPackage.m', 'Core/ExtractVertexTools.m',
+                     'Interfaces/UFO/PYIntMain.m', 'Interfaces/UFO/PYIntVertices.m')
+            pipeline = Pipeline.__new__(Pipeline)
+            pipeline.config = SimpleNamespace(runtime={'feynrules': str(root)})
+            pipeline._tool_digest_cache = {}
+            for name in names:
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text('original')
+            previous = pipeline._tool_fingerprint('feynrules')
+            for name in names:
+                with self.subTest(name=name):
+                    (root / name).write_text('modified source')
+                    current = pipeline._tool_fingerprint('feynrules')
+                    self.assertNotEqual(current, previous)
+                    previous = current
 
 
 if __name__=='__main__':unittest.main()
