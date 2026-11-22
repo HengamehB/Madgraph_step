@@ -22,13 +22,10 @@ jobs:
         include:
           - platform: linux
             host: ubuntu-24.04
-            shell: bash
           - platform: macos
             host: macos-15
-            shell: bash
           - platform: windows-wsl2
             host: windows-2025
-            shell: wsl-bash {0}
     runs-on: ${{ matrix.host }}
     timeout-minutes: 90
     steps:
@@ -38,7 +35,7 @@ jobs:
           HAS_ENTITLEMENT: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID != '' }}
         run: |
           if [[ $HAS_ENTITLEMENT != true ]]; then
-            echo 'Configure WOLFRAMSCRIPT_ENTITLEMENTID in the licensed-benchmarks environment.' >&2
+            echo 'Configure WOLFRAMSCRIPT_ENTITLEMENTID as a repository or licensed-benchmarks environment secret.' >&2
             exit 1
           fi
       - if: runner.os != 'Windows'
@@ -92,32 +89,24 @@ jobs:
           cd /opt/madgraph-ci/source
           bash .github/workflows/prepare-host.sh licensed
 
-      - name: Export, compute widths, and integrate with the local kernel
-        shell: ${{ matrix.shell }}
+      - name: Run the licensed benchmark on macOS or Linux
+        if: runner.os != 'Windows'
+        shell: bash
         timeout-minutes: 60
         env:
           ENTITLEMENT: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID }}
           BENCHMARK_ARTIFACTS: ${{ github.workspace }}/ci-artifacts
           WSLENV: ENTITLEMENT/u:BENCHMARK_ARTIFACTS/p:GITHUB_SHA/u:GITHUB_RUN_ID/u
-        run: |
-          set -euo pipefail
-          export PATH="/tmp/madgraph-ci-tools:$PATH"
-          if [[ -d /opt/madgraph-ci/venv ]]; then
-            export PATH="/opt/madgraph-ci/venv/bin:$PATH"
-            cd /opt/madgraph-ci/source
-          fi
-          # Wolfram's raw-kernel licensing arguments apply to both -run and -script.
-          export WOLFRAMINIT="-pwfile !cloudlm.wolfram.com -entitlement ${ENTITLEMENT:?Missing entitlement}"
-          unset ENTITLEMENT
-          python ci/run_benchmark.py --mode licensed
-          python - <<'PY'
-          import os
-          from pathlib import Path
-          report = Path(os.environ["BENCHMARK_ARTIFACTS"]) / "benchmark-licensed.json"
-          entitlement = os.environ["WOLFRAMINIT"].rsplit(" ", 1)[1].encode()
-          if entitlement in report.read_bytes():
-              raise SystemExit("The benchmark report contains license information.")
-          PY
+        run: bash .github/workflows/run-licensed.sh
+      - name: Run the licensed benchmark inside WSL2
+        if: runner.os == 'Windows'
+        shell: wsl-bash {0}
+        timeout-minutes: 60
+        env:
+          ENTITLEMENT: ${{ secrets.WOLFRAMSCRIPT_ENTITLEMENTID }}
+          BENCHMARK_ARTIFACTS: ${{ github.workspace }}/ci-artifacts
+          WSLENV: ENTITLEMENT/u:BENCHMARK_ARTIFACTS/p:GITHUB_SHA/u:GITHUB_RUN_ID/u
+        run: bash /opt/madgraph-ci/source/.github/workflows/run-licensed.sh
       - name: Save benchmark summary
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
