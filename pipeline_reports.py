@@ -393,5 +393,15 @@ def publish(project, *, status, selected='all', error=None):
     if decays is not None:
         manifest['report_notices'] = list(decays.coverage_notices)
     write_json(root / 'manifest.json', manifest)
-    write_report(root, manifest)
+    live_page = None
+    if ranking is not None and hasattr(ranking.rows, 'page'):
+        from history_store import SQLiteHistoryRows
+        if not isinstance(ranking.rows, SQLiteHistoryRows):
+            # Third-party page providers can expose live rows before an export exists.
+            live_page = _page(ranking, min_relative_rate=project.config.ranking.get('min_relative_rate', 0.))
+            live_page['next_command'] = _next_command(project, live_page)
+            live_page['calculated'] = (history_counts or {}).get('calculated')
+            live_page['notices'] = list(ranking.notices)
+            live_page['coverage'] = {key:(v,ranking.omitted_probability.get(key)) for key,v in ranking.coverage.items()}
+    write_report(root, manifest, page=live_page)
     return manifest
