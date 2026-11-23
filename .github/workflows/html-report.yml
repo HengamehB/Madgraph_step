@@ -9,6 +9,7 @@ on:
       - 'pipeline_cli.py'
       - 'tests/test_html_report.py'
       - 'ci/report_browser.py'
+      - 'user_guide/Madgraph_step_User_Guide.tex'
       - '.github/workflows/html-report.yml'
 permissions:
   contents: read
@@ -36,3 +37,56 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Run package regression suite
         run: python -m unittest discover -s tests
+  guide:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Prepare LaTeX on the hosted runner
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends texlive-latex-extra lmodern poppler-utils > "$RUNNER_TEMP/latex-install.log"
+      - name: Build and inspect the user guide
+        working-directory: user_guide
+        run: |
+          pdflatex -interaction=nonstopmode -halt-on-error Madgraph_step_User_Guide.tex > "$RUNNER_TEMP/guide-pass1.log"
+          pdflatex -interaction=nonstopmode -halt-on-error Madgraph_step_User_Guide.tex > "$RUNNER_TEMP/guide-pass2.log"
+          pdftotext -layout Madgraph_step_User_Guide.pdf "$RUNNER_TEMP/guide.txt"
+          grep -F -- '--run-dir' "$RUNNER_TEMP/guide.txt"
+          if grep -F 'Overfull' Madgraph_step_User_Guide.log; then exit 1; fi
+          mkdir -p "$RUNNER_TEMP/report-guide"
+          pdfinfo Madgraph_step_User_Guide.pdf | grep '^Pages:'
+          pdftoppm -scale-to 650 -png Madgraph_step_User_Guide.pdf "$RUNNER_TEMP/report-guide/page"
+          cp Madgraph_step_User_Guide.pdf "$RUNNER_TEMP/report-guide/"
+      - name: Save the compiled guide and page proofs
+        uses: actions/upload-artifact@v4
+        with:
+          name: user-guide
+          path: ${{ runner.temp }}/report-guide/
+  sync-compiled-guide-once:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/feature/offline-physics-report' && github.event.head_commit.message == 'Compile the user guide PDF once on the report branch'
+    needs: guide
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/offline-physics-report
+      - uses: actions/download-artifact@v4
+        with:
+          name: user-guide
+          path: ${{ runner.temp }}/compiled-guide
+      - name: Commit the PDF from this build to the report branch
+        run: |
+          set -eu
+          git diff --exit-code "$GITHUB_SHA" HEAD -- user_guide/Madgraph_step_User_Guide.tex
+          cp "$RUNNER_TEMP/compiled-guide/Madgraph_step_User_Guide.pdf" user_guide/Madgraph_step_User_Guide.pdf
+          git add -- user_guide/Madgraph_step_User_Guide.pdf
+          test "$(git diff --cached --name-only)" = 'user_guide/Madgraph_step_User_Guide.pdf'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Rebuild the terminal guide with report instructions'
+          git push origin HEAD:feature/offline-physics-report
