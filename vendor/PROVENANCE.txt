@@ -1,4 +1,4 @@
-Portable Madgraph_step upstream source provenance
+MadFieldRunner bundled software and provenance
 
 FeynRules 2.3.49 (29 September 2021)
 Upstream: https://github.com/FeynRules/FeynRules

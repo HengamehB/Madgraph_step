@@ -24,6 +24,17 @@ def executable(path):
     return path
 
 
+class PublicApiTests(unittest.TestCase):
+    def test_legacy_import_exposes_the_same_public_objects(self):
+        import madfieldrunner
+        import madgraph_step
+
+        self.assertIs(madfieldrunner.__all__, madgraph_step.__all__)
+        for name in madfieldrunner.__all__:
+            with self.subTest(name=name):
+                self.assertIs(getattr(madfieldrunner, name), getattr(madgraph_step, name))
+
+
 class ToolDiscoveryTests(unittest.TestCase):
     def test_mac_engine_and_user_applications_with_spaces(self):
         with tempfile.TemporaryDirectory(prefix='tool discovery ') as directory:

@@ -96,6 +96,6 @@
   "report_notices": [
     "This saved macOS benchmark integrated only the C0004 resonant production channel. The width tables contain four total widths and 10 checked two-body partial widths. The archive does not quantify omitted decay contributions."
   ],
-  "source_run": "https://github.com/HengamehB/Madgraph_step/actions/runs/45081434860",
+  "source_run": "https://github.com/HengamehB/MadFieldRunner/actions/runs/45081434860",
   "source_ranking_sha256": "35d22d07343460abccd5dadf8bd0bdb814a360747ea2a297bf99a46d3bc44983"
 }

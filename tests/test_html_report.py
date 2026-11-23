@@ -88,6 +88,7 @@ class ReportTest(unittest.TestCase):
         before=snapshot()
         subprocess.run([str(ROOT/'run.sh'),'report','--run-dir',str(new)],env=dict(os.environ,PYTHON=sys.executable),cwd=self.root,check=True,timeout=30)
         self.assertEqual(before,snapshot()); doc=Document(new/'report.html'); self.assertIn(RANK,doc.links)
+        self.assertIn('MadFieldRunner · Physics report', doc.text)
         benchmark=next(r for r in doc.rows if 'Hbenchmark' in r)
         for n in ('1.169196','33.92486%','0.3966479','0.00154912'): self.assertIn(n,benchmark)
         self.assertIn('0 ± 0',next(r for r in doc.rows if 'Hzero' in r))

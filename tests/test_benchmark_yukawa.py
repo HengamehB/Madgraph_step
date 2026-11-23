@@ -1,6 +1,6 @@
 """Recheck the triplet–sextet compiler with Python and the installed packages.
 
-From Madgraph_step: python output/pdf_benchmark/check_compiler.py -v
+Run from the repository root with python -m unittest discover -s tests -p test_benchmark_yukawa.py -v.
 These tests only generate source; the saved MadWidth and production runs
 provide independent numerical checks of the exported UFO.
 """

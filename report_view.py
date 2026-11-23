@@ -124,7 +124,7 @@ def write_report(root, manifest, limit=100, *, page=None):
     status = ('All production rates calculated' if manifest.get('all_rates_complete') else 'Requested selection complete · partial production coverage' if manifest.get('requested_complete') else 'Run ' + str(manifest.get('status','incomplete')).replace('_',' '))
     if manifest.get('status') == 'histories_complete' and not calculated_histories(manifest):
         status = 'History discovery complete · production rates pending'
-    head = '<header><div class="meta">Madgraph_step · Physics report</div><h1>' + esc(title) + '</h1><p>' + esc(status) + (' · pp at ' + esc(energy) + ' TeV' if energy is not None else '') + '</p></header>'
+    head = '<header><div class="meta">MadFieldRunner · Physics report</div><h1>' + esc(title) + '</h1><p>' + esc(status) + (' · pp at ' + esc(energy) + ' TeV' if energy is not None else '') + '</p></header>'
     head += '<nav aria-label="Report sections">' + ''.join('<a href="#' + key + '">' + label + '</a>' for key,label in [('model','Model'),('production','Production'),('decays','Decays'),('ranked','Ranked rates'),('methods','Methods'),('files','Downloads')]) + '</nav>'
     for failure in manifest.get('failures') or []:
         issues.append(' · '.join(str(failure[k]) for k in ('stage','channel','category','message') if failure.get(k)))

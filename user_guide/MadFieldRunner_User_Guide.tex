@@ -1,5 +1,5 @@
-% Editable source for Madgraph_step_User_Guide.pdf.
-% Rebuild here with latexmk -pdf -interaction=nonstopmode -halt-on-error Madgraph_step_User_Guide.tex
+% Editable source for MadFieldRunner_User_Guide.pdf.
+% Rebuild here with latexmk -pdf -interaction=nonstopmode -halt-on-error MadFieldRunner_User_Guide.tex
 \documentclass[11pt,letterpaper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -29,10 +29,10 @@
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \titleformat{\section}[hang]{\large\bfseries\color{navy}}{\color{teal}\thesection.}{0.45em}{}
 \titlespacing*{\section}{0pt}{12pt plus 2pt}{4pt}
-\hypersetup{pdftitle={Madgraph\_step User Guide},pdfsubject={Terminal workflow and saved results}}
+\hypersetup{pdftitle={MadFieldRunner User Guide},pdfsubject={Terminal workflow and saved results}}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyfoot[L]{\footnotesize\color{muted}Madgraph\_step User Guide}
+\fancyfoot[L]{\footnotesize\color{muted}MadFieldRunner User Guide}
 \fancyfoot[R]{\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \lstset{
@@ -45,11 +45,13 @@
 
 \begin{document}
 
-{\Huge\bfseries\color{navy}Madgraph\_step\par}
+{\Huge\bfseries\color{navy}MadFieldRunner\par}
 \vspace{2pt}
 {\large\color{muted}Run the sextet example and check your result\par}
 
 \section{Prepare your terminal}
+Download and extract the \href{https://github.com/HengamehB/MadFieldRunner/archive/refs/heads/main.zip}{\textcolor{teal}{source ZIP}}
+or clone the \href{https://github.com/HengamehB/MadFieldRunner}{\textcolor{teal}{repository}}.
 Run the commands from the package folder. Use Bash on macOS or Linux. On
 Windows, use an Ubuntu terminal in WSL2 with a Linux Python and a Linux
 Wolfram kernel. A working, licensed Mathematica or Wolfram Engine in that
@@ -58,8 +60,8 @@ only if one is missing. The package includes FeynRules and MadGraph.
 
 Activate your Python 3.11 environment with NumPy and SciPy and run the
 check below. If you need a new Conda environment, use
-\code{conda create -n madgraph-step -c conda-forge python=3.11 numpy scipy}
-and then \code{conda activate madgraph-step}.
+\code{conda create -n madfieldrunner -c conda-forge python=3.11 numpy scipy}
+and then \code{conda activate madfieldrunner}.
 
 \begin{lstlisting}
 ./run.sh check

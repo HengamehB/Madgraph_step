@@ -1,4 +1,4 @@
-"""Run a saved plain-text model from particle definitions through ranked rates."""
+"""MadFieldRunner runs a plain-text model from particle definitions through ranked collider rates."""
 import argparse
 from pathlib import Path
 from workflow_errors import error_category

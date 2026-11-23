@@ -15,7 +15,7 @@ if os.environ.get("MADGRAPH_STEP_OFFLINE") == "1":
                 return
         except ValueError:
             pass
-        raise OSError("Madgraph_step is offline; remote network access is disabled.")
+        raise OSError("MadFieldRunner is offline. Remote network access is disabled.")
 
     _getaddrinfo = socket.getaddrinfo
     _gethostbyname = socket.gethostbyname

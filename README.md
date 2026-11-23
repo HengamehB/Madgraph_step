@@ -1,21 +1,21 @@
-# Madgraph_step
+# MadFieldRunner
 
-Madgraph_step takes particle representations and operator coefficients, builds the Lagrangian and UFO, then uses MadGraph to rank production and decay histories by **cross section × branching fraction**. The supplied example pairs a 1,500 GeV colour sextet with a 1,200 GeV colour triplet.
+MadFieldRunner takes particle representations and operator coefficients, builds the Lagrangian and UFO, then uses MadGraph to rank production and decay histories by **cross section × branching fraction**. The supplied example pairs a 1,500 GeV colour sextet with a 1,200 GeV colour triplet.
 
 ## 1. Set up
 
-Clone the repository, or extract the [source ZIP](https://github.com/HengamehB/Madgraph_step/archive/refs/heads/main.zip) and open a terminal in the extracted folder.
+Download the [source ZIP](https://github.com/HengamehB/MadFieldRunner/archive/refs/heads/main.zip), extract it, and open a terminal in the extracted `MadFieldRunner-main` folder. To get the package with Git instead, run the following commands.
 
 ```bash
-git clone https://github.com/HengamehB/Madgraph_step.git
-cd Madgraph_step
+git clone https://github.com/HengamehB/MadFieldRunner.git
+cd MadFieldRunner
 ```
 
 Activate a Python 3.11 environment. If you need a new one, Conda can provide Python and its dependencies in one step:
 
 ```bash
-conda create -n madgraph-step -c conda-forge python=3.11 numpy scipy
-conda activate madgraph-step
+conda create -n madfieldrunner -c conda-forge python=3.11 numpy scipy
+conda activate madfieldrunner
 ```
 
 In an existing Python 3.11 environment, `python -m pip install -r requirements.txt` installs any missing Python dependencies. FeynRules, MadGraph5_aMC@NLO and the example PDF grid are bundled.
@@ -79,4 +79,6 @@ Edit the operator switches, coefficients and stability declarations in `input/my
 ./run.sh run "input/my model.txt"
 ```
 
-`run` integrates all discovered production channels by default. To select one, use `rates --selected` with an ID from **your** channel list. For a scan that changes only coefficients, you can copy the prepared model under another name in the same directory and edit the copy directly. The [user guide](user_guide/Madgraph_step_User_Guide.pdf) covers the commands, output files and physics limits.
+`run` integrates all discovered production channels by default. To select one, use `rates --selected` with an ID from **your** channel list. For a scan that changes only coefficients, you can copy the prepared model under another name in the same directory and edit the copy directly. The [user guide](user_guide/MadFieldRunner_User_Guide.pdf) covers the commands, output files and physics limits.
+
+For Python scripts, import the public API from the package directory with `from madfieldrunner import Pipeline`.
