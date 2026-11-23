@@ -24,7 +24,7 @@ runs:
           throw "Expected Ubuntu-24.04 running under WSL version 2. Found $distros"
         }
         Write-Host $distros
-        # Archive Git objects with Linux modes and include the files used only by CI.
+        # Keep Git blob bytes and Unix modes, including the files used only by CI.
         $PSNativeCommandUseErrorActionPreference = $true
         $repository = Join-Path $env:RUNNER_TEMP 'wsl-ci-source.git'
         git init --bare --quiet $repository
@@ -36,9 +36,9 @@ runs:
         }
         $revision = (git -C $repository rev-parse FETCH_HEAD).Trim()
         if ($revision -ne $env:GITHUB_SHA) { throw 'Fetched revision differs from the requested CI commit' }
-        Set-Content -LiteralPath (Join-Path $repository 'info/attributes') -Value '* -export-ignore -export-subst' -Encoding ascii
+        Set-Content -LiteralPath (Join-Path $repository 'info/attributes') -Value '* -text -export-ignore -export-subst' -Encoding ascii
         $tar = Join-Path $env:RUNNER_TEMP 'wsl-ci-source.tar.gz'
-        git -C $repository archive --format=tar.gz --prefix=source/ "--output=$tar" $revision
+        git -c core.autocrlf=false -C $repository archive --format=tar.gz --prefix=source/ "--output=$tar" $revision
     - name: Prepare the project and scientific toolchain inside WSL2
       shell: wsl-bash -u root {0}
       env:
