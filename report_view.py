@@ -68,6 +68,8 @@ def ranked(page, download=''):
             detail = '<small>' + esc(flags[0]) + '</small>' + detail
         result.append((process(row.get('production_process')),process(row.get('history')) + detail,terminal(row),measure(row.get('production_cross_section_pb'),row.get('production_error_pb')),percent(row.get('branching_ratio')),'<strong>' + measure(row.get('rate_pb'),row.get('error_pb')) + '</strong>'))
     text += table(('Production','Decay history','Terminal state','σ ± MC error (pb)','Cascade BR','σ × BR ± MC error (pb)'),result)
+    if page.get('next_command'):
+        text += '<p>Render the next history page</p><pre>' + esc(page['next_command']) + '</pre>'
     if page.get('more'):
         text += '<p>The preview ends here. The complete saved ranking lists the remaining histories.</p>'
     return section('ranked','Ranked histories',text) + SCRIPT
@@ -84,6 +86,8 @@ def downloads(root, manifest):
         item = link(root,filename,label)
         if item:
             items.append(item)
+    if manifest.get('vacuum'):
+        items.append(link(root,'vacuum_assumptions.json','Electroweak vacuum assumptions'))
     nodes = ((manifest.get('history_exports') or {}).get('files') or {}).get('history_nodes.json') or {}
     if nodes:
         items.append(link(root,nodes.get('path'),'Complete decay history nodes'))
@@ -92,9 +96,14 @@ def downloads(root, manifest):
     return section('files','Run files','<ul>' + ''.join('<li>' + item + '</li>' for item in items if item) + '</ul>')
 
 
-def write_report(root, manifest, limit=100):
+def calculated_histories(manifest):
+    return (manifest.get('history_counts') or {}).get('calculated')
+
+
+def write_report(root, manifest, limit=100, *, page=None):
     root = Path(root).resolve()
-    page = load_saved_page(root,manifest,limit)
+    if page is None:
+        page = load_saved_page(root,manifest,limit)
     issues = list(page.get('problems', ()))
     parts = []
     for function,anchor,title in [(model_section,'model','Model and spectrum'),(production_section,'production','Production'),(decay_section,'decays','Widths and branching fractions')]:
@@ -103,16 +112,18 @@ def write_report(root, manifest, limit=100):
         except (ValueError, OSError, KeyError, TypeError, csv.Error) as exc:
             parts.append(section(anchor,title,'<p class="attention">Saved data unavailable. ' + esc(exc) + '</p>'))
     if manifest.get('report_notices'):
-        page['notices'] = list(page['notices']) + list(manifest['report_notices'])
+        page['notices'] = list(page.get('notices') or ()) + list(manifest['report_notices'])
     elif record(manifest,'decays','json').get('path'):
         try:
             decays = read_json(root,record(manifest,'decays','json')['path'],{})
-            page['notices'].extend(decays.get('coverage_notices') or [])
+            page.setdefault('notices', []).extend(decays.get('coverage_notices') or [])
         except (OSError, ValueError, TypeError) as exc:
             issues.append('Decay notices unavailable: ' + str(exc))
     title = manifest.get('model') or 'Model run'
     energy = ((manifest.get('settings') or {}).get('collider') or {}).get('energy_tev')
     status = ('All production rates calculated' if manifest.get('all_rates_complete') else 'Requested selection complete · partial production coverage' if manifest.get('requested_complete') else 'Run ' + str(manifest.get('status','incomplete')).replace('_',' '))
+    if manifest.get('status') == 'histories_complete' and not calculated_histories(manifest):
+        status = 'History discovery complete · production rates pending'
     head = '<header><div class="meta">Madgraph_step · Physics report</div><h1>' + esc(title) + '</h1><p>' + esc(status) + (' · pp at ' + esc(energy) + ' TeV' if energy is not None else '') + '</p></header>'
     head += '<nav aria-label="Report sections">' + ''.join('<a href="#' + key + '">' + label + '</a>' for key,label in [('model','Model'),('production','Production'),('decays','Decays'),('ranked','Ranked rates'),('methods','Methods'),('files','Downloads')]) + '</nav>'
     for failure in manifest.get('failures') or []:
