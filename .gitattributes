@@ -4,3 +4,7 @@
 /tests export-ignore
 /.gitattributes export-ignore
 /.gitignore export-ignore
+
+# Omit the upstream prebuilt test executable and legacy CVS bookkeeping.
+/vendor/MG5_aMC/vendor/DiscreteSampler/check export-ignore
+/vendor/MG5_aMC/vendor/StdHEP/**/CVS export-ignore

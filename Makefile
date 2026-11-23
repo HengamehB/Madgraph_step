@@ -5,15 +5,18 @@ CONFIG ?=
 SELECTED ?= all
 INPUT ?=
 PARTICLES ?=
+test_files := $(and $(wildcard tests/test_*.py),$(wildcard ci/run_benchmark.py))
 
-.PHONY: help init setup validate run check configure-tools inputs ufo channels decays histories rates explicit-decays test
+.PHONY: help init setup validate run check configure-tools inputs ufo channels decays histories rates explicit-decays
 help:
 	@echo 'Run the prepared sample: make rates INPUT=input/sample_model_sextet.txt SELECTED=C0004'
 	@echo 'INPUT=path/to/model.txt overrides [project] model in CONFIG.'
 	@echo 'For a new model: make init PARTICLES="path/to/particles.txt" INPUT="path/to/model.txt".'
-	@echo 'Targets: init setup validate run check configure-tools inputs ufo channels decays histories rates explicit-decays test'
+	@echo 'Targets: init setup validate run check configure-tools inputs ufo channels decays histories rates explicit-decays'
 	@echo 'Example: make rates SELECTED=C0001,C0002'
+ifneq ($(test_files),)
 	@echo 'make test runs unit tests and fast benchmark checks without Mathematica or MadGraph.'
+endif
 
 init:
 	"$(PYTHON)" pipeline_cli.py init $(if $(PARTICLES),"$(PARTICLES)") $(if $(INPUT),--model "$(INPUT)")
@@ -33,6 +36,9 @@ inputs:
 rates:
 	"$(PYTHON)" pipeline_cli.py rates $(if $(INPUT),"$(INPUT)") $(if $(CONFIG),--config "$(CONFIG)") --selected "$(SELECTED)"
 
+ifneq ($(test_files),)
+.PHONY: test
 test:
 	"$(PYTHON)" -m unittest discover -s tests -p 'test_*.py'
 	"$(PYTHON)" ci/run_benchmark.py --mode fast
+endif

@@ -1,5 +1,6 @@
 """Exercise the shipped reference checker through the command a user runs."""
 import csv
+import json
 import shutil
 import subprocess
 import sys
@@ -56,3 +57,58 @@ class SextetComparisonTests(unittest.TestCase):
         result = self.compare()
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('decays', result.stderr)
+
+    def test_ranked_final_state_and_decay_history(self):
+        direct = lambda row: row['production_process'] == 'p p > x1' and row['final_state'] == 'u u'
+        for key, replacement in [('final_pdgs', '[21, 21]'), ('final_state', 'g g'),
+                                 ('history', 'x1 → (g g)'),
+                                 ('history_key', '[[9700001, [[21, []], [21, []]]]]')]:
+            with self.subTest(field=key):
+                shutil.copyfile(REFERENCE / 'ranking.csv', self.run_dir / 'ranking.csv')
+                self.edit_row('ranking', key, direct, replacement)
+                result = self.compare()
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn(key, result.stderr)
+
+    def test_production_error_is_checked_even_when_rate_error_is_correct(self):
+        self.edit_row('ranking', 'production_error_pb', lambda r: r['final_state'] == 'u u', '999')
+        result = self.compare()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('production_error_pb', result.stderr)
+
+    def test_zero_decay_branching_fraction(self):
+        self.edit_row('decays', 'branching_ratio', lambda r: r['process'] == 'x1 > u u', '0')
+        result = self.compare()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('decays', result.stderr)
+        self.assertIn('BR', result.stderr)
+
+    def test_fraction_must_equal_partial_width_over_total(self):
+        # Inside the cross-machine tolerance; conflicts with this run's own widths.
+        self.edit_row('decays', 'branching_ratio', lambda r: r['process'] == 'x1 > u u', '.33925')
+        result = self.compare()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('partial / total width', result.stderr)
+
+    def test_cascade_must_use_saved_primary_branch(self):
+        direct = lambda r: r['process'] == 'x1 > u u'
+        self.edit_row('decays', 'branching_ratio', direct, '.33925')
+        self.edit_row('decays', 'width_gev', direct, str(.33925 * .87965))
+        result = self.compare()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('cascade BR from primary decays', result.stderr)
+
+    def test_primary_decay_label(self):
+        self.edit_row('decays', 'process', lambda r: r['process'] == 'x1 > u u', 'x1 > g g')
+        result = self.compare()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('process label', result.stderr)
+
+    def test_unrecognized_excerpt_cannot_skip_missing_modes(self):
+        path = self.run_dir / 'manifest.json'
+        manifest = json.loads(path.read_text())
+        manifest['source_ranking_sha256'] = 'unrelated source'
+        path.write_text(json.dumps(manifest))
+        result = self.compare()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('missing primary decay', result.stderr)

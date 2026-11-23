@@ -12,7 +12,7 @@ if [[ -z "$python_bin" ]]; then
     done
 fi
 if [[ -z "$python_bin" ]] || ! command -v "$python_bin" >/dev/null 2>&1; then
-    echo 'Python was not found. Activate your Python 3.11 environment (for example: conda activate projAI), or set PYTHON to its executable.' >&2
+    echo 'Python was not found. Activate your Python 3.11 environment (for example, conda activate madgraph-step), or set PYTHON to its executable.' >&2
     exit 1
 fi
 exec "$python_bin" "$script_dir/pipeline_cli.py" "$@"

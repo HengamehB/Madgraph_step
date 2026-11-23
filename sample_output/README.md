@@ -12,10 +12,10 @@ Open `report.html` locally for the formatted reference. The [ranked CSV](ranking
 | --- | ---: | ---: | ---: |
 | pp → x1 → u u | 1.1691955 ± 0.0045663 pb | 0.3392486 | 0.39664794 ± 0.00154912 pb |
 
-To compare your output, replace `<run-id>` with the directory printed after **Run files**:
+From the package directory, replace the entire path between the quotes below with the full directory printed after **Run files**. Keep the quotes so paths containing spaces work.
 
 ```bash
-python sample_output/compare.py "output/triplet_sextet_particles/<run-id>"
+python sample_output/compare.py "path/to/saved run"
 ```
 
-The checker compares the selected histories, the four [total widths](total_widths.csv) and ten recorded [partial widths](decays.csv). It uses a 0.1% relative tolerance for widths and branching fractions, and three combined Monte Carlo standard errors for the production cross section and the direct `u u` rate. It also reports how many histories already have rates from additional channels you integrated in the same run directory. Full calculation settings are in the [manifest](manifest.json).
+The checker compares the selected histories, the four [total widths](total_widths.csv) and ten recorded [partial widths](decays.csv). It uses a 0.1% relative tolerance for widths and branching fractions, and three combined Monte Carlo standard errors for the production cross section and the direct `u u` rate. It also reports how many histories already have rates from additional channels you integrated in the same run directory. The [reference manifest](manifest.json) records the channel selection and completion status. The [prepared model](../input/sample_model_sextet.txt) specifies the input coefficients, seed, and calculation settings.

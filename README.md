@@ -54,10 +54,10 @@ The **Run files** line prints the directory for this calculation, under `output/
 | ---: | ---: | ---: |
 | 1.1691955 ± 0.0045663 pb | 0.3392486 | 0.39664794 ± 0.00154912 pb |
 
-From the package directory, substitute the run directory printed on your machine:
+From the package directory, replace the entire path between the quotes below with the full directory printed after **Run files**. Keep the quotes so paths containing spaces work.
 
 ```bash
-python sample_output/compare.py "output/triplet_sextet_particles/<run-id>"
+python sample_output/compare.py "path/to/saved run"
 ```
 
 The comparison checks the discovered channels, decay histories, four total widths and ten partial widths. It allows for Monte Carlo integration uncertainty. The reference HTML and CSVs are in [sample_output/](sample_output/).

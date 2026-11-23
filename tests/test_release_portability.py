@@ -2,6 +2,7 @@
 import configparser
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -152,6 +153,9 @@ class LauncherTests(unittest.TestCase):
                                     env=dict(os.environ, PYTHON=missing), capture_output=True, text=True)
             self.assertNotEqual(result.returncode, 0)
             self.assertIn('Python was not found', result.stderr)
+            activation = next(line for line in (ROOT / 'README.md').read_text(encoding='utf-8').splitlines()
+                              if line.startswith('conda activate '))
+            self.assertEqual(re.findall(r'conda activate [\w.-]+', result.stderr), [activation])
 
 
 @unittest.skipUnless(shutil.which('make'), 'make is required')
