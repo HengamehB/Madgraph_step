@@ -4,19 +4,19 @@ PYTHON ?= $(shell command -v python 2>/dev/null || command -v python3.11 2>/dev/
 CONFIG ?=
 SELECTED ?= all
 INPUT ?=
-PARTICLES ?= input/particles.txt
+PARTICLES ?=
 
 .PHONY: help init setup validate run check configure-tools inputs ufo channels decays histories rates explicit-decays test
 help:
-	@echo 'Activate Python 3.11; edit input/particles.txt; make init; edit input/my_model.txt; make run.'
+	@echo 'Run the prepared sample: make rates INPUT=input/sample_model_sextet.txt SELECTED=C0004'
 	@echo 'INPUT=path/to/model.txt overrides [project] model in CONFIG.'
-	@echo 'make init reads PARTICLES=input/particles.txt; optional INPUT=path/my_model.txt sets its destination.'
+	@echo 'For a new model: make init PARTICLES="path/to/particles.txt" INPUT="path/to/model.txt".'
 	@echo 'Targets: init setup validate run check configure-tools inputs ufo channels decays histories rates explicit-decays test'
 	@echo 'Example: make rates SELECTED=C0001,C0002'
 	@echo 'make test runs unit tests and fast benchmark checks without Mathematica or MadGraph.'
 
 init:
-	"$(PYTHON)" pipeline_cli.py init "$(PARTICLES)" $(if $(INPUT),--model "$(INPUT)")
+	"$(PYTHON)" pipeline_cli.py init $(if $(PARTICLES),"$(PARTICLES)") $(if $(INPUT),--model "$(INPUT)")
 
 check configure-tools:
 	"$(PYTHON)" pipeline_cli.py $@ $(if $(INPUT),"$(INPUT)") $(if $(CONFIG),--config "$(CONFIG)")

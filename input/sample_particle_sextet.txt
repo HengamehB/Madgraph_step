@@ -1,5 +1,6 @@
-# Particle declarations for: ./run.sh init input/particles.txt
-# This source is unchanged by init. The generated model is input/my_model.txt.
+# The pre-filled sample_model_sextet.txt already contains the benchmark interactions.
+# To generate a fresh model for your own coefficients, choose a new destination:
+#   ./run.sh init input/sample_particle_sextet.txt --model input/my_scan.txt
 # X is required; set Y = None or remove Y for one new multiplet. Gauge inputs are the SU(2)
 # representation dimension, SU(3) label or Dynkin pair, and hypercharge.
 
@@ -48,7 +49,7 @@ Y = {'spin': 'scalar', 'su2': 1, 'su3': '3',
 # Vectors also require vector_specifications; a representation is not a full gauge theory.
 # Leptoquark conventions: https://arxiv.org/abs/1603.04993 (Table 1).
 # Vectorlike-quark reference: https://arxiv.org/abs/2304.10561.
-# After editing X/Y, ./run.sh init input/particles.txt replaces input/my_model.txt.
+# Without --model, init on this source replaces sample_model_sextet.txt.
 
 # Optional catalogue choices: scenario, exact_dimension, sm_generations,
 # compiler_limits. Choices containing 'any' require an explicit scenario.

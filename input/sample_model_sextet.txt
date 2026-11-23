@@ -1,11 +1,11 @@
 # Coloured-scalar example: a 1.5 TeV sextet and a 1.2 TeV triplet.
 # Run from the package directory to integrate only pp -> x1 and save ranking.csv.
-#   ./run.sh rates input/my_model.txt --selected C0004 --page-size 5
+#   ./run.sh rates input/sample_model_sextet.txt --selected C0004
 
 # Edit coefficients and switches below; init replaces this file without a backup.
 # Masses and mixings are derived. Disabled rows do not enter the Lagrangian.
 # Electroweak vacuum is fixed: unmixed 125 GeV Higgs, zero VEVs for new scalars.
-# Full operator conventions: ./run.sh inputs input/my_model.txt
+# Full operator conventions: ./run.sh inputs input/sample_model_sextet.txt
 
 X = {'spin': 'scalar', 'su2': 3, 'su3': '6', 'hypercharge': '1/3', 'boson_kind': 'complex'}
 Y = {'spin': 'scalar', 'su2': 1, 'su3': '3', 'hypercharge': '-1/3', 'boson_kind': 'complex'}

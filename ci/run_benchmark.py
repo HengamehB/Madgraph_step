@@ -33,6 +33,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from ci import trace_ufo
 
+SAMPLE_PARTICLES = ROOT / 'input' / 'sample_particle_sextet.txt'
+SAMPLE_MODEL = ROOT / 'input' / 'sample_model_sextet.txt'
 FREE = {'X X†', 'Y Y†', 'D(X) D(X†)', 'D(Y) D(Y†)'}
 INVENTORY = FREE | {
     'H H† X X†', 'H H† Y Y†', 'X X† Y Y†', 'X X†^2 Y†',
@@ -130,7 +132,7 @@ class Benchmark:
         self.input = root / 'inputs with spaces'
         self.input.mkdir()
         self.model = self.input / 'generated benchmark.txt'
-        self.particles = self.input / 'particles.txt'
+        self.particles = self.input / SAMPLE_PARTICLES.name
         self.output = root / 'saved results'
         self.metadata_path = None
         self.metadata_digest = None
@@ -264,7 +266,7 @@ class Benchmark:
         return run
 
     def fast(self):
-        self.particles.write_bytes((ROOT / 'input' / 'particles.txt').read_bytes())
+        shutil.copyfile(SAMPLE_PARTICLES, self.particles)
         self.cli('init', '--model', str(self.model), source=self.particles)
         generated = self.document()
         self.metadata_path = (self.model.parent / generated.assignments['_metadata']).resolve()
@@ -300,10 +302,39 @@ class Benchmark:
                                           'Y ec uc': {'enabled': True, 'coefficient': eu_complex}})
         self.validation('complex off-diagonal Yukawas', COEFFICIENTS, masses)
         edit_values(self.model, operators={'Q^2 X†': {'coefficient': QQ}, 'Y ec uc': {'coefficient': EU}})
+        self.use_shipped_sample()
         run = self.validation('full diagonal benchmark', COEFFICIENTS, masses)
         self.report['scope'] = {'fresh_ufo_export': False, 'numerical_widths': False,
                                 'production_integrations': 0, 'package_defaults_modified': False}
         return run
+
+    def use_shipped_sample(self):
+        """Exercise the distributed model against the independent construction above."""
+        from pipeline_config import calculation_settings, explicit_decay_settings
+        from tex_inputs import read_inputs
+
+        generated = self.document()
+        shipped = read_inputs(SAMPLE_MODEL)
+        require(shipped.definition.signature == generated.definition.signature,
+                'The sample model and particle file define different particles or operators')
+        def point(doc):
+            physics = dict(doc.physical_inputs)
+            physics.pop('model_name', None)
+            settings = calculation_settings(doc.collider, doc.decays, doc.ranking)
+            return physics, settings, explicit_decay_settings(doc.explicit_decays)
+
+        require(point(shipped) == point(generated),
+                'Distributed sample inputs differ from the validated benchmark')
+
+        self.model = self.input / SAMPLE_MODEL.name
+        shutil.copyfile(SAMPLE_MODEL, self.model)
+        pointer = shipped.assignments['_metadata']
+        self.metadata_path = self.input / pointer
+        self.metadata_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(SAMPLE_MODEL.parent / pointer, self.metadata_path)
+        self.metadata_digest = digest(self.metadata_path)
+        # Keep all generated files in the temporary benchmark directory.
+        edit_values(self.model, assignments={'output': '../saved results'})
 
     def widths(self, run):
         totals = {row['name']: row for row in read_json(run / 'total_widths.json')}
@@ -446,6 +477,8 @@ class Benchmark:
         require(manifest['requested_complete'] and not manifest['all_rates_complete'],
                 'Selected calculation completion was reported as all-channel completion')
         require(manifest['discovery_complete'], 'History discovery is incomplete')
+        subprocess.run([sys.executable, str(ROOT / 'sample_output' / 'compare.py'), str(run)],
+                       cwd=ROOT, check=True)
         self.report['ranking'] = before
         self.report['scope'].update(fresh_ufo_export=True, numerical_widths=True, production_integrations=1)
         self.report['checks'].append({'name': 'fresh licensed export, widths, rate, ranking and resume', 'status': 'passed'})

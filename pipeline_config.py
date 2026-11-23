@@ -173,8 +173,17 @@ def load_config(path=None, *, model_file=None, output=None, read_model=True):
                 explicit_decays[key] = parser.getboolean('explicit_decays', key)
             else:
                 explicit_decays[key] = value
-    model = (Path(model_file).expanduser().resolve() if model_file is not None
-             else file_path(parser.get("project", "model", fallback="input/my_model.txt")))
+    configured_model = parser.get("project", "model", fallback=None)
+    if model_file is not None:
+        model = Path(model_file).expanduser().resolve()
+    elif configured_model is not None:
+        model = file_path(configured_model)
+    else:
+        sample = Path("input/sample_model_sextet.txt")
+        model = file_path(sample)
+        if not model.is_file():
+            legacy = file_path("input/my_model.txt")
+            model = legacy if legacy.is_file() else ROOT / sample
     destination = file_path(parser.get("project", "output", fallback="runs"))
     if read_model and model.suffix.lower() in {".txt", ".tex"}:
         from tex_inputs import read_inputs

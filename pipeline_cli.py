@@ -74,9 +74,9 @@ def _setup(args, model_file):
 def _main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("report", "init", "setup", "validate", "run", "check", "configure-tools", "inputs", "ufo", "channels", "decays", "histories", "rates", "explicit-decays"))
-    parser.add_argument("input_file", nargs="?", help="model path (defaults to .config); init defaults to input/particles.txt in the package")
+    parser.add_argument("input_file", nargs="?", help="model path (defaults to .config); init defaults to input/sample_particle_sextet.txt")
     parser.add_argument("--input", dest="input_option", help="input file, as an alternative to the positional path")
-    parser.add_argument("--model", help="init destination; defaults to my_model.txt beside the particle source")
+    parser.add_argument("--model", help="init destination; a named particle source such as scan_particle_X.txt defaults to scan_model_X.txt beside it")
     parser.add_argument("--config", help="optional machine tool configuration; defaults to the package .config")
     parser.add_argument("--output", help="output folder; relative paths start at the current directory")
     parser.add_argument("--selected", default="all", help="all or comma-separated production channel IDs")

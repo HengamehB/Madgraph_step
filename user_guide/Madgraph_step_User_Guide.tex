@@ -46,136 +46,133 @@
 \begin{document}
 
 {\Huge\bfseries\color{navy}Madgraph\_step\par}
-\vspace{3pt}
-{\large\color{muted}A step-by-step terminal guide\par}
-\vspace{6pt}
-To use your existing \code{input/my_model.txt}, set up the tools in step~1,
-then go straight to step~4.
+\vspace{2pt}
+{\large\color{muted}Run the sextet example and check your result\par}
 
-\section{Activate the environment and check the tools}
+\section{Prepare your terminal}
+Run the commands from the package folder. Use Bash on macOS or Linux. On
+Windows, use an Ubuntu terminal in WSL2 with a Linux Python and a Linux
+Wolfram kernel. A working, licensed Mathematica or Wolfram Engine in that
+environment satisfies the Wolfram requirement. Install and activate a kernel
+only if one is missing. The package includes FeynRules and MadGraph.
+
+Activate your Python 3.11 environment with NumPy and SciPy and run the
+check below. If you need a new Conda environment, use
+\code{conda create -n madgraph-step -c conda-forge python=3.11 numpy scipy}
+and then \code{conda activate madgraph-step}.
 
 \begin{lstlisting}
-cd "/path/to/Madgraph_step"
-conda activate projAI
-./run.sh configure-tools
 ./run.sh check
 \end{lstlisting}
-Replace the example path with your package folder. Run \code{configure-tools}
-on first use or when tool paths change. Review the proposed paths and type
-\code{y} to save them to \code{.config}, or \code{edit} to correct them.
-The package uses Python 3.11 with NumPy and SciPy, a licensed Mathematica
-kernel and the tools listed by \code{check}.
+If the check passes, continue to step~2. Install any missing prerequisites
+it identifies, including GNU Fortran, a C++ compiler, Make or Perl. If a
+tool is installed but its path was missed, run \code{./run.sh configure-tools}.
+Enter \code{edit} to correct the path or \code{y} to save the detected paths
+in \code{.config}, then repeat \code{./run.sh check}.
 
-\section{Define particles and generate the model}
-
-Edit \code{input/particles.txt}. Set \code{X} and optionally \code{Y}.
-Use \code{Y = None} for a single new multiplet. The file includes
-representation examples.
-
+\section{Run the supplied model}
+The two files in \code{input/} have distinct roles. \code{sample_particle_sextet.txt}
+defines the scalar colour sextet and triplet. The coefficients and calculation
+settings are in \code{sample_model_sextet.txt}. Run the model directly.
 \begin{lstlisting}
-./run.sh init input/particles.txt
+./run.sh rates input/sample_model_sextet.txt --selected C0004 --page-size 5
 \end{lstlisting}
-This generates \code{input/my_model.txt} with the allowed operators and
-starts with diagonal kinetic and mass terms enabled.
-\textbf{Running \code{init} again replaces the destination and its edits without a backup.}
+This exports the UFO, calculates two-body decays and integrates the
+$pp\to x_1$ production channel. The example uses $13.6$~TeV, the
+\code{nn23lo1} PDF, dynamical scale choice 3 and seed 1.
+The terminal shows five rows. The saved CSV contains all 1,925 histories.
 
-\section{Choose operators and coefficients}
-
-In \code{input/my_model.txt}, set \code{enabled} to \code{True} for the operators
-you want and supply their coefficients. Edit \code{stable_particles} only for
-states you intend to treat as stable. The package derives masses and mixings
-using a 125 GeV Higgs and zero VEVs for new scalars.
-Use this command to check coefficient units and array order.
-
+\section{Compare with the supplied result}
+Open \code{report.html} in the folder printed after \textbf{Run files}.
+Compare it with \code{sample_output/report.html}, or check the saved
+tables with this command. Replace the quoted path with your run folder.
 \begin{lstlisting}
-./run.sh inputs input/my_model.txt
+python sample_output/compare.py "path/to/saved run"
 \end{lstlisting}
+For a manual check, find \code{C0004} and $x_1\to u\,u$ in \code{ranking.csv}.
 
-\section{Validate, list channels and calculate rates}
-
-\begin{lstlisting}
-./run.sh validate input/my_model.txt
-./run.sh channels input/my_model.txt
-./run.sh run input/my_model.txt --selected C0001
-\end{lstlisting}
-\code{validate} checks the model and derives its spectrum. \code{channels}
-exports or reuses the UFO and lists the allowed production channels.
-Replace \code{C0001} with an ID from that list. To integrate all listed
-production channels, omit \code{--selected}.
-The run calculates widths, builds decay histories and saves the ranked rates.
-
-\newpage
-
-{\LARGE\bfseries\color{navy}Find and manage your results\par}
-
-\section{Open the run folder}
-
-Copy the exact path printed next to \textbf{Run files}. With
-\lstinline|output = '../output'| in a model inside \code{input/}, the layout is
-\code{output/<model_name>/<run-id>/}.
-
-\begin{tabularx}{\linewidth}{@{}p{0.39\linewidth}Y@{}}
+\begin{tabularx}{\linewidth}{@{}Yl@{}}
 \toprule
-\textbf{File} & \textbf{What to look for} \\
+\textbf{Quantity} & \textbf{Reference value} \\
 \midrule
-\code{report.html} & Open in a browser for the run summary and links. \\
-\code{ranking.csv} & Decay histories ranked by production cross section $\times$ cascade branching probability, in pb. \\
-\code{production_channels.csv} & The available production channels and their IDs. \\
-\code{cross_sections.csv} & Integrated production channels and their numerical errors. \\
-\code{total_widths.csv}, \code{decays.csv} & Total widths, decay modes and branching fractions. \\
-\code{manifest.json} & Completion status. Check \code{requested_complete} for the selected run. \\
+Production cross section for $pp\to x_1$ & $1.1691955 \pm 0.0045663$ pb \\
+Branching fraction for $x_1\to u\,u$ & $0.3392486$ \\
+Ranked rate for $pp\to x_1\to u\,u$ & $0.39664794 \pm 0.00154912$ pb \\
 \bottomrule
 \end{tabularx}
 
-Open \code{report.html} to see the mass spectrum and enabled couplings, then production cross sections, widths and ranked decay histories. Final-state filters apply to the displayed page. Choose \textbf{Download ranked rates (CSV)} for all saved rows. To refresh a saved run, including one moved to another directory, use its run folder:
+Thirty histories have numerical rates. The other 1,895 have blank rates
+because their production channels were not integrated. The errors above
+come from Monte Carlo integration. For a numerical cross-check, compare
+the two production cross sections within three times their errors added
+in quadrature.
+
+\newpage
+{\LARGE\bfseries\color{navy}Use your own filenames and settings\par}
+
+\section{Choose a model filename}
+\textbf{To keep the sample coefficients}, copy the supplied model to a new
+name, then edit it. Filenames may contain spaces when quoted.
+
+\begin{lstlisting}
+cp input/sample_model_sextet.txt "input/my scan.txt"
+./run.sh validate "input/my scan.txt"
+\end{lstlisting}
+
+\textbf{To start from a different particle definition}, copy the particle
+file under a new name. Edit \code{X} and \code{Y} in your copy first
+(use \code{Y = None} for a single new multiplet). Then run
+\code{init} and use \code{--model} to choose a fresh destination.
+
+\begin{lstlisting}
+cp input/sample_particle_sextet.txt "input/my particles.txt"
+# Edit "input/my particles.txt" before running init.
+./run.sh init "input/my particles.txt" --model "input/new model.txt"
+./run.sh inputs "input/new model.txt"
+\end{lstlisting}
+
+For \code{sample_particle_sextet.txt}, the paired default is
+\code{sample_model_sextet.txt}. \code{init} enables diagonal kinetic and mass terms. It \textbf{replaces
+its destination without a backup}, so choose a different path from any tuned
+model you want to keep. In the new model, set operator switches and
+coefficients. \code{inputs} explains units and array ordering. Declare
+physically stable states in \code{stable_particles}. Validation derives
+the spectrum with an unmixed 125~GeV Higgs and zero new-scalar VEVs.
+
+Keep the model's \code{_metadata} line and the adjacent
+\code{.model_metadata/} folder together when moving it. Pass the model path
+to each command. To make it the default, set \code{model = input/my scan.txt}
+under \code{[project]} in \code{.config}.
+
+\section{Choose what to calculate}
+\begin{lstlisting}
+./run.sh channels "input/my scan.txt"
+./run.sh histories "input/my scan.txt" --page-size 20
+./run.sh run "input/my scan.txt"
+\end{lstlisting}
+\code{channels} lists the production IDs for your model. Use \code{rates}
+with \code{--selected} and one of those IDs for a selected integration.
+\code{histories} calculates widths and builds cascades before any production
+integration. \code{--page-size} limits the display only. \code{run} with
+no selection integrates every discovered channel. Press \textbf{Ctrl+C} to
+stop and repeat your command to resume verified work.
+
+\section{Locate saved tables and refresh the report}
+The example writes to \code{output/<model_name>/<run-id>/}. Set
+\code{model_name} to label your own run. A relative \code{output} in the
+model starts beside that file. In the run folder, \code{cross_sections.csv}
+contains the production integrals and errors. \code{total_widths.csv} and
+\code{decays.csv} contain widths and branching fractions. In
+\code{manifest.json}, \code{requested_complete} records completion of the
+requested selection and \code{all_rates_complete} covers all channels.
+
 \begin{lstlisting}
 ./run.sh report --run-dir "path/to/saved run"
 \end{lstlisting}
-This reads saved results and writes HTML without running Mathematica or MadGraph.
-
-A blank rate means its production channel has no completed integration.
-These are tree-level, narrow-width estimates. Keep overlapping histories
-separate and check the report for omitted decay contributions.
-
-\section*{Use a different input filename}
-
-For a \textbf{new model}, choose the generated filename with \code{--model}.
-You can also pass a renamed particle source in place of \code{input/particles.txt}.
-
-\begin{lstlisting}
-./run.sh init input/particles.txt --model "input/my scan.txt"
-\end{lstlisting}
-To \textbf{keep an existing model's edits}, rename the TXT file directly.
-Leave its \code{_metadata} line and the adjacent \code{.model_metadata/}
-folder in place. If moving to another folder, bring the metadata folder too.
-
-\begin{lstlisting}
-mv -i input/my_model.txt "input/my scan.txt"
-./run.sh channels "input/my scan.txt"
-\end{lstlisting}
-Pass the chosen filename to each model command, or edit \code{model = input/my scan.txt}
-under \code{[project]} in \code{.config} to make it the default.
-To name the results subfolder, set \code{model_name} inside the TXT file.
-A relative \code{output} in that file starts beside the TXT file.
-Use \code{--output "scan results"} on a run command to override it for that run.
-A relative path in this option starts in the terminal's current folder.
-
-\section*{Inspect, stop or resume}
-
-\begin{lstlisting}
-./run.sh decays input/my_model.txt
-./run.sh histories input/my_model.txt --page-size 20
-\end{lstlisting}
-\code{decays} calculates widths and branching fractions. \code{histories}
-also builds the cascade catalogue without integrating production.
-\code{--page-size} limits the display only. A selected production run may
-still build histories for all discovered channels. To restrict production
-to at most two outgoing new particles, set \code{max_final} to \code{2}
-and \code{new_particles_only} to \code{True} in \code{collider}.
-These settings apply before decay.
-
-Press \textbf{Ctrl+C} to stop and repeat the same command to resume from
-verified checkpoints. If the package flags stale coefficient bindings,
-run \code{./run.sh setup input/my_model.txt} and review the values it requests.
+This rebuilds the HTML from saved tables. The ranking uses tree-level
+production and narrow-width cascades. Loop-induced production is excluded,
+omitted decay contributions can be uncertain, and overlapping rows must
+not be summed. Scale choice 3 depends on external particles, so its
+numerical scale may differ in an explicit decayed process.
 
 \end{document}

@@ -11,6 +11,7 @@ from copy import deepcopy
 from dataclasses import dataclass
 import fcntl
 import os
+import re
 import shlex
 from pathlib import Path
 from pprint import pformat
@@ -22,7 +23,7 @@ from coefficient_defaults import PROFILE, SM_DEFAULTS, _bare, _tokens, coefficie
 from model_builder import ModelDefinition
 
 
-DEFAULT_PARTICLES = Path(__file__).resolve().parent / 'input' / 'particles.txt'
+DEFAULT_PARTICLES = Path(__file__).resolve().parent / 'input' / 'sample_particle_sextet.txt'
 
 
 _PARTICLE_ASSIGNMENTS = {'X', 'Y', 'n_particles', 'scenario', 'exact_dimension',
@@ -372,15 +373,24 @@ def _render(source, destination):
     return _RenderedModel(text, metadata, format_operator_reference(reference_rows), len(rows), len(enabled), unresolved)
 
 
-def initialize_model(particles_path=None, model_path=None):
-    """Generate ``my_model.txt`` beside the source, or an explicit destination.
+def _paired_model_path(source):
+    """Retain the user's stem when it contains a named particle input."""
+    stem = source.stem
+    paired = re.sub(r'(?<![a-z0-9])particles?(?![a-z0-9])', 'model', stem,
+                    count=1, flags=re.IGNORECASE)
+    if paired == stem or stem.lower() in {'particle', 'particles'}:
+        return source.with_name('my_model.txt')
+    return source.with_name(paired + '.txt')
 
-    With no source, use the package's ``input/particles.txt`` from any working
-    directory. Every call starts from the particle source. No prompts, external programs,
-    configuration writes or reuse of destination physics values occur.
+
+def initialize_model(particles_path=None, model_path=None):
+    """Generate a fresh operator template next to the particle file, or at model_path.
+
+    The bundled sample_particle_sextet.txt pairs with sample_model_sextet.txt.
+    Every invocation starts from the declarations and replaces its destination.
     """
     source = _snapshot(DEFAULT_PARTICLES if particles_path is None else particles_path)
-    destination = _snapshot(model_path if model_path is not None else source.path.parent / 'my_model.txt', missing=True)
+    destination = _snapshot(model_path if model_path is not None else _paired_model_path(source.path), missing=True)
     if destination.resolved.suffix.lower() != '.txt':
         raise ValueError('The generated model destination must have a .txt extension.')
     _different_files(source, destination)

@@ -1,135 +1,82 @@
 # Madgraph_step
 
-Describe new particles and their operator coefficients in a text file. Madgraph_step constructs the Lagrangian, derives masses and mixing, exports a UFO with FeynRules, and uses MadGraph to rank production and decay histories by cross section × branching probability. Start with the included coloured-scalar model to check your installation.
+Madgraph_step takes particle representations and operator coefficients, builds the Lagrangian and UFO, then uses MadGraph to rank production and decay histories by **cross section × branching fraction**. The supplied example pairs a 1,500 GeV colour sextet with a 1,200 GeV colour triplet.
 
+## 1. Set up
 
-**See a real run.** The [sample output](sample_output/) includes the [HTML report](sample_output/report.html) and [full ranked CSV](sample_output/ranking.csv) from the archived macOS benchmark. To view the formatted report, extract the main ZIP and open `sample_output/report.html` in your browser.
-
-## 1. Prepare your platform
-
-You need **Python 3.11**, a locally licensed **Mathematica or Wolfram Engine** kernel, GNU Fortran, a C++ compiler, Make, Bash and Perl. The repository includes the patched FeynRules 2.3.49, MadGraph5_aMC@NLO 3.7.3, and the nn23lo1 parton distribution grid used by the example. The terminal workflow requires NumPy and SciPy. Wolfram Service Credits are used only for the project's licensed GitHub tests. Your runs use your own kernel and license. [Bundled software and provenance](vendor/PROVENANCE.txt)
-
-**macOS** — Install the Xcode Command Line Tools if needed. With Homebrew installed, install GNU Fortran through its GCC package. Install and activate Mathematica or Wolfram Engine for macOS. [Homebrew](https://brew.sh/) · [Wolfram Engine](https://www.wolfram.com/engine/)
+Clone the repository, or extract the [source ZIP](https://github.com/HengamehB/Madgraph_step/archive/refs/heads/main.zip) and open a terminal in the extracted folder.
 
 ```bash
-xcode-select --install
-brew install gcc
-```
-
-**Ubuntu Linux** — Install the build tools, then install and activate Mathematica or Wolfram Engine for Linux. The hosted Linux benchmark used Ubuntu 24.04. [Wolfram Engine](https://www.wolfram.com/engine/)
-
-```bash
-sudo apt update
-sudo apt install git build-essential gfortran perl
-```
-
-**Windows with WSL2** — In an administrator PowerShell, run the commands below and restart if prompted. Confirm that Ubuntu shows version `2` in the list. Then open the **Ubuntu terminal**, run the Ubuntu installation steps above, and perform the rest of this guide there. Clone into your Linux home directory. Use a Linux Python and a licensed Linux Wolfram kernel inside WSL2. This is the Windows configuration tested on GitHub. [Microsoft WSL installation guide](https://learn.microsoft.com/windows/wsl/install)
-
-```powershell
-wsl --install -d Ubuntu
-wsl --list --verbose
-```
-
-## 2. Download the release and set up Python
-
-Source ZIP and tar.gz archives built from this revision include the example model, its metadata, the guide and the bundled physics tools. Use a Git clone for the project tests and CI scripts. The v0.1.0 tag predates these archive rules.
-
-From your macOS or Linux terminal, or your Ubuntu terminal on Windows, clone the tagged version. Access to a private repository requires a GitHub account with permission. You can also sign in on GitHub, download the release's **Source code (zip)**, extract it, and open a terminal in the extracted folder. [Release v0.1.0](https://github.com/HengamehB/Madgraph_step/releases/tag/v0.1.0)
-
-```bash
-git clone --branch v0.1.0 https://github.com/HengamehB/Madgraph_step.git
+git clone https://github.com/HengamehB/Madgraph_step.git
 cd Madgraph_step
 ```
 
-If you already have Python 3.11, create an isolated environment in the package directory.
+Activate a Python 3.11 environment. If you need a new one, Conda can provide Python and its dependencies in one step:
 
 ```bash
-python3.11 -m venv .venv
-source .venv/bin/activate
-```
-
-If you use Conda, you can create the environment with these two commands instead. This also provides Python 3.11 on systems with a different default Python. If you need Conda, install Miniforge for the operating system and architecture in which you will run the package. [Miniforge installation](https://github.com/conda-forge/miniforge#install)
-
-```bash
-conda create -n madgraph-step python=3.11 pip
+conda create -n madgraph-step -c conda-forge python=3.11 numpy scipy
 conda activate madgraph-step
 ```
 
-Install the Python dependencies into the activated environment, configure tool paths, and check the installation.
+In an existing Python 3.11 environment, `python -m pip install -r requirements.txt` installs any missing Python dependencies. FeynRules, MadGraph5_aMC@NLO and the example PDF grid are bundled.
+
+**Already have a working Mathematica or Wolfram Engine installation?** Use its licensed kernel and go straight to the check below. On Windows, run the package in Ubuntu under WSL2 with a Linux Wolfram kernel available there.
 
 ```bash
-python --version
-python -m pip install -r requirements.txt
-./run.sh configure-tools
 ./run.sh check
 ```
 
-The first line should show `Python 3.11.x`. At `Save these paths? [y/N/edit]`, enter `y` if the detected paths are correct. Enter `edit` to supply a full executable path. Keep the bundled FeynRules selected to use the Wolfram 15 repair. The `check` command starts the actual kernel to verify its license and reports each tool as `OK` or `MISSING`. Reactivate the same Python environment in future terminal sessions.
+If the check passes, continue to step 2. If a tool is missing, install only what the check identifies:
 
-If the kernel is missing, point `mathematica` under `[tools]` in the package's `.config` to the full executable. On macOS one common path is `/Applications/Mathematica.app/Contents/MacOS/WolframKernel`. On Linux or WSL2, use the path from your Linux installation. Enter paths without surrounding quotes in this file. Run `./run.sh check` again after correcting a path or activating the license.
-
-## 3. Run the supplied example
-
-**Run the supplied model directly.** The release includes its companion metadata. Leave the hidden `input/.model_metadata/` directory in place. The model describes a 1,500 GeV colour sextet and a 1,200 GeV colour triplet. The example uses 13.6 TeV proton collisions, the `nn23lo1` PDF, dynamical scale choice 3, and two-body decays. This command calculates widths, integrates the single `p p > x1` production channel, and saves the ranked histories. The first run also builds the UFO and numerical code. [Example model](input/my_model.txt)
-
-```bash
-./run.sh rates input/my_model.txt --selected C0004 --page-size 5
-```
-
-If you prefer a single file you can move, download the same model as [triplet_sextet.txt](https://github.com/HengamehB/Madgraph_step/releases/download/v0.1.0/triplet_sextet.txt). This copy includes its operator bindings and writes to an `output/` directory beside the file. Run the command above with its path in place of `input/my_model.txt`.
-
-For this model, `C0004` is `p p > x1`. In the reference run, the corresponding CSV entry for `x1 → u u` had the following values. The integration errors are Monte Carlo uncertainties.
-
-| Quantity | Reference result |
-| --- | ---: |
-| Production cross section | 1.1691955 ± 0.0045663 pb |
-| Branching fraction for `x1 → u u` | 0.3392486 |
-| Ranked rate for `p p → x1 → u u` | 0.39664794 ± 0.00154912 pb |
-
-The Ubuntu, macOS and Windows WSL2 benchmark runs each exported 191 vertices and 136 couplings and matched four total and ten partial two-body widths within 0.1% of their reference values. Their ranked tables had 30 calculated histories and 1,895 histories with blank rates because only one production channel was integrated. [Ubuntu results](https://github.com/HengamehB/Madgraph_step/actions/runs/45078417909) · [macOS and Windows WSL2 results and CSV downloads](https://github.com/HengamehB/Madgraph_step/actions/runs/45081434860)
-
-## 4. Find your results
-
-Open the directory printed after **Run files**. With `output = '../output'` in a model under `input/`, each run is saved in `output/<model_name>/<run-id>/`.
-
-| File | What it contains |
+| Platform | Tools for compiling MadGraph processes |
 | --- | --- |
-| `report.html` | Run summary, physics notices, and links to the tables |
-| `ranking.csv` | All saved histories, cross sections, cascade branching probabilities, rates in pb, uncertainties, and flags |
-| `production_channels.csv`, `cross_sections.csv` | Discovered channel IDs and numerical results for integrated channels |
-| `total_widths.csv`, `decays.csv` | Calculated widths and branching fractions |
-| `manifest.json` | `requested_complete` for the requested selection and `all_rates_complete` for all discovered production channels |
+| macOS | Xcode Command Line Tools (`xcode-select --install`) supply C++ and Make. You also need GNU Fortran (`gfortran`). |
+| Ubuntu | `sudo apt install build-essential gfortran perl` supplies the build tools. |
+| Windows | If needed, run `wsl --install -d Ubuntu` in administrator PowerShell. Open Ubuntu and follow the Linux steps there. [WSL installation guide](https://learn.microsoft.com/windows/wsl/install) |
 
-`--page-size 5` controls terminal display. Every history is still saved. Press **Ctrl+C** to stop and repeat the same command to resume verified work. A different page size reuses the integration. A blank rate means the channel still needs a numerical calculation.
+If you need a kernel, install and activate Mathematica or [Wolfram Engine](https://www.wolfram.com/engine/) for the operating system where you run the package. If a tool is installed but detection missed it, run `./run.sh configure-tools`, enter `edit` to supply its path or `y` to save the detected paths, then repeat `./run.sh check`.
 
-Open **`report.html`** for the model spectrum, active couplings, production cross sections, widths and ranked decay histories. Choose **Download ranked rates (CSV)** for every saved history. Final-state filters apply only to the displayed page. A calculated zero is shown as `0` and a missing integration as **Not calculated**.
+## 2. Run the sextet example
 
-To refresh the HTML for an existing or relocated run, use its run directory. This requires only Python and reads at most one ranking page.
+The particle file declares the representations. The prepared model already contains the operator coefficients, two-body decay settings and 13.6 TeV proton collider settings. Run the model directly; `init` is for generating a fresh coefficient template. [Particle definitions](input/sample_particle_sextet.txt) · [Prepared model](input/sample_model_sextet.txt)
 
 ```bash
-./run.sh report --run-dir "path/to/saved run"
+./run.sh rates input/sample_model_sextet.txt --selected C0004 --page-size 5
 ```
 
-## 5. Build your own model
+This computes the widths, integrates `p p > x1` (channel `C0004` for this model), and saves the ranked table. In a fresh run, **30 of 1,925 histories** have numerical rates. The other histories come from the 13 production channels outside this selection. The page size limits the terminal preview. After Ctrl+C, repeat the command to resume verified work.
 
-Edit `input/particles.txt`, then give your model its own filename. The following command generates the catalogue and coefficient template. It overwrites its chosen destination on every invocation, without a backup.
+## 3. Check your result
+
+The **Run files** line prints the directory for this calculation, under `output/triplet_sextet_particles/<run-id>/`. Open `report.html` in a browser or `ranking.csv` for every history. For the direct decay `x1 → u u`, the reference values are:
+
+| Production cross section | Branching fraction | Cross section × BR |
+| ---: | ---: | ---: |
+| 1.1691955 ± 0.0045663 pb | 0.3392486 | 0.39664794 ± 0.00154912 pb |
+
+From the package directory, substitute the run directory printed on your machine:
 
 ```bash
-./run.sh init input/particles.txt --model "input/my scan.txt"
+python sample_output/compare.py "output/triplet_sextet_particles/<run-id>"
 ```
 
-Edit the switches, coefficients, stability declarations and collider settings in `input/my scan.txt`. Keep its generated `_metadata` reference and companion `.model_metadata/` directory together when moving the model. Then run these steps from the package directory.
+The comparison checks the discovered channels, decay histories, four total widths and ten partial widths. It allows for Monte Carlo integration uncertainty. The reference HTML and CSVs are in [sample_output/](sample_output/).
+
+## 4. Use your own filenames
+
+To start from new particle definitions, copy the particle file, edit its `X` and `Y`, and generate a model. A name such as `scan_particle_sextet.txt` generates `scan_model_sextet.txt` beside it. Use `--model` to choose any other destination filename. **Each `init` replaces its destination**, so give your own model a separate name.
 
 ```bash
-./run.sh inputs "input/my scan.txt"
-./run.sh validate "input/my scan.txt"
-./run.sh channels "input/my scan.txt"
+cp input/sample_particle_sextet.txt "input/my particles.txt"
+# Edit "input/my particles.txt", then generate its coefficient table.
+./run.sh init "input/my particles.txt" --model "input/my model.txt"
 ```
 
-`inputs` explains coefficient ordering and normalization. `validate` derives the spectrum under the fixed SM vacuum assumption of a 125 GeV Higgs and zero new-scalar VEVs. `channels` lists the channel IDs for this particular model. Pass an ID from that list to `rates --selected`, as in the example above. For histories before production integration use `./run.sh histories "input/my scan.txt" --page-size 5`. To integrate **all** discovered channels and run any configured explicit decay chains, use `./run.sh run "input/my scan.txt"`.
+Edit the operator switches, coefficients and stability declarations in `input/my model.txt`. Keep its `_metadata` line and the companion `input/.model_metadata/` folder. Use the same model path for subsequent commands:
 
-The model's `output` path is relative to the model file. To override it for a command, add `--output "scan results"` from the directory where you want the new results folder. The [terminal user guide](user_guide/Madgraph_step_User_Guide.pdf) has further examples.
+```bash
+./run.sh channels "input/my model.txt"
+./run.sh run "input/my model.txt"
+```
 
-### Interpreting a ranking
-
-Each row is a tree-level, narrow-width estimate for one production channel and complete decay history. Production multiplicity limits apply before the cascade decays. The supplied example uses two-body widths. The general adaptive decay defaults extend through four bodies with a 1% target. A full stored table can still omit physical decay contributions or loop-induced production. Inspect the omitted-probability and narrow-width flags, and keep overlapping histories separate. Dynamical scales can depend on the external particles, so a production-only and an explicit decayed process can use different numerical scales even with the same scale-choice number.
+`run` integrates all discovered production channels by default. To select one, use `rates --selected` with an ID from **your** channel list. For a scan that changes only coefficients, you can copy the prepared model under another name in the same directory and edit the copy directly. The [user guide](user_guide/Madgraph_step_User_Guide.pdf) covers the commands, output files and physics limits.
