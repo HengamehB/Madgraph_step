@@ -1,0 +1,67 @@
+name: Offline HTML report
+on:
+  pull_request:
+    paths:
+      - 'report_*.py'
+      - 'pipeline_reports.py'
+      - 'pipeline_cli.py'
+      - 'tests/test_html_report.py'
+      - 'ci/report_browser.py'
+      - 'user_guide/Madgraph_step_User_Guide.tex'
+      - '.github/workflows/html-report.yml'
+permissions:
+  contents: read
+jobs:
+  report:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build portable review examples
+        run: python tests/test_html_report.py --preview "$RUNNER_TEMP/report-preview"
+      - name: Check desktop, mobile, filters and print
+        run: python ci/report_browser.py "$RUNNER_TEMP/report-preview"
+      - name: Save HTML, data tables and layout previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report-preview
+          path: ${{ runner.temp }}/report-preview/
+      - name: Test public report refresh without a physics installation
+        run: python -m unittest discover -s tests -p test_html_report.py -v
+      - name: Install the package requirements on the runner
+        run: python -m pip install -r requirements.txt
+      - name: Run package regression suite
+        run: python -m unittest discover -s tests
+  guide:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Prepare LaTeX on the hosted runner
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends texlive-latex-extra lmodern poppler-utils > "$RUNNER_TEMP/latex-install.log"
+      - name: Build and inspect the user guide
+        working-directory: user_guide
+        run: |
+          pdflatex -interaction=nonstopmode -halt-on-error Madgraph_step_User_Guide.tex > "$RUNNER_TEMP/guide-pass1.log"
+          pdflatex -interaction=nonstopmode -halt-on-error Madgraph_step_User_Guide.tex > "$RUNNER_TEMP/guide-pass2.log"
+          pdftotext -layout Madgraph_step_User_Guide.pdf "$RUNNER_TEMP/guide.txt"
+          grep -F -- '--run-dir' "$RUNNER_TEMP/guide.txt"
+          if grep -F 'Overfull' Madgraph_step_User_Guide.log; then exit 1; fi
+          mkdir -p "$RUNNER_TEMP/report-guide"
+          pdfinfo Madgraph_step_User_Guide.pdf | grep '^Pages:'
+          pdftoppm -scale-to 650 -png Madgraph_step_User_Guide.pdf "$RUNNER_TEMP/report-guide/page"
+          cp Madgraph_step_User_Guide.pdf "$RUNNER_TEMP/report-guide/"
+      - name: Save the compiled guide and page proofs
+        uses: actions/upload-artifact@v4
+        with:
+          name: user-guide
+          path: ${{ runner.temp }}/report-guide/
