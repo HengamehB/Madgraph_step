@@ -32,7 +32,6 @@ def _show_history(row):
 def _save_input_failure(input_file, destination, error):
     """Retain diagnostics even when parsing fails before Pipeline can be built."""
     import hashlib
-    import html
     import re
     from pipeline_config import ROOT
     from pipeline_storage import RunStore, atomic_text, write_json
@@ -51,9 +50,8 @@ def _save_input_failure(input_file, destination, error):
             atomic_text(folder / ("input" + source.suffix), raw.decode("utf-8", errors="replace"))
         write_json(folder / "manifest.json", record)
         write_json(folder / "validation.json", record["failures"][0])
-        atomic_text(folder / "report.html", '<!doctype html><html lang="en"><meta charset="utf-8">'
-                    '<title>Input validation failed</title><h1>Input validation failed</h1><pre>'
-                    + html.escape(str(error)) + '</pre><p>No numerical calculation was started.</p></html>')
+        from report_view import write_report
+        write_report(folder, record)
     print("Input diagnostics:", folder, file=sys.stderr)
 
 
@@ -75,7 +73,7 @@ def _setup(args, model_file):
 
 def _main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("init", "setup", "validate", "run", "check", "configure-tools", "inputs", "ufo", "channels", "decays", "histories", "rates", "explicit-decays"))
+    parser.add_argument("action", choices=("report", "init", "setup", "validate", "run", "check", "configure-tools", "inputs", "ufo", "channels", "decays", "histories", "rates", "explicit-decays"))
     parser.add_argument("input_file", nargs="?", help="model path (defaults to .config); init defaults to input/particles.txt in the package")
     parser.add_argument("--input", dest="input_option", help="input file, as an alternative to the positional path")
     parser.add_argument("--model", help="init destination; defaults to my_model.txt beside the particle source")
@@ -86,7 +84,16 @@ def _main(argv=None):
     parser.add_argument('--page-size', type=int, default=100, help='history rows per page (1–1000; default 100)')
     parser.add_argument('--cursor', help='continue a saved history page without production integration')
     parser.add_argument('--report-page', action='store_true', help='save the selected bounded history page as HTML')
+    parser.add_argument('--run-dir', help='saved run directory for an offline HTML report')
     args = parser.parse_intermixed_args(argv)
+    if args.action == 'report':
+        if not args.run_dir or args.input_file or args.input_option or args.model or args.output or args.config or args.cursor or args.report_page or args.show_all or args.selected != 'all':
+            parser.error('Use report --run-dir "path/to/saved run" [--page-size N]')
+        from report_view import refresh_report
+        print('HTML report:', refresh_report(args.run_dir, limit=args.page_size))
+        return 0
+    if args.run_dir:
+        parser.error('--run-dir applies only to report')
     if args.input_file and args.input_option:
         parser.error("Pass either the positional input or --input, not both.")
     if not 1 <= args.page_size <= 1000:
