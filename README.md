@@ -29,6 +29,8 @@ wsl --list --verbose
 
 ## 2. Download the release and set up Python
 
+Source ZIP and tar.gz archives built from this revision include the example model, its metadata, the guide and the bundled physics tools. Use a Git clone for the project tests and CI scripts. The v0.1.0 tag predates these archive rules.
+
 From your macOS or Linux terminal, or your Ubuntu terminal on Windows, clone the tagged version. Access to a private repository requires a GitHub account with permission. You can also sign in on GitHub, download the release's **Source code (zip)**, extract it, and open a terminal in the extracted folder. [Release v0.1.0](https://github.com/HengamehB/Madgraph_step/releases/tag/v0.1.0)
 
 ```bash
