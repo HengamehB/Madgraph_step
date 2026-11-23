@@ -14,7 +14,7 @@ runs:
         wsl-version: 2
         wsl-shell-user: benchmark
         use-cache: false
-    - name: Verify WSL2 and download the exact source revision
+    - name: Verify WSL2 and prepare the full CI source revision
       shell: pwsh
       env:
         SOURCE_TOKEN: ${{ github.token }}
@@ -24,9 +24,21 @@ runs:
           throw "Expected Ubuntu-24.04 running under WSL version 2. Found $distros"
         }
         Write-Host $distros
-        $source = "$env:GITHUB_API_URL/repos/$env:GITHUB_REPOSITORY/tarball/$env:GITHUB_SHA"
-        $headers = @{ Authorization = "Bearer $env:SOURCE_TOKEN"; Accept = "application/vnd.github+json" }
-        Invoke-WebRequest -Uri $source -Headers $headers -OutFile (Join-Path $env:RUNNER_TEMP 'release.tar.gz')
+        # Archive Git objects with Linux modes and include the files used only by CI.
+        $PSNativeCommandUseErrorActionPreference = $true
+        $repository = Join-Path $env:RUNNER_TEMP 'wsl-ci-source.git'
+        git init --bare --quiet $repository
+        $env:CI_FETCH_HEADER = 'Authorization: Basic ' + [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes("x-access-token:$env:SOURCE_TOKEN"))
+        try {
+          git -C $repository --config-env=http.extraHeader=CI_FETCH_HEADER fetch --quiet --no-tags --depth=1 "$env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY.git" $env:GITHUB_SHA
+        } finally {
+          Remove-Item Env:CI_FETCH_HEADER
+        }
+        $revision = (git -C $repository rev-parse FETCH_HEAD).Trim()
+        if ($revision -ne $env:GITHUB_SHA) { throw 'Fetched revision differs from the requested CI commit' }
+        Set-Content -LiteralPath (Join-Path $repository 'info/attributes') -Value '* -export-ignore -export-subst' -Encoding ascii
+        $tar = Join-Path $env:RUNNER_TEMP 'wsl-ci-source.tar.gz'
+        git -C $repository archive --format=tar.gz --prefix=source/ "--output=$tar" $revision
     - name: Prepare the project and scientific toolchain inside WSL2
       shell: wsl-bash -u root {0}
       env:
@@ -38,8 +50,9 @@ runs:
         source /etc/os-release
         [[ $ID == ubuntu && $VERSION_ID == '24.04' ]]
         install -d /opt/madgraph-ci/source
-        tar -xzf "$RUNNER_TEMP/release.tar.gz" -C /opt/madgraph-ci/source --strip-components=1
-        rm -f -- "$RUNNER_TEMP/release.tar.gz"
+        tar -xzf "$RUNNER_TEMP/wsl-ci-source.tar.gz" -C /opt/madgraph-ci/source --strip-components=1
+        rm -f -- "$RUNNER_TEMP/wsl-ci-source.tar.gz"
         chown -R benchmark /opt/madgraph-ci/source
         cd /opt/madgraph-ci/source
+        test -f ci/run_benchmark.py && test -d tests
         bash .github/workflows/prepare-host.sh "$BENCHMARK_MODE"
