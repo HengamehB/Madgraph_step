@@ -15,7 +15,7 @@
             ],
             [
               "compiler_fingerprint",
-              "a15bda2685d72d40a99931ab988184c309a5c50780be866c73812f4754ef78b5"
+              "7938716385fbb1cf7aa95377f9241a0f424fcac9b7900c7f293f2ea4a8a5b7fd"
             ],
             [
               "catalogue_fingerprint",
@@ -98,67 +98,67 @@
                 "$dict": [
                   [
                     "X X†",
-                    "bed4578055b11b19ebb3d76d12d0fff432be553cece84cee8ac6ef55fb86977c"
+                    "fb206c7c3f29898d91972a61e1d635041d527c246e98e9f7f9ed1b98ee7b4090"
                   ],
                   [
                     "Y Y†",
-                    "3bcab0635a72277dccd7f6eef16ba83539e844863817fdc406b8a05fdd402f4a"
+                    "cb2753ed87ddc5c1b5f2f05937830a74367ec12a2b7a68e2456fccb528ac875d"
                   ],
                   [
                     "H H† X X†",
-                    "c274406963574a7bf3a7ce0376faba6fe70bd9e43b1956afa489491fedddacdb"
+                    "fa604b1dcd2e063d0092ede92faac4f2d3ed2dc29bbce1f016d07e0bfac97727"
                   ],
                   [
                     "H H† Y Y†",
-                    "0e647b6464411813000796b59394178e1646f9503356a1c38d33162366def070"
+                    "37b2f58fb63bea9c7ec26aa99bfa3e41542546d1e1a024be077ab8c9158ab495"
                   ],
                   [
                     "L Q Y†",
-                    "214dac0299602a54f9f417b7acde810a95f0e712e84ac64ecea289d219a91883"
+                    "007578ab42635ae0a45820c28e397aecee27edb8a61c401aebef916c30e6a1e3"
                   ],
                   [
                     "Q^2 X†",
-                    "4c5dfc4016a553dbfaada6d407345222c1a2a5376d3dd7ff78eeac1dfb486c91"
+                    "7f6a4afdfe28f7157cf020c82e10cef3fab04522ecce43209414395ccac8d37a"
                   ],
                   [
                     "Q^2 Y",
-                    "b2770ac6bb974bcb9041e26236fc98578681d515b1039f9b74786d9ac7d17ada"
+                    "4040f38dde3184d27f0bdd408af5cb292e0485f697828073724e03f828efd388"
                   ],
                   [
                     "X X† Y Y†",
-                    "84c3de2eef713317457f78bf1375cb68563d2e6d6747cd9e2477340381b1e50d"
+                    "2f0a3f14a4c3e0afd74ac37907de6a372baf9b2e70233f46ac836e2ddf60ae0d"
                   ],
                   [
                     "X X†^2 Y†",
-                    "6854092f1cba1f92f33afe1b9887d912506a85afbdb9de97e1e0c97bd1b85b5a"
+                    "b089c0f6ea948c98dca224bfc3814fd83fb15f7400ce066df90398d1e77d29d5"
                   ],
                   [
                     "X^2 X†^2",
-                    "623996600107ede3925297e3707f28e07cf38f7a645009c4f6391332b9b5d97f"
+                    "e2661351f7daaaa1cd2d3cfa05b0cedb73560c1b3b485c028c275ef21e58c1e8"
                   ],
                   [
                     "X^2 Y^2",
-                    "3f6f7d2405ba770d84a1a3d3bd81d209b5646c9f2e447fb894a2785a1c7696df"
+                    "6b53eee7ad975cec7b7764194ab111df9001e8750346a58dd79706231d537611"
                   ],
                   [
                     "Y dc† uc†",
-                    "4f7b1f2634015d12348a339025af60626c007b94fbd613981adb99e55cec0021"
+                    "cc688262a7bff98355acac017f801662262c0d794d266e187de58e4ceeaf844d"
                   ],
                   [
                     "Y ec uc",
-                    "4e0903ed78e5197fe62cf5eb4a55aedd5aeb4a0132ca72644369a30d899a203d"
+                    "8a1974b7010fdb5914e33ae815e1b7e5e9f2a331a4a19395a6d145487d63e1e6"
                   ],
                   [
                     "Y^2 Y†^2",
-                    "0f1c5ff23549ec54e2f5d0dc51635d168450ceba352339d6a5157c71864c020a"
+                    "441b1de9e38781f5b4fdb5b1257d11710b3c62dd8ac333529f8d12d8d407a9b2"
                   ],
                   [
                     "D(X) D(X†)",
-                    "b18cb8cb1d01506afbd6be292cb4379c7d181cc3eb008bcb82380bd54474cf08"
+                    "adcd2fbbdd1713058a3951a5f7f36c5d3a1b083c48302f59309115d3510c4e1e"
                   ],
                   [
                     "D(Y) D(Y†)",
-                    "ff3767af2a610bfc706aef7812363c5701cd3d22c0e120ab2aad95ba1ab5ef25"
+                    "c8805fc7197f025c0dcf502e612655c38000dfabfdf254183d11c196fbbcfabd"
                   ]
                 ]
               }
@@ -746,5 +746,5 @@
     ]
   },
   "schema": "madgraph-step-model-metadata-v1",
-  "sha256": "f654f1562a01384fe39cca46afcbb04528fe3da0eead30f826d89909d18d32e8"
+  "sha256": "a4802641da83fe42d7323774aa69b56ba239703bde486b2f6f7f3e7cbcab0a22"
 }
