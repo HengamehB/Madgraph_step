@@ -2,6 +2,9 @@
 
 Describe new particles and their operator coefficients in a text file. Madgraph_step constructs the Lagrangian, derives masses and mixing, exports a UFO with FeynRules, and uses MadGraph to rank production and decay histories by cross section × branching probability. Start with the included coloured-scalar model to check your installation.
 
+
+**See a real run.** The [sample output](sample_output/) includes the [HTML report](sample_output/report.html) and [full ranked CSV](sample_output/ranking.csv) from the archived macOS benchmark. To view the formatted report, extract the main ZIP and open `sample_output/report.html` in your browser.
+
 ## 1. Prepare your platform
 
 You need **Python 3.11**, a locally licensed **Mathematica or Wolfram Engine** kernel, GNU Fortran, a C++ compiler, Make, Bash and Perl. The repository includes the patched FeynRules 2.3.49, MadGraph5_aMC@NLO 3.7.3, and the nn23lo1 parton distribution grid used by the example. The terminal workflow requires NumPy and SciPy. Wolfram Service Credits are used only for the project's licensed GitHub tests. Your runs use your own kernel and license. [Bundled software and provenance](vendor/PROVENANCE.txt)

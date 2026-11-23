@@ -1,0 +1,101 @@
+{
+  "schema": "madgraph-step-run-v1",
+  "model": "Triplet–sextet benchmark",
+  "run_id": "macOS-45081434860",
+  "status": "partial",
+  "complete": false,
+  "requested_complete": true,
+  "requested_rates_complete": true,
+  "requested_scope": [
+    "C0004"
+  ],
+  "discovery_complete": true,
+  "export_complete": true,
+  "all_rates_complete": false,
+  "history_counts": {
+    "total": 1925,
+    "calculated": 30
+  },
+  "uncomputed_production_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013",
+    "C0014"
+  ],
+  "current_tables": {
+    "ranking": {
+      "csv": {
+        "path": "ranking.csv",
+        "sha256": "35d22d07343460abccd5dadf8bd0bdb814a360747ea2a297bf99a46d3bc44983",
+        "size_bytes": 1034872
+      }
+    },
+    "production_channels": {
+      "csv": {
+        "path": "production_channels.csv",
+        "sha256": "9e79a3725e7538a68bc14ddc2afc6e0eb9acc16790b5e31ee08ba937e9311a58",
+        "size_bytes": 566
+      }
+    },
+    "cross_sections": {
+      "csv": {
+        "path": "cross_sections.csv",
+        "sha256": "480b86d03a12c1222abfb17b8627fc0b5a7be319ebf3ad9126e1eefe4c85baee",
+        "size_bytes": 97
+      }
+    },
+    "total_widths": {
+      "csv": {
+        "path": "total_widths.csv",
+        "sha256": "756c6f24b69b82ea6ea75debce528a958e90ca6d3e76ba6e1a5a84613c603395",
+        "size_bytes": 128
+      }
+    },
+    "decays": {
+      "csv": {
+        "path": "decays.csv",
+        "sha256": "630c3c326df5316a6adaa7f1eda2046bb4fdc9f3a3e80acff325b652e9d06f61",
+        "size_bytes": 619
+      }
+    }
+  },
+  "settings": {
+    "collider": {
+      "energy_tev": 13.6,
+      "pdf": "nn23lo1",
+      "max_final": 2,
+      "new_particles_only": true,
+      "dynamical_scale_choice": 3,
+      "ptj": 20.0,
+      "ptl": 10.0,
+      "pta": 20.0,
+      "etaj": 5.0,
+      "etal": 2.5,
+      "etaa": 2.5,
+      "drjj": 0.4,
+      "drll": 0.4,
+      "drjl": 0.4,
+      "draa": 0.4,
+      "dral": 0.4
+    },
+    "decays": {
+      "max_body": 2,
+      "precision": 0.01,
+      "min_br": 1e-08
+    }
+  },
+  "report_notices": [
+    "This saved macOS benchmark integrated only the C0004 resonant production channel. The width tables contain four total widths and 10 checked two-body partial widths. The archive does not quantify omitted decay contributions."
+  ],
+  "source_run": "https://github.com/HengamehB/Madgraph_step/actions/runs/45081434860",
+  "source_ranking_sha256": "35d22d07343460abccd5dadf8bd0bdb814a360747ea2a297bf99a46d3bc44983"
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "O0001",
+    "field_content": "X X†",
+    "coefficient_dimension": 2,
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "coupling_parameters": "1 real before derivative relations"
+  },
+  {
+    "id": "O0002",
+    "field_content": "Y Y†",
+    "coefficient_dimension": 2,
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "coupling_parameters": "1 real before derivative relations"
+  },
+  {
+    "id": "O0003",
+    "field_content": "H H† X X†",
+    "coefficient_dimension": 0,
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "coupling_parameters": "2 real before derivative relations"
+  },
+  {
+    "id": "O0004",
+    "field_content": "H H† Y Y†",
+    "coefficient_dimension": 0,
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "coupling_parameters": "1 real before derivative relations"
+  },
+  {
+    "id": "O0006",
+    "field_content": "Q^2 X†",
+    "coefficient_dimension": 0,
+    "hc_relation": "add Hermitian conjugate",
+    "coupling_parameters": "6 complex before derivative relations"
+  },
+  {
+    "id": "O0008",
+    "field_content": "X X† Y Y†",
+    "coefficient_dimension": 0,
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "coupling_parameters": "2 real before derivative relations"
+  },
+  {
+    "id": "O0010",
+    "field_content": "X^2 X†^2",
+    "coefficient_dimension": 0,
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "coupling_parameters": "5 real before derivative relations"
+  },
+  {
+    "id": "O0013",
+    "field_content": "Y ec uc",
+    "coefficient_dimension": 0,
+    "hc_relation": "add Hermitian conjugate",
+    "coupling_parameters": "9 complex before derivative relations"
+  },
+  {
+    "id": "O0014",
+    "field_content": "Y^2 Y†^2",
+    "coefficient_dimension": 0,
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "coupling_parameters": "1 real before derivative relations"
+  },
+  {
+    "id": "O0015",
+    "field_content": "D(X) D(X†)",
+    "coefficient_dimension": 0,
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "coupling_parameters": "1 real before derivative relations"
+  },
+  {
+    "id": "O0016",
+    "field_content": "D(Y) D(Y†)",
+    "coefficient_dimension": 0,
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "coupling_parameters": "1 real before derivative relations"
+  }
+]
