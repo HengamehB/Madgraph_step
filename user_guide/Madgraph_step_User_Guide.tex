@@ -127,6 +127,12 @@ Copy the exact path printed next to \textbf{Run files}. With
 \bottomrule
 \end{tabularx}
 
+Open \code{report.html} to see the mass spectrum and enabled couplings, then production cross sections, widths and ranked decay histories. Final-state filters apply to the displayed page. Choose \textbf{Download ranked rates (CSV)} for all saved rows. To refresh a saved run, including one moved to another directory, use its run folder:
+\begin{lstlisting}
+./run.sh report --run-dir "path/to/saved run"
+\end{lstlisting}
+This reads saved results and writes HTML without running Mathematica or MadGraph.
+
 A blank rate means its production channel has no completed integration.
 These are tree-level, narrow-width estimates. Keep overlapping histories
 separate and check the report for omitted decay contributions.
