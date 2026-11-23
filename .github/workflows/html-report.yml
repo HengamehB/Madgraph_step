@@ -1,0 +1,38 @@
+name: Offline HTML report
+on:
+  push:
+    branches: [feature/offline-physics-report]
+  pull_request:
+    paths:
+      - 'report_*.py'
+      - 'pipeline_reports.py'
+      - 'pipeline_cli.py'
+      - 'tests/test_html_report.py'
+      - 'ci/report_browser.py'
+      - '.github/workflows/html-report.yml'
+permissions:
+  contents: read
+jobs:
+  report:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build portable review examples
+        run: python tests/test_html_report.py --preview "$RUNNER_TEMP/report-preview"
+      - name: Check desktop, mobile, filters and print
+        run: python ci/report_browser.py "$RUNNER_TEMP/report-preview"
+      - name: Save HTML, data tables and layout previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report-preview
+          path: ${{ runner.temp }}/report-preview/
+      - name: Test public report refresh without a physics installation
+        run: python -m unittest discover -s tests -p test_html_report.py -v
+      - name: Install the package requirements on the runner
+        run: python -m pip install -r requirements.txt
+      - name: Run package regression suite
+        run: python -m unittest discover -s tests
