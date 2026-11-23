@@ -387,42 +387,11 @@ def publish(project, *, status, selected='all', error=None):
                     all_rates_complete=getattr(project, 'all_rates_complete', project.complete),
                     selected_integrations_complete=getattr(project, 'selected_integrations_complete', False),
                     previous_results='previous_results/' if _safe_export_path(root, 'previous_results').is_dir() else None)
-    write_json(root / 'manifest.json', manifest)
-    heading = f"{project.inputs.get('model_name', 'Model')}: {status}"
-    body = ['<!doctype html><html lang="en"><meta charset="utf-8"><title>' + html.escape(heading) + '</title>',
-            '<style>body{font:16px system-ui;margin:2em;max-width:1200px;line-height:1.5}table{border-collapse:collapse;font-size:13px}td,th{border:1px solid #ddd;padding:.5em;text-align:left}.table{overflow:auto}code{background:#eee}a{color:#185abb}</style>',
-            '<h1>' + html.escape(heading) + '</h1>',
-            '<p>Tree-level production and decay histories, ordered by cross section × branching probability. '
-            'Different multiplicities and histories can overlap; rows must not be summed into an inclusive prediction.</p>',
-            '<p><a href="manifest.json">Completion manifest and settings</a> · '
-            '<a href="resolved_inputs.json">Resolved physical inputs</a> · <a href="lagrangian.tex">Lagrangian</a> · '
-            '<a href="spectrum.json">Spectrum and mixing</a> · <a href="validation.json">Validation</a></p>',
-            '<h2>Saved tables</h2><ul>']
-    body.extend('<li>' + html.escape(title) + ': <a href="' + html.escape(current_tables[name]['json']['path'], quote=True)
-                + '">JSON</a> · <a href="' + html.escape(current_tables[name]['csv']['path'], quote=True) + '">CSV</a></li>' for title, name in tables)
-    body.append('</ul>')
-    body.append(_vacuum_html(manifest['vacuum']))
-    if vacuum is not None:
-        body.append('<p><a href="vacuum_assumptions.json">Electroweak vacuum assumptions</a></p>')
-    if exported is not None:
-        body.append('<p><a href="' + html.escape(exported['files']['history_nodes.json']['path'], quote=True)
-                    + '">Complete decay DAG nodes (JSON)</a></p>')
+    from report_view import write_report
     if explicit is not None:
-        body.append('<p><a href="explicit_decay_results.json">Explicit decay-chain integration results</a></p>')
-    if failures:
-        body.extend(('<h2>Failures requiring attention</h2>', _table(failures, ('stage', 'channel', 'category', 'type', 'message'))))
-    if manifest['uncomputed_production_ids']:
-        body.append('<p>Uncomputed production channels: ' + html.escape(', '.join(manifest['uncomputed_production_ids'])) + '</p>')
-    if ranking is not None:
-        page = _page(ranking, min_relative_rate=project.config.ranking.get('min_relative_rate', 1e-4))
-        body.extend(('<h2>Ranked histories</h2>', _page_html(project, page),
-                     '<p>' + ('All rows, including uncalculated histories, are retained in the current full exports.' if exported is not None
-                              else 'Full exports are pending for this source revision. The indexed history database retains the current rows.') + '</p>',
-                     '<h2>Coverage and approximations</h2>',
-                     _table([dict(production_id=k, covered_probability=v, omitted_probability=ranking.omitted_probability[k]) for k, v in ranking.coverage.items()],
-                            ('production_id', 'covered_probability', 'omitted_probability')), '<ul>'))
-        body.extend('<li>' + html.escape(notice) + '</li>' for notice in ranking.notices)
-        body.append('</ul>')
-    body.extend(('<h2>Calculation settings</h2><pre>' + html.escape(str(manifest['settings'])) + '</pre>', '</html>'))
-    atomic_text(root / 'report.html', '\n'.join(body) + '\n')
+        manifest['explicit_results_file'] = 'explicit_decay_results.json'
+    if decays is not None:
+        manifest['report_notices'] = list(decays.coverage_notices)
+    write_json(root / 'manifest.json', manifest)
+    write_report(root, manifest)
     return manifest
