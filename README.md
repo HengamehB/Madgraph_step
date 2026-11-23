@@ -97,6 +97,14 @@ Open the directory printed after **Run files**. With `output = '../output'` in a
 
 `--page-size 5` controls terminal display. Every history is still saved. Press **Ctrl+C** to stop and repeat the same command to resume verified work. A different page size reuses the integration. A blank rate means the channel still needs a numerical calculation.
 
+Open **`report.html`** for the model spectrum, active couplings, production cross sections, widths and ranked decay histories. Choose **Download ranked rates (CSV)** for every saved history. Final-state filters apply only to the displayed page. A calculated zero is shown as `0` and a missing integration as **Not calculated**.
+
+To refresh the HTML for an existing or relocated run, use its run directory. This requires only Python and reads at most one ranking page.
+
+```bash
+./run.sh report --run-dir "path/to/saved run"
+```
+
 ## 5. Build your own model
 
 Edit `input/particles.txt`, then give your model its own filename. The following command generates the catalogue and coefficient template. It overwrites its chosen destination on every invocation, without a backup.
