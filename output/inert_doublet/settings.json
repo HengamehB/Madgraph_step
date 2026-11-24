@@ -1,0 +1,66 @@
+{
+  "collider": {
+    "accuracy": 0.01,
+    "draa": 0.4,
+    "draj": 0.4,
+    "dral": 0.4,
+    "drjj": 0.4,
+    "drjl": 0.4,
+    "drll": 0.4,
+    "dynamical_scale_choice": 3,
+    "energy_tev": 13.6,
+    "etaa": 2.5,
+    "etaj": 5.0,
+    "etal": 2.5,
+    "max_final": 2,
+    "max_tree_signatures": 250000,
+    "new_particles_only": true,
+    "parton_pdgs": [
+      21,
+      1,
+      -1,
+      2,
+      -2,
+      3,
+      -3,
+      4,
+      -4,
+      5,
+      -5
+    ],
+    "pdf": "nn23lo1",
+    "pta": 20.0,
+    "ptj": 20.0,
+    "ptl": 10.0,
+    "seed": 1
+  },
+  "decays": {
+    "max_body": 2,
+    "min_br": 1e-08,
+    "precision": 0.01
+  },
+  "explicit_decays": {
+    "bwcutoff": 15.0,
+    "cut_decays": false,
+    "history_ids": []
+  },
+  "ranking": {
+    "batch_size": 1000,
+    "max_depth": 12,
+    "max_render_nodes": 10000,
+    "max_width_mass_ratio": 0.01,
+    "memory_mb": 64,
+    "min_relative_rate": 0.0001,
+    "threshold_widths": 5.0
+  },
+  "runtime": {
+    "bash": "bash",
+    "cxx": "c++",
+    "feynrules": "../../vendor/FeynRules",
+    "fortran": "gfortran",
+    "madgraph": "../../vendor/MG5_aMC",
+    "make": "make",
+    "perl": "perl",
+    "wolfram_kernel": "WolframKernel"
+  }
+}

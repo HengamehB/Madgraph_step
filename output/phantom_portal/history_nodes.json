@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {"branching_ratio":1.0,"children":[],"final_counts":[[9000001,1]],"flags":[],"key":"ec136c572aa95f98878eb735427452b9d682f0fae27ded0d4102d005f98da8e6","node_id":1,"pdg":9000001}
+  ],
+  "source": {
+    "file_stat": {
+      "ctime_ns": 1795543487152384422,
+      "mtime_ns": 1795543487152384422,
+      "size_bytes": 57344
+    },
+    "fingerprint": "9e5e51576d0fd7ef1ee867821116d96103d262413f0367753da15184a1fccbe4",
+    "path": "histories/5c860d3859cab3d1941e/histories.sqlite",
+    "path_base": "run",
+    "revision": 4,
+    "schema": "madgraph-history-store-v2",
+    "sha256": "88524c366f6556e0f237465c6066821143606d0da8c62d89045d62be9d894056"
+  }
+}

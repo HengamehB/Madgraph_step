@@ -1,6 +1,7 @@
 /.config
 /.venv/
 /..config.lock
+# Published reference files in output/ are tracked. Ignore new local runs.
 /output/
 /runs/
 /ci-artifacts/

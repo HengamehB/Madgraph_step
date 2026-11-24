@@ -1,0 +1,87 @@
+{
+  "interpretation": "Only enabled entries enter the selected Lagrangian and numerical physics.",
+  "operators": {
+    "D(H) D(X†)": {
+      "coefficient": 0.0,
+      "enabled": false
+    },
+    "D(X) D(X†)": {
+      "coefficient": 1.0,
+      "enabled": true
+    },
+    "H H† X X†": {
+      "coefficient": [
+        -1.266813137468242,
+        0.633406568734121
+      ],
+      "enabled": true
+    },
+    "H H†^2 X": {
+      "coefficient": -0.01,
+      "enabled": false
+    },
+    "H X X†^2": {
+      "coefficient": -0.01,
+      "enabled": false
+    },
+    "H X†": {
+      "coefficient": 0.0,
+      "enabled": false
+    },
+    "H^2 X†^2": {
+      "coefficient": 0.3167032843670605,
+      "enabled": true
+    },
+    "L X† ec": {
+      "coefficient": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "enabled": false
+    },
+    "Q X uc": {
+      "coefficient": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "enabled": false
+    },
+    "Q X† dc": {
+      "coefficient": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "enabled": false
+    },
+    "X X†": {
+      "coefficient": -10000.0,
+      "enabled": true
+    },
+    "X^2 X†^2": {
+      "coefficient": -0.1,
+      "enabled": true
+    }
+  },
+  "schema": "operator-input-state-v1"
+}

@@ -1,0 +1,46 @@
+M$ModelName = "hlm_diquark";
+M$InteractionOrderHierarchy = {{QCD,1},{QED,2},{NP,1}};
+IndexRange[Index[pmJSWeak3]] = Unfold[Range[3]];
+pmJST3[Index[SU2W,a_Integer],Index[pmJSWeak3,b_Integer],Index[pmJSWeak3,c_Integer]] := pmJST3[a,b,c];
+pmJST3[1,1,1] = 0;
+pmJST3[1,1,2] = Sqrt[2]/2;
+pmJST3[1,1,3] = 0;
+pmJST3[1,2,1] = Sqrt[2]/2;
+pmJST3[1,2,2] = 0;
+pmJST3[1,2,3] = Sqrt[2]/2;
+pmJST3[1,3,1] = 0;
+pmJST3[1,3,2] = Sqrt[2]/2;
+pmJST3[1,3,3] = 0;
+pmJST3[2,1,1] = 0;
+pmJST3[2,1,2] = -I*Sqrt[2]/2;
+pmJST3[2,1,3] = 0;
+pmJST3[2,2,1] = I*Sqrt[2]/2;
+pmJST3[2,2,2] = 0;
+pmJST3[2,2,3] = -I*Sqrt[2]/2;
+pmJST3[2,3,1] = 0;
+pmJST3[2,3,2] = I*Sqrt[2]/2;
+pmJST3[2,3,3] = 0;
+pmJST3[3,1,1] = 1;
+pmJST3[3,1,2] = 0;
+pmJST3[3,1,3] = 0;
+pmJST3[3,2,1] = 0;
+pmJST3[3,2,2] = 0;
+pmJST3[3,2,3] = 0;
+pmJST3[3,3,1] = 0;
+pmJST3[3,3,2] = 0;
+pmJST3[3,3,3] = -1;
+IndexRange[Index[Sextet]] = NoUnfold[Range[6]];
+IndexStyle[Sextet,sx];
+AddGaugeRepresentation[{SU3C -> {T6,Sextet}}];
+M$ClassesDescription = {
+S[50001] == {ClassName -> pmJSP1, SelfConjugate -> False, Indices -> {Index[Sextet]},QuantumNumbers -> {Q -> 4/3}, Mass -> {pmJSM1,1000},Width -> {pmJSW1,0}, ParticleName -> "x1",AntiParticleName -> "x1bar",PDG -> 9700001, PropagatorLabel -> "x1", PropagatorType -> D,PropagatorArrow -> Forward},
+S[50002] == {ClassName -> pmJSP2, SelfConjugate -> False, Indices -> {Index[Sextet]},QuantumNumbers -> {Q -> 1/3}, Mass -> {pmJSM2,1000},Width -> {pmJSW2,0}, ParticleName -> "x2",AntiParticleName -> "x2bar",PDG -> 9700002, PropagatorLabel -> "x2", PropagatorType -> D,PropagatorArrow -> Forward},
+S[50003] == {ClassName -> pmJSP3, SelfConjugate -> False, Indices -> {Index[Sextet]},QuantumNumbers -> {Q -> -2/3}, Mass -> {pmJSM3,1000},Width -> {pmJSW3,0}, ParticleName -> "x3",AntiParticleName -> "x3bar",PDG -> 9700003, PropagatorLabel -> "x3", PropagatorType -> D,PropagatorArrow -> Forward},
+S[50004] == {ClassName -> pmJSU1, SelfConjugate -> False, Unphysical -> True,Indices -> {Index[pmJSWeak3],Index[Sextet]}, FlavorIndex -> pmJSWeak3, QuantumNumbers -> {Y -> 1/3},Definitions -> {pmJSU1[1,cc_] :> ((1)*pmJSP1[cc]),pmJSU1[2,cc_] :> ((1)*pmJSP2[cc]),pmJSU1[3,cc_] :> ((1)*pmJSP3[cc])}}
+};
+M$Parameters = {
+pmJSO0001n1 == {ParameterType -> Internal, Value -> -1000000, ComplexParameter -> False, Description -> "pmJSO0001n1"},
+pmCYO0003n1 == {ParameterType -> Internal, Value -> 0.2, ComplexParameter -> False, InteractionOrder -> {NP, 1}, Description -> "pmCYO0003n1"},
+pmJSO0005n1 == {ParameterType -> Internal, Value -> 1, ComplexParameter -> False, Description -> "pmJSO0005n1"}
+};
+LJointScalar := Block[{mu,cc,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,c22,c23}, ExpandIndices[pmJSO0001n1*(((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(((1)*pmJSP1[c1]))*(((1)*pmJSP1bar[c2]))+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(((1)*pmJSP2[c1]))*(((1)*pmJSP2bar[c2]))+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(((1)*pmJSP3[c1]))*(((1)*pmJSP3bar[c2]))))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(((1)*pmJSP1[c1]))*(((1)*pmJSP1bar[c2]))+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(((1)*pmJSP2[c1]))*(((1)*pmJSP2bar[c2]))+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(((1)*pmJSP3[c1]))*(((1)*pmJSP3bar[c2])))])/2) + (pmCYO0003n1*(1/2*K6[c3,c1,c2]*(Sqrt[2]*((1)*pmJSP1bar[c3])*ProjM[s1,s2]*CC[uqbar][s1,1,c1].uq[s2,1,c2]+1*CKM[1,1]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[uqbar][s1,1,c1].dq[s2,1,c2]+1*CKM[1,2]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[uqbar][s1,1,c1].dq[s2,2,c2]+1*CKM[1,3]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[uqbar][s1,1,c1].dq[s2,3,c2]+1*CKM[1,1]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,1,c1].uq[s2,1,c2]+1*CKM[1,2]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,2,c1].uq[s2,1,c2]+1*CKM[1,3]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,3,c1].uq[s2,1,c2]+Sqrt[2]*CKM[1,1]*CKM[1,1]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,1,c1].dq[s2,1,c2]+Sqrt[2]*CKM[1,1]*CKM[1,2]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,1,c1].dq[s2,2,c2]+Sqrt[2]*CKM[1,1]*CKM[1,3]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,1,c1].dq[s2,3,c2]+Sqrt[2]*CKM[1,2]*CKM[1,1]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,2,c1].dq[s2,1,c2]+Sqrt[2]*CKM[1,2]*CKM[1,2]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,2,c1].dq[s2,2,c2]+Sqrt[2]*CKM[1,2]*CKM[1,3]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,2,c1].dq[s2,3,c2]+Sqrt[2]*CKM[1,3]*CKM[1,1]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,3,c1].dq[s2,1,c2]+Sqrt[2]*CKM[1,3]*CKM[1,2]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,3,c1].dq[s2,2,c2]+Sqrt[2]*CKM[1,3]*CKM[1,3]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,3,c1].dq[s2,3,c2]))+HC[pmCYO0003n1*(1/2*K6[c3,c1,c2]*(Sqrt[2]*((1)*pmJSP1bar[c3])*ProjM[s1,s2]*CC[uqbar][s1,1,c1].uq[s2,1,c2]+1*CKM[1,1]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[uqbar][s1,1,c1].dq[s2,1,c2]+1*CKM[1,2]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[uqbar][s1,1,c1].dq[s2,2,c2]+1*CKM[1,3]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[uqbar][s1,1,c1].dq[s2,3,c2]+1*CKM[1,1]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,1,c1].uq[s2,1,c2]+1*CKM[1,2]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,2,c1].uq[s2,1,c2]+1*CKM[1,3]*((1)*pmJSP2bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,3,c1].uq[s2,1,c2]+Sqrt[2]*CKM[1,1]*CKM[1,1]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,1,c1].dq[s2,1,c2]+Sqrt[2]*CKM[1,1]*CKM[1,2]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,1,c1].dq[s2,2,c2]+Sqrt[2]*CKM[1,1]*CKM[1,3]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,1,c1].dq[s2,3,c2]+Sqrt[2]*CKM[1,2]*CKM[1,1]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,2,c1].dq[s2,1,c2]+Sqrt[2]*CKM[1,2]*CKM[1,2]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,2,c1].dq[s2,2,c2]+Sqrt[2]*CKM[1,2]*CKM[1,3]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,2,c1].dq[s2,3,c2]+Sqrt[2]*CKM[1,3]*CKM[1,1]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,3,c1].dq[s2,1,c2]+Sqrt[2]*CKM[1,3]*CKM[1,2]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,3,c1].dq[s2,2,c2]+Sqrt[2]*CKM[1,3]*CKM[1,3]*((1)*pmJSP3bar[c3])*ProjM[s1,s2]*CC[dqbar][s1,3,c1].dq[s2,3,c2]))]) + pmJSO0005n1*(((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*((1)*DC[pmJSU1[1,c1],mu])*((1)*DC[pmJSU1bar[1,c2],mu])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*((1)*DC[pmJSU1[2,c1],mu])*((1)*DC[pmJSU1bar[2,c2],mu])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*((1)*DC[pmJSU1[3,c1],mu])*((1)*DC[pmJSU1bar[3,c2],mu])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*((1)*DC[pmJSU1[1,c1],mu])*((1)*DC[pmJSU1bar[1,c2],mu])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*((1)*DC[pmJSU1[2,c1],mu])*((1)*DC[pmJSU1bar[2,c2],mu])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*((1)*DC[pmJSU1[3,c1],mu])*((1)*DC[pmJSU1bar[3,c2],mu]))])/2), FlavorExpand -> {SU2D,SU2W,pmJSWeak3}]];

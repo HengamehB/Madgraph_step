@@ -1,0 +1,32 @@
+[
+  {
+    "name": "t",
+    "omitted_probability": 0.0,
+    "pdg": 6,
+    "width_gev": 1.466877
+  },
+  {
+    "name": "z",
+    "omitted_probability": 0.0,
+    "pdg": 23,
+    "width_gev": 2.411596
+  },
+  {
+    "name": "w+",
+    "omitted_probability": 0.0,
+    "pdg": 24,
+    "width_gev": 2.002524
+  },
+  {
+    "name": "h",
+    "omitted_probability": 3.3793999999999997e-09,
+    "pdg": 25,
+    "width_gev": 0.006339043
+  },
+  {
+    "name": "x",
+    "omitted_probability": 0.0,
+    "pdg": 9000001,
+    "width_gev": 0.0
+  }
+]

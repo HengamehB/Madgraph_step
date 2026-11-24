@@ -1,0 +1,240 @@
+{
+  "all_rates_complete": false,
+  "artifact_schema": "madgraph-step-artifact-v1",
+  "cache_rejections": [],
+  "complete": false,
+  "current_tables": {
+    "cross_sections": {
+      "csv": {
+        "path": "cross_sections.csv",
+        "sha256": "9424f0ffa457c8c8c57f940966a47b14813589a43ba756bf5fcf68c3a1de4663",
+        "size_bytes": 49
+      },
+      "json": {
+        "path": "cross_sections.json",
+        "sha256": "64bfef4bfbfeb29319b4254956c3baefc1f6641d2481fe3d988da580ce354951",
+        "size_bytes": 8711
+      }
+    },
+    "decays": {
+      "csv": {
+        "path": "decays.csv",
+        "sha256": "a6b98bad3fb98851574afae0fe39ba7a6a2bce0c54282dd0d796c7a92166cda0",
+        "size_bytes": 34792
+      },
+      "json": {
+        "path": "decays.json",
+        "sha256": "00b34332d8886a866eaf803557eda9dddbcae622cfbee85128565d0f4bfdeb40",
+        "size_bytes": 54769
+      }
+    },
+    "production_channels": {
+      "csv": {
+        "path": "production_channels.csv",
+        "sha256": "b417c308340a5f2c0e394fbe14fc28c3942798eddc31d7efde31fa3959c324e3",
+        "size_bytes": 72
+      },
+      "json": {
+        "path": "production_channels.json",
+        "sha256": "8c34faabb2b507a666bd8adc1fb037c4c2ef98cf69d1a2849f3709fba9a83077",
+        "size_bytes": 87
+      }
+    },
+    "ranking": {
+      "csv": {
+        "path": "ranking.csv",
+        "sha256": "ea75a2e432a7b4340ae91fea34ce302604f75ae4e341e2b5ef5fdf33837816bc",
+        "size_bytes": 446
+      },
+      "json": {
+        "path": "ranking.json",
+        "sha256": "211d755a32c9561a0bec220fe07095aaeaea334660e7af1fe44bc31ef4da8363",
+        "size_bytes": 2787
+      }
+    },
+    "total_widths": {
+      "csv": {
+        "path": "total_widths.csv",
+        "sha256": "4f39c3c156291dc43f70c8d23d5a07854e90ed0d8aeac4277338e35fc3e0f804",
+        "size_bytes": 157
+      },
+      "json": {
+        "path": "total_widths.json",
+        "sha256": "39d0666d34b5f63e687ea2682577427f7cb2023538d3cb8217a8835fcc4b509d",
+        "size_bytes": 520
+      }
+    }
+  },
+  "discovery_complete": true,
+  "explicit_results_file": "explicit_decay_results.json",
+  "export_complete": true,
+  "failures": [],
+  "history_counts": {
+    "calculated": 0,
+    "discovery_complete": true,
+    "fingerprint": "9e5e51576d0fd7ef1ee867821116d96103d262413f0367753da15184a1fccbe4",
+    "revision": 4,
+    "total": 1
+  },
+  "history_exports": {
+    "complete": true,
+    "counts": {
+      "calculated": 0,
+      "discovery_complete": true,
+      "fingerprint": "9e5e51576d0fd7ef1ee867821116d96103d262413f0367753da15184a1fccbe4",
+      "revision": 4,
+      "total": 1
+    },
+    "files": {
+      "history_nodes.json": {
+        "path": "history_nodes.json",
+        "sha256": "3e7739c677a4167fdff209549090d78f6e8d32cd32beb2dc6a368d8d8b629bef",
+        "size_bytes": 668
+      },
+      "ranking.csv": {
+        "path": "ranking.csv",
+        "sha256": "ea75a2e432a7b4340ae91fea34ce302604f75ae4e341e2b5ef5fdf33837816bc",
+        "size_bytes": 446
+      },
+      "ranking.json": {
+        "path": "ranking.json",
+        "sha256": "211d755a32c9561a0bec220fe07095aaeaea334660e7af1fe44bc31ef4da8363",
+        "size_bytes": 2787
+      }
+    },
+    "identity": "2b5f5380672ddaccdce6996628f5b6859f6103d7a2a59542f7c74d96abc7d3e6",
+    "schema": "history-exports-v1",
+    "source": {
+      "fingerprint": "9e5e51576d0fd7ef1ee867821116d96103d262413f0367753da15184a1fccbe4",
+      "path": "histories/5c860d3859cab3d1941e/histories.sqlite",
+      "path_base": "run",
+      "revision": 4,
+      "schema": "madgraph-history-store-v2",
+      "sha256": "88524c366f6556e0f237465c6066821143606d0da8c62d89045d62be9d894056",
+      "size_bytes": 57344
+    }
+  },
+  "history_store": {
+    "fingerprint": "9e5e51576d0fd7ef1ee867821116d96103d262413f0367753da15184a1fccbe4",
+    "path": "histories/5c860d3859cab3d1941e/histories.sqlite",
+    "path_base": "run",
+    "revision": 4,
+    "schema": "madgraph-history-store-v2",
+    "sha256": "88524c366f6556e0f237465c6066821143606d0da8c62d89045d62be9d894056",
+    "size_bytes": 57344
+  },
+  "input_file": "input.txt",
+  "model": "phantom_portal",
+  "physics_fingerprint": "b5d34a1f616845fd20d1baafb527aecdae12234c752bf18f7775a43721de3f8a",
+  "previous_results": null,
+  "publication": {
+    "kind": "benchmark result snapshot",
+    "paths_relative_to": "this run directory",
+    "source": "original completed benchmark run",
+    "table_checksums": "published bytes"
+  },
+  "report_notices": [
+    "Reported decay rows omit modes below min_br; omitted_probability records their summed BR for each parent. The SLHA card and total widths retain those modes.",
+    "Adaptive precision and the maximum body multiplicity can leave uncomputed contributions. Their probability is unknown; reported BRs use the computed total, not a guaranteed physical total."
+  ],
+  "requested_complete": false,
+  "requested_rates_complete": false,
+  "requested_scope": "all",
+  "run_id": "b5d34a1f616845fd20d1",
+  "schema": "madgraph-step-run-v1",
+  "selected_integrations_complete": true,
+  "settings": {
+    "collider": {
+      "accuracy": 0.01,
+      "draa": 0.4,
+      "draj": 0.4,
+      "dral": 0.4,
+      "drjj": 0.4,
+      "drjl": 0.4,
+      "drll": 0.4,
+      "dynamical_scale_choice": 3,
+      "energy_tev": 13.6,
+      "etaa": 2.5,
+      "etaj": 5.0,
+      "etal": 2.5,
+      "max_final": 2,
+      "max_tree_signatures": 250000,
+      "new_particles_only": true,
+      "parton_pdgs": [
+        21,
+        1,
+        -1,
+        2,
+        -2,
+        3,
+        -3,
+        4,
+        -4,
+        5,
+        -5
+      ],
+      "pdf": "nn23lo1",
+      "pta": 20.0,
+      "ptj": 20.0,
+      "ptl": 10.0,
+      "seed": 1
+    },
+    "decays": {
+      "max_body": 2,
+      "min_br": 1e-08,
+      "precision": 0.01
+    },
+    "explicit_decays": {
+      "bwcutoff": 15.0,
+      "cut_decays": false,
+      "history_ids": []
+    },
+    "ranking": {
+      "batch_size": 1000,
+      "max_depth": 12,
+      "max_render_nodes": 10000,
+      "max_width_mass_ratio": 0.01,
+      "memory_mb": 64,
+      "min_relative_rate": 0.0001,
+      "threshold_widths": 5.0
+    }
+  },
+  "stage_fingerprints": {
+    "channels": "c14f0d5346e00de7a7ca1ad5acc6a5e3f227d90acc77835ffe5fb74cba2c70a2",
+    "decays": "6c1a22413c4297a9c008238363438a510d4b5f1d6f8601ccfd571393ca9cbcd8",
+    "explicit_decays": "053d44e9c60f08d5828194f4ad9604748c65cfaef70952b1becd3e8432b3dc1b",
+    "export": "058187c2a15cd6d2b2d025625a60213cdbaeb10dd59115eb1e844bbf076645a6",
+    "histories": "5c860d3859cab3d1941e33713e4453fb63b953f5ec3662fa64be7c9e9a96bf89",
+    "rates": "ae0fbb2ffc9aded410c587bf66c62fbb71b70e5fb258e11501ff9e86312677e8"
+  },
+  "status": "histories_complete",
+  "uncomputed_production_ids": [
+    "C0001"
+  ],
+  "updated_at": "2026-11-24T18:04:47.309954+00:00",
+  "vacuum": {
+    "analysis": "fixed_sm",
+    "assumptions": {
+      "higgs_mass_gev": 125.0,
+      "higgs_mixing": false,
+      "higgs_vev_gev": 246.22056907348588,
+      "lambda_h": 0.12886689630821146,
+      "mu_h_squared": 7812.5,
+      "scalar_vevs": {
+        "X": 0.0
+      }
+    },
+    "boundedness": "not_evaluated",
+    "global_minimum": null,
+    "loop_stability": "not_evaluated",
+    "potential_minimized": false,
+    "schema": "fixed-sm-v1",
+    "search_complete": false,
+    "status": "assumed_fixed_sm",
+    "vacuum_lifetime": "not_evaluated",
+    "warnings": [
+      "The SM electroweak vacuum and zero new-scalar VEVs are assumed; the scalar potential is not minimized. Global stability, boundedness and vacuum lifetime are not established."
+    ]
+  },
+  "vacuum_status": "assumed_fixed_sm"
+}

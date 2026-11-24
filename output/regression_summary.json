@@ -1,0 +1,76 @@
+{
+  "reference_commit": "0682bcd811296d30e999077b1ef097ad215f3d50",
+  "scope": "Full Python regression suite of the reference commit in isolated development checkouts with Python 3.11 in projAI. The local runs use the installed runtime source and vendor trees; the source archive omits the development suite. The development Makefile was retained for archive tests.",
+  "original_local_compiler_fingerprint": "a15bda2685d72d40a99931ab988184c309a5c50780be866c73812f4754ef78b5",
+  "benchmark_compiler_fingerprint": "3ea030404748c216c13c6a8712844a472b66107aab3af7085e283af5b5fdef08",
+  "historical_expectation": "The historical test asserted that L Q X\u2020 must be rejected. In the updated scratch suite its unrelated-operator rejection uses X dc\u2020 uc\u2020; separate BRW regressions verify the now supported L Q X\u2020 interaction. Archived local outputs were preserved.",
+  "full_suite_comparison": "The final local suite has the same three failures and seven error records as the reconstructed original local runtime. These cover generated-UFO error reporting, executable discovery and launcher/configuration differences from the newer GitHub checkout. Four opt-in tests were skipped.",
+  "results": {
+    "published_suite_unmodified": {
+      "run": "Ran 414 tests in 46.335s",
+      "result": "OK (skipped=4)",
+      "failed_checks": []
+    },
+    "local_before_benchmarks": {
+      "run": "Ran 414 tests in 45.383s",
+      "result": "FAILED (failures=3, errors=7, skipped=4)",
+      "failed_checks": [
+        "ERROR: test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print (test_feynrules_resource_limits.UFOExportDiagnosticsTests.test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print) (prefix='# UFO header\\n')",
+        "ERROR: test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print (test_feynrules_resource_limits.UFOExportDiagnosticsTests.test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print) (prefix='print \"legacy header\"\\n')",
+        "ERROR: test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken (test_feynrules_resource_limits.WolframResourceLimitTests.test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken) (trace=None)",
+        "ERROR: test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken (test_feynrules_resource_limits.WolframResourceLimitTests.test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken) (trace='{')",
+        "ERROR: test_export_surfaces_first_unclassified_leg_even_if_kernel_returns_zero (test_feynrules_resource_limits.WolframResourceLimitTests.test_export_surfaces_first_unclassified_leg_even_if_kernel_returns_zero)",
+        "ERROR: test_linux_products_and_numeric_version_order (test_release_portability.ToolDiscoveryTests.test_linux_products_and_numeric_version_order)",
+        "ERROR: test_mac_engine_and_user_applications_with_spaces (test_release_portability.ToolDiscoveryTests.test_mac_engine_and_user_applications_with_spaces)",
+        "FAIL: test_can_edit_missing_tool_when_other_paths_are_unchanged (test_release_portability.ConfigurationTests.test_can_edit_missing_tool_when_other_paths_are_unchanged)",
+        "FAIL: test_cancel_missing_tools_preserves_original (test_release_portability.ConfigurationTests.test_cancel_missing_tools_preserves_original)",
+        "FAIL: test_python3_fallback_and_arguments_with_spaces (test_release_portability.LauncherTests.test_python3_fallback_and_arguments_with_spaces)"
+      ]
+    },
+    "local_after_with_historical_expectation": {
+      "run": "Ran 416 tests in 44.865s",
+      "result": "FAILED (failures=4, errors=7, skipped=4)",
+      "failed_checks": [
+        "ERROR: test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print (test_feynrules_resource_limits.UFOExportDiagnosticsTests.test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print) (prefix='# UFO header\\n')",
+        "ERROR: test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print (test_feynrules_resource_limits.UFOExportDiagnosticsTests.test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print) (prefix='print \"legacy header\"\\n')",
+        "ERROR: test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken (test_feynrules_resource_limits.WolframResourceLimitTests.test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken) (trace=None)",
+        "ERROR: test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken (test_feynrules_resource_limits.WolframResourceLimitTests.test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken) (trace='{')",
+        "ERROR: test_export_surfaces_first_unclassified_leg_even_if_kernel_returns_zero (test_feynrules_resource_limits.WolframResourceLimitTests.test_export_surfaces_first_unclassified_leg_even_if_kernel_returns_zero)",
+        "ERROR: test_linux_products_and_numeric_version_order (test_release_portability.ToolDiscoveryTests.test_linux_products_and_numeric_version_order)",
+        "ERROR: test_mac_engine_and_user_applications_with_spaces (test_release_portability.ToolDiscoveryTests.test_mac_engine_and_user_applications_with_spaces)",
+        "FAIL: test_unrelated_contractions_keep_their_diagnostics (test_benchmark_yukawa.ColourYukawaTests.test_unrelated_contractions_keep_their_diagnostics) (label='L Q X\u2020')",
+        "FAIL: test_can_edit_missing_tool_when_other_paths_are_unchanged (test_release_portability.ConfigurationTests.test_can_edit_missing_tool_when_other_paths_are_unchanged)",
+        "FAIL: test_cancel_missing_tools_preserves_original (test_release_portability.ConfigurationTests.test_cancel_missing_tools_preserves_original)",
+        "FAIL: test_python3_fallback_and_arguments_with_spaces (test_release_portability.LauncherTests.test_python3_fallback_and_arguments_with_spaces)"
+      ]
+    },
+    "local_after_with_current_expectation": {
+      "run": "Ran 418 tests in 44.584s",
+      "result": "FAILED (failures=3, errors=7, skipped=4)",
+      "failed_checks": [
+        "ERROR: test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print (test_feynrules_resource_limits.UFOExportDiagnosticsTests.test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print) (prefix='# UFO header\\n')",
+        "ERROR: test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print (test_feynrules_resource_limits.UFOExportDiagnosticsTests.test_broken_ufo_keeps_filename_line_and_source_before_and_after_legacy_print) (prefix='print \"legacy header\"\\n')",
+        "ERROR: test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken (test_feynrules_resource_limits.WolframResourceLimitTests.test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken) (trace=None)",
+        "ERROR: test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken (test_feynrules_resource_limits.WolframResourceLimitTests.test_export_preserves_raw_leg_from_log_if_trace_is_missing_or_broken) (trace='{')",
+        "ERROR: test_export_surfaces_first_unclassified_leg_even_if_kernel_returns_zero (test_feynrules_resource_limits.WolframResourceLimitTests.test_export_surfaces_first_unclassified_leg_even_if_kernel_returns_zero)",
+        "ERROR: test_linux_products_and_numeric_version_order (test_release_portability.ToolDiscoveryTests.test_linux_products_and_numeric_version_order)",
+        "ERROR: test_mac_engine_and_user_applications_with_spaces (test_release_portability.ToolDiscoveryTests.test_mac_engine_and_user_applications_with_spaces)",
+        "FAIL: test_can_edit_missing_tool_when_other_paths_are_unchanged (test_release_portability.ConfigurationTests.test_can_edit_missing_tool_when_other_paths_are_unchanged)",
+        "FAIL: test_cancel_missing_tools_preserves_original (test_release_portability.ConfigurationTests.test_cancel_missing_tools_preserves_original)",
+        "FAIL: test_python3_fallback_and_arguments_with_spaces (test_release_portability.LauncherTests.test_python3_fallback_and_arguments_with_spaces)"
+      ]
+    },
+    "focused_in_local_package": {
+      "run": "Ran 5 tests in 0.937s, including the additional complex off-diagonal octet regression",
+      "result": "OK",
+      "failed_checks": []
+    }
+  },
+  "release_validation": {
+    "version": "v0.2.0",
+    "base_main": "86bd3b5783b4983381c947996bc27b693aa24e99",
+    "make_test": "passed (421 tests, four opt-in skips); fast CLI benchmark passed",
+    "physics_source_check": "The release validated the five model files, reproduced their saved spectra and generated all ten FeynRules source files byte-for-byte as in the measured runs.",
+    "scope": "Earlier local_* entries below describe the Mac installation used for the saved calculations."
+  }
+}

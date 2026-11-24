@@ -1,0 +1,117 @@
+{
+  "coefficients": {
+    "D(X) D(X†)": {
+      "binding": "75a355ad84192cfbf6bab4c702b7743a7c57e176970efa0a80d7e71b24bc06ad",
+      "enabled": true,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Canonical scalar norm projected onto the displayed invariant basis.",
+      "role": "kinetic",
+      "units": "dimensionless",
+      "value": 1.0
+    },
+    "H H† X X†": {
+      "binding": "ce28480725210b25c0b5051d6fe53588f00b060c6a6075095989a80809f801d9",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "dimensionless",
+      "value": [
+        -2.5,
+        0.5
+      ]
+    },
+    "H X X†^2": {
+      "binding": "981c1fb7077912fb1e027510a9eaa2e64974d3bf99f50d8c62a4c52a97fbe1a1",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.",
+      "role": "quartic",
+      "units": "dimensionless",
+      "value": [
+        -0.01,
+        -0.01
+      ]
+    },
+    "H^2 X†^2": {
+      "binding": "8322c535d5b15f6eb5c5d8695f4bd0b603b8e77ce46c696be27e4c6eb4d49e10",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "dimensionless",
+      "value": -0.5
+    },
+    "Q X uc": {
+      "binding": "3b4650bf62a705bae629341d46dc516be9a4686159dce736038ec9cf4271726b",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "dimensionless",
+      "value": [
+        1.4646398542662327e-05,
+        0,
+        0,
+        0,
+        0.00729448084281614,
+        0,
+        0,
+        0,
+        0.9879139409168315
+      ]
+    },
+    "Q X† dc": {
+      "binding": "0907c54cca155eaaaa7249bf8ffc2939cabc942f6c07654350e93fa59064d065",
+      "enabled": false,
+      "origin": "unresolved",
+      "profile": "coefficient-seeds-v1",
+      "reason": "compiler gap: this nonzero fermion or derivative family needs joint Lorentz lowering",
+      "role": "interaction",
+      "units": "dimensionless",
+      "value": null
+    },
+    "X X†": {
+      "binding": "0f6e6349a8a9b4717d17295c17614ea73841978cb4da6b39a1e8d11545fb523e",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "GeV^2",
+      "value": -562500.0
+    },
+    "X^2 X†^2": {
+      "binding": "0e9ee20371eb96cf52d200a1f175cf76c59b2480c4643b130f647a9fb1a84f6a",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.",
+      "role": "quartic",
+      "units": "dimensionless",
+      "value": [
+        -0.01,
+        -0.01,
+        -0.01,
+        -0.01,
+        -0.01,
+        -0.01
+      ]
+    }
+  },
+  "defaults": {
+    "sm_inputs": {
+      "Gf": {
+        "origin": "explicit",
+        "value": 1.16637e-05
+      },
+      "MZ": {
+        "origin": "explicit",
+        "value": 91.1876
+      },
+      "aEWM1": {
+        "origin": "explicit",
+        "value": 127.9
+      }
+    },
+    "stable_particles": {
+      "origin": "explicit",
+      "value": []
+    }
+  },
+  "profile": "coefficient-seeds-v1",
+  "schema": "model-input-origins-v1"
+}

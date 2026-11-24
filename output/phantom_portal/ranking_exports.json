@@ -1,0 +1,38 @@
+{
+  "complete": true,
+  "counts": {
+    "calculated": 0,
+    "discovery_complete": true,
+    "fingerprint": "9e5e51576d0fd7ef1ee867821116d96103d262413f0367753da15184a1fccbe4",
+    "revision": 4,
+    "total": 1
+  },
+  "files": {
+    "history_nodes.json": {
+      "path": "history_nodes.json",
+      "sha256": "3e7739c677a4167fdff209549090d78f6e8d32cd32beb2dc6a368d8d8b629bef",
+      "size_bytes": 668
+    },
+    "ranking.csv": {
+      "path": "ranking.csv",
+      "sha256": "ea75a2e432a7b4340ae91fea34ce302604f75ae4e341e2b5ef5fdf33837816bc",
+      "size_bytes": 446
+    },
+    "ranking.json": {
+      "path": "ranking.json",
+      "sha256": "211d755a32c9561a0bec220fe07095aaeaea334660e7af1fe44bc31ef4da8363",
+      "size_bytes": 2787
+    }
+  },
+  "identity": "2b5f5380672ddaccdce6996628f5b6859f6103d7a2a59542f7c74d96abc7d3e6",
+  "schema": "history-exports-v1",
+  "source": {
+    "fingerprint": "9e5e51576d0fd7ef1ee867821116d96103d262413f0367753da15184a1fccbe4",
+    "path": "histories/5c860d3859cab3d1941e/histories.sqlite",
+    "path_base": "run",
+    "revision": 4,
+    "schema": "madgraph-history-store-v2",
+    "sha256": "88524c366f6556e0f237465c6066821143606d0da8c62d89045d62be9d894056",
+    "size_bytes": 57344
+  }
+}

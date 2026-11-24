@@ -1,0 +1,170 @@
+{
+  "coordinates": {
+    "fields": [
+      {
+        "hypercharge": "1/3",
+        "kind": "complex",
+        "name": "X",
+        "spin": "scalar",
+        "su2": 3,
+        "su3": [
+          2,
+          0
+        ]
+      }
+    ],
+    "flat_fields": [
+      {
+        "hypercharge": "4/3",
+        "kind": "complex",
+        "name": "XW0",
+        "spin": "scalar",
+        "su2": 1,
+        "su3": [
+          2,
+          0
+        ]
+      },
+      {
+        "hypercharge": "1/3",
+        "kind": "complex",
+        "name": "XW1",
+        "spin": "scalar",
+        "su2": 1,
+        "su3": [
+          2,
+          0
+        ]
+      },
+      {
+        "hypercharge": "-2/3",
+        "kind": "complex",
+        "name": "XW2",
+        "spin": "scalar",
+        "su2": 1,
+        "su3": [
+          2,
+          0
+        ]
+      }
+    ],
+    "labels": {
+      "XW0": "X1",
+      "XW1": "X2",
+      "XW2": "X3"
+    },
+    "raw_maps": {
+      "('X', 0)": {
+        "XW0": 1.0
+      },
+      "('X', 1)": {
+        "XW1": 1.0
+      },
+      "('X', 2)": {
+        "XW2": 1.0
+      },
+      "('X†', 0)": {
+        "XW0†": {
+          "imag": -0.0,
+          "real": 1.0
+        }
+      },
+      "('X†', 1)": {
+        "XW1†": {
+          "imag": -0.0,
+          "real": 1.0
+        }
+      },
+      "('X†', 2)": {
+        "XW2†": {
+          "imag": -0.0,
+          "real": 1.0
+        }
+      }
+    },
+    "sources": {
+      "XW0": "X",
+      "XW1": "X",
+      "XW2": "X"
+    }
+  },
+  "masses": {
+    "H": 125.0,
+    "X1": 1000.0,
+    "X2": 1000.0,
+    "X3": 1000.0
+  },
+  "raw_field_basis": {
+    "('X', 0)": {
+      "(0, False)": {
+        "imag": 0.0,
+        "real": 1.0
+      }
+    },
+    "('X', 1)": {
+      "(1, False)": {
+        "imag": 0.0,
+        "real": 1.0
+      }
+    },
+    "('X', 2)": {
+      "(2, False)": {
+        "imag": 0.0,
+        "real": 1.0
+      }
+    },
+    "('X†', 0)": {
+      "(0, True)": {
+        "imag": 0.0,
+        "real": 1.0
+      }
+    },
+    "('X†', 1)": {
+      "(1, True)": {
+        "imag": 0.0,
+        "real": 1.0
+      }
+    },
+    "('X†', 2)": {
+      "(2, True)": {
+        "imag": 0.0,
+        "real": 1.0
+      }
+    }
+  },
+  "scalar_basis": null,
+  "scalar_states": [
+    {
+      "charge": "4/3",
+      "label": "X1",
+      "mass": 1000.0,
+      "name": "x1",
+      "real": false,
+      "rep": 6,
+      "source": "X"
+    },
+    {
+      "charge": "1/3",
+      "label": "X2",
+      "mass": 1000.0,
+      "name": "x2",
+      "real": false,
+      "rep": 6,
+      "source": "X"
+    },
+    {
+      "charge": "-2/3",
+      "label": "X3",
+      "mass": 1000.0,
+      "name": "x3",
+      "real": false,
+      "rep": 6,
+      "source": "X"
+    }
+  ],
+  "transformation": [
+    [{"imag":0.0,"real":1.0},{"imag":0.0,"real":0.0},{"imag":0.0,"real":0.0}],
+    [{"imag":0.0,"real":0.0},{"imag":0.0,"real":1.0},{"imag":0.0,"real":0.0}],
+    [{"imag":0.0,"real":0.0},{"imag":0.0,"real":0.0},{"imag":0.0,"real":1.0}]
+  ]
+}

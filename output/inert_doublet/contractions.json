@@ -1,0 +1,171 @@
+{
+  "coverage": {
+    "O0002": "resolved and numerically normalized",
+    "O0003": "resolved and numerically normalized",
+    "O0006": "resolved and numerically normalized",
+    "O0010": "resolved and numerically normalized",
+    "O0012": "resolved and numerically normalized"
+  },
+  "notation": [
+    {
+      "coefficient_suffix": "",
+      "expression": "\\left(X^{\\dagger} X\\right)",
+      "index_ranges": {},
+      "multiplicity": 1,
+      "operator_id": "O0002",
+      "self_conjugate": true,
+      "style": "standard",
+      "summed_indices": []
+    },
+    {
+      "coefficient_suffix": "",
+      "components": [
+        "\\left(H^{\\dagger} H\\right)\\,\\left(X^{\\dagger} X\\right)",
+        "\\left(H^{\\dagger} X\\right)\\,\\left(X^{\\dagger} H\\right)"
+      ],
+      "expression": "\\left(H^{\\dagger} H\\right)\\,\\left(X^{\\dagger} X\\right)",
+      "index_ranges": {},
+      "multiplicity": 2,
+      "operator_id": "O0003",
+      "self_conjugate": true,
+      "style": "standard",
+      "summed_indices": []
+    },
+    {
+      "coefficient_suffix": "",
+      "expression": "{\\left(X^{\\dagger} H\\right)}^{2}",
+      "index_ranges": {},
+      "multiplicity": 1,
+      "operator_id": "O0006",
+      "self_conjugate": false,
+      "style": "standard",
+      "summed_indices": []
+    },
+    {
+      "coefficient_suffix": "",
+      "expression": "{\\left(X^{\\dagger} X\\right)}^{2}",
+      "index_ranges": {},
+      "multiplicity": 1,
+      "operator_id": "O0010",
+      "self_conjugate": true,
+      "style": "standard",
+      "summed_indices": []
+    },
+    {
+      "coefficient_suffix": "",
+      "expression": "\\left(D_{\\mu} X\\right)^{\\dagger}\\left(D^{\\mu} X\\right)",
+      "index_ranges": {},
+      "multiplicity": 1,
+      "operator_id": "O0012",
+      "self_conjugate": true,
+      "style": "standard",
+      "summed_indices": []
+    }
+  ],
+  "operators": [
+    {
+      "add_hc": false,
+      "coefficients": [
+        -10000.0
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "X",
+          1
+        ],
+        [
+          "X†",
+          1
+        ]
+      ],
+      "kind": "doublet_potential",
+      "operator_id": "O0002"
+    },
+    {
+      "add_hc": false,
+      "coefficients": [
+        -1.266813137468242,
+        0.633406568734121
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "H",
+          1
+        ],
+        [
+          "H†",
+          1
+        ],
+        [
+          "X",
+          1
+        ],
+        [
+          "X†",
+          1
+        ]
+      ],
+      "kind": "doublet_potential",
+      "operator_id": "O0003"
+    },
+    {
+      "add_hc": true,
+      "coefficients": [
+        0.3167032843670605
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "H",
+          2
+        ],
+        [
+          "X†",
+          2
+        ]
+      ],
+      "kind": "doublet_potential",
+      "operator_id": "O0006"
+    },
+    {
+      "add_hc": false,
+      "coefficients": [
+        -0.1
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "X",
+          2
+        ],
+        [
+          "X†",
+          2
+        ]
+      ],
+      "kind": "doublet_potential",
+      "operator_id": "O0010"
+    },
+    {
+      "add_hc": false,
+      "coefficients": [
+        1.0
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "D(X)",
+          1
+        ],
+        [
+          "D(X†)",
+          1
+        ]
+      ],
+      "kind": "doublet_kinetic",
+      "operator_id": "O0012"
+    }
+  ]
+}

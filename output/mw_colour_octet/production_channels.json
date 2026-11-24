@@ -1,0 +1,14 @@
+[
+  {"diagrams":6,"final_pdgs":[-9700001],"id":"C0001","process":"p p > x1bar"},
+  {"diagrams":6,"final_pdgs":[9700001],"id":"C0002","process":"p p > x1"},
+  {"diagrams":2,"final_pdgs":[9700002],"id":"C0003","process":"p p > x2r"},
+  {"diagrams":2,"final_pdgs":[9700003],"id":"C0004","process":"p p > x2i"},
+  {"diagrams":63,"final_pdgs":[-9700001,9700001],"id":"C0005","process":"p p > x1bar x1"},
+  {"diagrams":12,"final_pdgs":[-9700001,9700002],"id":"C0006","process":"p p > x1bar x2r"},
+  {"diagrams":12,"final_pdgs":[-9700001,9700003],"id":"C0007","process":"p p > x1bar x2i"},
+  {"diagrams":12,"final_pdgs":[9700001,9700002],"id":"C0008","process":"p p > x1 x2r"},
+  {"diagrams":12,"final_pdgs":[9700001,9700003],"id":"C0009","process":"p p > x1 x2i"},
+  {"diagrams":18,"final_pdgs":[9700002,9700002],"id":"C0010","process":"p p > x2r x2r"},
+  {"diagrams":9,"final_pdgs":[9700002,9700003],"id":"C0011","process":"p p > x2r x2i"},
+  {"diagrams":18,"final_pdgs":[9700003,9700003],"id":"C0012","process":"p p > x2i x2i"}
+]

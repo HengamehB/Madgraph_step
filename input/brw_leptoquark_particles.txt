@@ -1,0 +1,4 @@
+# Charge-conjugate field convention for Buchmüller–Rückl–Wyler S1.
+# X of charge -1/3 decays to u e- or d' nu_e. DESY 86-150, Eqs. (5a)–(7).
+X = {'spin': 'scalar', 'su2': 1, 'su3': '3', 'hypercharge': '-1/3', 'boson_kind': 'complex'}
+Y = None

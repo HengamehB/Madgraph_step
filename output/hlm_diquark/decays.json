@@ -1,0 +1,2642 @@
+{
+  "approximation": "Tree-level MadWidth through 2-body decays; 1% adaptive target. Reported modes require BR ≥ 1e-08, without renormalizing their BRs or total widths. Unknown adaptive/body tails remain; total-width accuracy is not guaranteed.",
+  "benchmark_digest": "394beb744339b26be38c5030264d64231ca9d1978c73bb387c1126fee9a1b505",
+  "coverage_notices": [
+    "x2 > u s: retained perturbative partial width 0.040563 GeV below the QCD scale; hadronization may matter.",
+    "x3 > d s: retained perturbative partial width 0.076991 GeV below the QCD scale; hadronization may matter.",
+    "x3 > s s: retained perturbative partial width 0.0020676 GeV below the QCD scale; hadronization may matter.",
+    "Reported decay rows omit modes below min_br; omitted_probability records their summed BR for each parent. The SLHA card and total widths retain those modes.",
+    "Adaptive precision and the maximum body multiplicity can leave uncomputed contributions. Their probability is unknown; reported BRs use the computed total, not a guaranteed physical total."
+  ],
+  "model_digest": "5d4c39b47f2bbf428d12965519bffc926eb86d20ce97607695e2efbf42e64cdc",
+  "modes": [
+    {
+      "branching_ratio": 1.0,
+      "conjugated": false,
+      "daughters": [
+        5,
+        24
+      ],
+      "pdg": 6,
+      "primary_diagrams": {
+        "daughters": [
+          5,
+          24
+        ],
+        "definitions": [
+          "[6,[124,[[\"external\",5],[\"external\",24]]]]"
+        ],
+        "parent": 6,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "t > b w+",
+      "width_gev": 1.4669
+    },
+    {
+      "branching_ratio": 1.0,
+      "conjugated": true,
+      "daughters": [
+        -5,
+        -24
+      ],
+      "pdg": -6,
+      "primary_diagrams": {
+        "daughters": [
+          5,
+          24
+        ],
+        "definitions": [
+          "[6,[124,[[\"external\",5],[\"external\",24]]]]"
+        ],
+        "parent": 6,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "t~ > b~ w-",
+      "width_gev": 1.4669
+    },
+    {
+      "branching_ratio": 0.1520733,
+      "conjugated": false,
+      "daughters": [
+        -1,
+        1
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -1,
+          1
+        ],
+        "definitions": [
+          "[23,[134,[[\"external\",-1],[\"external\",1]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > d~ d",
+      "width_gev": 0.36673997028
+    },
+    {
+      "branching_ratio": 0.1520733,
+      "conjugated": false,
+      "daughters": [
+        -3,
+        3
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -3,
+          3
+        ],
+        "definitions": [
+          "[23,[135,[[\"external\",-3],[\"external\",3]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > s~ s",
+      "width_gev": 0.36673997028
+    },
+    {
+      "branching_ratio": 0.1504312,
+      "conjugated": false,
+      "daughters": [
+        -5,
+        5
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -5,
+          5
+        ],
+        "definitions": [
+          "[23,[136,[[\"external\",-5],[\"external\",5]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > b~ b",
+      "width_gev": 0.36277988192
+    },
+    {
+      "branching_ratio": 0.1178263,
+      "conjugated": false,
+      "daughters": [
+        -2,
+        2
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -2,
+          2
+        ],
+        "definitions": [
+          "[23,[131,[[\"external\",-2],[\"external\",2]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > u~ u",
+      "width_gev": 0.28414990508
+    },
+    {
+      "branching_ratio": 0.1177061,
+      "conjugated": false,
+      "daughters": [
+        -4,
+        4
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -4,
+          4
+        ],
+        "definitions": [
+          "[23,[132,[[\"external\",-4],[\"external\",4]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > c~ c",
+      "width_gev": 0.28386003076
+    },
+    {
+      "branching_ratio": 0.06878422,
+      "conjugated": false,
+      "daughters": [
+        -12,
+        12
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -12,
+          12
+        ],
+        "definitions": [
+          "[23,[137,[[\"external\",-12],[\"external\",12]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > ve~ ve",
+      "width_gev": 0.165880024952
+    },
+    {
+      "branching_ratio": 0.06878422,
+      "conjugated": false,
+      "daughters": [
+        -14,
+        14
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -14,
+          14
+        ],
+        "definitions": [
+          "[23,[138,[[\"external\",-14],[\"external\",14]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > vm~ vm",
+      "width_gev": 0.165880024952
+    },
+    {
+      "branching_ratio": 0.06878422,
+      "conjugated": false,
+      "daughters": [
+        -16,
+        16
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -16,
+          16
+        ],
+        "definitions": [
+          "[23,[139,[[\"external\",-16],[\"external\",16]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > vt~ vt",
+      "width_gev": 0.165880024952
+    },
+    {
+      "branching_ratio": 0.03453848,
+      "conjugated": false,
+      "daughters": [
+        -11,
+        11
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -11,
+          11
+        ],
+        "definitions": [
+          "[23,[140,[[\"external\",-11],[\"external\",11]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > e+ e-",
+      "width_gev": 0.08329299836800001
+    },
+    {
+      "branching_ratio": 0.03453848,
+      "conjugated": false,
+      "daughters": [
+        -13,
+        13
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -13,
+          13
+        ],
+        "definitions": [
+          "[23,[141,[[\"external\",-13],[\"external\",13]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > mu+ mu-",
+      "width_gev": 0.08329299836800001
+    },
+    {
+      "branching_ratio": 0.03446011,
+      "conjugated": false,
+      "daughters": [
+        -15,
+        15
+      ],
+      "pdg": 23,
+      "primary_diagrams": {
+        "daughters": [
+          -15,
+          15
+        ],
+        "definitions": [
+          "[23,[142,[[\"external\",-15],[\"external\",15]]]]"
+        ],
+        "parent": 23,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > ta+ ta-",
+      "width_gev": 0.083104001276
+    },
+    {
+      "branching_ratio": 0.3164112,
+      "conjugated": false,
+      "daughters": [
+        -1,
+        2
+      ],
+      "pdg": 24,
+      "primary_diagrams": {
+        "daughters": [
+          -1,
+          2
+        ],
+        "definitions": [
+          "[24,[107,[[\"external\",-1],[\"external\",2]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > d~ u",
+      "width_gev": 0.6336200726352
+    },
+    {
+      "branching_ratio": 0.3164112,
+      "conjugated": true,
+      "daughters": [
+        1,
+        -2
+      ],
+      "pdg": -24,
+      "primary_diagrams": {
+        "daughters": [
+          -1,
+          2
+        ],
+        "definitions": [
+          "[24,[107,[[\"external\",-1],[\"external\",2]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > d u~",
+      "width_gev": 0.6336200726352
+    },
+    {
+      "branching_ratio": 0.3162863,
+      "conjugated": false,
+      "daughters": [
+        -3,
+        4
+      ],
+      "pdg": 24,
+      "primary_diagrams": {
+        "daughters": [
+          -3,
+          4
+        ],
+        "definitions": [
+          "[24,[111,[[\"external\",-3],[\"external\",4]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > s~ c",
+      "width_gev": 0.6333699577623001
+    },
+    {
+      "branching_ratio": 0.3162863,
+      "conjugated": true,
+      "daughters": [
+        3,
+        -4
+      ],
+      "pdg": -24,
+      "primary_diagrams": {
+        "daughters": [
+          -3,
+          4
+        ],
+        "definitions": [
+          "[24,[111,[[\"external\",-3],[\"external\",4]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > s c~",
+      "width_gev": 0.6333699577623001
+    },
+    {
+      "branching_ratio": 0.1111349,
+      "conjugated": false,
+      "daughters": [
+        -11,
+        12
+      ],
+      "pdg": 24,
+      "primary_diagrams": {
+        "daughters": [
+          -11,
+          12
+        ],
+        "definitions": [
+          "[24,[125,[[\"external\",-11],[\"external\",12]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > e+ ve",
+      "width_gev": 0.2225499710829
+    },
+    {
+      "branching_ratio": 0.1111349,
+      "conjugated": true,
+      "daughters": [
+        11,
+        -12
+      ],
+      "pdg": -24,
+      "primary_diagrams": {
+        "daughters": [
+          -11,
+          12
+        ],
+        "definitions": [
+          "[24,[125,[[\"external\",-11],[\"external\",12]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > e- ve~",
+      "width_gev": 0.2225499710829
+    },
+    {
+      "branching_ratio": 0.1111349,
+      "conjugated": false,
+      "daughters": [
+        -13,
+        14
+      ],
+      "pdg": 24,
+      "primary_diagrams": {
+        "daughters": [
+          -13,
+          14
+        ],
+        "definitions": [
+          "[24,[126,[[\"external\",-13],[\"external\",14]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > mu+ vm",
+      "width_gev": 0.2225499710829
+    },
+    {
+      "branching_ratio": 0.1111349,
+      "conjugated": true,
+      "daughters": [
+        13,
+        -14
+      ],
+      "pdg": -24,
+      "primary_diagrams": {
+        "daughters": [
+          -13,
+          14
+        ],
+        "definitions": [
+          "[24,[126,[[\"external\",-13],[\"external\",14]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > mu- vm~",
+      "width_gev": 0.2225499710829
+    },
+    {
+      "branching_ratio": 0.11105,
+      "conjugated": false,
+      "daughters": [
+        -15,
+        16
+      ],
+      "pdg": 24,
+      "primary_diagrams": {
+        "daughters": [
+          -15,
+          16
+        ],
+        "definitions": [
+          "[24,[127,[[\"external\",-15],[\"external\",16]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > ta+ vt",
+      "width_gev": 0.22237995705000002
+    },
+    {
+      "branching_ratio": 0.11105,
+      "conjugated": true,
+      "daughters": [
+        15,
+        -16
+      ],
+      "pdg": -24,
+      "primary_diagrams": {
+        "daughters": [
+          -15,
+          16
+        ],
+        "definitions": [
+          "[24,[127,[[\"external\",-15],[\"external\",16]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > ta- vt~",
+      "width_gev": 0.22237995705000002
+    },
+    {
+      "branching_ratio": 0.01699458,
+      "conjugated": false,
+      "daughters": [
+        -3,
+        2
+      ],
+      "pdg": 24,
+      "primary_diagrams": {
+        "daughters": [
+          -3,
+          2
+        ],
+        "definitions": [
+          "[24,[108,[[\"external\",-3],[\"external\",2]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > s~ u",
+      "width_gev": 0.03403200333618
+    },
+    {
+      "branching_ratio": 0.01699458,
+      "conjugated": true,
+      "daughters": [
+        3,
+        -2
+      ],
+      "pdg": -24,
+      "primary_diagrams": {
+        "daughters": [
+          -3,
+          2
+        ],
+        "definitions": [
+          "[24,[108,[[\"external\",-3],[\"external\",2]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > s u~",
+      "width_gev": 0.03403200333618
+    },
+    {
+      "branching_ratio": 0.01698809,
+      "conjugated": false,
+      "daughters": [
+        -1,
+        4
+      ],
+      "pdg": 24,
+      "primary_diagrams": {
+        "daughters": [
+          -1,
+          4
+        ],
+        "definitions": [
+          "[24,[110,[[\"external\",-1],[\"external\",4]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > d~ c",
+      "width_gev": 0.034019006974890006
+    },
+    {
+      "branching_ratio": 0.01698809,
+      "conjugated": true,
+      "daughters": [
+        1,
+        -4
+      ],
+      "pdg": -24,
+      "primary_diagrams": {
+        "daughters": [
+          -1,
+          4
+        ],
+        "definitions": [
+          "[24,[110,[[\"external\",-1],[\"external\",4]]]]"
+        ],
+        "parent": 24,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > d c~",
+      "width_gev": 0.034019006974890006
+    },
+    {
+      "branching_ratio": 0.8910845,
+      "conjugated": false,
+      "daughters": [
+        -5,
+        5
+      ],
+      "pdg": 25,
+      "primary_diagrams": {
+        "daughters": [
+          -5,
+          5
+        ],
+        "definitions": [
+          "[25,[13,[[\"external\",-5],[\"external\",5]]]]"
+        ],
+        "parent": 25,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > b~ b",
+      "width_gev": 0.005390699444693
+    },
+    {
+      "branching_ratio": 0.06557795,
+      "conjugated": false,
+      "daughters": [
+        -4,
+        4
+      ],
+      "pdg": 25,
+      "primary_diagrams": {
+        "daughters": [
+          -4,
+          4
+        ],
+        "definitions": [
+          "[25,[18,[[\"external\",-4],[\"external\",4]]]]"
+        ],
+        "parent": 25,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > c~ c",
+      "width_gev": 0.0003967199728523
+    },
+    {
+      "branching_ratio": 0.04276981,
+      "conjugated": false,
+      "daughters": [
+        -15,
+        15
+      ],
+      "pdg": 25,
+      "primary_diagrams": {
+        "daughters": [
+          -15,
+          15
+        ],
+        "definitions": [
+          "[25,[16,[[\"external\",-15],[\"external\",15]]]]"
+        ],
+        "parent": 25,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > ta+ ta-",
+      "width_gev": 0.00025873998595714
+    },
+    {
+      "branching_ratio": 0.00041500299999999994,
+      "conjugated": false,
+      "daughters": [
+        -3,
+        3
+      ],
+      "pdg": 25,
+      "primary_diagrams": {
+        "daughters": [
+          -3,
+          3
+        ],
+        "definitions": [
+          "[25,[12,[[\"external\",-3],[\"external\",3]]]]"
+        ],
+        "parent": 25,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > s~ s",
+      "width_gev": 2.510599658782e-06
+    },
+    {
+      "branching_ratio": 0.0001513953,
+      "conjugated": false,
+      "daughters": [
+        -13,
+        13
+      ],
+      "pdg": 25,
+      "primary_diagrams": {
+        "daughters": [
+          -13,
+          13
+        ],
+        "definitions": [
+          "[25,[15,[[\"external\",-13],[\"external\",13]]]]"
+        ],
+        "parent": 25,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > mu+ mu-",
+      "width_gev": 9.158800985082e-07
+    },
+    {
+      "branching_ratio": 1.033425e-06,
+      "conjugated": false,
+      "daughters": [
+        -1,
+        1
+      ],
+      "pdg": 25,
+      "primary_diagrams": {
+        "daughters": [
+          -1,
+          1
+        ],
+        "definitions": [
+          "[25,[11,[[\"external\",-1],[\"external\",1]]]]"
+        ],
+        "parent": 25,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > d~ d",
+      "width_gev": 6.25180167945e-09
+    },
+    {
+      "branching_ratio": 2.645467e-07,
+      "conjugated": false,
+      "daughters": [
+        -2,
+        2
+      ],
+      "pdg": 25,
+      "primary_diagrams": {
+        "daughters": [
+          -2,
+          2
+        ],
+        "definitions": [
+          "[25,[17,[[\"external\",-2],[\"external\",2]]]]"
+        ],
+        "parent": 25,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > u~ u",
+      "width_gev": 1.6004001290398002e-09
+    },
+    {
+      "branching_ratio": 1.0,
+      "conjugated": false,
+      "daughters": [
+        2,
+        2
+      ],
+      "pdg": 9700001,
+      "primary_diagrams": {
+        "daughters": [
+          2,
+          2
+        ],
+        "definitions": [
+          "[9700001,[30,[[\"external\",2],[\"external\",2]]]]"
+        ],
+        "parent": 9700001,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x1 > u u",
+      "width_gev": 0.79577
+    },
+    {
+      "branching_ratio": 1.0,
+      "conjugated": true,
+      "daughters": [
+        -2,
+        -2
+      ],
+      "pdg": -9700001,
+      "primary_diagrams": {
+        "daughters": [
+          2,
+          2
+        ],
+        "definitions": [
+          "[9700001,[30,[[\"external\",2],[\"external\",2]]]]"
+        ],
+        "parent": 9700001,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x1bar > u~ u~",
+      "width_gev": 0.79577
+    },
+    {
+      "branching_ratio": 0.9490269,
+      "conjugated": false,
+      "daughters": [
+        1,
+        2
+      ],
+      "pdg": 9700002,
+      "primary_diagrams": {
+        "daughters": [
+          1,
+          2
+        ],
+        "definitions": [
+          "[9700002,[31,[[\"external\",1],[\"external\",2]]]]"
+        ],
+        "parent": 9700002,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x2 > d u",
+      "width_gev": 0.7552099832936999
+    },
+    {
+      "branching_ratio": 0.9490269,
+      "conjugated": true,
+      "daughters": [
+        -1,
+        -2
+      ],
+      "pdg": -9700002,
+      "primary_diagrams": {
+        "daughters": [
+          1,
+          2
+        ],
+        "definitions": [
+          "[9700002,[31,[[\"external\",1],[\"external\",2]]]]"
+        ],
+        "parent": 9700002,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x2bar > d~ u~",
+      "width_gev": 0.7552099832936999
+    },
+    {
+      "branching_ratio": 0.05097308,
+      "conjugated": false,
+      "daughters": [
+        2,
+        3
+      ],
+      "pdg": 9700002,
+      "primary_diagrams": {
+        "daughters": [
+          2,
+          3
+        ],
+        "definitions": [
+          "[9700002,[32,[[\"external\",2],[\"external\",3]]]]"
+        ],
+        "parent": 9700002,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x2 > u s",
+      "width_gev": 0.04056300079083999
+    },
+    {
+      "branching_ratio": 0.05097308,
+      "conjugated": true,
+      "daughters": [
+        -2,
+        -3
+      ],
+      "pdg": -9700002,
+      "primary_diagrams": {
+        "daughters": [
+          2,
+          3
+        ],
+        "definitions": [
+          "[9700002,[32,[[\"external\",2],[\"external\",3]]]]"
+        ],
+        "parent": 9700002,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x2bar > u~ s~",
+      "width_gev": 0.04056300079083999
+    },
+    {
+      "branching_ratio": 0.9006525,
+      "conjugated": false,
+      "daughters": [
+        1,
+        1
+      ],
+      "pdg": 9700003,
+      "primary_diagrams": {
+        "daughters": [
+          1,
+          1
+        ],
+        "definitions": [
+          "[9700003,[34,[[\"external\",1],[\"external\",1]]]]"
+        ],
+        "parent": 9700003,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x3 > d d",
+      "width_gev": 0.7167199855365
+    },
+    {
+      "branching_ratio": 0.9006525,
+      "conjugated": true,
+      "daughters": [
+        -1,
+        -1
+      ],
+      "pdg": -9700003,
+      "primary_diagrams": {
+        "daughters": [
+          1,
+          1
+        ],
+        "definitions": [
+          "[9700003,[34,[[\"external\",1],[\"external\",1]]]]"
+        ],
+        "parent": 9700003,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x3bar > d~ d~",
+      "width_gev": 0.7167199855365
+    },
+    {
+      "branching_ratio": 0.09674927,
+      "conjugated": false,
+      "daughters": [
+        1,
+        3
+      ],
+      "pdg": 9700003,
+      "primary_diagrams": {
+        "daughters": [
+          1,
+          3
+        ],
+        "definitions": [
+          "[9700003,[35,[[\"external\",1],[\"external\",3]]]]"
+        ],
+        "parent": 9700003,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x3 > d s",
+      "width_gev": 0.076990998631622
+    },
+    {
+      "branching_ratio": 0.09674927,
+      "conjugated": true,
+      "daughters": [
+        -1,
+        -3
+      ],
+      "pdg": -9700003,
+      "primary_diagrams": {
+        "daughters": [
+          1,
+          3
+        ],
+        "definitions": [
+          "[9700003,[35,[[\"external\",1],[\"external\",3]]]]"
+        ],
+        "parent": 9700003,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x3bar > d~ s~",
+      "width_gev": 0.076990998631622
+    },
+    {
+      "branching_ratio": 0.00259821,
+      "conjugated": false,
+      "daughters": [
+        3,
+        3
+      ],
+      "pdg": 9700003,
+      "primary_diagrams": {
+        "daughters": [
+          3,
+          3
+        ],
+        "definitions": [
+          "[9700003,[37,[[\"external\",3],[\"external\",3]]]]"
+        ],
+        "parent": 9700003,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x3 > s s",
+      "width_gev": 0.002067599916306
+    },
+    {
+      "branching_ratio": 0.00259821,
+      "conjugated": true,
+      "daughters": [
+        -3,
+        -3
+      ],
+      "pdg": -9700003,
+      "primary_diagrams": {
+        "daughters": [
+          3,
+          3
+        ],
+        "definitions": [
+          "[9700003,[37,[[\"external\",3],[\"external\",3]]]]"
+        ],
+        "parent": 9700003,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x3bar > s~ s~",
+      "width_gev": 0.002067599916306
+    }
+  ],
+  "omitted_probability": {
+    "-24": 0.0,
+    "-6": 0.0,
+    "-9700001": 0.0,
+    "-9700002": 0.0,
+    "-9700003": 0.0,
+    "23": 0.0,
+    "24": 0.0,
+    "25": 3.541064e-09,
+    "6": 0.0,
+    "9700001": 0.0,
+    "9700002": 0.0,
+    "9700003": 0.0
+  },
+  "parameter_card": "decays/86c6fc99494cf0fb/attempt-2363ff3cef/param_card.dat",
+  "particles": {
+    "-1": {
+      "aliases": [
+        "d~"
+      ],
+      "anti_pdg": 1,
+      "antiname": "d",
+      "charge": 0.3333333333333333,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 0.00504,
+      "name": "d~",
+      "pdg": -1,
+      "spin": 2
+    },
+    "-11": {
+      "aliases": [
+        "e+"
+      ],
+      "anti_pdg": 11,
+      "antiname": "e-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.000511,
+      "name": "e+",
+      "pdg": -11,
+      "spin": 2
+    },
+    "-12": {
+      "aliases": [
+        "ve~"
+      ],
+      "anti_pdg": 12,
+      "antiname": "ve",
+      "charge": -0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "ve~",
+      "pdg": -12,
+      "spin": 2
+    },
+    "-13": {
+      "aliases": [
+        "mu+"
+      ],
+      "anti_pdg": 13,
+      "antiname": "mu-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.10566,
+      "name": "mu+",
+      "pdg": -13,
+      "spin": 2
+    },
+    "-14": {
+      "aliases": [
+        "vm~"
+      ],
+      "anti_pdg": 14,
+      "antiname": "vm",
+      "charge": -0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vm~",
+      "pdg": -14,
+      "spin": 2
+    },
+    "-15": {
+      "aliases": [
+        "ta+"
+      ],
+      "anti_pdg": 15,
+      "antiname": "ta-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 1.777,
+      "name": "ta+",
+      "pdg": -15,
+      "spin": 2
+    },
+    "-16": {
+      "aliases": [
+        "vt~"
+      ],
+      "anti_pdg": 16,
+      "antiname": "vt",
+      "charge": -0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vt~",
+      "pdg": -16,
+      "spin": 2
+    },
+    "-2": {
+      "aliases": [
+        "u~"
+      ],
+      "anti_pdg": 2,
+      "antiname": "u",
+      "charge": -0.6666666666666666,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 0.00255,
+      "name": "u~",
+      "pdg": -2,
+      "spin": 2
+    },
+    "-24": {
+      "aliases": [
+        "w-"
+      ],
+      "anti_pdg": 24,
+      "antiname": "w+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 79.82435974619784,
+      "name": "w-",
+      "pdg": -24,
+      "spin": 3
+    },
+    "-3": {
+      "aliases": [
+        "s~"
+      ],
+      "anti_pdg": 3,
+      "antiname": "s",
+      "charge": 0.3333333333333333,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 0.101,
+      "name": "s~",
+      "pdg": -3,
+      "spin": 2
+    },
+    "-4": {
+      "aliases": [
+        "c~"
+      ],
+      "anti_pdg": 4,
+      "antiname": "c",
+      "charge": -0.6666666666666666,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 1.27,
+      "name": "c~",
+      "pdg": -4,
+      "spin": 2
+    },
+    "-5": {
+      "aliases": [
+        "b~"
+      ],
+      "anti_pdg": 5,
+      "antiname": "b",
+      "charge": 0.3333333333333333,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 4.7,
+      "name": "b~",
+      "pdg": -5,
+      "spin": 2
+    },
+    "-6": {
+      "aliases": [
+        "t~"
+      ],
+      "anti_pdg": 6,
+      "antiname": "t",
+      "charge": -0.6666666666666666,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 172.0,
+      "name": "t~",
+      "pdg": -6,
+      "spin": 2
+    },
+    "-9700001": {
+      "aliases": [
+        "x1bar"
+      ],
+      "anti_pdg": 9700001,
+      "antiname": "x1",
+      "charge": -1.3333333333333333,
+      "color": -6,
+      "is_new": true,
+      "mass_gev": 1000.0,
+      "name": "x1bar",
+      "pdg": -9700001,
+      "spin": 1
+    },
+    "-9700002": {
+      "aliases": [
+        "x2bar"
+      ],
+      "anti_pdg": 9700002,
+      "antiname": "x2",
+      "charge": -0.3333333333333333,
+      "color": -6,
+      "is_new": true,
+      "mass_gev": 1000.0,
+      "name": "x2bar",
+      "pdg": -9700002,
+      "spin": 1
+    },
+    "-9700003": {
+      "aliases": [
+        "x3bar"
+      ],
+      "anti_pdg": 9700003,
+      "antiname": "x3",
+      "charge": 0.6666666666666666,
+      "color": -6,
+      "is_new": true,
+      "mass_gev": 1000.0,
+      "name": "x3bar",
+      "pdg": -9700003,
+      "spin": 1
+    },
+    "1": {
+      "aliases": [
+        "d"
+      ],
+      "anti_pdg": -1,
+      "antiname": "d~",
+      "charge": -0.3333333333333333,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 0.00504,
+      "name": "d",
+      "pdg": 1,
+      "spin": 2
+    },
+    "11": {
+      "aliases": [
+        "e-"
+      ],
+      "anti_pdg": -11,
+      "antiname": "e+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.000511,
+      "name": "e-",
+      "pdg": 11,
+      "spin": 2
+    },
+    "12": {
+      "aliases": [
+        "ve"
+      ],
+      "anti_pdg": -12,
+      "antiname": "ve~",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "ve",
+      "pdg": 12,
+      "spin": 2
+    },
+    "13": {
+      "aliases": [
+        "mu-"
+      ],
+      "anti_pdg": -13,
+      "antiname": "mu+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.10566,
+      "name": "mu-",
+      "pdg": 13,
+      "spin": 2
+    },
+    "14": {
+      "aliases": [
+        "vm"
+      ],
+      "anti_pdg": -14,
+      "antiname": "vm~",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vm",
+      "pdg": 14,
+      "spin": 2
+    },
+    "15": {
+      "aliases": [
+        "ta-"
+      ],
+      "anti_pdg": -15,
+      "antiname": "ta+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 1.777,
+      "name": "ta-",
+      "pdg": 15,
+      "spin": 2
+    },
+    "16": {
+      "aliases": [
+        "vt"
+      ],
+      "anti_pdg": -16,
+      "antiname": "vt~",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vt",
+      "pdg": 16,
+      "spin": 2
+    },
+    "2": {
+      "aliases": [
+        "u"
+      ],
+      "anti_pdg": -2,
+      "antiname": "u~",
+      "charge": 0.6666666666666666,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 0.00255,
+      "name": "u",
+      "pdg": 2,
+      "spin": 2
+    },
+    "21": {
+      "aliases": [
+        "g"
+      ],
+      "anti_pdg": 21,
+      "antiname": "g",
+      "charge": 0.0,
+      "color": 8,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "g",
+      "pdg": 21,
+      "spin": 3
+    },
+    "22": {
+      "aliases": [
+        "a"
+      ],
+      "anti_pdg": 22,
+      "antiname": "a",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "a",
+      "pdg": 22,
+      "spin": 3
+    },
+    "23": {
+      "aliases": [
+        "z"
+      ],
+      "anti_pdg": 23,
+      "antiname": "z",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 91.1876,
+      "name": "z",
+      "pdg": 23,
+      "spin": 3
+    },
+    "24": {
+      "aliases": [
+        "w+"
+      ],
+      "anti_pdg": -24,
+      "antiname": "w-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 79.82435974619784,
+      "name": "w+",
+      "pdg": 24,
+      "spin": 3
+    },
+    "25": {
+      "aliases": [
+        "h"
+      ],
+      "anti_pdg": 25,
+      "antiname": "h",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 125.0,
+      "name": "h",
+      "pdg": 25,
+      "spin": 1
+    },
+    "3": {
+      "aliases": [
+        "s"
+      ],
+      "anti_pdg": -3,
+      "antiname": "s~",
+      "charge": -0.3333333333333333,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 0.101,
+      "name": "s",
+      "pdg": 3,
+      "spin": 2
+    },
+    "4": {
+      "aliases": [
+        "c"
+      ],
+      "anti_pdg": -4,
+      "antiname": "c~",
+      "charge": 0.6666666666666666,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 1.27,
+      "name": "c",
+      "pdg": 4,
+      "spin": 2
+    },
+    "5": {
+      "aliases": [
+        "b"
+      ],
+      "anti_pdg": -5,
+      "antiname": "b~",
+      "charge": -0.3333333333333333,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 4.7,
+      "name": "b",
+      "pdg": 5,
+      "spin": 2
+    },
+    "6": {
+      "aliases": [
+        "t"
+      ],
+      "anti_pdg": -6,
+      "antiname": "t~",
+      "charge": 0.6666666666666666,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 172.0,
+      "name": "t",
+      "pdg": 6,
+      "spin": 2
+    },
+    "9700001": {
+      "aliases": [
+        "x1"
+      ],
+      "anti_pdg": -9700001,
+      "antiname": "x1bar",
+      "charge": 1.3333333333333333,
+      "color": 6,
+      "is_new": true,
+      "mass_gev": 1000.0,
+      "name": "x1",
+      "pdg": 9700001,
+      "spin": 1
+    },
+    "9700002": {
+      "aliases": [
+        "x2"
+      ],
+      "anti_pdg": -9700002,
+      "antiname": "x2bar",
+      "charge": 0.3333333333333333,
+      "color": 6,
+      "is_new": true,
+      "mass_gev": 1000.0,
+      "name": "x2",
+      "pdg": 9700002,
+      "spin": 1
+    },
+    "9700003": {
+      "aliases": [
+        "x3"
+      ],
+      "anti_pdg": -9700003,
+      "antiname": "x3bar",
+      "charge": -0.6666666666666666,
+      "color": 6,
+      "is_new": true,
+      "mass_gev": 1000.0,
+      "name": "x3",
+      "pdg": 9700003,
+      "spin": 1
+    }
+  },
+  "run_directory": "decays/86c6fc99494cf0fb/attempt-2363ff3cef",
+  "settings": {
+    "max_body": 2,
+    "min_br": 1e-08,
+    "precision": 0.01
+  },
+  "source_benchmark_digest": "394beb744339b26be38c5030264d64231ca9d1978c73bb387c1126fee9a1b505",
+  "source_parameter_card": "export/467f68f13bc8a123/attempt-8045794503/madgraph_import/param_card.dat",
+  "source_width_digest": "cbf8a0aa8c36f8a169f980cfcd331a42f9cf5801332b9500832793cac559595d",
+  "total_widths": {
+    "-24": 2.002521,
+    "-6": 1.4669,
+    "-9700001": 0.79577,
+    "-9700002": 0.795773,
+    "-9700003": 0.7957786,
+    "23": 2.4116,
+    "24": 2.002521,
+    "25": 0.006049594,
+    "6": 1.4669,
+    "9700001": 0.79577,
+    "9700002": 0.795773,
+    "9700003": 0.7957786
+  },
+  "two_body": [
+    {
+      "branching_ratio": 1.0,
+      "conjugated": false,
+      "daughters": [
+        2,
+        2
+      ],
+      "pdg": 9700001,
+      "primary_diagrams": {
+        "daughters": [
+          2,
+          2
+        ],
+        "definitions": [
+          "[9700001,[30,[[\"external\",2],[\"external\",2]]]]"
+        ],
+        "parent": 9700001,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x1 > u u",
+      "width_gev": 0.79577
+    },
+    {
+      "branching_ratio": 0.9490269,
+      "conjugated": false,
+      "daughters": [
+        1,
+        2
+      ],
+      "pdg": 9700002,
+      "primary_diagrams": {
+        "daughters": [
+          1,
+          2
+        ],
+        "definitions": [
+          "[9700002,[31,[[\"external\",1],[\"external\",2]]]]"
+        ],
+        "parent": 9700002,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x2 > d u",
+      "width_gev": 0.7552099832936999
+    },
+    {
+      "branching_ratio": 0.05097308,
+      "conjugated": false,
+      "daughters": [
+        2,
+        3
+      ],
+      "pdg": 9700002,
+      "primary_diagrams": {
+        "daughters": [
+          2,
+          3
+        ],
+        "definitions": [
+          "[9700002,[32,[[\"external\",2],[\"external\",3]]]]"
+        ],
+        "parent": 9700002,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x2 > u s",
+      "width_gev": 0.04056300079083999
+    },
+    {
+      "branching_ratio": 0.9006525,
+      "conjugated": false,
+      "daughters": [
+        1,
+        1
+      ],
+      "pdg": 9700003,
+      "primary_diagrams": {
+        "daughters": [
+          1,
+          1
+        ],
+        "definitions": [
+          "[9700003,[34,[[\"external\",1],[\"external\",1]]]]"
+        ],
+        "parent": 9700003,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x3 > d d",
+      "width_gev": 0.7167199855365
+    },
+    {
+      "branching_ratio": 0.09674927,
+      "conjugated": false,
+      "daughters": [
+        1,
+        3
+      ],
+      "pdg": 9700003,
+      "primary_diagrams": {
+        "daughters": [
+          1,
+          3
+        ],
+        "definitions": [
+          "[9700003,[35,[[\"external\",1],[\"external\",3]]]]"
+        ],
+        "parent": 9700003,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x3 > d s",
+      "width_gev": 0.076990998631622
+    },
+    {
+      "branching_ratio": 0.00259821,
+      "conjugated": false,
+      "daughters": [
+        3,
+        3
+      ],
+      "pdg": 9700003,
+      "primary_diagrams": {
+        "daughters": [
+          3,
+          3
+        ],
+        "definitions": [
+          "[9700003,[37,[[\"external\",3],[\"external\",3]]]]"
+        ],
+        "parent": 9700003,
+        "schema": "madwidth-primary-diagrams-v1"
+      },
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x3 > s s",
+      "width_gev": 0.002067599916306
+    }
+  ],
+  "ufo": "export/467f68f13bc8a123/attempt-8045794503/hlm_diquark_UFO",
+  "width_digest": "7eb8642402115a9615baefea505dcc96c9365c6032c4044a0d27e92c44e829f1"
+}

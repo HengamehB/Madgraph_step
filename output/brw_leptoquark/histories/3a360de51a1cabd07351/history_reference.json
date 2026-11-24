@@ -1,0 +1,9 @@
+{
+  "fingerprint": "697dd3c0ec451aa226934689c545076bc583cd4d5e23577f4a269cf0bb619aea",
+  "path": "histories/3a360de51a1cabd07351/histories.sqlite",
+  "path_base": "run",
+  "revision": 17,
+  "schema": "madgraph-history-store-v2",
+  "sha256": "63f9aac8a2241cd4061d0eb94e89a0a7a418866c9b93e8d62c2dd5bc4de47202",
+  "size_bytes": 57344
+}

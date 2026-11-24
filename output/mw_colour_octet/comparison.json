@@ -1,0 +1,103 @@
+{
+  "status": "pass",
+  "reference": "https://arxiv.org/pdf/hep-ph/0606172#page=4",
+  "model": "Manohar–Wise colour-octet weak doublet",
+  "scenario": {
+    "mS_gev": 750,
+    "lambda1": 4,
+    "lambda2": 1,
+    "lambda3": 1,
+    "etaU": 1,
+    "etaD": 0,
+    "mt_gev": 172.0,
+    "mb_gev": 4.7,
+    "v_gev": 246.22056907348588,
+    "beam_energy_tev": 13.6,
+    "decay_max_body": 2
+  },
+  "masses": [
+    {
+      "observable": "X1",
+      "analytic_gev": 789.382396962886,
+      "measured_gev": 789.3823969628859,
+      "relative_difference": 1.1102230246251565e-16
+    },
+    {
+      "observable": "X2r",
+      "analytic_gev": 817.675360464668,
+      "measured_gev": 817.675360464668,
+      "relative_difference": 0.0
+    },
+    {
+      "observable": "X2i",
+      "analytic_gev": 779.7233012268862,
+      "measured_gev": 779.7233012268862,
+      "relative_difference": 0.0
+    }
+  ],
+  "partial_widths": [
+    {
+      "observable": "charged octet to t bbar",
+      "analytic_gev": 6.952531141162949,
+      "measured_gev": 6.9525311277651,
+      "relative_difference": 1.9270463003095983e-09
+    },
+    {
+      "observable": "CP-even octet to t tbar",
+      "analytic_gev": 5.926863335182042,
+      "measured_gev": 5.926864307319001,
+      "relative_difference": 1.6402216540534198e-07
+    },
+    {
+      "observable": "CP-odd octet to t tbar",
+      "analytic_gev": 6.79318532699781,
+      "measured_gev": 6.7931856286014005,
+      "relative_difference": 4.4397962861708606e-08
+    }
+  ],
+  "relative_width_tolerance": 0.001,
+  "cross_section": {
+    "id": "C0005",
+    "process": "p p > x1bar x1",
+    "cross_section_pb": "0.4754901902041903",
+    "error_pb": "0.0028070450102910434",
+    "target_met": "True",
+    "width_source": "parameter_card.dat",
+    "units": "pb",
+    "scale_diagnostics": "{\"common_incoming_prescription\": false, \"definition\": \"one half of the sum of final external transverse masses\", \"dynamical_scale_choice\": 3, \"fixed_fac_scale\": false, \"fixed_ren_scale\": false, \"has_decay_chain\": false, \"note\": \"Equal dynamical_scale_choice integers do not ensure equal numerical renormalization or factorization scales: production uses external parents while a decay chain uses their external daughters. This can change PDFs and running couplings independently of the resonance window.\", \"scalefact\": 1.0, \"schema\": \"madgraph-lo-scale-diagnostics-v1\"}",
+    "final_pdgs": "[-9700001, 9700001]",
+    "run_directory": "rates/C0005/7bcae7a375744bb0/attempt-55c9eb325a/C0005",
+    "status": "computed"
+  },
+  "histories": {
+    "total": 7049,
+    "with_calculated_rate": 81,
+    "leading": {
+      "history_id": "H1bd4b9eba99eb619f6d163d1978e70524cfe51a70ca7ee7b05a55c91fca41b5d",
+      "history": "x1bar → (t~ → (w- → (u~ d) b~) b); x1 → (b~ t → (b w+ → (d~ u)))",
+      "final_state": "b~ b~ u~ d~ d u b b",
+      "branching_ratio": "0.10010249531270284",
+      "rate_pb": "0.04759775453615114",
+      "error_pb": "0.00028099220998520504"
+    }
+  },
+  "artifacts": {
+    "Generated Lagrangian": "lagrangian_expression.tex",
+    "Contraction conventions": "contractions.json",
+    "Spectrum and mixing": "spectrum.json",
+    "Export validation": "validation.json",
+    "FeynRules extension": "export/6d852e1a12004968/attempt-fe106aa690/feynrules_source/generic_joint_scalar.fr",
+    "FeynRules log": "export/6d852e1a12004968/attempt-fe106aa690/feynrules.log",
+    "UFO vertices": "export/6d852e1a12004968/attempt-fe106aa690/mw_colour_octet_UFO/vertices.py",
+    "UFO Lorentz structures": "export/6d852e1a12004968/attempt-fe106aa690/mw_colour_octet_UFO/lorentz.py",
+    "MadGraph import": "export/6d852e1a12004968/attempt-fe106aa690/madgraph_import/madgraph.log",
+    "Width card": "decays/3497f9a5d17ecade/attempt-21dc6933a3/two_body_param_card.dat",
+    "MadWidth log": "decays/3497f9a5d17ecade/attempt-21dc6933a3/madgraph.log",
+    "Integration parameter card": "rates/C0005/7bcae7a375744bb0/attempt-55c9eb325a/C0005/process/Cards/param_card.dat",
+    "Integration run card": "rates/C0005/7bcae7a375744bb0/attempt-55c9eb325a/C0005/process/Cards/run_card.dat",
+    "Integration log": "rates/C0005/7bcae7a375744bb0/attempt-55c9eb325a/C0005/madgraph.log",
+    "Ranked CSV": "ranking.csv",
+    "Report": "report.html",
+    "Completion manifest": "manifest.json"
+  }
+}

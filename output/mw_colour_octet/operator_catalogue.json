@@ -1,0 +1,428 @@
+[
+  {
+    "index": 1,
+    "label": "Scenario 1: X: complex scalar (SU(2)=2, SU(3)=8, hypercharge=1/2)",
+    "operators": [
+      {
+        "coefficient_dimension": 2,
+        "conjugate_content": "X X†",
+        "coupling_parameters": "1 real before derivative relations",
+        "derivatives": 0,
+        "dimension": 2,
+        "factors": [
+          {
+            "count": 1,
+            "name": "X"
+          },
+          {
+            "count": 1,
+            "name": "X†"
+          }
+        ],
+        "field_content": "X X†",
+        "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+        "id": "O0001",
+        "latex": "\\left[X (X)^{\\dagger}\\right]_{\\mathbf{1}}",
+        "multiplicity": 1,
+        "notes": "",
+        "operator": "[X X†]_(singlet)",
+        "sector": "X only"
+      },
+      {
+        "coefficient_dimension": 0,
+        "conjugate_content": "H H† X X†",
+        "coupling_parameters": "2 real before derivative relations",
+        "derivatives": 0,
+        "dimension": 4,
+        "factors": [
+          {
+            "count": 1,
+            "name": "H"
+          },
+          {
+            "count": 1,
+            "name": "H†"
+          },
+          {
+            "count": 1,
+            "name": "X"
+          },
+          {
+            "count": 1,
+            "name": "X†"
+          }
+        ],
+        "field_content": "H H† X X†",
+        "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+        "id": "O0002",
+        "latex": "\\left[H (H)^{\\dagger} X (X)^{\\dagger}\\right]_{\\mathbf{1},a},\\quad a=1,\\ldots,2",
+        "multiplicity": 2,
+        "notes": "",
+        "operator": "[H H† X X†]_(singlet,a), a=1,...,2",
+        "sector": "X ↔ SM"
+      },
+      {
+        "coefficient_dimension": 0,
+        "conjugate_content": "H† X^2 X†",
+        "coupling_parameters": "2 complex before derivative relations",
+        "derivatives": 0,
+        "dimension": 4,
+        "factors": [
+          {
+            "count": 1,
+            "name": "H"
+          },
+          {
+            "count": 1,
+            "name": "X"
+          },
+          {
+            "count": 2,
+            "name": "X†"
+          }
+        ],
+        "field_content": "H X X†^2",
+        "hc_relation": "add Hermitian conjugate",
+        "id": "O0003",
+        "latex": "\\left[H X ((X)^{\\dagger})^{2}\\right]_{\\mathbf{1},a},\\quad a=1,\\ldots,2",
+        "multiplicity": 2,
+        "notes": "",
+        "operator": "[H X X†^2]_(singlet,a), a=1,...,2",
+        "sector": "X ↔ SM"
+      },
+      {
+        "coefficient_dimension": 0,
+        "conjugate_content": "H†^2 X^2",
+        "coupling_parameters": "1 complex before derivative relations",
+        "derivatives": 0,
+        "dimension": 4,
+        "factors": [
+          {
+            "count": 2,
+            "name": "H"
+          },
+          {
+            "count": 2,
+            "name": "X†"
+          }
+        ],
+        "field_content": "H^2 X†^2",
+        "hc_relation": "add Hermitian conjugate",
+        "id": "O0004",
+        "latex": "\\left[(H)^{2} ((X)^{\\dagger})^{2}\\right]_{\\mathbf{1}}",
+        "multiplicity": 1,
+        "notes": "",
+        "operator": "[H^2 X†^2]_(singlet)",
+        "sector": "X ↔ SM"
+      },
+      {
+        "coefficient_dimension": 0,
+        "conjugate_content": "Q† X† uc†",
+        "coupling_parameters": "9 complex before derivative relations",
+        "derivatives": 0,
+        "dimension": 4,
+        "factors": [
+          {
+            "count": 1,
+            "name": "Q"
+          },
+          {
+            "count": 1,
+            "name": "X"
+          },
+          {
+            "count": 1,
+            "name": "uc"
+          }
+        ],
+        "field_content": "Q X uc",
+        "hc_relation": "add Hermitian conjugate",
+        "id": "O0005",
+        "latex": "\\left[Q X u^c\\right]_{\\mathbf{1},a},\\quad a=1,\\ldots,9",
+        "multiplicity": 9,
+        "notes": "",
+        "operator": "[Q X uc]_(singlet,a), a=1,...,9",
+        "sector": "X ↔ SM"
+      },
+      {
+        "coefficient_dimension": 0,
+        "conjugate_content": "Q† X dc†",
+        "coupling_parameters": "9 complex before derivative relations",
+        "derivatives": 0,
+        "dimension": 4,
+        "factors": [
+          {
+            "count": 1,
+            "name": "Q"
+          },
+          {
+            "count": 1,
+            "name": "X†"
+          },
+          {
+            "count": 1,
+            "name": "dc"
+          }
+        ],
+        "field_content": "Q X† dc",
+        "hc_relation": "add Hermitian conjugate",
+        "id": "O0006",
+        "latex": "\\left[Q (X)^{\\dagger} d^c\\right]_{\\mathbf{1},a},\\quad a=1,\\ldots,9",
+        "multiplicity": 9,
+        "notes": "",
+        "operator": "[Q X† dc]_(singlet,a), a=1,...,9",
+        "sector": "X ↔ SM"
+      },
+      {
+        "coefficient_dimension": 0,
+        "conjugate_content": "X^2 X†^2",
+        "coupling_parameters": "6 real before derivative relations",
+        "derivatives": 0,
+        "dimension": 4,
+        "factors": [
+          {
+            "count": 2,
+            "name": "X"
+          },
+          {
+            "count": 2,
+            "name": "X†"
+          }
+        ],
+        "field_content": "X^2 X†^2",
+        "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+        "id": "O0007",
+        "latex": "\\left[(X)^{2} ((X)^{\\dagger})^{2}\\right]_{\\mathbf{1},a},\\quad a=1,\\ldots,6",
+        "multiplicity": 6,
+        "notes": "",
+        "operator": "[X^2 X†^2]_(singlet,a), a=1,...,6",
+        "sector": "X only"
+      },
+      {
+        "coefficient_dimension": 0,
+        "conjugate_content": "D(X) D(X†)",
+        "coupling_parameters": "1 real before derivative relations",
+        "derivatives": 2,
+        "dimension": 4,
+        "factors": [
+          {
+            "count": 1,
+            "name": "D(X)"
+          },
+          {
+            "count": 1,
+            "name": "D(X†)"
+          }
+        ],
+        "field_content": "D(X) D(X†)",
+        "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+        "id": "O0008",
+        "latex": "\\left[(D X) (D (X)^{\\dagger})\\right]_{\\mathbf{1}}",
+        "multiplicity": 1,
+        "notes": "Local contractions before IBP/Bianchi/EOM; derivative rows can be redundant or total derivatives.",
+        "operator": "[D(X) D(X†)]_(singlet)",
+        "sector": "X only"
+      }
+    ],
+    "pairs": [
+      {
+        "hypercharge": "1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 1,
+        "su3": "10 [0,3]"
+      },
+      {
+        "hypercharge": "1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 1,
+        "su3": "8 [1,1]"
+      },
+      {
+        "hypercharge": "1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 1,
+        "su3": "10 [3,0]"
+      },
+      {
+        "hypercharge": "1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 3,
+        "su3": "1 [0,0]"
+      },
+      {
+        "hypercharge": "1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 3,
+        "su3": "8 [1,1]"
+      },
+      {
+        "hypercharge": "1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 3,
+        "su3": "27 [2,2]"
+      },
+      {
+        "hypercharge": "0",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X†",
+        "statistics": "Different fields: no identical-particle exchange restriction.",
+        "su2": 1,
+        "su3": "1 [0,0]"
+      },
+      {
+        "hypercharge": "0",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X†",
+        "statistics": "Different fields: no identical-particle exchange restriction.",
+        "su2": 1,
+        "su3": "10 [0,3]"
+      },
+      {
+        "hypercharge": "0",
+        "lorentz": "(0, 0)",
+        "multiplicity": 2,
+        "pair": "X × X†",
+        "statistics": "Different fields: no identical-particle exchange restriction.",
+        "su2": 1,
+        "su3": "8 [1,1]"
+      },
+      {
+        "hypercharge": "0",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X†",
+        "statistics": "Different fields: no identical-particle exchange restriction.",
+        "su2": 1,
+        "su3": "27 [2,2]"
+      },
+      {
+        "hypercharge": "0",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X†",
+        "statistics": "Different fields: no identical-particle exchange restriction.",
+        "su2": 1,
+        "su3": "10 [3,0]"
+      },
+      {
+        "hypercharge": "0",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X†",
+        "statistics": "Different fields: no identical-particle exchange restriction.",
+        "su2": 3,
+        "su3": "1 [0,0]"
+      },
+      {
+        "hypercharge": "0",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X†",
+        "statistics": "Different fields: no identical-particle exchange restriction.",
+        "su2": 3,
+        "su3": "10 [0,3]"
+      },
+      {
+        "hypercharge": "0",
+        "lorentz": "(0, 0)",
+        "multiplicity": 2,
+        "pair": "X × X†",
+        "statistics": "Different fields: no identical-particle exchange restriction.",
+        "su2": 3,
+        "su3": "8 [1,1]"
+      },
+      {
+        "hypercharge": "0",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X†",
+        "statistics": "Different fields: no identical-particle exchange restriction.",
+        "su2": 3,
+        "su3": "27 [2,2]"
+      },
+      {
+        "hypercharge": "0",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X × X†",
+        "statistics": "Different fields: no identical-particle exchange restriction.",
+        "su2": 3,
+        "su3": "10 [3,0]"
+      },
+      {
+        "hypercharge": "-1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X† × X†",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 1,
+        "su3": "10 [0,3]"
+      },
+      {
+        "hypercharge": "-1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X† × X†",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 1,
+        "su3": "8 [1,1]"
+      },
+      {
+        "hypercharge": "-1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X† × X†",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 1,
+        "su3": "10 [3,0]"
+      },
+      {
+        "hypercharge": "-1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X† × X†",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 3,
+        "su3": "1 [0,0]"
+      },
+      {
+        "hypercharge": "-1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X† × X†",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 3,
+        "su3": "8 [1,1]"
+      },
+      {
+        "hypercharge": "-1",
+        "lorentz": "(0, 0)",
+        "multiplicity": 1,
+        "pair": "X† × X†",
+        "statistics": "Identical bosons: exchanging the two fields, including all indices, leaves the product unchanged.",
+        "su2": 3,
+        "su3": "27 [2,2]"
+      }
+    ]
+  }
+]

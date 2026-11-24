@@ -1,0 +1,9 @@
+{
+  "effective_analytic_decays": true,
+  "effective_wolfram_limits": {
+    "max_wolfram_iterations": 4096,
+    "max_wolfram_recursion": 2500
+  },
+  "reason": null,
+  "requested_analytic_decays": true
+}

@@ -1,0 +1,473 @@
+{
+  "metadata": {
+    "$dict": [
+      [
+        "_input_bindings",
+        {
+          "$dict": [
+            [
+              "schema",
+              "operator-table-bindings-v1"
+            ],
+            [
+              "context",
+              "3819606fadf950724e4a42e8d7b67334113d63fa5141f633eada1e83f39b7859"
+            ],
+            [
+              "compiler_fingerprint",
+              "3ea030404748c216c13c6a8712844a472b66107aab3af7085e283af5b5fdef08"
+            ],
+            [
+              "catalogue_fingerprint",
+              "5963758373029bc7e76a0765b81e5cccd4ab05580c8eda7bce1056b0c382eaa0"
+            ],
+            [
+              "operator_ids",
+              {
+                "$dict": [
+                  [
+                    "O0001",
+                    "X X†"
+                  ],
+                  [
+                    "O0002",
+                    "H H† X X†"
+                  ],
+                  [
+                    "O0003",
+                    "L Q X†"
+                  ],
+                  [
+                    "O0004",
+                    "Q^2 X"
+                  ],
+                  [
+                    "O0005",
+                    "X dc† uc†"
+                  ],
+                  [
+                    "O0006",
+                    "X ec uc"
+                  ],
+                  [
+                    "O0007",
+                    "X^2 X†^2"
+                  ],
+                  [
+                    "O0008",
+                    "D(X) D(X†)"
+                  ]
+                ]
+              }
+            ],
+            [
+              "coefficients",
+              {
+                "$dict": [
+                  [
+                    "X X†",
+                    "f068b226255fdc4db36a083e8ab732a8016df55d720a26dcc93a7a961804e9e0"
+                  ],
+                  [
+                    "H H† X X†",
+                    "897736aad026002a2c4eb8affd02fc2d4efa43201d08373b21485e39226db627"
+                  ],
+                  [
+                    "L Q X†",
+                    "fd065c7cc02f26ca407bb6e6c21e2b33b3387bdeba3ad02c3c4a321a39876709"
+                  ],
+                  [
+                    "Q^2 X",
+                    "9f5dc3e43f7ce615850dc52665f8ebd94638fac7d1a1aea23b7af93b9ac729c6"
+                  ],
+                  [
+                    "X dc† uc†",
+                    "a87c883cf0c540a2032435c5180e7d239ec7d79b58a2ebf1b726415836d7bf01"
+                  ],
+                  [
+                    "X ec uc",
+                    "ed8101613653bd586a4e87eb31250cb3c22f149d03f7e5ca76494c560a8ca3cf"
+                  ],
+                  [
+                    "X^2 X†^2",
+                    "1b33b415bb59c9cb0126701b523d0dd97306f2a590ea1c2ec2a23b32a10f703f"
+                  ],
+                  [
+                    "D(X) D(X†)",
+                    "e066a06fb5f52b5ef93710c6d09321ef4b9e5546028f308312d0e9382921d656"
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      [
+        "_input_provenance",
+        {
+          "$dict": [
+            [
+              "schema",
+              "model-input-origins-v1"
+            ],
+            [
+              "profile",
+              "coefficient-seeds-v1"
+            ],
+            [
+              "coefficients",
+              {
+                "$dict": [
+                  [
+                    "X X†",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "quadratic"
+                        ],
+                        [
+                          "units",
+                          "GeV^2"
+                        ],
+                        [
+                          "value",
+                          -40000.0
+                        ],
+                        [
+                          "reason",
+                          "Reference mass 200 GeV before VEV shifts/mixing; actual masses are derived."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "f068b226255fdc4db36a083e8ab732a8016df55d720a26dcc93a7a961804e9e0"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "H H† X X†",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "quartic"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          -0.01
+                        ],
+                        [
+                          "reason",
+                          "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "897736aad026002a2c4eb8affd02fc2d4efa43201d08373b21485e39226db627"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "L Q X†",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "dimensionless_interaction"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          [
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01
+                          ]
+                        ],
+                        [
+                          "reason",
+                          "Small real seed for each independent complex flavour coupling in the stated order."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "fd065c7cc02f26ca407bb6e6c21e2b33b3387bdeba3ad02c3c4a321a39876709"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "Q^2 X",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "interaction"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          null
+                        ],
+                        [
+                          "reason",
+                          "compiler gap: fermion/Lorentz contraction needs an additional lowerer"
+                        ],
+                        [
+                          "origin",
+                          "unresolved"
+                        ],
+                        [
+                          "binding",
+                          "9f5dc3e43f7ce615850dc52665f8ebd94638fac7d1a1aea23b7af93b9ac729c6"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "X dc† uc†",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "interaction"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          null
+                        ],
+                        [
+                          "reason",
+                          "compiler gap: fermion/Lorentz contraction needs an additional lowerer"
+                        ],
+                        [
+                          "origin",
+                          "unresolved"
+                        ],
+                        [
+                          "binding",
+                          "a87c883cf0c540a2032435c5180e7d239ec7d79b58a2ebf1b726415836d7bf01"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "X ec uc",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "dimensionless_interaction"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          [
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01
+                          ]
+                        ],
+                        [
+                          "reason",
+                          "Small real seed for each independent complex flavour coupling in the stated order."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "ed8101613653bd586a4e87eb31250cb3c22f149d03f7e5ca76494c560a8ca3cf"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "X^2 X†^2",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "quartic"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          -0.01
+                        ],
+                        [
+                          "reason",
+                          "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "1b33b415bb59c9cb0126701b523d0dd97306f2a590ea1c2ec2a23b32a10f703f"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "D(X) D(X†)",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "kinetic"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          1.0
+                        ],
+                        [
+                          "reason",
+                          "Canonical scalar norm projected onto the displayed invariant basis."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "e066a06fb5f52b5ef93710c6d09321ef4b9e5546028f308312d0e9382921d656"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "unresolved",
+              {
+                "$dict": []
+              }
+            ]
+          ]
+        }
+      ],
+      [
+        "operator_reference",
+        "# Operator conventions and suggested values\n# This reference is managed with the generated model metadata.\n# Only literals and finite arithmetic are parsed; the model file is never executed.\n# Only canonical diagonal kinetic and mass terms start enabled. All interactions,\n# inter-particle/chiral mixing and holomorphic mass additions start disabled.\n# Suggestions are starting inputs, not fitted physics or a guarantee of export support.\n# The fixed SM vacuum assumes a 125 GeV unmixed Higgs and zero new scalar VEVs.\n# No potential minimization or global-stability test is performed.\n\n# O0001: X X†; operator dimension 2; coefficient units: GeV^2.\n# Normalization: Coefficient multiplies the stated monomial; no implicit factorial. No implicit factorial unless\n# stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1. invariant 1\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Reference mass 200 GeV before VEV shifts/mixing; actual masses are derived.\n\n# O0002: H H† X X†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Ordered native SU(3) tensor basis native-colour-networks-hermitian-v1; coefficients multiply the\n# displayed contractions. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1.\n# ((IndexDelta[Index[Colour,c1],Index[Colour,c2]]*X[c1]*X†[c2]*((vev+H)^2/2))+HC[IndexDelta[Index[Colour,c1],Index[Colour,c2]]*X[c1]*X†[c2]*((vev+H)^2/2)])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.\n\n# O0003: L Q X†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: lambda_L[i,j] S† (u_Li^T C e_Lj - d′_Li^T C nu_Lj) + HC, with a colour identity. d′_Li = sum_k\n# CKM[i,k] d_Lk. Row-major order: quark doublet i, lepton doublet j. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (9):\n# 1. lambda_L[1,1]\n# 2. lambda_L[1,2]\n# 3. lambda_L[1,3]\n# 4. lambda_L[2,1]\n# 5. lambda_L[2,2]\n# 6. lambda_L[2,3]\n# 7. lambda_L[3,1]\n# 8. lambda_L[3,2]\n# 9. lambda_L[3,3]\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small real seed for each independent complex flavour coupling in the stated order.\n\n# O0004: Q^2 X; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Automatic export unresolved: compiler gap: fermion/Lorentz contraction needs an additional\n# lowerer. No contraction ordering is assumed. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (6):\n# 1. invariant 1\n# 2. invariant 2\n# 3. invariant 3\n# 4. invariant 4\n# 5. invariant 5\n# 6. invariant 6\n# Limitations: compiler gap: fermion/Lorentz contraction needs an additional lowerer\n# Suggested value: compiler gap: fermion/Lorentz contraction needs an additional lowerer\n\n# O0005: X dc† uc†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Automatic export unresolved: compiler gap: fermion/Lorentz contraction needs an additional\n# lowerer. No contraction ordering is assumed. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (9):\n# 1. invariant 1\n# 2. invariant 2\n# 3. invariant 3\n# 4. invariant 4\n# 5. invariant 5\n# 6. invariant 6\n# 7. invariant 7\n# 8. invariant 8\n# 9. invariant 9\n# Limitations: compiler gap: fermion/Lorentz contraction needs an additional lowerer\n# Suggested value: compiler gap: fermion/Lorentz contraction needs an additional lowerer\n\n# O0006: X ec uc; operator dimension 4; coefficient units: dimensionless.\n# Normalization: lambda_R[i,j] S_a ubar_i^a P_L C(lbar_j)^T plus its Hermitian conjugate; the colour contraction\n# is the identity. Both physical fermions are right-handed. Row-major order: up-quark generation i, charged-lepton\n# generation j. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (9):\n# 1. lambda_R[1,1]\n# 2. lambda_R[1,2]\n# 3. lambda_R[1,3]\n# 4. lambda_R[2,1]\n# 5. lambda_R[2,2]\n# 6. lambda_R[2,3]\n# 7. lambda_R[3,1]\n# 8. lambda_R[3,2]\n# 9. lambda_R[3,3]\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small real seed for each independent complex flavour coupling in the stated order.\n\n# O0007: X^2 X†^2; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Ordered native SU(3) tensor basis native-colour-networks-hermitian-v1; coefficients multiply the\n# displayed contractions. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1.\n# ((IndexDelta[Index[Colour,c1],Index[Colour,c3]]*IndexDelta[Index[Colour,c2],Index[Colour,c4]]*X[c1]*X[c2]*X†[c3]*X†[c4])+HC[IndexDelta[Index[Colour,c1],Index[Colour,c3]]*IndexDelta[Index[Colour,c2],Index[Colour,c4]]*X[c1]*X[c2]*X†[c3]*X†[c4]])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.\n\n# O0008: D(X) D(X†); operator dimension 4; coefficient units: dimensionless.\n# Normalization: Covariant scalar kinetic term; canonical coefficient is 1. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1. invariant 1\n# Limitations: Local contractions before IBP/Bianchi/EOM; derivative rows can be redundant or total derivatives.\n# Suggested value: Canonical scalar norm projected onto the displayed invariant basis.\n\n"
+      ]
+    ]
+  },
+  "schema": "madgraph-step-model-metadata-v1",
+  "sha256": "fee447dee5521e87531abb37bcd87e8e441c7271877327b9fb5d906fdaf7b4bb"
+}

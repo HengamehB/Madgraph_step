@@ -1,0 +1,31 @@
+{
+  "coefficients": {
+    "O0001": -1000000.0,
+    "O0003": [
+      0.2,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "O0005": 1.0
+  },
+  "compiler_limits": {},
+  "higgs_mass": 125.0,
+  "model_name": "hlm_diquark",
+  "model_signature": "operator-inputs-v1:b0bbf88460d353f110e540db57bfa5c57040c18065d8110bae63f307857d795f",
+  "sm_inputs": {
+    "Gf": 1.16637e-05,
+    "MZ": 91.1876,
+    "aEWM1": 127.9
+  },
+  "sm_scheme": "fixed_sm",
+  "stable_particles": [],
+  "vevs": {
+    "X": 0.0
+  },
+  "widths": {
+    "X": 0.0
+  }
+}

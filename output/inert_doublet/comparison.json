@@ -1,0 +1,149 @@
+{
+  "artifacts": {
+    "Completion manifest": "manifest.json",
+    "Decay card": "decays/09a9bac2a3709f45/attempt-901aa504e4/param_card.dat",
+    "FeynRules log": "export/fc1d0b82021e6a50/attempt-ac144babb2/feynrules.log",
+    "FeynRules source": "export/fc1d0b82021e6a50/attempt-ac144babb2/feynrules_source",
+    "Integration log": "rates/C0005/2442bcc1d9e1b08c/attempt-44e021ad27/C0005/madgraph.log",
+    "Lagrangian": "lagrangian.tex",
+    "MadGraph import log": "export/fc1d0b82021e6a50/attempt-ac144babb2/madgraph_import/madgraph.log",
+    "MadWidth log": "decays/09a9bac2a3709f45/attempt-901aa504e4/madgraph.log",
+    "Parameter card": "export/fc1d0b82021e6a50/attempt-ac144babb2/param_card.dat",
+    "Ranked CSV": "ranking.csv",
+    "Report": "report.html",
+    "Run card": "rates/C0005/2442bcc1d9e1b08c/attempt-44e021ad27/C0005/process/Cards/run_card.dat",
+    "Spectrum": "spectrum.json",
+    "UFO": "export/fc1d0b82021e6a50/attempt-ac144babb2/inert_doublet_UFO",
+    "Widths": "decays.csv"
+  },
+  "case": "inert_doublet",
+  "checks": [
+    {
+      "expected": 125.0,
+      "measured": 125.0,
+      "observable": "UFO Higgs mass [GeV]",
+      "passed": true,
+      "relative_difference": 0.0
+    },
+    {
+      "expected": 220.0,
+      "measured": 220.0,
+      "observable": "UFO charged mass [GeV]",
+      "passed": true,
+      "relative_difference": 0.0
+    },
+    {
+      "expected": 100.0,
+      "measured": 100.00000000000004,
+      "observable": "UFO light neutral mass [GeV]",
+      "passed": true,
+      "relative_difference": 4.263256414560601e-16
+    },
+    {
+      "expected": 220.0,
+      "measured": 220.0,
+      "observable": "UFO heavy neutral mass [GeV]",
+      "passed": true,
+      "relative_difference": 0.0
+    },
+    {
+      "expected": 0.3241985835975134,
+      "measured": 0.3241985835975134,
+      "observable": "Magnitude of W cubic coupling",
+      "passed": true,
+      "relative_difference": 0.0
+    },
+    {
+      "expected": 0.0,
+      "measured": 0.0,
+      "observable": "Charge conjugate W vertex, absolute mismatch",
+      "passed": true,
+      "relative_difference": null
+    },
+    {
+      "expected": 0.37034923744646436,
+      "measured": 0.3703492374464643,
+      "observable": "Magnitude of Z cubic coupling",
+      "passed": true,
+      "relative_difference": 1.4988866080568672e-16
+    },
+    {
+      "expected": 0.6596713262305527,
+      "measured": 0.6596713,
+      "observable": "x+ > x1 w+ partial width [GeV]",
+      "passed": true,
+      "relative_difference": 3.976306334210798e-08
+    },
+    {
+      "expected": 1.0,
+      "measured": 1.0,
+      "observable": "x+ > x1 w+ BR",
+      "passed": true,
+      "relative_difference": 0.0
+    },
+    {
+      "expected": 0.6596713262305527,
+      "measured": 0.6596713,
+      "observable": "x- > x1 w- partial width [GeV]",
+      "passed": true,
+      "relative_difference": 3.976306334210798e-08
+    },
+    {
+      "expected": 1.0,
+      "measured": 1.0,
+      "observable": "x- > x1 w- BR",
+      "passed": true,
+      "relative_difference": 0.0
+    },
+    {
+      "expected": 0.42214783339190776,
+      "measured": 0.4221478,
+      "observable": "x2 > x1 z partial width [GeV]",
+      "passed": true,
+      "relative_difference": 7.910003344226068e-08
+    },
+    {
+      "expected": 1.0,
+      "measured": 1.0,
+      "observable": "x2 > x1 z BR",
+      "passed": true,
+      "relative_difference": 0.0
+    }
+  ],
+  "decays": [
+    {
+      "conjugated": false,
+      "process": "x+ > x1 w+"
+    },
+    {
+      "conjugated": true,
+      "process": "x- > x1 w-"
+    },
+    {
+      "conjugated": false,
+      "process": "x2 > x1 z"
+    }
+  ],
+  "history_counts": {
+    "calculated": 77,
+    "discovery_complete": true,
+    "fingerprint": "e827d11589dc70736d1ee71f2b91f5166610e97c38b1e12b75f8a661ebc76786",
+    "revision": 41,
+    "total": 295
+  },
+  "passed": true,
+  "production": {
+    "computed_histories": 77,
+    "error_pb": 0.0001144447059228958,
+    "leading_history": {
+      "history": "x+ → (w+ → (d~ u) x1); x2 → (z → (d~ d) x1)",
+      "rate_pb": 0.0006783698340725919
+    },
+    "process": "p p > x+ x2",
+    "sigma_pb": 0.014098299
+  },
+  "run_id": "e8a8f31970df5a357882",
+  "scope": "Selected positively charged plus heavy neutral pair. MadWidth supplies the positive-parent width; the negative-parent row uses charge conjugation. Both charge vertices were checked in the UFO.",
+  "source": "Chosen inert Z2 spectrum in the one-VEV solution C of [Deshpande and Ma, Eq. 6](https://doi.org/10.1103/PhysRevD.18.2574). In their potential λ2=0.2, λ3=2a, λ4=λ5=−a, with a=(220²−100²)/v².",
+  "tolerance": "0.1% for nonzero widths and couplings"
+}

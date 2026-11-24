@@ -56,7 +56,7 @@ def input_provenance(document):
     stored = stored if isinstance(stored, dict) and stored.get('schema') == PROVENANCE_SCHEMA else {}
     previous = stored.get('coefficients', {})
     previous = previous if isinstance(previous, dict) else {}
-    bindings = input_bindings(document.definition)
+    bindings = input_bindings(document.definition, recorded=document.assignments.get('_input_bindings'))
     records = {}
     table = document.assignments.get('operators')
     active_info = {info['key']: info for info in document.definition.operator_inputs()}
@@ -156,8 +156,9 @@ def setup_text(path, *, input_fn=input, output_fn=print):
     definition = ModelDefinition(**args)
     document = _document(source, definition)
     table = deepcopy(source.assignments.get('operators'))
-    bindings = operator_bindings(definition) if table is not None else input_bindings(definition)
     old = source.assignments.get('_input_bindings', {})
+    bindings = (operator_bindings(definition, recorded=old) if table is not None
+                else input_bindings(definition, recorded=old))
     schema = OPERATOR_BINDING_SCHEMA if table is not None else BINDING_SCHEMA
     old = old if isinstance(old, dict) and old.get('schema') == schema else {}
     old_coefficients = old.get('coefficients', {})

@@ -1,0 +1,120 @@
+{
+  "coverage": {
+    "O0002": "resolved and numerically normalized",
+    "O0005": "resolved and numerically normalized",
+    "O0006": "resolved and numerically normalized",
+    "O0007": "resolved and numerically normalized"
+  },
+  "notation": [
+    {
+      "coefficient_suffix": "",
+      "expression": "{X}^{2}",
+      "index_ranges": {},
+      "multiplicity": 1,
+      "operator_id": "O0002",
+      "self_conjugate": true,
+      "style": "standard",
+      "summed_indices": []
+    },
+    {
+      "coefficient_suffix": "",
+      "expression": "{X}^{2}\\,\\left(H^{\\dagger} H\\right)",
+      "index_ranges": {},
+      "multiplicity": 1,
+      "operator_id": "O0005",
+      "self_conjugate": true,
+      "style": "standard",
+      "summed_indices": []
+    },
+    {
+      "coefficient_suffix": "",
+      "expression": "{X}^{4}",
+      "index_ranges": {},
+      "multiplicity": 1,
+      "operator_id": "O0006",
+      "self_conjugate": true,
+      "style": "standard",
+      "summed_indices": []
+    },
+    {
+      "coefficient_suffix": "",
+      "expression": "\\partial_{\\mu} X\\,\\partial^{\\mu} X",
+      "index_ranges": {},
+      "multiplicity": 1,
+      "operator_id": "O0007",
+      "self_conjugate": true,
+      "style": "standard",
+      "summed_indices": []
+    }
+  ],
+  "operators": [
+    {
+      "add_hc": false,
+      "coefficients": [
+        -1098.438578412822
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "X",
+          2
+        ]
+      ],
+      "kind": "potential",
+      "operator_id": "O0002"
+    },
+    {
+      "add_hc": false,
+      "coefficients": [
+        -0.005
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "H",
+          1
+        ],
+        [
+          "H†",
+          1
+        ],
+        [
+          "X",
+          2
+        ]
+      ],
+      "kind": "potential",
+      "operator_id": "O0005"
+    },
+    {
+      "add_hc": false,
+      "coefficients": [
+        -0.01
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "X",
+          4
+        ]
+      ],
+      "kind": "potential",
+      "operator_id": "O0006"
+    },
+    {
+      "add_hc": false,
+      "coefficients": [
+        0.5
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "D(X)",
+          2
+        ]
+      ],
+      "kind": "kinetic",
+      "operator_id": "O0007"
+    }
+  ]
+}

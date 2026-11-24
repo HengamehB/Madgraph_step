@@ -1,0 +1,34 @@
+{
+  "interpretation": "Only enabled entries enter the selected Lagrangian and numerical physics.",
+  "operators": {
+    "D(X)^2": {
+      "coefficient": 0.5,
+      "enabled": true
+    },
+    "H H† X": {
+      "coefficient": 0.0,
+      "enabled": false
+    },
+    "H H† X^2": {
+      "coefficient": -0.005,
+      "enabled": true
+    },
+    "X": {
+      "coefficient": 0.0,
+      "enabled": false
+    },
+    "X^2": {
+      "coefficient": -1098.438578412822,
+      "enabled": true
+    },
+    "X^3": {
+      "coefficient": 0.0,
+      "enabled": false
+    },
+    "X^4": {
+      "coefficient": -0.01,
+      "enabled": true
+    }
+  },
+  "schema": "operator-input-state-v1"
+}

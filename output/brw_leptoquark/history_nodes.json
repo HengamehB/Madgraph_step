@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {"branching_ratio":1.0,"children":[],"final_counts":[[-12,1]],"flags":[],"key":"1c85eb47f7d83dfb7345e55c6748b033f039daa6dd3dce0a59ea426a690dff8f","node_id":1,"pdg":-12},
+    {"branching_ratio":1.0,"children":[],"final_counts":[[-3,1]],"flags":[],"key":"eceda007333c5cbb36ed21b07f1227b8eb3a8574f389671dc757fea362f99da2","node_id":2,"pdg":-3},
+    {"branching_ratio":1.0,"children":[],"final_counts":[[-1,1]],"flags":[],"key":"8dbbeb14b36f121cae84d909a6f44db56769651b2111c1e1db38f79e205d6efb","node_id":3,"pdg":-1},
+    {"branching_ratio":1.0,"children":[],"final_counts":[[-11,1]],"flags":[],"key":"e2e460410ed4c9ba19da524e477046ed3fd21b72f51463b68350b136f732d0aa","node_id":4,"pdg":-11},
+    {"branching_ratio":1.0,"children":[],"final_counts":[[-2,1]],"flags":[],"key":"ba9ee1c015241b1fbf43a76cf59cdbe649cf0531a5652a16c78fa93d4e94cd1a","node_id":5,"pdg":-2},
+    {"branching_ratio":0.025486610000000003,"children":[1,2],"final_counts":[[-12,1],[-3,1]],"flags":[],"key":"903cb57d69500edba9b2c5bc6a1f82ea070fc438b78f0766934e4eae1fb3008e","node_id":6,"pdg":-9200001},
+    {"branching_ratio":0.4745134,"children":[1,3],"final_counts":[[-12,1],[-1,1]],"flags":[],"key":"39f7c71cfe25c4f8e67f3d3aee6a3e587fbb34309fac69d069d94442ce94614a","node_id":7,"pdg":-9200001},
+    {"branching_ratio":0.5,"children":[5,4],"final_counts":[[-11,1],[-2,1]],"flags":[],"key":"44c65f974bef8cdffcbf2af6f0683bfc9df6f5e3526bb51d6619094a85815c0b","node_id":8,"pdg":-9200001},
+    {"branching_ratio":1.0,"children":[],"final_counts":[[1,1]],"flags":[],"key":"3b42d8202c01be60bcf90d261fa59c3eb473119558c0545e4fb85700a53b51da","node_id":9,"pdg":1},
+    {"branching_ratio":1.0,"children":[],"final_counts":[[12,1]],"flags":[],"key":"300a42bf7b029ced95b1b0c4e13d2e619992a313a146acc09a1dbea55ef0e632","node_id":10,"pdg":12},
+    {"branching_ratio":1.0,"children":[],"final_counts":[[2,1]],"flags":[],"key":"9d12e57138a1b38b14208aefd3aa9198c2630541daa069fe99724aa194558f60","node_id":11,"pdg":2},
+    {"branching_ratio":1.0,"children":[],"final_counts":[[11,1]],"flags":[],"key":"52c26e3c38e07d85c6c3c295af25dd9ebd6afa86d2ebdcdb6c677f6c833d8376","node_id":12,"pdg":11},
+    {"branching_ratio":1.0,"children":[],"final_counts":[[3,1]],"flags":[],"key":"8baa36b702cc582eb13c8c3c2af3c8f7bd3cf4f13f64c300ea812c30e9aa0a69","node_id":13,"pdg":3},
+    {"branching_ratio":0.4745134,"children":[10,9],"final_counts":[[1,1],[12,1]],"flags":[],"key":"873156648b479bb938b172266cc6c436005e343f525e5ad99a98e150ae9963c0","node_id":14,"pdg":9200001},
+    {"branching_ratio":0.5,"children":[12,11],"final_counts":[[2,1],[11,1]],"flags":[],"key":"2520ac39943c74f9c18fb9447c08cde1a535effdf2f5c98322e40ae4c07d8f2a","node_id":15,"pdg":9200001},
+    {"branching_ratio":0.025486610000000003,"children":[10,13],"final_counts":[[3,1],[12,1]],"flags":[],"key":"f98c1957584d1e6b3a082c63d105e8e21b33c44f1b5e6f8c0c264c19aa992fd0","node_id":16,"pdg":9200001}
+  ],
+  "source": {
+    "file_stat": {
+      "ctime_ns": 1795543592544262043,
+      "mtime_ns": 1795543592544262043,
+      "size_bytes": 57344
+    },
+    "fingerprint": "697dd3c0ec451aa226934689c545076bc583cd4d5e23577f4a269cf0bb619aea",
+    "path": "histories/3a360de51a1cabd07351/histories.sqlite",
+    "path_base": "run",
+    "revision": 17,
+    "schema": "madgraph-history-store-v2",
+    "sha256": "63f9aac8a2241cd4061d0eb94e89a0a7a418866c9b93e8d62c2dd5bc4de47202"
+  }
+}

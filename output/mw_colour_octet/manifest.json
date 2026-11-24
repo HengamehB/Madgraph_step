@@ -1,0 +1,260 @@
+{
+  "all_rates_complete": false,
+  "artifact_schema": "madgraph-step-artifact-v1",
+  "cache_rejections": [],
+  "complete": false,
+  "current_tables": {
+    "cross_sections": {
+      "csv": {
+        "path": "cross_sections.csv",
+        "sha256": "0f2b24d936d3028bdb26ae42a9e92ba4c6fd2d70f7a7ca7b20331eb20c6cb5b5",
+        "size_bytes": 889
+      },
+      "json": {
+        "path": "cross_sections.json",
+        "sha256": "9c17a5d96eee4789268cda9079ea4c00b44a600b24a35d454efad74799a06cb9",
+        "size_bytes": 10625
+      }
+    },
+    "decays": {
+      "csv": {
+        "path": "decays.csv",
+        "sha256": "97112de663e068d3381152f4f2cfb9bd233630a4fe5df25b1039d52113421d62",
+        "size_bytes": 43790
+      },
+      "json": {
+        "path": "decays.json",
+        "sha256": "83ab629ece607d1b6821a15a2a0d13dd29a888ac498d97d28ab62aee53289faa",
+        "size_bytes": 77412
+      }
+    },
+    "production_channels": {
+      "csv": {
+        "path": "production_channels.csv",
+        "sha256": "6982da750272308872741b31c97eca8600d3bd6dc662eaf159c07f71c3df1436",
+        "size_bytes": 515
+      },
+      "json": {
+        "path": "production_channels.json",
+        "sha256": "342be616aa6201eb8fa7158316d0b753b50940cd459818c5252afba098de97f1",
+        "size_bytes": 1026
+      }
+    },
+    "ranking": {
+      "csv": {
+        "path": "ranking.csv",
+        "sha256": "1b6e77637bee0ff2c43eb850ea211464e7838456a2e1b27737cdaea6805dfb56",
+        "size_bytes": 4526952
+      },
+      "json": {
+        "path": "ranking.json",
+        "sha256": "bf994c7649d0b62ef380a22b46952a03873dec99b32c9021d4b7f058cab89cf6",
+        "size_bytes": 6255421
+      }
+    },
+    "total_widths": {
+      "csv": {
+        "path": "total_widths.csv",
+        "sha256": "999a7b331e6181082bfc73454bcb0ae51a6ad3f5f6a3aeab15f9127c6c47297f",
+        "size_bytes": 232
+      },
+      "json": {
+        "path": "total_widths.json",
+        "sha256": "5176daab4c962e60cb5af5f44148c927356d8db774416ddea713d682332fcf9f",
+        "size_bytes": 755
+      }
+    }
+  },
+  "discovery_complete": true,
+  "explicit_results_file": "explicit_decay_results.json",
+  "export_complete": true,
+  "failures": [],
+  "history_counts": {
+    "calculated": 81,
+    "discovery_complete": true,
+    "fingerprint": "ed82e57edce5cb2062b3ae7ca79440c3cd695ab4531ee01cb40bb73d26f0e657",
+    "revision": 50,
+    "total": 7049
+  },
+  "history_exports": {
+    "complete": true,
+    "counts": {
+      "calculated": 81,
+      "discovery_complete": true,
+      "fingerprint": "ed82e57edce5cb2062b3ae7ca79440c3cd695ab4531ee01cb40bb73d26f0e657",
+      "revision": 50,
+      "total": 7049
+    },
+    "files": {
+      "history_nodes.json": {
+        "path": "history_nodes.json",
+        "sha256": "d91810c8037332a11e69b92f0ca8e4503352ca6aeef82109a77306688d507836",
+        "size_bytes": 45353
+      },
+      "ranking.csv": {
+        "path": "ranking.csv",
+        "sha256": "1b6e77637bee0ff2c43eb850ea211464e7838456a2e1b27737cdaea6805dfb56",
+        "size_bytes": 4526952
+      },
+      "ranking.json": {
+        "path": "ranking.json",
+        "sha256": "bf994c7649d0b62ef380a22b46952a03873dec99b32c9021d4b7f058cab89cf6",
+        "size_bytes": 6255421
+      }
+    },
+    "identity": "b10894664e955c868a270d51b92da8838c6d30cc771d8eaff8c4453920fe9e2a",
+    "schema": "history-exports-v1",
+    "source": {
+      "fingerprint": "ed82e57edce5cb2062b3ae7ca79440c3cd695ab4531ee01cb40bb73d26f0e657",
+      "path": "histories/89ee650bae6f0b05af2a/histories.sqlite",
+      "path_base": "run",
+      "revision": 50,
+      "schema": "madgraph-history-store-v2",
+      "sha256": "ba67d4803166fd6436c1ca1489c381326a6497c15e988b2850ad96e4df1148a6",
+      "size_bytes": 2117632
+    }
+  },
+  "history_store": {
+    "fingerprint": "ed82e57edce5cb2062b3ae7ca79440c3cd695ab4531ee01cb40bb73d26f0e657",
+    "path": "histories/89ee650bae6f0b05af2a/histories.sqlite",
+    "path_base": "run",
+    "revision": 50,
+    "schema": "madgraph-history-store-v2",
+    "sha256": "ba67d4803166fd6436c1ca1489c381326a6497c15e988b2850ad96e4df1148a6",
+    "size_bytes": 2117632
+  },
+  "input_file": "input.txt",
+  "model": "mw_colour_octet",
+  "physics_fingerprint": "2db745f6ed135c024c6a5c4aae8de2c82561b13bb642bfe7072917d2501de4b0",
+  "previous_results": null,
+  "publication": {
+    "kind": "benchmark result snapshot",
+    "paths_relative_to": "this run directory",
+    "source": "original completed benchmark run",
+    "table_checksums": "published bytes"
+  },
+  "report_notices": [
+    "x1 > c s~: retained perturbative partial width 0.000396509 GeV below the QCD scale; hadronization may matter.",
+    "x1 > c d~: retained perturbative partial width 2.12969e-05 GeV below the QCD scale; hadronization may matter.",
+    "x1 > u d~: retained perturbative partial width 1.59856e-09 GeV below the QCD scale; hadronization may matter.",
+    "x1 > u s~: retained perturbative partial width 8.58602e-11 GeV below the QCD scale; hadronization may matter.",
+    "x2r > c c~: retained perturbative partial width 0.000432776 GeV below the QCD scale; hadronization may matter.",
+    "x2r > u u~: retained perturbative partial width 1.74479e-09 GeV below the QCD scale; hadronization may matter.",
+    "x2i > c c~: retained perturbative partial width 0.000412693 GeV below the QCD scale; hadronization may matter.",
+    "x2i > u u~: retained perturbative partial width 1.6638e-09 GeV below the QCD scale; hadronization may matter.",
+    "Reported decay rows omit modes below min_br; omitted_probability records their summed BR for each parent. The SLHA card and total widths retain those modes.",
+    "Adaptive precision and the maximum body multiplicity can leave uncomputed contributions. Their probability is unknown; reported BRs use the computed total, not a guaranteed physical total."
+  ],
+  "requested_complete": true,
+  "requested_rates_complete": true,
+  "requested_scope": [
+    "C0005"
+  ],
+  "run_id": "2db745f6ed135c024c6a",
+  "schema": "madgraph-step-run-v1",
+  "selected_integrations_complete": true,
+  "settings": {
+    "collider": {
+      "accuracy": 0.01,
+      "draa": 0.4,
+      "draj": 0.4,
+      "dral": 0.4,
+      "drjj": 0.4,
+      "drjl": 0.4,
+      "drll": 0.4,
+      "dynamical_scale_choice": 3,
+      "energy_tev": 13.6,
+      "etaa": 2.5,
+      "etaj": 5.0,
+      "etal": 2.5,
+      "max_final": 2,
+      "max_tree_signatures": 250000,
+      "new_particles_only": true,
+      "parton_pdgs": [
+        21,
+        1,
+        -1,
+        2,
+        -2,
+        3,
+        -3,
+        4,
+        -4,
+        5,
+        -5
+      ],
+      "pdf": "nn23lo1",
+      "pta": 20.0,
+      "ptj": 20.0,
+      "ptl": 10.0,
+      "seed": 1
+    },
+    "decays": {
+      "max_body": 2,
+      "min_br": 1e-08,
+      "precision": 0.01
+    },
+    "explicit_decays": {
+      "bwcutoff": 15.0,
+      "cut_decays": false,
+      "history_ids": []
+    },
+    "ranking": {
+      "batch_size": 1000,
+      "max_depth": 12,
+      "max_render_nodes": 10000,
+      "max_width_mass_ratio": 0.01,
+      "memory_mb": 64,
+      "min_relative_rate": 0.0001,
+      "threshold_widths": 5.0
+    }
+  },
+  "stage_fingerprints": {
+    "channels": "d9cdc4cb8cb8cd48d3449a24251cc78557da30243d0413342433c2e9cdbb9b23",
+    "decays": "3497f9a5d17ecade07f2697388bf96d6c157b176b76b1fd0c21aff4216a5ee86",
+    "explicit_decays": "a10498977fb42ce88de5854b8deadacb510529441c7f9baccd8753ea04ce92db",
+    "export": "6d852e1a120049682cbd6c424be8a02337ddca59d3d78ed2d8e1ffa4c3e5f754",
+    "histories": "89ee650bae6f0b05af2afb0c572fb2d440ad2a13b348c4e3c6aa775cce9174f8",
+    "rates": "4b193afd944c5578eb830c756fabaaba4c17daf4b0b0c9f88cf18265d69f4bbf"
+  },
+  "status": "partial",
+  "uncomputed_production_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012"
+  ],
+  "updated_at": "2026-11-24T18:09:24.104089+00:00",
+  "vacuum": {
+    "analysis": "fixed_sm",
+    "assumptions": {
+      "higgs_mass_gev": 125.0,
+      "higgs_mixing": false,
+      "higgs_vev_gev": 246.22056907348588,
+      "lambda_h": 0.12886689630821146,
+      "mu_h_squared": 7812.5,
+      "scalar_vevs": {
+        "X": 0.0
+      }
+    },
+    "boundedness": "not_evaluated",
+    "global_minimum": null,
+    "loop_stability": "not_evaluated",
+    "potential_minimized": false,
+    "schema": "fixed-sm-v1",
+    "search_complete": false,
+    "status": "assumed_fixed_sm",
+    "vacuum_lifetime": "not_evaluated",
+    "warnings": [
+      "The SM electroweak vacuum and zero new-scalar VEVs are assumed; the scalar potential is not minimized. Global stability, boundedness and vacuum lifetime are not established."
+    ]
+  },
+  "vacuum_status": "assumed_fixed_sm"
+}

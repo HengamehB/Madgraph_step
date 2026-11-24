@@ -1,0 +1,3 @@
+# Manohar--Wise (8,2,1/2) scalar. Electric charge Q = T3 + Y.
+X = {'spin': 'scalar', 'su2': 2, 'su3': '8', 'hypercharge': '1/2', 'boson_kind': 'complex'}
+Y = None

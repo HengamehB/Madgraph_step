@@ -1,0 +1,10 @@
+[
+  {"diagrams":15,"final_pdgs":[-9300001,9300001],"id":"C0001","process":"p p > x- x+"},
+  {"diagrams":6,"final_pdgs":[-9300001,9300002],"id":"C0002","process":"p p > x- x1"},
+  {"diagrams":6,"final_pdgs":[-9300001,9300003],"id":"C0003","process":"p p > x- x2"},
+  {"diagrams":6,"final_pdgs":[9300001,9300002],"id":"C0004","process":"p p > x+ x1"},
+  {"diagrams":6,"final_pdgs":[9300001,9300003],"id":"C0005","process":"p p > x+ x2"},
+  {"diagrams":5,"final_pdgs":[9300002,9300002],"id":"C0006","process":"p p > x1 x1"},
+  {"diagrams":5,"final_pdgs":[9300002,9300003],"id":"C0007","process":"p p > x1 x2"},
+  {"diagrams":5,"final_pdgs":[9300003,9300003],"id":"C0008","process":"p p > x2 x2"}
+]

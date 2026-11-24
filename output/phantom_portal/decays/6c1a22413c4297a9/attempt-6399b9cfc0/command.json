@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "python",
+    "../../madgraph_runner.py",
+    "--worker"
+  ],
+  "job": {
+    "action": "decays",
+    "decay_settings": {
+      "max_body": 2,
+      "min_br": 1e-08,
+      "precision": 0.01
+    },
+    "new_particles": [
+      "x"
+    ],
+    "parameter_card": "export/058187c2a15cd6d2/attempt-301dd16a6f/madgraph_import/param_card.dat",
+    "parameters": {},
+    "ufo": "export/058187c2a15cd6d2/attempt-301dd16a6f/phantom_portal_UFO"
+  },
+  "schema": "madgraph-step-command-v1",
+  "tools": {
+    "bash": "bash",
+    "cxx": "c++",
+    "feynrules": "../../vendor/FeynRules",
+    "fortran": "gfortran",
+    "madgraph": "../../vendor/MG5_aMC",
+    "make": "make",
+    "perl": "perl",
+    "python": "python",
+    "wolfram_kernel": "WolframKernel"
+  }
+}

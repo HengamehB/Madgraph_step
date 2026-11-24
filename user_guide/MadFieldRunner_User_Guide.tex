@@ -73,9 +73,8 @@ Enter \code{edit} to correct the path or \code{y} to save the detected paths
 in \code{.config}, then repeat \code{./run.sh check}.
 
 \section{Run the supplied model}
-The two files in \code{input/} have distinct roles. \code{sample_particle_sextet.txt}
-defines the scalar colour sextet and triplet. The coefficients and calculation
-settings are in \code{sample_model_sextet.txt}. Run the model directly.
+The six examples are in \code{input/}. For the first, \code{sample_particle_sextet.txt}
+defines the sextet and triplet. Run the prepared model to use the supplied coefficients.
 \begin{lstlisting}
 ./run.sh rates input/sample_model_sextet.txt --selected C0004 --page-size 5
 \end{lstlisting}
@@ -86,10 +85,10 @@ The terminal shows five rows. The saved CSV contains all 1,925 histories.
 
 \section{Compare with the supplied result}
 Open \code{report.html} in the folder printed after \textbf{Run files}.
-Compare it with \code{sample_output/report.html}, or check the saved
-tables with this command. Replace the quoted path with your run folder.
+The reference report is in \code{output/triplet_sextet/}.
+To compare the tables, replace the quoted path below with your run folder.
 \begin{lstlisting}
-python sample_output/compare.py "path/to/saved run"
+python output/triplet_sextet/compare.py "path/to/saved run"
 \end{lstlisting}
 For a manual check, find \code{C0004} and $x_1\to u\,u$ in \code{ranking.csv}.
 

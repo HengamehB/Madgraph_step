@@ -112,7 +112,7 @@ class ColourYukawaTests(unittest.TestCase):
             self.assertIn(class_name + '[', yukawa_term)
 
     def test_unrelated_contractions_keep_their_diagnostics(self):
-        for label in ('Q^2 X', 'L Q X†'):
+        for label in ('Q^2 X', 'X dc† uc†'):
             with self.subTest(label=label):
                 definition = ModelDefinition(1, TRIPLET, selected_operators=[label])
                 self.assertTrue(definition.operator_inputs()[0]['obstruction'])

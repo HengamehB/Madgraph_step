@@ -1,0 +1,27 @@
+{
+  "coefficients": {
+    "O0002": -1098.438578412822,
+    "O0005": -0.005,
+    "O0006": -0.01,
+    "O0007": 0.5
+  },
+  "compiler_limits": {},
+  "higgs_mass": 125.0,
+  "model_name": "phantom_portal",
+  "model_signature": "operator-inputs-v1:0a81a854c0dd8df2fcc6c9b67eebf001f7007e22c19019baa69cc81e9ba1fbbd",
+  "sm_inputs": {
+    "Gf": 1.16637e-05,
+    "MZ": 91.1876,
+    "aEWM1": 127.9
+  },
+  "sm_scheme": "fixed_sm",
+  "stable_particles": [
+    "x"
+  ],
+  "vevs": {
+    "X": 0.0
+  },
+  "widths": {
+    "X": 0.0
+  }
+}

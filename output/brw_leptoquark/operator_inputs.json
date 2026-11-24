@@ -1,0 +1,58 @@
+{
+  "interpretation": "Only enabled entries enter the selected Lagrangian and numerical physics.",
+  "operators": {
+    "D(X) D(X†)": {
+      "coefficient": 1.0,
+      "enabled": true
+    },
+    "H H† X X†": {
+      "coefficient": -0.01,
+      "enabled": false
+    },
+    "L Q X†": {
+      "coefficient": [
+        0.3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "enabled": true
+    },
+    "Q^2 X": {
+      "coefficient": null,
+      "enabled": false
+    },
+    "X X†": {
+      "coefficient": -40000.0,
+      "enabled": true
+    },
+    "X dc† uc†": {
+      "coefficient": null,
+      "enabled": false
+    },
+    "X ec uc": {
+      "coefficient": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "enabled": false
+    },
+    "X^2 X†^2": {
+      "coefficient": -0.01,
+      "enabled": false
+    }
+  },
+  "schema": "operator-input-state-v1"
+}

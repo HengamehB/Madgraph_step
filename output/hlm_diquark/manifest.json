@@ -1,0 +1,256 @@
+{
+  "all_rates_complete": false,
+  "artifact_schema": "madgraph-step-artifact-v1",
+  "cache_rejections": [],
+  "complete": false,
+  "current_tables": {
+    "cross_sections": {
+      "csv": {
+        "path": "cross_sections.csv",
+        "sha256": "8916e5a682556819128eea367225266cbac1d791de4631dfef56079a6eced2d6",
+        "size_bytes": 845
+      },
+      "json": {
+        "path": "cross_sections.json",
+        "sha256": "61e22631c56fa275a6dd6a0e3bbf79885d521c709f9b707a757c925e31ec042a",
+        "size_bytes": 11202
+      }
+    },
+    "decays": {
+      "csv": {
+        "path": "decays.csv",
+        "sha256": "c01e469f8fedd56177ee21ed36f1ba9d101d9a4e6658a88a385efe74e1943181",
+        "size_bytes": 53427
+      },
+      "json": {
+        "path": "decays.json",
+        "sha256": "6e6c255077bc04bae96a343df10fd275129b234110a04031aebbbec4091696b3",
+        "size_bytes": 92529
+      }
+    },
+    "production_channels": {
+      "csv": {
+        "path": "production_channels.csv",
+        "sha256": "93a9b23b26a1b64880096cd16971687139283ab2330a5a9c988671f80eceb603",
+        "size_bytes": 539
+      },
+      "json": {
+        "path": "production_channels.json",
+        "sha256": "e7ccf3610d1b79423bf33404405ee5ffac937f7b7fac2326e05cfbc7178ea903",
+        "size_bytes": 1100
+      }
+    },
+    "ranking": {
+      "csv": {
+        "path": "ranking.csv",
+        "sha256": "eda235a5865e5b0b33ee9fd8e93ef02abf3978678c7514e00fcda3657a73f556",
+        "size_bytes": 11460
+      },
+      "json": {
+        "path": "ranking.json",
+        "sha256": "b1aa93f2e025763fda7f1bd15c4f1d244785d20ef3d0e53d8108ec13f4c8c3be",
+        "size_bytes": 26740
+      }
+    },
+    "total_widths": {
+      "csv": {
+        "path": "total_widths.csv",
+        "sha256": "0ccf4f73fd7b5975673766ce4b862befb5e33f373ccc22f8d3faab57a6ab2a78",
+        "size_bytes": 199
+      },
+      "json": {
+        "path": "total_widths.json",
+        "sha256": "de5ea4179ad9ad511ffdefcc06329d715e0ff85279397c90dd5ed617d0226107",
+        "size_bytes": 722
+      }
+    }
+  },
+  "discovery_complete": true,
+  "explicit_results_file": "explicit_decay_results.json",
+  "export_complete": true,
+  "failures": [],
+  "history_counts": {
+    "calculated": 1,
+    "discovery_complete": true,
+    "fingerprint": "03e456ce65229b88e5a958751994723f00e13d04f7cf59743c45cdba0634be35",
+    "revision": 29,
+    "total": 42
+  },
+  "history_exports": {
+    "complete": true,
+    "counts": {
+      "calculated": 1,
+      "discovery_complete": true,
+      "fingerprint": "03e456ce65229b88e5a958751994723f00e13d04f7cf59743c45cdba0634be35",
+      "revision": 29,
+      "total": 42
+    },
+    "files": {
+      "history_nodes.json": {
+        "path": "history_nodes.json",
+        "sha256": "17700423a22fd98d7c607e06ccfa9c7daf85b1f420e102ec9af1eb444278a1ea",
+        "size_bytes": 3799
+      },
+      "ranking.csv": {
+        "path": "ranking.csv",
+        "sha256": "eda235a5865e5b0b33ee9fd8e93ef02abf3978678c7514e00fcda3657a73f556",
+        "size_bytes": 11460
+      },
+      "ranking.json": {
+        "path": "ranking.json",
+        "sha256": "b1aa93f2e025763fda7f1bd15c4f1d244785d20ef3d0e53d8108ec13f4c8c3be",
+        "size_bytes": 26740
+      }
+    },
+    "identity": "affb87afa75d01f997a30d85a6ef1a5beff2fd70867dd758f99a29a05aef8e05",
+    "schema": "history-exports-v1",
+    "source": {
+      "fingerprint": "03e456ce65229b88e5a958751994723f00e13d04f7cf59743c45cdba0634be35",
+      "path": "histories/d38ab31199ea4d89d798/histories.sqlite",
+      "path_base": "run",
+      "revision": 29,
+      "schema": "madgraph-history-store-v2",
+      "sha256": "f10ca29b845b12c26114178716f63eb127c1dda36792be8868a5e3563efa6cd8",
+      "size_bytes": 57344
+    }
+  },
+  "history_store": {
+    "fingerprint": "03e456ce65229b88e5a958751994723f00e13d04f7cf59743c45cdba0634be35",
+    "path": "histories/d38ab31199ea4d89d798/histories.sqlite",
+    "path_base": "run",
+    "revision": 29,
+    "schema": "madgraph-history-store-v2",
+    "sha256": "f10ca29b845b12c26114178716f63eb127c1dda36792be8868a5e3563efa6cd8",
+    "size_bytes": 57344
+  },
+  "input_file": "input.txt",
+  "model": "hlm_diquark",
+  "physics_fingerprint": "f7857e9cc78401eaf17aa79e5daacb0a608d06604b13d42cbf00879c47076a69",
+  "previous_results": null,
+  "publication": {
+    "kind": "benchmark result snapshot",
+    "paths_relative_to": "this run directory",
+    "source": "original completed benchmark run",
+    "table_checksums": "published bytes"
+  },
+  "report_notices": [
+    "x2 > u s: retained perturbative partial width 0.040563 GeV below the QCD scale; hadronization may matter.",
+    "x3 > d s: retained perturbative partial width 0.076991 GeV below the QCD scale; hadronization may matter.",
+    "x3 > s s: retained perturbative partial width 0.0020676 GeV below the QCD scale; hadronization may matter.",
+    "Reported decay rows omit modes below min_br; omitted_probability records their summed BR for each parent. The SLHA card and total widths retain those modes.",
+    "Adaptive precision and the maximum body multiplicity can leave uncomputed contributions. Their probability is unknown; reported BRs use the computed total, not a guaranteed physical total."
+  ],
+  "requested_complete": true,
+  "requested_rates_complete": true,
+  "requested_scope": [
+    "C0004"
+  ],
+  "run_id": "f7857e9cc78401eaf17a",
+  "schema": "madgraph-step-run-v1",
+  "selected_integrations_complete": true,
+  "settings": {
+    "collider": {
+      "accuracy": 0.01,
+      "draa": 0.4,
+      "draj": 0.4,
+      "dral": 0.4,
+      "drjj": 0.4,
+      "drjl": 0.4,
+      "drll": 0.4,
+      "dynamical_scale_choice": 3,
+      "energy_tev": 13.6,
+      "etaa": 2.5,
+      "etaj": 5.0,
+      "etal": 2.5,
+      "max_final": 2,
+      "max_tree_signatures": 250000,
+      "new_particles_only": true,
+      "parton_pdgs": [
+        21,
+        1,
+        -1,
+        2,
+        -2,
+        3,
+        -3,
+        4,
+        -4,
+        5,
+        -5
+      ],
+      "pdf": "nn23lo1",
+      "pta": 20.0,
+      "ptj": 20.0,
+      "ptl": 10.0,
+      "seed": 1
+    },
+    "decays": {
+      "max_body": 2,
+      "min_br": 1e-08,
+      "precision": 0.01
+    },
+    "explicit_decays": {
+      "bwcutoff": 15.0,
+      "cut_decays": false,
+      "history_ids": []
+    },
+    "ranking": {
+      "batch_size": 1000,
+      "max_depth": 12,
+      "max_render_nodes": 10000,
+      "max_width_mass_ratio": 0.01,
+      "memory_mb": 64,
+      "min_relative_rate": 0.0001,
+      "threshold_widths": 5.0
+    }
+  },
+  "stage_fingerprints": {
+    "channels": "ab9392c407b9c79287d86ee11a5b23e0b964806fa4b95f05de58864b2ef9631d",
+    "decays": "86c6fc99494cf0fbf2591d3d615d243141745979f45b62f321fd4b6176df52fa",
+    "explicit_decays": "c3d6045a08ef27802544bb7066d3fa9861676c7dcb9ec0957801096e39da246b",
+    "export": "467f68f13bc8a123142308cb7463dd968ea333c8e0f880247306223f5968b73a",
+    "histories": "d38ab31199ea4d89d79836447c20cbdf53eb3240045cf07b32d4375f75384292",
+    "rates": "9bb9bc072c47adf2a0085fdb90e422a6dac746ce339c4b0a09ca86a402b59bdf"
+  },
+  "status": "partial",
+  "uncomputed_production_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013"
+  ],
+  "updated_at": "2026-11-24T18:10:32.182066+00:00",
+  "vacuum": {
+    "analysis": "fixed_sm",
+    "assumptions": {
+      "higgs_mass_gev": 125.0,
+      "higgs_mixing": false,
+      "higgs_vev_gev": 246.22056907348588,
+      "lambda_h": 0.12886689630821146,
+      "mu_h_squared": 7812.5,
+      "scalar_vevs": {
+        "X": 0.0
+      }
+    },
+    "boundedness": "not_evaluated",
+    "global_minimum": null,
+    "loop_stability": "not_evaluated",
+    "potential_minimized": false,
+    "schema": "fixed-sm-v1",
+    "search_complete": false,
+    "status": "assumed_fixed_sm",
+    "vacuum_lifetime": "not_evaluated",
+    "warnings": [
+      "The SM electroweak vacuum and zero new-scalar VEVs are assumed; the scalar potential is not minimized. Global stability, boundedness and vacuum lifetime are not established."
+    ]
+  },
+  "vacuum_status": "assumed_fixed_sm"
+}

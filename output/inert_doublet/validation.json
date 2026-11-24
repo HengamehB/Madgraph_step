@@ -1,0 +1,39 @@
+{
+  "coverage": {
+    "O0002": "resolved and numerically normalized",
+    "O0003": "resolved and numerically normalized",
+    "O0006": "resolved and numerically normalized",
+    "O0010": "resolved and numerically normalized",
+    "O0012": "resolved and numerically normalized"
+  },
+  "external_export_validated": true,
+  "model_digest": "47dfad6dbbe12c6de0ae210dd01bf7fd4663e2cddc6d71b21640cd034d637220",
+  "parameter_card": "export/fc1d0b82021e6a50/attempt-ac144babb2/madgraph_import/param_card.dat",
+  "parameter_card_digest": "a5843b5d186b842c7e4c2c45e9726789894c3aa04519232356a2fa0aeb49e83b",
+  "status": "ufo_validated",
+  "ufo": "export/fc1d0b82021e6a50/attempt-ac144babb2/inert_doublet_UFO",
+  "vacuum": {
+    "analysis": "fixed_sm",
+    "assumptions": {
+      "higgs_mass_gev": 125.0,
+      "higgs_mixing": false,
+      "higgs_vev_gev": 246.22056907348588,
+      "lambda_h": 0.12886689630821146,
+      "mu_h_squared": 7812.5,
+      "scalar_vevs": {
+        "X": 0.0
+      }
+    },
+    "boundedness": "not_evaluated",
+    "global_minimum": null,
+    "loop_stability": "not_evaluated",
+    "potential_minimized": false,
+    "schema": "fixed-sm-v1",
+    "search_complete": false,
+    "status": "assumed_fixed_sm",
+    "vacuum_lifetime": "not_evaluated",
+    "warnings": [
+      "The SM electroweak vacuum and zero new-scalar VEVs are assumed; the scalar potential is not minimized. Global stability, boundedness and vacuum lifetime are not established."
+    ]
+  }
+}

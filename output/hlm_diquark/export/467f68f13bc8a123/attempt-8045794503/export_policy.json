@@ -1,0 +1,9 @@
+{
+  "effective_analytic_decays": false,
+  "effective_wolfram_limits": {
+    "max_wolfram_iterations": 4096,
+    "max_wolfram_recursion": 2500
+  },
+  "reason": "The bundled FeynRules analytic-width colour sums do not support sextets. MadWidth must calculate these widths from the exported matrix elements.",
+  "requested_analytic_decays": true
+}

@@ -1,0 +1,34 @@
+{
+  "coefficients": {
+    "O0001": -40000.0,
+    "O0003": [
+      0.3,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "O0008": 1.0
+  },
+  "compiler_limits": {},
+  "higgs_mass": 125.0,
+  "model_name": "brw_leptoquark",
+  "model_signature": "operator-inputs-v1:06fc4b2a61b5d669fb7cae9bc8b305ad179a6dfadbc8cc6974551b4cf1d490aa",
+  "sm_inputs": {
+    "Gf": 1.16637e-05,
+    "MZ": 91.1876,
+    "aEWM1": 127.9
+  },
+  "sm_scheme": "fixed_sm",
+  "stable_particles": [],
+  "vevs": {
+    "X": 0.0
+  },
+  "widths": {
+    "X": 0.0
+  }
+}

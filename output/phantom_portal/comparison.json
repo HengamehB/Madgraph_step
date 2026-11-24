@@ -1,0 +1,81 @@
+{
+  "artifacts": {
+    "Completion manifest": "manifest.json",
+    "Decay card": "decays/6c1a22413c4297a9/attempt-6399b9cfc0/param_card.dat",
+    "FeynRules log": "export/058187c2a15cd6d2/attempt-301dd16a6f/feynrules.log",
+    "FeynRules source": "export/058187c2a15cd6d2/attempt-301dd16a6f/feynrules_source",
+    "Lagrangian": "lagrangian.tex",
+    "MadGraph import log": "export/058187c2a15cd6d2/attempt-301dd16a6f/madgraph_import/madgraph.log",
+    "MadWidth log": "decays/6c1a22413c4297a9/attempt-6399b9cfc0/madgraph.log",
+    "Parameter card": "export/058187c2a15cd6d2/attempt-301dd16a6f/param_card.dat",
+    "Ranked CSV": "ranking.csv",
+    "Report": "report.html",
+    "Spectrum": "spectrum.json",
+    "UFO": "export/058187c2a15cd6d2/attempt-301dd16a6f/phantom_portal_UFO",
+    "Widths": "decays.csv"
+  },
+  "case": "phantom_portal",
+  "checks": [
+    {
+      "expected": 125.0,
+      "measured": 125.0,
+      "observable": "UFO Higgs mass [GeV]",
+      "passed": true,
+      "relative_difference": 0.0
+    },
+    {
+      "expected": 50.0,
+      "measured": 50.0,
+      "observable": "UFO X mass [GeV]",
+      "passed": true,
+      "relative_difference": 0.0
+    },
+    {
+      "expected": -2.4622056907348586,
+      "measured": -2.462205690734859,
+      "observable": "Im(hXX coupling) [GeV]",
+      "passed": true,
+      "relative_difference": 1.8036235214675416e-16
+    },
+    {
+      "expected": 0.0,
+      "measured": 0.0,
+      "observable": "Re(hXX coupling) [GeV]",
+      "passed": true,
+      "relative_difference": null
+    },
+    {
+      "expected": 0.000289460993131609,
+      "measured": 0.0002894609883176,
+      "observable": "Higgs partial width to two singlets [GeV]",
+      "passed": true,
+      "relative_difference": 1.663094204292368e-08
+    },
+    {
+      "expected": 0.0,
+      "measured": 0.0,
+      "observable": "Stable X total width [GeV]",
+      "passed": true,
+      "relative_difference": null
+    }
+  ],
+  "decays": [
+    {
+      "branching_ratio": 0.0456632,
+      "process": "h > x x"
+    }
+  ],
+  "history_counts": {
+    "calculated": 0,
+    "discovery_complete": true,
+    "fingerprint": "9e5e51576d0fd7ef1ee867821116d96103d262413f0367753da15184a1fccbe4",
+    "revision": 4,
+    "total": 1
+  },
+  "passed": true,
+  "production": null,
+  "run_id": "b5d34a1f616845fd20d1",
+  "scope": "Decay and discovery only. The single on-shell Higgs partial width is compared independently of production.",
+  "source": "Chosen Z2-odd real singlet at 50 GeV, rho=0.01 in L = -rho X² H†H/2. [Silveira and Zee](https://doi.org/10.1016/0370-2693(85)90624-0), [analytic Higgs width, Eq. 21](https://arxiv.org/pdf/1207.4930).",
+  "tolerance": "0.1% for nonzero widths and couplings"
+}

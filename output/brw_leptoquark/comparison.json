@@ -1,0 +1,65 @@
+{
+  "status": "pass",
+  "reference": "https://www-library.desy.de/preparch/desy/postpr/1986/desy86-150.pdf#page=2",
+  "reference_equations": "BRW (5a), (6a), (7a)",
+  "run_id": "93869b51086de25a5fc9",
+  "field": "X is the charge −1/3 colour triplet conjugate of BRW S1",
+  "mass_GeV": 200.0,
+  "g_L_11": 0.3,
+  "g_R": 0,
+  "cabibbo_rad": 0.227736,
+  "decays": {
+    "(2, 11)": {
+      "analytic_GeV": 0.3580986218356624,
+      "measured_GeV": 0.3580986,
+      "relative_difference": -6.09766724890548e-08
+    },
+    "(1, 12)": {
+      "analytic_GeV": 0.3398451712863657,
+      "measured_GeV": 0.33984516844248,
+      "relative_difference": -8.368180481888032e-09
+    },
+    "(3, 12)": {
+      "analytic_GeV": 0.018253440928597073,
+      "measured_GeV": 0.018253438719492,
+      "relative_difference": -1.2102403490477087e-07
+    },
+    "neutral_sum": {
+      "analytic_GeV": 0.3580986122149628,
+      "measured_GeV": 0.35809860716197195,
+      "relative_difference": -1.41106127893309e-08
+    },
+    "total": {
+      "analytic_GeV": 0.7161972340506251,
+      "measured_GeV": 0.7161972,
+      "relative_difference": -4.7543642245351236e-08
+    }
+  },
+  "production": {
+    "channel": "p p > xbar x",
+    "cross_section_pb": 46.585256022799996,
+    "error_pb": 0.21777516078354228
+  },
+  "ranked_example": {
+    "history_id": "H3829bb99d64e279c4f715f0f6573f8a1d1a9aa1b44146b98239bb6adfdfdefb4",
+    "history": "xbar → (e+ u~); x → (u e-)",
+    "branching_probability": 0.25,
+    "rate_pb": 11.646314005699999
+  },
+  "files": {
+    "Lagrangian": "lagrangian.tex",
+    "FeynRules source": "export/5cfbdfa009d94fdb/attempt-4a5ef4cd8f/feynrules_source/gauge_matter.fr",
+    "UFO vertices": "export/5cfbdfa009d94fdb/attempt-4a5ef4cd8f/brw_leptoquark_UFO/vertices.py",
+    "FeynRules log": "export/5cfbdfa009d94fdb/attempt-4a5ef4cd8f/feynrules.log",
+    "MadWidth card": "decays/7072d8d0569728de/attempt-e76ed96aff/two_body_param_card.dat",
+    "Decay modes": "decays.csv",
+    "Production result": "cross_sections.csv",
+    "Ranking": "ranking.csv",
+    "Run manifest": "manifest.json",
+    "MadGraph UFO import": "export/5cfbdfa009d94fdb/attempt-4a5ef4cd8f/madgraph_import/madgraph.log",
+    "MadWidth log": "decays/7072d8d0569728de/attempt-e76ed96aff/madgraph.log",
+    "Integration log": "rates/C0001/1347a8723322d639/attempt-9767cffae9/C0001/madgraph.log",
+    "Run card": "rates/C0001/1347a8723322d639/attempt-9767cffae9/C0001/process/Cards/run_card.dat",
+    "Production parameter card": "rates/C0001/1347a8723322d639/attempt-9767cffae9/C0001/param_card.dat"
+  }
+}

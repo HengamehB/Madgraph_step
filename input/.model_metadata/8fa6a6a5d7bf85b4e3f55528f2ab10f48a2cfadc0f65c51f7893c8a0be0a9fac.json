@@ -1,0 +1,328 @@
+{
+  "metadata": {
+    "$dict": [
+      [
+        "_input_bindings",
+        {
+          "$dict": [
+            [
+              "schema",
+              "operator-table-bindings-v1"
+            ],
+            [
+              "context",
+              "883d547081c2659518125f38028867dc2da3743da67587cb17362adf946f5dce"
+            ],
+            [
+              "compiler_fingerprint",
+              "3ea030404748c216c13c6a8712844a472b66107aab3af7085e283af5b5fdef08"
+            ],
+            [
+              "catalogue_fingerprint",
+              "e462739f16c4b78225f5af4ef10ad8d3f254883daa9183065e51c33a5d654cce"
+            ],
+            [
+              "operator_ids",
+              {
+                "$dict": [
+                  [
+                    "O0001",
+                    "X X†"
+                  ],
+                  [
+                    "O0002",
+                    "H H† X X†"
+                  ],
+                  [
+                    "O0003",
+                    "Q^2 X†"
+                  ],
+                  [
+                    "O0004",
+                    "X^2 X†^2"
+                  ],
+                  [
+                    "O0005",
+                    "D(X) D(X†)"
+                  ]
+                ]
+              }
+            ],
+            [
+              "coefficients",
+              {
+                "$dict": [
+                  [
+                    "X X†",
+                    "4d70a2b8b536915f21605d0e59bdc171073230f15130309ca44b399570fb2295"
+                  ],
+                  [
+                    "H H† X X†",
+                    "d298e752e428d6aab666893280abf0512df50cf0a6f70cb2cf7b2a7aa5a8a074"
+                  ],
+                  [
+                    "Q^2 X†",
+                    "2fbb1f47b1dda2a1dbf650572426af6adae4e9aa16ce38605aed9cef209c5919"
+                  ],
+                  [
+                    "X^2 X†^2",
+                    "ab0c089809ef5d7b4ca865bbb41ca8ed1bd3c69193f03a2c7f2515fd46ea56c9"
+                  ],
+                  [
+                    "D(X) D(X†)",
+                    "6a5995d2daae582c46ec46ebe2a0a92b163b72a0b49cf1634a5ff195ca17ecba"
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      [
+        "_input_provenance",
+        {
+          "$dict": [
+            [
+              "schema",
+              "model-input-origins-v1"
+            ],
+            [
+              "profile",
+              "coefficient-seeds-v1"
+            ],
+            [
+              "coefficients",
+              {
+                "$dict": [
+                  [
+                    "X X†",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "quadratic"
+                        ],
+                        [
+                          "units",
+                          "GeV^2"
+                        ],
+                        [
+                          "value",
+                          -40000.0
+                        ],
+                        [
+                          "reason",
+                          "Reference mass 200 GeV before VEV shifts/mixing; actual masses are derived."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "4d70a2b8b536915f21605d0e59bdc171073230f15130309ca44b399570fb2295"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "H H† X X†",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "quartic"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          [
+                            -0.01,
+                            -0.01
+                          ]
+                        ],
+                        [
+                          "reason",
+                          "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "d298e752e428d6aab666893280abf0512df50cf0a6f70cb2cf7b2a7aa5a8a074"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "Q^2 X†",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "dimensionless_interaction"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          [
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01,
+                            0.01
+                          ]
+                        ],
+                        [
+                          "reason",
+                          "Small real seed for each independent complex flavour coupling in the stated order."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "2fbb1f47b1dda2a1dbf650572426af6adae4e9aa16ce38605aed9cef209c5919"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "X^2 X†^2",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "quartic"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          [
+                            -0.01,
+                            -0.01,
+                            -0.01,
+                            -0.01,
+                            -0.01
+                          ]
+                        ],
+                        [
+                          "reason",
+                          "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "ab0c089809ef5d7b4ca865bbb41ca8ed1bd3c69193f03a2c7f2515fd46ea56c9"
+                        ],
+                        [
+                          "enabled",
+                          false
+                        ]
+                      ]
+                    }
+                  ],
+                  [
+                    "D(X) D(X†)",
+                    {
+                      "$dict": [
+                        [
+                          "profile",
+                          "coefficient-seeds-v1"
+                        ],
+                        [
+                          "role",
+                          "kinetic"
+                        ],
+                        [
+                          "units",
+                          "dimensionless"
+                        ],
+                        [
+                          "value",
+                          1.0
+                        ],
+                        [
+                          "reason",
+                          "Canonical scalar norm projected onto the displayed invariant basis."
+                        ],
+                        [
+                          "origin",
+                          "default"
+                        ],
+                        [
+                          "binding",
+                          "6a5995d2daae582c46ec46ebe2a0a92b163b72a0b49cf1634a5ff195ca17ecba"
+                        ],
+                        [
+                          "enabled",
+                          true
+                        ]
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ],
+            [
+              "unresolved",
+              {
+                "$dict": []
+              }
+            ]
+          ]
+        }
+      ],
+      [
+        "operator_reference",
+        "# Operator conventions and suggested values\n# This reference is managed with the generated model metadata.\n# Only literals and finite arithmetic are parsed; the model file is never executed.\n# Only canonical diagonal kinetic and mass terms start enabled. All interactions,\n# inter-particle/chiral mixing and holomorphic mass additions start disabled.\n# Suggestions are starting inputs, not fitted physics or a guarantee of export support.\n# The fixed SM vacuum assumes a 125 GeV unmixed Higgs and zero new scalar VEVs.\n# No potential minimization or global-stability test is performed.\n\n# O0001: X X†; operator dimension 2; coefficient units: GeV^2.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[3][c1])*(X†[3][c2])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[3][c1])*(X†[3][c2]))])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Reference mass 200 GeV before VEV shifts/mixing; actual masses are derived.\n\n# O0002: H H† X X†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (2):\n# 1.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[3][c1])*(X†[3][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[3][c1])*(X†[3][c2])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[3][c1])*(X†[3][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[3][c1])*(X†[3][c2]))])/2\n# 2.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[2][c1])*(X†[2][c2])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[3][c1])*(X†[3][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[2])*(X[2][c1])*(X†[1][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[2])*(X[3][c1])*(X†[2][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[1])*(X[1][c1])*(X†[2][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[1])*(X[2][c1])*(X†[3][c2])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[2][c1])*(X†[2][c2])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[2][c1])*(X†[2][c2])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[1])*(X[3][c1])*(X†[3][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[2])*(X[2][c1])*(X†[1][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[1])*(H†[2])*(X[3][c1])*(X†[2][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[1])*(X[1][c1])*(X†[2][c2])+(-Sqrt[2])*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[1])*(X[2][c1])*(X†[3][c2])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(H[2])*(H†[2])*(X[2][c1])*(X†[2][c2]))])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.\n\n# O0003: Q^2 X†; operator dimension 4; coefficient units: dimensionless.\n# Normalization: One half times the full symmetric complex matrix Y_QQ[i,j], with normalized sextet colour\n# Clebsches and i sigma2 sigmaA in the weak triplet. In descending T3 order the weak bilinears are sqrt(2) u_i\n# u_j, u_i d'_j + d'_i u_j, sqrt(2) d'_i d'_j, where d'_i = sum_k CKM[i,k] d_k. Quarks are left-handed. Add the\n# Hermitian conjugate. No implicit factorial unless stated.\n# Hermitian conjugation: add Hermitian conjugate; coefficient is real or complex.\n# Flavour/contraction entry order (6):\n# 1. Y_QQ[1,1]\n# 2. Y_QQ[1,2]\n# 3. Y_QQ[1,3]\n# 4. Y_QQ[2,2]\n# 5. Y_QQ[2,3]\n# 6. Y_QQ[3,3]\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small real seed for each independent complex flavour coupling in the stated order.\n\n# O0004: X^2 X†^2; operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (5):\n# 1.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4]))])/2\n# 2.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[2][c3])*(X†[1][c4])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[1][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[3][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[2][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[2][c3])*(X†[1][c4])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[1][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[3][c3])*(X†[2][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(2)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[2][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4]))])/2\n# 3.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[1][c2])*(X†[1][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[3][c2])*(X†[3][c3])*(X†[3][c4])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[1][c2])*(X†[1][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c3]]*IndexDelta[Index[Sextet,c2],Index[Sextet,c4]]*(X[3][c1])*(X[3][c2])*(X†[3][c3])*(X†[3][c4]))])/2\n# 4.\n# ((((1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])))+HC[((1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[3][c3])*(X†[1][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[1][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[3][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[1][c3])*(X†[3][c4])+(-1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4]))])/2\n# 5.\n# ((((1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[1][c2])*(X†[1][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[3][c2])*(X†[3][c3])*(X†[3][c4])))+HC[((1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[1][c2])*(X†[1][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[2][c2])*(X†[1][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[1][c1])*(X[3][c2])*(X†[1][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[1][c2])*(X†[2][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[2][c2])*(X†[2][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[2][c1])*(X[3][c2])*(X†[2][c3])*(X†[3][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[1][c2])*(X†[3][c3])*(X†[1][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[2][c2])*(X†[3][c3])*(X†[2][c4])+(1)*T6[c5,c3,c1]*T6[c5,c4,c2]*(X[3][c1])*(X[3][c2])*(X†[3][c3])*(X†[3][c4]))])/2\n# Limitations: No row-specific compiler limitation reported; full model validation remains required.\n# Suggested value: Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.\n\n# O0005: D(X) D(X†); operator dimension 4; coefficient units: dimensionless.\n# Normalization: Joint weak/SU(3) invariant basis joint-native-colour-weak-scalar-v1; Bose symmetry is applied to\n# the combined tensor. Coefficients multiply the displayed contractions, with no implicit factorial; weak\n# components are ordered by descending T3. No implicit factorial unless stated.\n# Hermitian conjugation: self-conjugate field content; choose Hermitian combinations; coefficient is real.\n# Flavour/contraction entry order (1):\n# 1.\n# ((((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[3][c1])*(X†[3][c2])))+HC[((1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[1][c1])*(X†[1][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[2][c1])*(X†[2][c2])+(1)*IndexDelta[Index[Sextet,c1],Index[Sextet,c2]]*(X[3][c1])*(X†[3][c2]))])/2\n# Limitations: Local contractions before IBP/Bianchi/EOM; derivative rows can be redundant or total derivatives.\n# Suggested value: Canonical scalar norm projected onto the displayed invariant basis.\n\n"
+      ]
+    ]
+  },
+  "schema": "madgraph-step-model-metadata-v1",
+  "sha256": "8fa6a6a5d7bf85b4e3f55528f2ab10f48a2cfadc0f65c51f7893c8a0be0a9fac"
+}

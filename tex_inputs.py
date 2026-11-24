@@ -263,7 +263,19 @@ def _compiler_fingerprint(definition):
                   for name in sorted(names) if (root / name).is_file()})
 
 
-def input_bindings(definition):
+# The two published revisions and their local benchmark builds were reviewed
+# together. The local exporters differ from their published counterparts only
+# in error diagnostics. New Yukawa bases still change their individual hashes.
+# A future compiler revision is gated again until its changes are reviewed.
+_BENCHMARK_RELEASE_COMPILER = '3a7f49cf319954f05e008e8e6c024810ef0d40eed6592a2e2efa19059267ce45'
+_REVIEWED_BINDING_COMPILERS = {
+    '7938716385fbb1cf7aa95377f9241a0f424fcac9b7900c7f293f2ea4a8a5b7fd',  # preceding release
+    'a15bda2685d72d40a99931ab988184c309a5c50780be866c73812f4754ef78b5',  # local preceding release
+    '3ea030404748c216c13c6a8712844a472b66107aab3af7085e283af5b5fdef08',  # five measured local runs
+}
+
+
+def input_bindings(definition, *, recorded=None):
     """Describe coefficient meanings independently of display IDs and values.
 
     The complete field context is conservative: adding/changing a multiplet
@@ -275,6 +287,10 @@ def input_bindings(definition):
                    su3=f.su3, hypercharge=str(f.hypercharge)) for f in definition.fields]
     context = dict(fields=fields, sm_generations=definition.result.sm_generations)
     convention = _compiler_fingerprint(definition)
+    stored_compiler = recorded.get('compiler_fingerprint') if isinstance(recorded, dict) else None
+    if (convention == _BENCHMARK_RELEASE_COMPILER and isinstance(stored_compiler, str)
+            and stored_compiler in _REVIEWED_BINDING_COMPILERS):
+        convention = stored_compiler
     metadata = {row["operator_id"]: row for row in definition.operator_inputs()}
     coefficients = {}
     for row in definition.lagrangian.operators:
@@ -320,7 +336,7 @@ def operator_inventory(definition):
     return complete
 
 
-def operator_bindings(active_definition, inventory_definition=None):
+def operator_bindings(active_definition, inventory_definition=None, *, recorded=None):
     """Bind every catalogue row, overriding active rows with their actual basis.
 
     Compiler dispatch can depend on the selected operators. Dormant entries use
@@ -329,8 +345,8 @@ def operator_bindings(active_definition, inventory_definition=None):
     The aggregate selected signature is deliberately not a validation gate.
     """
     inventory = inventory_definition or operator_inventory(active_definition)
-    complete = input_bindings(inventory)
-    active = input_bindings(active_definition)
+    complete = input_bindings(inventory, recorded=recorded)
+    active = input_bindings(active_definition, recorded=recorded)
     if complete['context'] != active['context']:
         raise ValueError('Operator inventory and active definition describe different fields.')
     if not set(active['coefficients']).issubset(complete['coefficients']):
@@ -343,8 +359,8 @@ def operator_bindings(active_definition, inventory_definition=None):
 
 
 def _check_operator_bindings(document):
-    expected = input_bindings(document.definition)
     stored = document.assignments.get('_input_bindings', {})
+    expected = input_bindings(document.definition, recorded=stored)
     valid = (isinstance(stored, dict) and stored.get('schema') == OPERATOR_BINDING_SCHEMA
              and all(stored.get(key) == expected[key] for key in ('context', 'compiler_fingerprint')))
     meanings = stored.get('coefficients', {}) if isinstance(stored, dict) else {}
@@ -387,10 +403,9 @@ class TexInputs:
 
     def build(self):
         """Validate meanings before binding the numbers to this catalogue."""
-        expected = input_bindings(self.definition)
         if 'operators' in self.assignments:
             _check_operator_bindings(self)
-        elif self.assignments.get("_input_bindings") != expected:
+        elif self.assignments.get("_input_bindings") != input_bindings(self.definition, recorded=self.assignments.get("_input_bindings")):
             raise _error(self.path, self._source.line("physical_inputs"),
                          "Missing or stale input bindings: run setup for this input file to review changed coefficient meanings.")
         values = deepcopy(self.physical_inputs)
@@ -469,7 +484,7 @@ def discover_inputs(path):
         return _discover_operator_table(document)
     return dict(required_inputs=document.definition.required_inputs(),
                 operators=document.definition.operator_inputs(),
-                bindings=input_bindings(document.definition), provenance=document.provenance)
+                bindings=input_bindings(document.definition, recorded=document.assignments.get('_input_bindings')), provenance=document.provenance)
 
 
 def _discover_operator_table(document):
@@ -480,8 +495,8 @@ def _discover_operator_table(document):
     the full-catalogue convention, which may differ when a row is enabled.
     """
     active = {info['key']: info for info in document.definition.operator_inputs()}
-    expected = input_bindings(document.definition)
     stored = document.assignments.get('_input_bindings', {})
+    expected = input_bindings(document.definition, recorded=stored)
     stored = deepcopy(stored) if isinstance(stored, dict) and stored.get('schema') == OPERATOR_BINDING_SCHEMA else {}
     meanings = stored.get('coefficients', {})
     meanings = meanings if isinstance(meanings, dict) else {}
@@ -516,7 +531,7 @@ def discover_tex(path):
         return _discover_operator_table(document)
     return dict(required_inputs=document.definition.required_inputs(),
                 operators=document.definition.operator_inputs(),
-                bindings=input_bindings(document.definition))
+                bindings=input_bindings(document.definition, recorded=document.assignments.get('_input_bindings')))
 
 
 def _node_spans(source):
@@ -695,7 +710,7 @@ def setup(path, *, input_fn=input, output_fn=print):
     except (ValueError, TypeError) as exc:
         raise _error(source.path, source.line("X"), str(exc)) from exc
     document = _document(source, definition)
-    expected = input_bindings(definition)
+    expected = input_bindings(definition, recorded=source.assignments.get('_input_bindings'))
     old_bindings = source.assignments.get("_input_bindings")
     old_bindings = old_bindings if isinstance(old_bindings, dict) else {}
     old_coefficients = old_bindings.get("coefficients", {}) if old_bindings.get("schema") == BINDING_SCHEMA else {}

@@ -1,0 +1,169 @@
+{
+  "coefficients": {
+    "D(H) D(X†)": {
+      "binding": "178c12ac5ec9b1991a69f0d33e353eb17178c27d18fe63dfb67d2deb0b375835",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Declared zero kinetic mixing; diagonal norms are normalized separately.",
+      "role": "kinetic",
+      "units": "dimensionless",
+      "value": 0.0
+    },
+    "D(X) D(X†)": {
+      "binding": "48a32c85acf47ffe494f6adc1ded934a5c7f8a8a5f3b287bc44fc3f4541d8032",
+      "enabled": true,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Canonical scalar norm projected onto the displayed invariant basis.",
+      "role": "kinetic",
+      "units": "dimensionless",
+      "value": 1.0
+    },
+    "H H† X X†": {
+      "binding": "4fa32bdb64fb027f9ef249fd5aec9e0c8420e604ce1b6272aedc71d22877fb67",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "dimensionless",
+      "value": [
+        -1.266813137468242,
+        0.633406568734121
+      ]
+    },
+    "H H†^2 X": {
+      "binding": "3f93155de4882517ebe9c11e4442f6a12c725a86fbdfc24fe8e7b50ca84b78ca",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.",
+      "role": "quartic",
+      "units": "dimensionless",
+      "value": -0.01
+    },
+    "H X X†^2": {
+      "binding": "d6d40a5321c8cf6b41ada0da2eaa174d07c73a021ec3b7a1d95a8c2b280d038f",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.",
+      "role": "quartic",
+      "units": "dimensionless",
+      "value": -0.01
+    },
+    "H X†": {
+      "binding": "d0a212a92c844478fd3128ec9b2d757e295c1f637957c941ccbe412d497468dc",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Declared zero mass mixing.",
+      "role": "quadratic",
+      "units": "GeV^2",
+      "value": 0.0
+    },
+    "H^2 X†^2": {
+      "binding": "cf632f0b75497ccb78fb4d29ef829b44f63ee1ed5a7cee02648aa52e89ebdff2",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "dimensionless",
+      "value": 0.3167032843670605
+    },
+    "L X† ec": {
+      "binding": "00f541e50510d15de78cfbf83e5c6ee0b211103111d6bcd55bac9981f0f96b5c",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small dimensionless interaction seed in the displayed real/Hermitian invariant basis.",
+      "role": "dimensionless_interaction",
+      "units": "dimensionless",
+      "value": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ]
+    },
+    "Q X uc": {
+      "binding": "af2e1042e302440c16d4f8bf058388acc348c7e6df248f529b367452012ecf6b",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small dimensionless interaction seed in the displayed real/Hermitian invariant basis.",
+      "role": "dimensionless_interaction",
+      "units": "dimensionless",
+      "value": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ]
+    },
+    "Q X† dc": {
+      "binding": "eaf9718a0af34ff2de0d413ba49309461c1512d2ad0894e20f36bfaf7314b580",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small dimensionless interaction seed in the displayed real/Hermitian invariant basis.",
+      "role": "dimensionless_interaction",
+      "units": "dimensionless",
+      "value": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ]
+    },
+    "X X†": {
+      "binding": "0397777c543bcc24db85724b7d5e21e2ef03f29b971564abcc1660ce1920f341",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "GeV^2",
+      "value": -10000.0
+    },
+    "X^2 X†^2": {
+      "binding": "b34f42abd88afdefedfd01bc473b2f7944b77f15f6b61959e47b69dd227ef295",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "dimensionless",
+      "value": -0.1
+    }
+  },
+  "defaults": {
+    "sm_inputs": {
+      "Gf": {
+        "origin": "explicit",
+        "value": 1.16637e-05
+      },
+      "MZ": {
+        "origin": "explicit",
+        "value": 91.1876
+      },
+      "aEWM1": {
+        "origin": "explicit",
+        "value": 127.9
+      }
+    },
+    "stable_particles": {
+      "origin": "explicit",
+      "value": [
+        "x1"
+      ]
+    }
+  },
+  "profile": "coefficient-seeds-v1",
+  "schema": "model-input-origins-v1"
+}

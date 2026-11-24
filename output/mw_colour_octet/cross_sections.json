@@ -1,0 +1,546 @@
+{
+  "benchmark_digest": "c2729427d0c2f1f2d23fbe4e72ae132e2d04463f4e34bb5254c9fcc0f0b1e592",
+  "collider": {
+    "accuracy": 0.01,
+    "draa": 0.4,
+    "draj": 0.4,
+    "dral": 0.4,
+    "drjj": 0.4,
+    "drjl": 0.4,
+    "drll": 0.4,
+    "dynamical_scale_choice": 3,
+    "energy_tev": 13.6,
+    "etaa": 2.5,
+    "etaj": 5.0,
+    "etal": 2.5,
+    "max_final": 2,
+    "max_tree_signatures": 250000,
+    "new_particles_only": true,
+    "parton_pdgs": [
+      21,
+      1,
+      -1,
+      2,
+      -2,
+      3,
+      -3,
+      4,
+      -4,
+      5,
+      -5
+    ],
+    "pdf": "nn23lo1",
+    "pta": 20.0,
+    "ptj": 20.0,
+    "ptl": 10.0,
+    "seed": 1
+  },
+  "model_digest": "09e3e57e7f7ea1a353f21dd3a3bd8c8ec547170ab17eba6627a6f8ab5475832c",
+  "particles": {
+    "-1": {
+      "aliases": [
+        "d~"
+      ],
+      "anti_pdg": 1,
+      "antiname": "d",
+      "charge": 0.3333333333333333,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 0.00504,
+      "name": "d~",
+      "pdg": -1,
+      "spin": 2
+    },
+    "-11": {
+      "aliases": [
+        "e+"
+      ],
+      "anti_pdg": 11,
+      "antiname": "e-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.000511,
+      "name": "e+",
+      "pdg": -11,
+      "spin": 2
+    },
+    "-12": {
+      "aliases": [
+        "ve~"
+      ],
+      "anti_pdg": 12,
+      "antiname": "ve",
+      "charge": -0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "ve~",
+      "pdg": -12,
+      "spin": 2
+    },
+    "-13": {
+      "aliases": [
+        "mu+"
+      ],
+      "anti_pdg": 13,
+      "antiname": "mu-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.10566,
+      "name": "mu+",
+      "pdg": -13,
+      "spin": 2
+    },
+    "-14": {
+      "aliases": [
+        "vm~"
+      ],
+      "anti_pdg": 14,
+      "antiname": "vm",
+      "charge": -0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vm~",
+      "pdg": -14,
+      "spin": 2
+    },
+    "-15": {
+      "aliases": [
+        "ta+"
+      ],
+      "anti_pdg": 15,
+      "antiname": "ta-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 1.777,
+      "name": "ta+",
+      "pdg": -15,
+      "spin": 2
+    },
+    "-16": {
+      "aliases": [
+        "vt~"
+      ],
+      "anti_pdg": 16,
+      "antiname": "vt",
+      "charge": -0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vt~",
+      "pdg": -16,
+      "spin": 2
+    },
+    "-2": {
+      "aliases": [
+        "u~"
+      ],
+      "anti_pdg": 2,
+      "antiname": "u",
+      "charge": -0.6666666666666666,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 0.00255,
+      "name": "u~",
+      "pdg": -2,
+      "spin": 2
+    },
+    "-24": {
+      "aliases": [
+        "w-"
+      ],
+      "anti_pdg": 24,
+      "antiname": "w+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 79.82435974619784,
+      "name": "w-",
+      "pdg": -24,
+      "spin": 3
+    },
+    "-3": {
+      "aliases": [
+        "s~"
+      ],
+      "anti_pdg": 3,
+      "antiname": "s",
+      "charge": 0.3333333333333333,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 0.101,
+      "name": "s~",
+      "pdg": -3,
+      "spin": 2
+    },
+    "-4": {
+      "aliases": [
+        "c~"
+      ],
+      "anti_pdg": 4,
+      "antiname": "c",
+      "charge": -0.6666666666666666,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 1.27,
+      "name": "c~",
+      "pdg": -4,
+      "spin": 2
+    },
+    "-5": {
+      "aliases": [
+        "b~"
+      ],
+      "anti_pdg": 5,
+      "antiname": "b",
+      "charge": 0.3333333333333333,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 4.7,
+      "name": "b~",
+      "pdg": -5,
+      "spin": 2
+    },
+    "-6": {
+      "aliases": [
+        "t~"
+      ],
+      "anti_pdg": 6,
+      "antiname": "t",
+      "charge": -0.6666666666666666,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 172.0,
+      "name": "t~",
+      "pdg": -6,
+      "spin": 2
+    },
+    "-9700001": {
+      "aliases": [
+        "x1bar"
+      ],
+      "anti_pdg": 9700001,
+      "antiname": "x1",
+      "charge": -1.0,
+      "color": 8,
+      "is_new": true,
+      "mass_gev": 789.3824,
+      "name": "x1bar",
+      "pdg": -9700001,
+      "spin": 1
+    },
+    "1": {
+      "aliases": [
+        "d"
+      ],
+      "anti_pdg": -1,
+      "antiname": "d~",
+      "charge": -0.3333333333333333,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 0.00504,
+      "name": "d",
+      "pdg": 1,
+      "spin": 2
+    },
+    "11": {
+      "aliases": [
+        "e-"
+      ],
+      "anti_pdg": -11,
+      "antiname": "e+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.000511,
+      "name": "e-",
+      "pdg": 11,
+      "spin": 2
+    },
+    "12": {
+      "aliases": [
+        "ve"
+      ],
+      "anti_pdg": -12,
+      "antiname": "ve~",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "ve",
+      "pdg": 12,
+      "spin": 2
+    },
+    "13": {
+      "aliases": [
+        "mu-"
+      ],
+      "anti_pdg": -13,
+      "antiname": "mu+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.10566,
+      "name": "mu-",
+      "pdg": 13,
+      "spin": 2
+    },
+    "14": {
+      "aliases": [
+        "vm"
+      ],
+      "anti_pdg": -14,
+      "antiname": "vm~",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vm",
+      "pdg": 14,
+      "spin": 2
+    },
+    "15": {
+      "aliases": [
+        "ta-"
+      ],
+      "anti_pdg": -15,
+      "antiname": "ta+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 1.777,
+      "name": "ta-",
+      "pdg": 15,
+      "spin": 2
+    },
+    "16": {
+      "aliases": [
+        "vt"
+      ],
+      "anti_pdg": -16,
+      "antiname": "vt~",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vt",
+      "pdg": 16,
+      "spin": 2
+    },
+    "2": {
+      "aliases": [
+        "u"
+      ],
+      "anti_pdg": -2,
+      "antiname": "u~",
+      "charge": 0.6666666666666666,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 0.00255,
+      "name": "u",
+      "pdg": 2,
+      "spin": 2
+    },
+    "21": {
+      "aliases": [
+        "g"
+      ],
+      "anti_pdg": 21,
+      "antiname": "g",
+      "charge": 0.0,
+      "color": 8,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "g",
+      "pdg": 21,
+      "spin": 3
+    },
+    "22": {
+      "aliases": [
+        "a"
+      ],
+      "anti_pdg": 22,
+      "antiname": "a",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "a",
+      "pdg": 22,
+      "spin": 3
+    },
+    "23": {
+      "aliases": [
+        "z"
+      ],
+      "anti_pdg": 23,
+      "antiname": "z",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 91.1876,
+      "name": "z",
+      "pdg": 23,
+      "spin": 3
+    },
+    "24": {
+      "aliases": [
+        "w+"
+      ],
+      "anti_pdg": -24,
+      "antiname": "w-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 79.82435974619784,
+      "name": "w+",
+      "pdg": 24,
+      "spin": 3
+    },
+    "25": {
+      "aliases": [
+        "h"
+      ],
+      "anti_pdg": 25,
+      "antiname": "h",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 125.0,
+      "name": "h",
+      "pdg": 25,
+      "spin": 1
+    },
+    "3": {
+      "aliases": [
+        "s"
+      ],
+      "anti_pdg": -3,
+      "antiname": "s~",
+      "charge": -0.3333333333333333,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 0.101,
+      "name": "s",
+      "pdg": 3,
+      "spin": 2
+    },
+    "4": {
+      "aliases": [
+        "c"
+      ],
+      "anti_pdg": -4,
+      "antiname": "c~",
+      "charge": 0.6666666666666666,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 1.27,
+      "name": "c",
+      "pdg": 4,
+      "spin": 2
+    },
+    "5": {
+      "aliases": [
+        "b"
+      ],
+      "anti_pdg": -5,
+      "antiname": "b~",
+      "charge": -0.3333333333333333,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 4.7,
+      "name": "b",
+      "pdg": 5,
+      "spin": 2
+    },
+    "6": {
+      "aliases": [
+        "t"
+      ],
+      "anti_pdg": -6,
+      "antiname": "t~",
+      "charge": 0.6666666666666666,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 172.0,
+      "name": "t",
+      "pdg": 6,
+      "spin": 2
+    },
+    "9700001": {
+      "aliases": [
+        "x1"
+      ],
+      "anti_pdg": -9700001,
+      "antiname": "x1bar",
+      "charge": 1.0,
+      "color": 8,
+      "is_new": true,
+      "mass_gev": 789.3824,
+      "name": "x1",
+      "pdg": 9700001,
+      "spin": 1
+    },
+    "9700002": {
+      "aliases": [
+        "x2r"
+      ],
+      "anti_pdg": 9700002,
+      "antiname": "x2r",
+      "charge": 0.0,
+      "color": 8,
+      "is_new": true,
+      "mass_gev": 817.6754,
+      "name": "x2r",
+      "pdg": 9700002,
+      "spin": 1
+    },
+    "9700003": {
+      "aliases": [
+        "x2i"
+      ],
+      "anti_pdg": 9700003,
+      "antiname": "x2i",
+      "charge": 0.0,
+      "color": 8,
+      "is_new": true,
+      "mass_gev": 779.7233,
+      "name": "x2i",
+      "pdg": 9700003,
+      "spin": 1
+    }
+  },
+  "rates": [
+    {
+      "cross_section_pb": 0.4754901902041903,
+      "error_pb": 0.0028070450102910434,
+      "final_pdgs": [
+        -9700001,
+        9700001
+      ],
+      "id": "C0005",
+      "process": "p p > x1bar x1",
+      "run_directory": "rates/C0005/7bcae7a375744bb0/attempt-55c9eb325a/C0005",
+      "scale_diagnostics": {
+        "common_incoming_prescription": false,
+        "definition": "one half of the sum of final external transverse masses",
+        "dynamical_scale_choice": 3,
+        "fixed_fac_scale": false,
+        "fixed_ren_scale": false,
+        "has_decay_chain": false,
+        "note": "Equal dynamical_scale_choice integers do not ensure equal numerical renormalization or factorization scales: production uses external parents while a decay chain uses their external daughters. This can change PDFs and running couplings independently of the resonance window.",
+        "scalefact": 1.0,
+        "schema": "madgraph-lo-scale-diagnostics-v1"
+      },
+      "status": "computed",
+      "target_met": true,
+      "units": "pb",
+      "width_source": "parameter_card.dat"
+    }
+  ],
+  "width_digest": "fcb3d12a5d42aeb7be692a350d055a60214023f2570e07732d253c95b9a14deb"
+}

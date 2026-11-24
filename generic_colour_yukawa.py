@@ -1,4 +1,4 @@
-"""Physical flavour bases for two native-colour scalar–fermion–fermion invariants."""
+"""Physical flavour bases for native-colour scalar–fermion–fermion invariants."""
 
 from fractions import Fraction
 from hashlib import sha256
@@ -6,10 +6,13 @@ from itertools import combinations_with_replacement, product
 import json
 from math import isqrt
 
+import generic_octet_yukawa as octet
+
 
 SEXTET = 'sextet_qq_yukawa'
 TRIPLET = 'triplet_eu_yukawa'
-KINDS = frozenset((SEXTET, TRIPLET))
+TRIPLET_LEFT = 'triplet_lq_yukawa'
+KINDS = frozenset((SEXTET, TRIPLET, TRIPLET_LEFT, octet.KIND))
 BASIS_VERSION = 'coloured-scalar-sm-yukawa-v1'
 
 
@@ -23,9 +26,12 @@ def classify(row, fields):
         rep = (field.su3, field.su2, field.hypercharge)
         if rep == ((2, 0), 3, Fraction(1, 3)) and counts == {'Q': 2, field.name + '†': 1}:
             return SEXTET
-        if rep == ((1, 0), 1, Fraction(-1, 3)) and counts == {'ec': 1, 'uc': 1, field.name: 1}:
-            return TRIPLET
-    return None
+        if rep == ((1, 0), 1, Fraction(-1, 3)):
+            if counts == {'ec': 1, 'uc': 1, field.name: 1}:
+                return TRIPLET
+            if counts == {'Q': 1, 'L': 1, field.name + '†': 1}:
+                return TRIPLET_LEFT
+    return octet.classify(row, fields)
 
 
 def normalization(kind):
@@ -38,6 +44,11 @@ def normalization(kind):
         return ('lambda_R[i,j] S_a ubar_i^a P_L C(lbar_j)^T plus its Hermitian conjugate; '
                 'the colour contraction is the identity. Both physical fermions are right-handed. '
                 'Row-major order: up-quark generation i, charged-lepton generation j.')
+    if kind == TRIPLET_LEFT:
+        return ('lambda_L[i,j] S† (u_Li^T C e_Lj - d′_Li^T C nu_Lj) + HC, with a colour identity. '
+                'd′_Li = sum_k CKM[i,k] d_Lk. Row-major order: quark doublet i, lepton doublet j.')
+    if kind == octet.KIND:
+        return octet.NORMALIZATION
     raise ValueError(f'Unknown coloured-scalar Yukawa family {kind!r}')
 
 
@@ -46,7 +57,7 @@ def _flavours(kind, count):
         n = (isqrt(8 * count + 1) - 1) // 2
         if n > 0 and n * (n + 1) // 2 == count:
             return tuple(combinations_with_replacement(range(1, n + 1), 2))
-    elif kind == TRIPLET:
+    elif kind in (TRIPLET, TRIPLET_LEFT, octet.KIND):
         n = isqrt(count)
         if n > 0 and n * n == count:
             return tuple(product(range(1, n + 1), repeat=2))
@@ -55,7 +66,7 @@ def _flavours(kind, count):
 
 def basis_labels(row, fields):
     kind = classify(row, fields)
-    label = 'Y_QQ' if kind == SEXTET else 'lambda_R'
+    label = {SEXTET: 'Y_QQ', TRIPLET: 'lambda_R', TRIPLET_LEFT: 'lambda_L', octet.KIND: octet.LABEL}[kind]
     return tuple(f'{label}[{i},{j}]' for i, j in _flavours(kind, row['multiplicity']))
 
 
@@ -90,11 +101,19 @@ def _qq_term(scalar, symbols, i, j):
     return f'{factor}*K6[c3,c1,c2]*(' + '+'.join(components) + ')'
 
 
+def _left_lq_term(scalar, symbols, i, j):
+    component = symbols[scalar.removesuffix('†'), 0].replace('{index}', 'c1')
+    charged = f'CC[uqbar][s1,{i},c1].l[s2,{j}]'
+    neutral = '+'.join(f'{v}*CC[{q}bar][s1,{k},c1].vl[s2,{j}]'
+                       for q, k, v in _quark_components(1, i))
+    return f'HC[{component}]*ProjM[s1,s2]*({charged}-({neutral}))'
+
+
 def render(op, symbols):
     """Emit the normal and HC terms after the scalar kinetic/mass rotations."""
     from feynrules_export import _internal
 
-    scalar = next(name for name, count in op.factors if name not in ('Q', 'ec', 'uc'))
+    scalar = next(name for name, count in op.factors if name not in ('L', 'Q', 'ec', 'uc'))
     parameters, terms = [], []
     flavours = _flavours(op.kind, len(op.coefficients))
     for index, ((i, j), value) in enumerate(zip(flavours, op.coefficients), 1):
@@ -104,6 +123,10 @@ def render(op, symbols):
         parameters.append(_internal(parameter, value, order=True))
         if op.kind == SEXTET:
             expression = _qq_term(scalar, symbols, i, j)
+        elif op.kind == TRIPLET_LEFT:
+            expression = _left_lq_term(scalar, symbols, i, j)
+        elif op.kind == octet.KIND:
+            expression = octet.term(scalar, symbols, i, j)
         else:
             component = symbols[scalar, 0].replace('{index}', 'c1')
             expression = component + f'*ProjM[s1,s2]*uqbar[s1,{i},c1].CC[l][s2,{j}]'
@@ -116,16 +139,16 @@ def lepton_labels(operators, scalar_maps):
     """Label physical leptoquarks from nonzero Yukawas and actual field rotations."""
     possibilities = {}
     for op in operators:
-        if op.kind != TRIPLET or not any(op.coefficients):
+        if op.kind not in (TRIPLET, TRIPLET_LEFT) or not any(op.coefficients):
             continue
-        source = next(name for name, _ in op.factors if name not in ('ec', 'uc'))
+        source = next(name for name, _ in op.factors if name not in ('Q', 'L', 'ec', 'uc')).removesuffix('†')
         for (state, bar), value in scalar_maps[source, 0].items():
             if value:
                 possibilities.setdefault(state, set()).add(-1 if bar else 1)
     if not possibilities:
         return {}, ''
     charges = {state: next(iter(labels)) for state, labels in possibilities.items() if len(labels) == 1}
-    notes = ['LeptonNumber labels follow the active right-handed leptoquark couplings.']
+    notes = ['LeptonNumber labels follow the active leptoquark couplings.']
     if set(possibilities) != set(charges):
         notes.append('States with incompatible particle and antiparticle projections have no assigned lepton number.')
 

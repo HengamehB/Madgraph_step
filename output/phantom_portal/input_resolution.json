@@ -1,0 +1,92 @@
+{
+  "coefficients": {
+    "D(X)^2": {
+      "binding": "bb6a0c665e29d59df52d98f29a4ad605efc583c84698a417031181c116514301",
+      "enabled": true,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Canonical scalar norm projected onto the displayed invariant basis.",
+      "role": "kinetic",
+      "units": "dimensionless",
+      "value": 0.5
+    },
+    "H H† X": {
+      "binding": "0809024039c3bcc2c43920eec8b61ac8e54598bf8b495d92456d5f3b13c7fd55",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Declared zero dimensionful interaction seed (linear/cubic/mixing), in the displayed units.",
+      "role": "dimensionful_interaction",
+      "units": "GeV",
+      "value": 0.0
+    },
+    "H H† X^2": {
+      "binding": "21d84030e5f0686a3198738295ccf13690e4ba114a8221b4f02a331b02c988d3",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "dimensionless",
+      "value": -0.005
+    },
+    "X": {
+      "binding": "dc145303a5e0764ef58dd5ea0527724c4c39384a8e0c9d0e08ec0344311ef297",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Declared zero dimensionful interaction seed (linear/cubic/mixing), in the displayed units.",
+      "role": "dimensionful_interaction",
+      "units": "GeV^3",
+      "value": 0.0
+    },
+    "X^2": {
+      "binding": "09721c1e127341cfa5a485046a3e9deb77218112adc9cc1be9f2068833bce1a8",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "GeV^2",
+      "value": -1098.438578412822
+    },
+    "X^3": {
+      "binding": "3e0065f1f331cc8669b3532d6408535d64f61e493334c04fbd5203b3cc0fcea5",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Declared zero dimensionful interaction seed (linear/cubic/mixing), in the displayed units.",
+      "role": "dimensionful_interaction",
+      "units": "GeV",
+      "value": 0.0
+    },
+    "X^4": {
+      "binding": "937c4be34783258cbaa303a1aea1af2d05cf1012bc7c03529e9c648decad3d27",
+      "enabled": true,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.",
+      "role": "quartic",
+      "units": "dimensionless",
+      "value": -0.01
+    }
+  },
+  "defaults": {
+    "sm_inputs": {
+      "Gf": {
+        "origin": "explicit",
+        "value": 1.16637e-05
+      },
+      "MZ": {
+        "origin": "explicit",
+        "value": 91.1876
+      },
+      "aEWM1": {
+        "origin": "explicit",
+        "value": 127.9
+      }
+    },
+    "stable_particles": {
+      "origin": "explicit",
+      "value": [
+        "x"
+      ]
+    }
+  },
+  "profile": "coefficient-seeds-v1",
+  "schema": "model-input-origins-v1"
+}

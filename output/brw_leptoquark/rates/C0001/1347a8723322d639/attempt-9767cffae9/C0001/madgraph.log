@@ -1,0 +1,593 @@
+INFO:cmdprint:************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 3.7.3                 2026-09-01         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*              http://madgraph.phys.ucl.ac.be/             *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+INFO:cmdprint:load MG5 configuration from ../mg5/input/mg5_configuration.txt 
+INFO:cmdprint:fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+INFO:cmdprint:eMELA-config does not seem to correspond to a valid eMELA-config executable.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/eMELA-config (including eMELA-config).
+ MG5_aMC> set eMELA /PATH/TO/eMELA-config
+
+INFO:cmdprint.ext_program:Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+INFO:cmdprint.ext_program:Using default gzip "gzip". Set another one in ./input/mg5_configuration.txt
+INFO:madgraph.model:load particles
+INFO:madgraph.model:load vertices
+INFO:madgraph.model:The model has interaction violating the charge: Y
+INFO:cmdprint:Defined multiparticle p = g u c d s u~ c~ d~ s~
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle j = g u c d s u~ c~ d~ s~
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle l+ = e+ mu+
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle l- = e- mu-
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle vl = ve vm vt
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle vl~ = ve~ vm~ vt~
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle all = g a ve vm vt ve~ vm~ vt~ x xbar u c t d s b u~ c~ t~ d~ s~ b~ z w+ h w- e- mu- ta- e+ mu+ ta+
+INFO:tutorial:
+	You have successfully imported a model. If you followed the tutorial
+	this is the MSSM.
+	
+	MadGraph can auto-download a large class of model (and more can be used). 
+	To see the full list of model, write:
+	MG5_aMC>display modellist 
+	
+	If you want to know more information about this model you can use the
+	following commands:
+	MG5_aMC>display particles
+	MG5_aMC>display interactions
+	MG5_aMC>display multiparticles
+	which show information on the particles and the vertices of the model
+	or presently defined multiparticle labels.
+	
+	Some of the model (including mssm) allow to modify the model (setting some
+	mass to zero, put some matrices diagonal, remove some interaction, ...). You can
+	see the possibility for each model by using the following command:
+	MG5_aMC> customize_model 
+	
+	To define a multiparticle label, i.e. a label corresponding to a set
+	of particles, write:
+	MG5_aMC>define v = w+ w- z a
+	This defines the symbol "v" to correspond to any EW vector boson.
+	
+INFO:cmdprint:define p = g d d~ u u~ s s~ c c~ b b~
+INFO:cmdprint:Defined multiparticle p = g d u s c b d~ u~ s~ c~ b~
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:generate p p > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.diagram_generation:Trying process: g g > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 4 diagrams
+INFO:madgraph.diagram_generation:Trying process: d d~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 4 diagrams
+INFO:madgraph.diagram_generation:Trying process: d s~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Trying process: d b~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Trying process: u u~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 4 diagrams
+INFO:madgraph.diagram_generation:Trying process: u c~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: s d~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Trying process: s s~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 4 diagrams
+INFO:madgraph.diagram_generation:Trying process: s b~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Trying process: c u~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: c c~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 3 diagrams
+INFO:madgraph.diagram_generation:Trying process: b d~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Trying process: b s~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Trying process: b b~ > xbar x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 4 diagrams
+INFO:madgraph.diagram_generation:Process d~ d > xbar x added to mirror process d d~ > xbar x
+INFO:madgraph.diagram_generation:Process d~ s > xbar x added to mirror process s d~ > xbar x
+INFO:madgraph.diagram_generation:Process d~ b > xbar x added to mirror process b d~ > xbar x
+INFO:madgraph.diagram_generation:Process u~ u > xbar x added to mirror process u u~ > xbar x
+INFO:madgraph.diagram_generation:Process s~ d > xbar x added to mirror process d s~ > xbar x
+INFO:madgraph.diagram_generation:Process s~ s > xbar x added to mirror process s s~ > xbar x
+INFO:madgraph.diagram_generation:Process s~ b > xbar x added to mirror process b s~ > xbar x
+INFO:madgraph.diagram_generation:Process c~ c > xbar x added to mirror process c c~ > xbar x
+INFO:madgraph.diagram_generation:Process b~ d > xbar x added to mirror process d b~ > xbar x
+INFO:madgraph.diagram_generation:Process b~ s > xbar x added to mirror process s b~ > xbar x
+INFO:madgraph.diagram_generation:Process b~ b > xbar x added to mirror process b b~ > xbar x
+INFO:cmdprint:12 processes with 29 diagrams generated in 0.020 s
+INFO:cmdprint:Total: 12 processes with 29 diagrams
+INFO:tutorial:
+	You have just generated a new process.
+	Note that the coupling order "QED=0" was automatically added by MG5
+	to avoid non-QCD diagrams which have negligible contribution.
+	You can find more information on supported syntax by using:
+	MG5_aMC>help generate
+	To list all defined processes, type
+	MG5_aMC>display processes
+	
+	If you want to know more about particles and multiparticles present,
+	write
+	MG5_aMC>display particles
+	MG5_aMC>display multiparticles
+	
+	If you want to add a second process, use the add process command:
+	MG5_aMC>add process p p > W+ j, W+ > l+ vl @2
+	This adds a decay chain process, with the W+ decaying
+	leptonically.
+	
+	At this stage you can export your processes to different formats. In
+	this tutorial, we will explain how to create output for MadEvent.
+	This is done simply by typing:
+	MG5_aMC>output MY_FIRST_MG5_RUN
+	
+INFO:tutorial_aMCatNLO:
+	You have just generated a new process.
+	You can find more information on supported syntax by using:
+	MG_aMC>help generate
+	To list all defined processes, type
+	MG_aMC>display processes
+	
+	If you want to know more about particles and multiparticles present,
+	write
+	MG_aMC>display particles
+	MG_aMC>display multiparticles
+	
+	If you want to add a second process, use the add process command:
+	MG_aMC>add process p p > e+ e- [QCD] @2
+	
+	At this stage you can export your processes.
+	This is done simply by typing:
+	MG_aMC>output MY_FIRST_AMCATNLO_RUN
+	
+INFO:tutorial_MadLoop:
+	You have just generated a new process.
+	You can find more information on supported syntax by using:
+	MG5_aMC>help generate
+	To list all defined processes, type
+	MG5_aMC>display processes
+	
+	You can display a pictorial representation of the diagrams with 
+	MG5_aMC> display diagrams
+	Notice you can add the option 'loop' or 'born' if you only want those diagrams
+	to be displayed.
+	
+	If you want to add a second process, you can use the add process command:
+	MG5_aMC>add process e+ e- > d d~ [virt=QCD]
+	But keep in mind that you must still consider only virtual corrections and 
+	cannot employ multiparticle labels. Also decay chains are not available for
+	loops.
+	
+	At this stage you can export your processes.
+	This is done simply by typing:
+	
+	MG5_aMC>output MY_FIRST_MADLOOP_RUN
+	
+	Notice that the standalone output mode (implicit in the above) is the only
+	available for MadLoop standalone runs.
+	
+INFO:cmdprint:output madevent process -f
+INFO:madgraph.export_v4:initialize a new directory: process
+INFO:madgraph.export_v4:remove old information in process
+INFO:madgraph.group_subprocs:Organizing processes into subprocess groups
+INFO:madgraph.helas_objects:Generating Helas calls for process: g g > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: g g > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: d d~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: d d~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: u u~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: u u~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: s s~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: s s~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: b b~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: b b~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: c c~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: c c~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: d s~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: d s~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: d b~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: d b~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: s d~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: s d~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: s b~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: s b~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: b d~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: b d~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Generating Helas calls for process: b s~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.helas_objects:Processing color information for process: b s~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.export_v4:Creating files in directory P0_gg_xbarx
+--- Logging error ---
+Traceback (most recent call last):
+  File "${PYTHON_ENV}/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "${PYTHON_ENV}/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "${PYTHON_ENV}/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "${PYTHON_ENV}/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "../../madgraph_runner.py", line 928, in <module>
+    value = _worker(payload)
+  File "../../madgraph_runner.py", line 893, in _worker
+    command.exec_cmd('output madevent process -f')
+  File "${MG_WORK}/mg5/madgraph/interface/extended_cmd.py", line 1599, in exec_cmd
+    stop = Cmd.onecmd_orig(current_interface, line, **opt)
+  File "${MG_WORK}/mg5/madgraph/interface/extended_cmd.py", line 1519, in onecmd_orig
+    return func(arg, **opt)
+  File "${MG_WORK}/mg5/madgraph/interface/master_interface.py", line 299, in do_output
+    self.cmd.do_output(self, line, *args, **opts)
+  File "${MG_WORK}/mg5/madgraph/interface/madgraph_interface.py", line 9389, in do_output
+    self.export(nojpeg, main_file_name, group_processes, args)
+  File "${MG_WORK}/mg5/madgraph/interface/master_interface.py", line 313, in export
+    return self.cmd.export(self, *args, **opts)
+  File "${MG_WORK}/mg5/madgraph/interface/madgraph_interface.py", line 9577, in export
+    calls += self._curr_exporter.export_processes(self._curr_matrix_elements,
+  File "${MG_WORK}/mg5/madgraph/iolibs/export_v4.py", line 228, in export_processes
+    calls = calls + self.generate_subprocess_directory(\
+  File "${MG_WORK}/mg5/madgraph/iolibs/export_v4.py", line 6291, in generate_subprocess_directory
+    replace_dict = self.write_matrix_element_v4(None,
+  File "${MG_WORK}/mg5/madgraph/iolibs/export_v4.py", line 4810, in write_matrix_element_v4
+    logger.info("Some T-channel width have been set to zero [new since 2.8.0]\n if you want to keep this width please set \"zerowidth_tchannel\" to False", '$MG:BOLD')
+Message: 'Some T-channel width have been set to zero [new since 2.8.0]\n if you want to keep this width please set "zerowidth_tchannel" to False'
+Arguments: ('$MG:BOLD',)
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: g g > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group gg_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_ddx_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: d d~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group ddx_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_uux_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: u u~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group uux_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_ssx_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: s s~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group ssx_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_bbx_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: b b~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group bbx_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_ccx_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: c c~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group ccx_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_dsx_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: d s~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group dsx_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_dbx_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: d b~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group dbx_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_sdx_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: s d~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group sdx_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_sbx_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: s b~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group sbx_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_bdx_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: b d~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group bdx_xbarx
+INFO:madgraph.export_v4:Creating files in directory P0_bsx_xbarx
+INFO:madgraph.export_v4:Generating Feynman diagrams for Process: b s~ > xbar x NP<=4 QCD<=4 QED<=4
+INFO:madgraph.various.diagram_symmetry:Finding symmetric diagrams for subprocess group bsx_xbarx
+INFO:cmdprint:Generated helas calls for 12 subprocesses (29 diagrams) in 0.020 s
+INFO:cmdprint:Wrote files for 106 helas calls in 0.627 s
+INFO:ALOHA:aloha starts to compute helicity amplitudes
+INFO:ALOHA:aloha creates 7 routines in  0.695 s
+INFO:cmdprint:save configuration file to ${MG_WORK}/work/process/Cards/me5_configuration.txt
+INFO:madgraph.export_v4:Use Fortran compiler gfortran
+INFO:madgraph.export_v4:Use c++ compiler c++
+INFO:madgraph.export_v4:Generate jpeg diagrams
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+INFO:madgraph.export_v4:Generate web pages
+INFO:cmdprint:Output to directory ${MG_WORK}/work/process done.
+INFO:cmdprint:Type "launch" to generate events from this process, or see
+INFO:cmdprint:${MG_WORK}/work/process/README
+INFO:cmdprint:Run "open index.html" to see more information about this process.
+INFO:tutorial:
+	If you are following the tutorial, a directory MY_FIRST_MG5_RUN has
+	been created which can be used in order to generate LO events/compute cross-section.
+	
+	From that directory you can run the command './bin/generate_events'
+	You can also  generate your events/compute the cross-section from this interface:
+	Please Enter:
+	MG5_aMC> launch MY_FIRST_MG5_RUN
+	(you can interrupt the computation to continue the tutorial by pressing Ctrl-C)
+	
+INFO:tutorial_aMCatNLO:
+	If you are following the tutorial, a directory MY_FIRST_AMCATNLO_RUN has
+	been created which can be used in order to run simulation including NLO corrections.
+	
+	Additionally to the commands in the bin directory (see 
+	MY_FIRST_AMCATNLO_RUN/README), you can also generate your events/compute the 
+	cross-section from this interface. 
+	You will generate events to be showered a la MC@NLO, compute the theoretical
+	and PDF error on the fly (if asked for in the run_card.dat) and shower the 
+	events with the parton_shower MonteCarlo specified in the run_card.dat, 
+	generating a file in the StdHEP format. 
+	Please note that, since shower-specific counterterms have to be included in the
+	calculation, the parton level sample you will obtain can only be showered
+	with the selected MonteCarlo. 
+	Note also that, because of the way they have been generated, the parton-level
+	events in the .lhe file are UNPHYSICAL. 
+	In order to obtain physical results, please use the .hep file
+	
+	Please enter
+	MG_aMC> launch 
+	
+	If you just want to generate the parton level .lhe file, please enter
+	MG_aMC> launch -p
+	
+	(you can interrupt the computation to continue the tutorial by pressing Ctrl-C)
+	
+	At any time, you can access more commands/options for running the output by 
+	switching to an interactive interface for a given output folder 'MyFolder'.
+	You can do so by typing:
+	MG_aMC> launch -i MyFolder
+	
+	Please see MY_FIRST_AMCATNLO_RUN/README to know about the available commands.
+	To know the possible options/modes for each command, simply tiple
+	'MyFolder'> help COMMAND
+	from the interface bound to the 'MyFolder' output.
+	
+	
+INFO:tutorial_MadLoop:
+	If you are following the tutorial, a directory MY_FIRST_MADLOOP_RUN has
+	been created under your MadGraph5_aMC@NLO installation directory.
+	
+	The code for the evaluation of the squared loop matrix element is in 
+	'SubProcesses/P0_<shell_proc_name>/'. There, you can compile and edit 
+	running parameters from 'MadloopParams.dat' and then run the code with './check'
+	Alternatively, for a simple quick run, type:
+	
+	MG5_aMC>launch -f
+	
+	This computes the squared matrix element for a given PS points.
+	For the purpose of this tutorial, the option '-f' is added to automatically skip
+	the edition of the cards and phase-space point specification.
+	
+INFO:madevent.stdout:************************************************************
+*                                                          *
+*                      W E L C O M E to                    *
+*             M A D G R A P H 5 _ a M C @ N L O            *
+*                      M A D E V E N T                     *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 3.7.3                 2026-09-01         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*                                                          *
+************************************************************
+INFO:madgraph.stdout:load configuration from ${MG_WORK}/work/process/Cards/me5_configuration.txt 
+INFO:madgraph.stdout:load configuration from ${MG_WORK}/mg5/input/mg5_configuration.txt 
+INFO:madgraph.stdout:load configuration from ${MG_WORK}/work/process/Cards/me5_configuration.txt 
+INFO:cmdprint.ext_program:Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+INFO:cmdprint.ext_program:Using default gzip "gzip". Set another one in ./input/mg5_configuration.txt
+INFO:cmdprint:survey run_01 --accuracy=0.01 --points=1000 --iterations=5
+INFO:madgraph.stdout:compile directory
+INFO:madevent.stdout:compile Source Directory
+INFO:madevent.stdout:Using random number seed offset = 1
+INFO:madgraph.stdout:Running Survey
+INFO:madevent.stdout:Working on SubProcesses
+INFO:madgraph.stdout:Compiling for process 1/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_gg_xbarx 
+WARNING:madgraph.madevent.gen_ximprove:The optimizer detects that you have coupling evaluated to zero: 
+GC_17 GC_59
+This will slow down the computation. Please consider using restricted model:
+https://answers.launchpad.net/mg5amcnlo/+faq/2312
+INFO:madgraph.stdout:Compiling for process 2/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_ddx_xbarx 
+INFO:madgraph.stdout:Compiling for process 3/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_uux_xbarx 
+INFO:madgraph.stdout:Compiling for process 4/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_ssx_xbarx 
+INFO:madgraph.stdout:Compiling for process 5/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_bbx_xbarx 
+INFO:madgraph.stdout:Compiling for process 6/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_ccx_xbarx 
+INFO:madgraph.stdout:Compiling for process 7/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_dsx_xbarx 
+INFO:madgraph.stdout:Compiling for process 8/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_dbx_xbarx 
+INFO:madgraph.stdout:Compiling for process 9/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_sdx_xbarx 
+INFO:madgraph.stdout:Compiling for process 10/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_sbx_xbarx 
+INFO:madgraph.stdout:Compiling for process 11/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_bdx_xbarx 
+INFO:madgraph.stdout:Compiling for process 12/12.
+INFO:madgraph.madevent.gen_ximprove:    P0_bsx_xbarx 
+INFO:madgraph.madevent.gen_ximprove:    P0_gg_xbarx 
+INFO:madgraph.stdout: Idle: 0,  Running: 1,  Completed: -1
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 1.347641 s
+INFO:madgraph.madevent.gen_ximprove:    P0_ddx_xbarx 
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.966113 s
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.384323 s
+INFO:madgraph.madevent.gen_ximprove:    P0_uux_xbarx 
+INFO:madgraph.stdout: Idle: 0,  Running: 1,  Completed: -1
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.952554 s
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.582439 s
+INFO:madgraph.madevent.gen_ximprove:    P0_ssx_xbarx 
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.993890 s
+INFO:madgraph.stdout: Idle: 0,  Running: 1,  Completed: -1
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.418280 s
+INFO:madgraph.madevent.gen_ximprove:    P0_bbx_xbarx 
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 1.052017 s
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.230633 s
+INFO:madgraph.madevent.gen_ximprove:    P0_ccx_xbarx 
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 1.083126 s
+INFO:madgraph.stdout: Idle: 0,  Running: 1,  Completed: -1
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.162649 s
+INFO:madgraph.madevent.gen_ximprove:    P0_dsx_xbarx 
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 1.226182 s
+INFO:madgraph.madevent.gen_ximprove:    P0_dbx_xbarx 
+INFO:madgraph.stdout: Idle: 0,  Running: 1,  Completed: -1
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 1.037653 s
+INFO:madgraph.madevent.gen_ximprove:    P0_sdx_xbarx 
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 1.131173 s
+INFO:madgraph.madevent.gen_ximprove:    P0_sbx_xbarx 
+INFO:madgraph.stdout: Idle: 0,  Running: 1,  Completed: -1
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.398316 s
+INFO:madgraph.madevent.gen_ximprove:    P0_bdx_xbarx 
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.615959 s
+INFO:madgraph.madevent.gen_ximprove:    P0_bsx_xbarx 
+INFO:madevent.stdout:${MG_WORK}/work/process/SubProcesses/survey.sh run in 0.729343 s
+INFO:madevent.stdout:sum of cpu time of last step: 11 seconds
+INFO:madevent.stdout:  === Results Summary for run: run_01 tag: tag_1 ===
+
+INFO:madevent.stdout:     Cross-section :   46.59 +- 0.2178 pb
+INFO:madevent.stdout:     Nb of events :  0
+INFO:madevent.stdout: 
+INFO:madgraph.stdout:End survey
+INFO:cmdprint:refine 0.01
+INFO:madgraph.stdout:Refine results to 0.01
+INFO:madgraph.madevent.gen_ximprove:running for accuracy 1.0%
+INFO:madevent.stdout:sum of cpu time of last step: 11 seconds
+INFO:madgraph.madevent.gen_ximprove:Working on precision:  1.0 %
+INFO:madgraph.madevent.gen_ximprove:need to improve 0 channels
+INFO:madevent.stdout:- Current estimate of cross-section: 46.585256022799996 +- 0.21777516078354228
+INFO:madevent.stdout:    P0_gg_xbarx 
+INFO:madevent.stdout:    P0_ddx_xbarx 
+INFO:madevent.stdout:    P0_uux_xbarx 
+INFO:madevent.stdout:    P0_ssx_xbarx 
+INFO:madevent.stdout:    P0_bbx_xbarx 
+INFO:madevent.stdout:    P0_ccx_xbarx 
+INFO:madevent.stdout:    P0_dsx_xbarx 
+INFO:madevent.stdout:    P0_dbx_xbarx 
+INFO:madevent.stdout:    P0_sdx_xbarx 
+INFO:madevent.stdout:    P0_sbx_xbarx 
+INFO:madevent.stdout:    P0_bdx_xbarx 
+INFO:madevent.stdout:    P0_bsx_xbarx 
+INFO:madgraph.stdout:Combining runs
+INFO:madevent.stdout:sum of cpu time of last step: 11 seconds
+INFO:madgraph.stdout:finish refine
+ "No helicity", self.input_file = [0m No helicity ${MG_WORK}/work/process/SubProcesses/P0_dbx_xbarx/matrix1_orig.f [1;30m[hel_recycle.py at line 739][0m
+ "No helicity", self.input_file = [0m No helicity ${MG_WORK}/work/process/SubProcesses/P0_sbx_xbarx/matrix1_orig.f [1;30m[hel_recycle.py at line 739][0m
+ "No helicity", self.input_file = [0m No helicity ${MG_WORK}/work/process/SubProcesses/P0_bdx_xbarx/matrix1_orig.f [1;30m[hel_recycle.py at line 739][0m
+ "No helicity", self.input_file = [0m No helicity ${MG_WORK}/work/process/SubProcesses/P0_bsx_xbarx/matrix1_orig.f [1;30m[hel_recycle.py at line 739][0m

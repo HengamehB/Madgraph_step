@@ -1,0 +1,81 @@
+[
+  {
+    "coefficient_dimension": 2,
+    "conjugate_content": "X X†",
+    "coupling_parameters": "1 real before derivative relations",
+    "derivatives": 0,
+    "dimension": 2,
+    "factors": [
+      {
+        "count": 1,
+        "name": "X"
+      },
+      {
+        "count": 1,
+        "name": "X†"
+      }
+    ],
+    "field_content": "X X†",
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "id": "O0001",
+    "latex": "\\left[X (X)^{\\dagger}\\right]_{\\mathbf{1}}",
+    "multiplicity": 1,
+    "notes": "",
+    "operator": "[X X†]_(singlet)",
+    "sector": "X only"
+  },
+  {
+    "coefficient_dimension": 0,
+    "conjugate_content": "L† Q† X",
+    "coupling_parameters": "9 complex before derivative relations",
+    "derivatives": 0,
+    "dimension": 4,
+    "factors": [
+      {
+        "count": 1,
+        "name": "L"
+      },
+      {
+        "count": 1,
+        "name": "Q"
+      },
+      {
+        "count": 1,
+        "name": "X†"
+      }
+    ],
+    "field_content": "L Q X†",
+    "hc_relation": "add Hermitian conjugate",
+    "id": "O0003",
+    "latex": "\\left[L Q (X)^{\\dagger}\\right]_{\\mathbf{1},a},\\quad a=1,\\ldots,9",
+    "multiplicity": 9,
+    "notes": "",
+    "operator": "[L Q X†]_(singlet,a), a=1,...,9",
+    "sector": "X ↔ SM"
+  },
+  {
+    "coefficient_dimension": 0,
+    "conjugate_content": "D(X) D(X†)",
+    "coupling_parameters": "1 real before derivative relations",
+    "derivatives": 2,
+    "dimension": 4,
+    "factors": [
+      {
+        "count": 1,
+        "name": "D(X)"
+      },
+      {
+        "count": 1,
+        "name": "D(X†)"
+      }
+    ],
+    "field_content": "D(X) D(X†)",
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "id": "O0008",
+    "latex": "\\left[(D X) (D (X)^{\\dagger})\\right]_{\\mathbf{1}}",
+    "multiplicity": 1,
+    "notes": "Local contractions before IBP/Bianchi/EOM; derivative rows can be redundant or total derivatives.",
+    "operator": "[D(X) D(X†)]_(singlet)",
+    "sector": "X only"
+  }
+]

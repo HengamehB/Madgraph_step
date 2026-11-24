@@ -1,0 +1,41 @@
+M$ModelName = "inert_doublet";
+M$InteractionOrderHierarchy = {{QCD,1},{QED,2},{NP,1}};
+M$ClassesDescription = {
+S[301] == {ClassName -> pmDC, SelfConjugate -> False,
+              AntiParticleName -> "x-", QuantumNumbers -> {Q -> 1}, Mass -> {pmDM1,220},
+              Width -> {pmDW1,0}, ParticleName -> "x+", PDG -> 9300001,
+              PropagatorLabel -> "x+", PropagatorType -> D,
+              PropagatorArrow -> Forward},
+S[302] == {ClassName -> pmDN1, SelfConjugate -> True,
+               QuantumNumbers -> {Q -> 0}, Mass -> {pmDM2,100.00000000000004},
+              Width -> {pmDW2,0}, ParticleName -> "x1", PDG -> 9300002,
+              PropagatorLabel -> "x1", PropagatorType -> D,
+              PropagatorArrow -> None},
+S[303] == {ClassName -> pmDN2, SelfConjugate -> True,
+               QuantumNumbers -> {Q -> 0}, Mass -> {pmDM3,220},
+              Width -> {pmDW3,0}, ParticleName -> "x2", PDG -> 9300003,
+              PropagatorLabel -> "x2", PropagatorType -> D,
+              PropagatorArrow -> None},
+S[304] == {ClassName -> pmD, SelfConjugate -> False, Unphysical -> True, Indices -> {Index[SU2D]}, QuantumNumbers -> {Y -> 1/2}, Definitions -> {pmD[1] -> pmDC/Sqrt[pmDK], pmD[2] -> ((pmDR11*pmDN1)+I*(pmDR22*pmDN2))/Sqrt[2]}}
+};
+M$Parameters = {
+pmDK == {ParameterType -> Internal, Value -> 1, ComplexParameter -> False, Description -> "pmDK"},
+pmDBareH == {ParameterType -> Internal, Value -> 125, ComplexParameter -> False, Description -> "pmDBareH"},
+pmDR00 == {ParameterType -> Internal, Value -> 1, ComplexParameter -> False, Description -> "pmDR00"},
+pmDR01 == {ParameterType -> Internal, Value -> 0, ComplexParameter -> False, Description -> "pmDR01"},
+pmDR02 == {ParameterType -> Internal, Value -> 0, ComplexParameter -> False, Description -> "pmDR02"},
+pmDR10 == {ParameterType -> Internal, Value -> 0, ComplexParameter -> False, Description -> "pmDR10"},
+pmDR11 == {ParameterType -> Internal, Value -> 1, ComplexParameter -> False, Description -> "pmDR11"},
+pmDR12 == {ParameterType -> Internal, Value -> 0, ComplexParameter -> False, Description -> "pmDR12"},
+pmDR20 == {ParameterType -> Internal, Value -> 0, ComplexParameter -> False, Description -> "pmDR20"},
+pmDR21 == {ParameterType -> Internal, Value -> 0, ComplexParameter -> False, Description -> "pmDR21"},
+pmDR22 == {ParameterType -> Internal, Value -> 1, ComplexParameter -> False, Description -> "pmDR22"},
+pmDO0002n1 == {ParameterType -> Internal, Value -> -10000, ComplexParameter -> False, Description -> "pmDO0002n1"},
+pmDO0003n1 == {ParameterType -> Internal, Value -> -1.266813137468242, ComplexParameter -> False, InteractionOrder -> {{NP, 1}, {QED, 2}}, Description -> "pmDO0003n1"},
+pmDO0003n2 == {ParameterType -> Internal, Value -> 0.633406568734121, ComplexParameter -> False, InteractionOrder -> {{NP, 1}, {QED, 2}}, Description -> "pmDO0003n2"},
+pmDO0006n1 == {ParameterType -> Internal, Value -> 0.3167032843670605, ComplexParameter -> False, InteractionOrder -> {{NP, 1}, {QED, 2}}, Description -> "pmDO0006n1"},
+pmDO0010n1 == {ParameterType -> Internal, Value -> -0.1, ComplexParameter -> False, InteractionOrder -> {NP, 1}, Description -> "pmDO0010n1"},
+pmDO0012n1 == {ParameterType -> Internal, Value -> 1, ComplexParameter -> False, Description -> "pmDO0012n1"}
+};
+(* Doublet potentials use sorted products of dagger-undagger bilinears; Yukawas use row-major Q/L then singlet generation order. *)
+LDoublet := Block[{mu,ii,jj,sp,cc,i1,i2}, ExpandIndices[pmDO0002n1*(pmDbar[i1]*pmD[i1]) + pmDO0003n1*(Phibar[i1]*Phi[i1]*pmDbar[i2]*pmD[i2]) + pmDO0003n2*(Phibar[i1]*pmD[i1]*pmDbar[i2]*Phi[i2]) + (pmDO0006n1*(pmDbar[i1]*Phi[i1]*pmDbar[i2]*Phi[i2])+HC[pmDO0006n1*(pmDbar[i1]*Phi[i1]*pmDbar[i2]*Phi[i2])]) + pmDO0010n1*(pmDbar[i1]*pmD[i1]*pmDbar[i2]*pmD[i2]) + pmDO0012n1*(DC[pmDbar[ii],mu]*DC[pmD[ii],mu]), FlavorExpand -> {SU2D,SU2W}]] /. {G0|GP|GPbar -> 0};

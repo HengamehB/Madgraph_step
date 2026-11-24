@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-REFERENCE = Path(__file__).resolve().parents[1] / 'sample_output'
+REFERENCE = Path(__file__).resolve().parents[1] / 'output' / 'triplet_sextet'
 
 
 class SextetComparisonTests(unittest.TestCase):

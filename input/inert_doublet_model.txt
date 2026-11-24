@@ -1,0 +1,60 @@
+# Deshpande-Ma, Phys. Rev. D 18, 2574 (1978), solution C. Masses are chosen for two-body decays.
+X = {'spin': 'scalar', 'su2': 2, 'su3': '1', 'hypercharge': '1/2', 'boson_kind': 'complex'}
+scenario = 1
+sm_generations = 3
+compiler_limits = {}
+
+Gf = 1.16637e-5
+v2 = 1/(2**0.5 * Gf)
+mH0 = 100.0
+mCharged = 220.0
+a = (mCharged**2 - mH0**2)/v2
+
+operators = {
+    # Mass and kinetic terms
+    'X X†': {'enabled': True, 'coefficient': -mH0**2},  # GeV^2
+    'D(X) D(X†)': {'enabled': True, 'coefficient': 1.0},  # dimensionless
+
+    # Higgs interactions
+    'H X†': {'enabled': False, 'coefficient': 0.0},  # GeV^2
+    'H H† X X†': {'enabled': True, 'coefficient': [-2*a, a]},  # dimensionless; 2 ordered entries: see reference
+    'H H†^2 X': {'enabled': False, 'coefficient': -0.01},  # dimensionless
+    'H X X†^2': {'enabled': False, 'coefficient': -0.01},  # dimensionless
+    'H^2 X†^2': {'enabled': True, 'coefficient': a/2},  # dimensionless
+
+    # Scalar quartic interactions
+    'X^2 X†^2': {'enabled': True, 'coefficient': -0.1},  # dimensionless
+
+    # Fermion interactions
+    'L X† ec': {'enabled': False, 'coefficient': [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]},  # dimensionless; 9 ordered entries: see reference
+    'Q X uc': {'enabled': False, 'coefficient': [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]},  # dimensionless; 9 ordered entries: see reference
+    'Q X† dc': {'enabled': False, 'coefficient': [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]},  # dimensionless; 9 ordered entries: see reference
+
+    # Derivative interactions
+    'D(H) D(X†)': {'enabled': False, 'coefficient': 0.0},  # dimensionless
+
+}
+
+# Fixed SM vacuum and particle stability
+# Incompatible tadpoles or Higgs mixing must be removed; coefficients are never silently changed.
+model_name = 'inert_doublet'
+sm_inputs = {'Gf': Gf, 'MZ': 91.1876, 'aEWM1': 127.9}
+stable_particles = ['x1']
+
+# Collider, decays and saved results
+collider = {
+    'energy_tev': 13.6, 'max_final': 2, 'max_tree_signatures': 250000, 'new_particles_only': True,
+    'pdf': 'nn23lo1', 'seed': 1, 'accuracy': 0.01, 'ptj': 20.0, 'pta': 20.0, 'ptl': 10.0, 'etaj': 5.0,
+    'etaa': 2.5, 'etal': 2.5, 'drjj': 0.4, 'drjl': 0.4, 'draa': 0.4, 'draj': 0.4, 'dral': 0.4, 'drll': 0.4,
+    'dynamical_scale_choice': 3,
+}
+decays = {'max_body': 2, 'precision': 0.01, 'min_br': 1e-08}
+ranking = {
+    'min_relative_rate': 0.0001, 'max_width_mass_ratio': 0.01, 'threshold_widths': 5.0, 'max_depth': 12,
+    'batch_size': 1000, 'memory_mb': 64, 'max_render_nodes': 10000,
+}
+explicit_decays = {'history_ids': [], 'bwcutoff': 15.0, 'cut_decays': False}
+output = '../output'
+
+# Managed operator details; keep the companion folder with this file.
+_metadata = '.model_metadata/e2b8121104d3c051ceb9be2ee3e02a958caecd31e0c95cffaacabb6742e7a80e.json'

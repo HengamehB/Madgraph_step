@@ -1,0 +1,35 @@
+{
+  "calculation_limits": {
+    "discovery_incomplete_production_ids": [],
+    "incomplete": false,
+    "max_depth": 12,
+    "max_width_mass_ratio": 0.01,
+    "min_probability": 0.0,
+    "threshold_widths": 5.0
+  },
+  "coverage": {
+    "C0001": 1.0
+  },
+  "notices": [
+    "Tree-level narrow-width approximation; no decay-product acceptance or detector efficiency.",
+    "Loop-induced production and decay channels are excluded, including gluon fusion and Higgs loop decays in the renormalizable SM template.",
+    "MC errors propagate production integration only; width, scale, PDF and approximation errors are not included.",
+    "Different production channels and intermediate histories can overlap or interfere; rows are not an inclusive total.",
+    "Coverage measures supplied decay-table probabilities, not unknown loop modes or the total physical branching fraction beyond the width approximation.",
+    "Quarks, gluons and tau are terminal parton-level objects; this is not hadronization or tau-decay simulation.",
+    "Equal dynamical_scale_choice integers do not ensure equal numerical renormalization or factorization scales: production uses external parents while a decay chain uses their external daughters. This can change PDFs and running couplings independently of the resonance window.",
+    "Explicit decay-chain comparisons can differ through scale choices, finite resonance windows, off-shell kinematics, cuts, spin correlations or interference within retained diagrams, and numerical uncertainty; a discrepancy is not solely a resonance-window effect.",
+    "Tree-level MadWidth through 2-body decays; 1% adaptive target. Reported modes require BR ≥ 1e-08, without renormalizing their BRs or total widths. Unknown adaptive/body tails remain; total-width accuracy is not guaranteed.",
+    "Reported decay rows omit modes below min_br; omitted_probability records their summed BR for each parent. The SLHA card and total widths retain those modes.",
+    "Adaptive precision and the maximum body multiplicity can leave uncomputed contributions. Their probability is unknown; reported BRs use the computed total, not a guaranteed physical total."
+  ],
+  "omitted_probability": {
+    "C0001": 0.0
+  },
+  "rows": [
+    {"branching_ratio":1.0,"error_pb":null,"final_pdgs":[9000001,9000001],"final_state":"x x","flags":[],"history":"x; x","history_id":"H4c1f759fa798a17e093e426c3256c7c12c7dc98ef4b198b5c461b1b4ae815666","history_key":[[9000001,[]],[9000001,[]]],"history_ref":[1,1],"production_cross_section_pb":null,"production_error_pb":null,"production_final_pdgs":[9000001,9000001],"production_id":"C0001","production_process":"p p > x x","rate_pb":null,"rate_status":"not_calculated","render_truncated":false}
+  ],
+  "uncomputed_production_ids": [
+    "C0001"
+  ]
+}

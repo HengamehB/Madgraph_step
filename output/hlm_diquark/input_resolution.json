@@ -1,0 +1,86 @@
+{
+  "coefficients": {
+    "D(X) D(X†)": {
+      "binding": "6a5995d2daae582c46ec46ebe2a0a92b163b72a0b49cf1634a5ff195ca17ecba",
+      "enabled": true,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Canonical scalar norm projected onto the displayed invariant basis.",
+      "role": "kinetic",
+      "units": "dimensionless",
+      "value": 1.0
+    },
+    "H H† X X†": {
+      "binding": "d298e752e428d6aab666893280abf0512df50cf0a6f70cb2cf7b2a7aa5a8a074",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.",
+      "role": "quartic",
+      "units": "dimensionless",
+      "value": [
+        -0.01,
+        -0.01
+      ]
+    },
+    "Q^2 X†": {
+      "binding": "2fbb1f47b1dda2a1dbf650572426af6adae4e9aa16ce38605aed9cef209c5919",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "dimensionless",
+      "value": [
+        0.2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "X X†": {
+      "binding": "4d70a2b8b536915f21605d0e59bdc171073230f15130309ca44b399570fb2295",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "GeV^2",
+      "value": -1000000
+    },
+    "X^2 X†^2": {
+      "binding": "ab0c089809ef5d7b4ca865bbb41ca8ed1bd3c69193f03a2c7f2515fd46ea56c9",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.",
+      "role": "quartic",
+      "units": "dimensionless",
+      "value": [
+        -0.01,
+        -0.01,
+        -0.01,
+        -0.01,
+        -0.01
+      ]
+    }
+  },
+  "defaults": {
+    "sm_inputs": {
+      "Gf": {
+        "origin": "explicit",
+        "value": 1.16637e-05
+      },
+      "MZ": {
+        "origin": "explicit",
+        "value": 91.1876
+      },
+      "aEWM1": {
+        "origin": "explicit",
+        "value": 127.9
+      }
+    },
+    "stable_particles": {
+      "origin": "explicit",
+      "value": []
+    }
+  },
+  "profile": "coefficient-seeds-v1",
+  "schema": "model-input-origins-v1"
+}

@@ -1,0 +1,259 @@
+INFO:cmdprint:************************************************************
+*                                                          *
+*                     W E L C O M E to                     *
+*              M A D G R A P H 5 _ a M C @ N L O           *
+*                                                          *
+*                                                          *
+*                 *                       *                *
+*                   *        * *        *                  *
+*                     * * * * 5 * * * *                    *
+*                   *        * *        *                  *
+*                 *                       *                *
+*                                                          *
+*         VERSION 3.7.3                 2026-09-01         *
+*                                                          *
+*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+*              http://madgraph.phys.ucl.ac.be/             *
+*                            and                           *
+*            http://amcatnlo.web.cern.ch/amcatnlo/         *
+*                                                          *
+*               Type 'help' for in-line help.              *
+*           Type 'tutorial' to learn how MG5 works         *
+*    Type 'tutorial aMCatNLO' to learn how aMC@NLO works   *
+*    Type 'tutorial MadLoop' to learn how MadLoop works    *
+*                                                          *
+************************************************************
+INFO:cmdprint:load MG5 configuration from ../mg5/input/mg5_configuration.txt 
+INFO:cmdprint:fastjet-config does not seem to correspond to a valid fastjet-config executable (v3+). We will use fjcore instead.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/fastjet-config (including fastjet-config).
+ MG5_aMC> set fastjet /PATH/TO/fastjet-config
+
+INFO:cmdprint:eMELA-config does not seem to correspond to a valid eMELA-config executable.
+ Please set the 'fastjet'variable to the full (absolute) /PATH/TO/eMELA-config (including eMELA-config).
+ MG5_aMC> set eMELA /PATH/TO/eMELA-config
+
+INFO:cmdprint.ext_program:Using default text editor "vi". Set another one in ./input/mg5_configuration.txt
+INFO:cmdprint.ext_program:Using default gzip "gzip". Set another one in ./input/mg5_configuration.txt
+INFO:madgraph.model:load particles
+INFO:madgraph.model:load vertices
+INFO:cmdprint:Defined multiparticle p = g u c d s u~ c~ d~ s~
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle j = g u c d s u~ c~ d~ s~
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle l+ = e+ mu+
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle l- = e- mu-
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle vl = ve vm vt
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle vl~ = ve~ vm~ vt~
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:cmdprint:Defined multiparticle all = g a ve vm vt ve~ vm~ vt~ u c t d s b u~ c~ t~ d~ s~ b~ z w+ h x w- e- mu- ta- e+ mu+ ta+
+INFO:tutorial:
+	You have successfully imported a model. If you followed the tutorial
+	this is the MSSM.
+	
+	MadGraph can auto-download a large class of model (and more can be used). 
+	To see the full list of model, write:
+	MG5_aMC>display modellist 
+	
+	If you want to know more information about this model you can use the
+	following commands:
+	MG5_aMC>display particles
+	MG5_aMC>display interactions
+	MG5_aMC>display multiparticles
+	which show information on the particles and the vertices of the model
+	or presently defined multiparticle labels.
+	
+	Some of the model (including mssm) allow to modify the model (setting some
+	mass to zero, put some matrices diagonal, remove some interaction, ...). You can
+	see the possibility for each model by using the following command:
+	MG5_aMC> customize_model 
+	
+	To define a multiparticle label, i.e. a label corresponding to a set
+	of particles, write:
+	MG5_aMC>define v = w+ w- z a
+	This defines the symbol "v" to correspond to any EW vector boson.
+	
+INFO:cmdprint:define p = g d d~ u u~ s s~ c c~ b b~
+INFO:cmdprint:Defined multiparticle p = g d u s c b d~ u~ s~ c~ b~
+INFO:tutorial:
+	You have just defined a multiparticle label.
+	If you followed the tutorial, the label is "v"
+	
+	Note that some multiparticles such as as p, j, l+, l- are
+	predefined. Type
+	MG5_aMC>display multiparticles
+	to see their definitions.
+	
+	MG5 allows you to store a file with the list of command that you have
+	used in an interactive session:
+	MG5_aMC>history my_mg5_cmd.dat
+	
+INFO:madgraph.diagram_generation:Trying process: g g > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: d d~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Trying process: d s~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: d b~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: u u~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Trying process: u c~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: s d~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: s s~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Trying process: s b~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: c u~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: c c~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Trying process: b d~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: b s~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Trying process: b b~ > x x NP<=4 QCD<=4 QED<=4 
+INFO:madgraph.diagram_generation:Process has 1 diagrams
+INFO:madgraph.diagram_generation:Process d~ d > x x added to mirror process d d~ > x x
+INFO:madgraph.diagram_generation:Process u~ u > x x added to mirror process u u~ > x x
+INFO:madgraph.diagram_generation:Process s~ s > x x added to mirror process s s~ > x x
+INFO:madgraph.diagram_generation:Process c~ c > x x added to mirror process c c~ > x x
+INFO:madgraph.diagram_generation:Process b~ b > x x added to mirror process b b~ > x x
+INFO:cmdprint:5 processes with 5 diagrams generated in 0.013 s
+INFO:cmdprint:Total: 5 processes with 5 diagrams
+INFO:tutorial:
+	You have just generated a new process.
+	Note that the coupling order "QED=0" was automatically added by MG5
+	to avoid non-QCD diagrams which have negligible contribution.
+	You can find more information on supported syntax by using:
+	MG5_aMC>help generate
+	To list all defined processes, type
+	MG5_aMC>display processes
+	
+	If you want to know more about particles and multiparticles present,
+	write
+	MG5_aMC>display particles
+	MG5_aMC>display multiparticles
+	
+	If you want to add a second process, use the add process command:
+	MG5_aMC>add process p p > W+ j, W+ > l+ vl @2
+	This adds a decay chain process, with the W+ decaying
+	leptonically.
+	
+	At this stage you can export your processes to different formats. In
+	this tutorial, we will explain how to create output for MadEvent.
+	This is done simply by typing:
+	MG5_aMC>output MY_FIRST_MG5_RUN
+	
+INFO:tutorial_aMCatNLO:
+	You have just generated a new process.
+	You can find more information on supported syntax by using:
+	MG_aMC>help generate
+	To list all defined processes, type
+	MG_aMC>display processes
+	
+	If you want to know more about particles and multiparticles present,
+	write
+	MG_aMC>display particles
+	MG_aMC>display multiparticles
+	
+	If you want to add a second process, use the add process command:
+	MG_aMC>add process p p > e+ e- [QCD] @2
+	
+	At this stage you can export your processes.
+	This is done simply by typing:
+	MG_aMC>output MY_FIRST_AMCATNLO_RUN
+	
+INFO:tutorial_MadLoop:
+	You have just generated a new process.
+	You can find more information on supported syntax by using:
+	MG5_aMC>help generate
+	To list all defined processes, type
+	MG5_aMC>display processes
+	
+	You can display a pictorial representation of the diagrams with 
+	MG5_aMC> display diagrams
+	Notice you can add the option 'loop' or 'born' if you only want those diagrams
+	to be displayed.
+	
+	If you want to add a second process, you can use the add process command:
+	MG5_aMC>add process e+ e- > d d~ [virt=QCD]
+	But keep in mind that you must still consider only virtual corrections and 
+	cannot employ multiparticle labels. Also decay chains are not available for
+	loops.
+	
+	At this stage you can export your processes.
+	This is done simply by typing:
+	
+	MG5_aMC>output MY_FIRST_MADLOOP_RUN
+	
+	Notice that the standalone output mode (implicit in the above) is the only
+	available for MadLoop standalone runs.
+	

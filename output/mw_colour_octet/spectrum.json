@@ -1,0 +1,144 @@
+{
+  "coordinates": {
+    "fields": [
+      {
+        "hypercharge": "1/2",
+        "kind": "complex",
+        "name": "X",
+        "spin": "scalar",
+        "su2": 2,
+        "su3": [
+          1,
+          1
+        ]
+      }
+    ],
+    "flat_fields": [
+      {
+        "hypercharge": "1",
+        "kind": "complex",
+        "name": "XW0",
+        "spin": "scalar",
+        "su2": 1,
+        "su3": [
+          1,
+          1
+        ]
+      },
+      {
+        "hypercharge": "0",
+        "kind": "complex",
+        "name": "XW1",
+        "spin": "scalar",
+        "su2": 1,
+        "su3": [
+          1,
+          1
+        ]
+      }
+    ],
+    "labels": {
+      "XW0": "X1",
+      "XW1": "X2"
+    },
+    "raw_maps": {
+      "('X', 0)": {
+        "XW0": 1.0
+      },
+      "('X', 1)": {
+        "XW1": 1.0
+      },
+      "('X†', 0)": {
+        "XW0†": {
+          "imag": -0.0,
+          "real": 1.0
+        }
+      },
+      "('X†', 1)": {
+        "XW1†": {
+          "imag": -0.0,
+          "real": 1.0
+        }
+      }
+    },
+    "sources": {
+      "XW0": "X",
+      "XW1": "X"
+    }
+  },
+  "masses": {
+    "H": 125.0,
+    "X1": 789.3823969628859,
+    "X2i": 779.7233012268862,
+    "X2r": 817.675360464668
+  },
+  "raw_field_basis": {
+    "('X', 0)": {
+      "(0, False)": {
+        "imag": 0.0,
+        "real": 1.0
+      }
+    },
+    "('X', 1)": {
+      "(1, False)": {
+        "imag": 0.0,
+        "real": 0.7071067811865476
+      },
+      "(2, False)": {
+        "imag": 0.7071067811865476,
+        "real": 0.0
+      }
+    },
+    "('X†', 0)": {
+      "(0, True)": {
+        "imag": 0.0,
+        "real": 1.0
+      }
+    },
+    "('X†', 1)": {
+      "(1, False)": {
+        "imag": 0.0,
+        "real": 0.7071067811865476
+      },
+      "(2, False)": {
+        "imag": -0.7071067811865476,
+        "real": 0.0
+      }
+    }
+  },
+  "scalar_basis": null,
+  "scalar_states": [
+    {
+      "charge": "1",
+      "label": "X1",
+      "mass": 789.3823969628859,
+      "name": "x1",
+      "real": false,
+      "rep": 8,
+      "source": "X"
+    },
+    {
+      "charge": "0",
+      "label": "X2r",
+      "mass": 817.675360464668,
+      "name": "x2r",
+      "real": true,
+      "rep": 8,
+      "source": "X"
+    },
+    {
+      "charge": "0",
+      "label": "X2i",
+      "mass": 779.7233012268862,
+      "name": "x2i",
+      "real": true,
+      "rep": 8,
+      "source": "X"
+    }
+  ],
+  "transformation": [
+    [{"imag":0.0,"real":1.0},{"imag":0.0,"real":0.0},{"imag":0.0,"real":0.0}],
+    [{"imag":0.0,"real":0.0},{"imag":0.0,"real":1.0000000000000002},{"imag":0.0,"real":0.0}],
+    [{"imag":0.0,"real":0.0},{"imag":0.0,"real":0.0},{"imag":0.0,"real":1.0000000000000002}]
+  ]
+}

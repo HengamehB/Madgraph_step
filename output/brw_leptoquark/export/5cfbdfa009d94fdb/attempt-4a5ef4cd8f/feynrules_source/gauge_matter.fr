@@ -1,0 +1,22 @@
+M$ModelName = "brw_leptoquark";
+(* LeptonNumber labels follow the active leptoquark couplings. *)
+M$InteractionOrderHierarchy = {{QCD,1},{QED,2},{NP,1}};
+M$ClassesDescription = {
+S[201] == {ClassName -> pmGMS1, SelfConjugate -> False,
+              Indices -> {Index[Colour]}, AntiParticleName -> "xbar", Mass -> {pmGMM1,200}, Width -> {pmGMW1,0},
+              QuantumNumbers -> {Y -> -1/3, Q -> -1/3, LeptonNumber -> 1},
+              ParticleName -> "x", PDG -> 9200001,
+              PropagatorLabel -> "X", PropagatorType -> D,
+              PropagatorArrow -> Forward, FullName -> "X"}
+};
+M$Parameters = {
+pmGM0001n1 == {ParameterType -> Internal, Value -> -40000, ComplexParameter -> False, Description -> "pmGM0001n1"},
+pmGM0008n1 == {ParameterType -> Internal, Value -> 1, ComplexParameter -> False, Description -> "pmGM0008n1"},
+pmCYO0003n1 == {ParameterType -> Internal, Value -> 0.3, ComplexParameter -> False, InteractionOrder -> {NP, 1}, Description -> "pmCYO0003n1"},
+pmGMZ1 == {ParameterType -> Internal, Value -> 1, ComplexParameter -> False, Description -> "pmGMZ1"}
+};
+(* Diagonal fields are canonically normalized. Dirac mass phases are removed by a chiral rephasing. *)
+(* Proca derivative basis: d_mu V_nu d^mu V^nu, (d.V)^2, d_mu V_nu d^nu V^mu, epsilon dV dV. *)
+(* The last term is a total derivative; the second and third agree up to integration by parts. *)
+LGM := Block[{mu,nu,cc,c1,c2,c3,c4,m1,m2,m3,m4},
+ExpandIndices[DC[pmGMS1bar[cc],mu]*DC[pmGMS1[cc],mu] + pmGM0001n1*(pmGMS1bar[c1]*pmGMS1[c1]/pmGMZ1) + (pmCYO0003n1*(HC[(pmGMS1[c1]/Sqrt[pmGMZ1])]*ProjM[s1,s2]*(CC[uqbar][s1,1,c1].l[s2,1]-(CKM[1,1]*CC[dqbar][s1,1,c1].vl[s2,1]+CKM[1,2]*CC[dqbar][s1,2,c1].vl[s2,1]+CKM[1,3]*CC[dqbar][s1,3,c1].vl[s2,1])))+HC[pmCYO0003n1*(HC[(pmGMS1[c1]/Sqrt[pmGMZ1])]*ProjM[s1,s2]*(CC[uqbar][s1,1,c1].l[s2,1]-(CKM[1,1]*CC[dqbar][s1,1,c1].vl[s2,1]+CKM[1,2]*CC[dqbar][s1,2,c1].vl[s2,1]+CKM[1,3]*CC[dqbar][s1,3,c1].vl[s2,1])))]), FlavorExpand -> {SU2D,SU2W}]];

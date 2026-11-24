@@ -49,8 +49,10 @@ def classify(row, fields):
     """Classify only contractions whose basis is explicitly fixed here."""
     if _doublet(fields):
         return _doublet_classify(row, fields[0].name)
-    if all(f.spin == 'scalar' for f in fields) and yukawa.classify(row, fields) == yukawa.TRIPLET:
-        return yukawa.TRIPLET, ''
+    if all(f.spin == 'scalar' for f in fields):
+        kind = yukawa.classify(row, fields)
+        if kind in (yukawa.TRIPLET, yukawa.TRIPLET_LEFT):
+            return kind, ''
     if _triplet(fields):
         counts, n = _counts(row), fields[0].name
         if row['multiplicity'] == 1:
@@ -147,7 +149,8 @@ class GaugeMatterCompiler:
             symbols[f.name] = symbol
             colour = f.su3 != (0, 0)
             conjugated = f.su3 == (0, 1)
-            charge = float(f.hypercharge) * (-1 if conjugated else 1)
+            # Gauge identities must simplify exactly in L - HC[L].
+            charge = f.hypercharge * (-1 if conjugated else 1)
             lepton = f', LeptonNumber -> {lepton_numbers[index-1]}' if index-1 in lepton_numbers else ''
             self_conjugate = f.spin == 'vector'
             physical_name = f.name.lower() + ('bar' if conjugated else '')
@@ -160,7 +163,7 @@ class GaugeMatterCompiler:
                 extra += f' AntiParticleName -> {_wl(anti_name)},'
             classes.append(f'''{letter}[{200+index}] == {{ClassName -> {symbol}, SelfConjugate -> {str(self_conjugate)},
               {extra} Mass -> {{pmGMM{index},{_wl(mass)}}}, Width -> {{pmGMW{index},{_wl(width)}}},
-              QuantumNumbers -> {{Y -> {_wl(charge)}, Q -> {_wl(charge)}{lepton}}},
+              QuantumNumbers -> {{Y -> {charge}, Q -> {charge}{lepton}}},
               ParticleName -> {_wl(physical_name)}, PDG -> {pdg},
               PropagatorLabel -> {_wl(f.name)}, PropagatorType -> {'D' if f.spin == 'scalar' else 'Straight' if f.spin == 'fermion' else 'Sine'},
               PropagatorArrow -> {'None' if self_conjugate else 'Forward'}, FullName -> {_wl(f.name)}}}''')

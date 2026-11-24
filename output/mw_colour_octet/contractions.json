@@ -1,0 +1,192 @@
+{
+  "coverage": {
+    "O0001": "resolved and numerically normalized",
+    "O0002": "resolved and numerically normalized",
+    "O0004": "resolved and numerically normalized",
+    "O0005": "resolved and numerically normalized",
+    "O0008": "resolved and numerically normalized"
+  },
+  "notation": [
+    {
+      "coefficient_suffix": "",
+      "expression": "\\left(X^{\\dagger} X\\right)",
+      "index_ranges": {},
+      "multiplicity": 1,
+      "operator_id": "O0001",
+      "self_conjugate": true,
+      "style": "standard",
+      "summed_indices": []
+    },
+    {
+      "coefficient_suffix": "a",
+      "conventions": "T is a symbolic invariant tensor with uncomputed components; I indices collect spin, gauge and flavour. For self-conjugate families the contracted tensor monomials define a Hermitian basis. No derivative identities are removed.",
+      "expression": "\\mathcal{T}^{(2,a)}_{I_{1} I_{2} I_{3} I_{4}}\\,{H}^{I_{1}} {(H)^{\\dagger}}^{I_{2}} {X}^{I_{3}} {(X)^{\\dagger}}^{I_{4}}",
+      "index_ranges": [
+        [
+          "a",
+          2
+        ]
+      ],
+      "multiplicity": 2,
+      "operator_id": "O0002",
+      "self_conjugate": true,
+      "style": "tensor",
+      "tensor_components_computed": false
+    },
+    {
+      "coefficient_suffix": "",
+      "conventions": "T is a symbolic invariant tensor with uncomputed components; I indices collect spin, gauge and flavour. For self-conjugate families the contracted tensor monomials define a Hermitian basis. No derivative identities are removed.",
+      "expression": "\\mathcal{T}^{(4)}_{I_{1} I_{2} I_{3} I_{4}}\\,{H}^{I_{1}} {H}^{I_{2}} {(X)^{\\dagger}}^{I_{3}} {(X)^{\\dagger}}^{I_{4}}",
+      "index_ranges": [],
+      "multiplicity": 1,
+      "operator_id": "O0004",
+      "self_conjugate": false,
+      "style": "tensor",
+      "tensor_components_computed": false
+    },
+    {
+      "coefficient_suffix": "a",
+      "conventions": "T is a symbolic invariant tensor with uncomputed components; I indices collect spin, gauge and flavour. For self-conjugate families the contracted tensor monomials define a Hermitian basis. No derivative identities are removed.",
+      "expression": "\\mathcal{T}^{(5,a)}_{I_{1} I_{2} I_{3}}\\,{Q}^{I_{1}} {X}^{I_{2}} {u^c}^{I_{3}}",
+      "index_ranges": [
+        [
+          "a",
+          9
+        ]
+      ],
+      "multiplicity": 9,
+      "operator_id": "O0005",
+      "self_conjugate": false,
+      "style": "tensor",
+      "tensor_components_computed": false
+    },
+    {
+      "coefficient_suffix": "",
+      "expression": "\\left(D_{\\mu} X\\right)^{\\dagger}\\left(D^{\\mu} X\\right)",
+      "index_ranges": {},
+      "multiplicity": 1,
+      "operator_id": "O0008",
+      "self_conjugate": true,
+      "style": "standard",
+      "summed_indices": []
+    }
+  ],
+  "operators": [
+    {
+      "add_hc": false,
+      "coefficients": [
+        -562500.0
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "X",
+          1
+        ],
+        [
+          "X†",
+          1
+        ]
+      ],
+      "kind": "joint_scalar_potential",
+      "operator_id": "O0001"
+    },
+    {
+      "add_hc": false,
+      "coefficients": [
+        -2.5,
+        0.5
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "H",
+          1
+        ],
+        [
+          "H†",
+          1
+        ],
+        [
+          "X",
+          1
+        ],
+        [
+          "X†",
+          1
+        ]
+      ],
+      "kind": "joint_scalar_potential",
+      "operator_id": "O0002"
+    },
+    {
+      "add_hc": true,
+      "coefficients": [
+        -0.5
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "H",
+          2
+        ],
+        [
+          "X†",
+          2
+        ]
+      ],
+      "kind": "joint_scalar_potential",
+      "operator_id": "O0004"
+    },
+    {
+      "add_hc": true,
+      "coefficients": [
+        1.4646398542662327e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.00729448084281614,
+        0.0,
+        0.0,
+        0.0,
+        0.9879139409168315
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "Q",
+          1
+        ],
+        [
+          "X",
+          1
+        ],
+        [
+          "uc",
+          1
+        ]
+      ],
+      "kind": "octet_up_yukawa",
+      "operator_id": "O0005"
+    },
+    {
+      "add_hc": false,
+      "coefficients": [
+        1.0
+      ],
+      "expressions": [],
+      "factors": [
+        [
+          "D(X)",
+          1
+        ],
+        [
+          "D(X†)",
+          1
+        ]
+      ],
+      "kind": "joint_scalar_kinetic",
+      "operator_id": "O0008"
+    }
+  ]
+}

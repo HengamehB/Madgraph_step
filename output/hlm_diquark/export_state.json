@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "identity": "affb87afa75d01f997a30d85a6ef1a5beff2fd70867dd758f99a29a05aef8e05",
+  "source": {
+    "fingerprint": "03e456ce65229b88e5a958751994723f00e13d04f7cf59743c45cdba0634be35",
+    "path": "histories/d38ab31199ea4d89d798/histories.sqlite",
+    "path_base": "run",
+    "revision": 29,
+    "schema": "madgraph-history-store-v2",
+    "sha256": "f10ca29b845b12c26114178716f63eb127c1dda36792be8868a5e3563efa6cd8",
+    "size_bytes": 57344
+  },
+  "status": "complete"
+}

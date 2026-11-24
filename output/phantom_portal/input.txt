@@ -1,0 +1,54 @@
+# Silveira-Zee real singlet. Chosen collider test point; see arXiv:1207.4930 Eq. (21).
+X = {'spin': 'scalar', 'su2': 1, 'su3': '1', 'hypercharge': '0', 'boson_kind': 'real'}
+scenario = 1
+sm_generations = 3
+compiler_limits = {}
+
+Gf = 1.16637e-5
+v2 = 1/(2**0.5 * Gf)
+rho = 0.01
+mX = 50.0
+
+operators = {
+    # Mass and kinetic terms
+    'X^2': {'enabled': True, 'coefficient': -mX**2/2 + rho*v2/4},  # GeV^2
+    'D(X)^2': {'enabled': True, 'coefficient': 0.5},  # dimensionless
+
+    # Scalar mixing and tadpoles
+    'X': {'enabled': False, 'coefficient': 0.0},  # GeV^3
+
+    # Cubic scalar interactions
+    'X^3': {'enabled': False, 'coefficient': 0.0},  # GeV
+
+    # Higgs interactions
+    'H H† X': {'enabled': False, 'coefficient': 0.0},  # GeV
+    'H H† X^2': {'enabled': True, 'coefficient': -rho/2},  # dimensionless
+
+    # Scalar quartic interactions
+    'X^4': {'enabled': True, 'coefficient': -0.01},  # dimensionless
+
+}
+
+# Fixed SM vacuum and particle stability
+# Incompatible tadpoles or Higgs mixing must be removed; coefficients are never silently changed.
+model_name = 'phantom_portal'
+sm_inputs = {'Gf': Gf, 'MZ': 91.1876, 'aEWM1': 127.9}
+stable_particles = ['x']
+
+# Collider, decays and saved results
+collider = {
+    'energy_tev': 13.6, 'max_final': 2, 'max_tree_signatures': 250000, 'new_particles_only': True,
+    'pdf': 'nn23lo1', 'seed': 1, 'accuracy': 0.01, 'ptj': 20.0, 'pta': 20.0, 'ptl': 10.0, 'etaj': 5.0,
+    'etaa': 2.5, 'etal': 2.5, 'drjj': 0.4, 'drjl': 0.4, 'draa': 0.4, 'draj': 0.4, 'dral': 0.4, 'drll': 0.4,
+    'dynamical_scale_choice': 3,
+}
+decays = {'max_body': 2, 'precision': 0.01, 'min_br': 1e-08}
+ranking = {
+    'min_relative_rate': 0.0001, 'max_width_mass_ratio': 0.01, 'threshold_widths': 5.0, 'max_depth': 12,
+    'batch_size': 1000, 'memory_mb': 64, 'max_render_nodes': 10000,
+}
+explicit_decays = {'history_ids': [], 'bwcutoff': 15.0, 'cut_decays': False}
+output = '../../output/benchmarks'
+
+# Managed operator details; keep the companion folder with this file.
+_metadata = '.model_metadata/2a931f55f9ba974bac3f46f4a0ecd386948ca39b86a4ba1f1656615c2f635757.json'

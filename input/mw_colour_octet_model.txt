@@ -1,0 +1,67 @@
+# Edit coefficients and switches below; init replaces this file without a backup.
+# Masses and mixings are derived. Disabled rows do not enter the Lagrangian.
+# Electroweak vacuum is fixed: unmixed 125 GeV Higgs, zero VEVs for new scalars.
+# Full operator conventions: ./run.sh inputs input/mw_colour_octet_model.txt
+
+X = {'spin': 'scalar', 'su2': 2, 'su3': '8', 'hypercharge': '1/2', 'boson_kind': 'complex'}
+scenario = 1
+sm_generations = 3
+compiler_limits = {}
+
+# Manohar and Wise, arXiv:hep-ph/0606172, Eqs. (6), (13) and (14).
+# Tr(T^A T^B)=delta^AB/2. The chosen eta_U is real; eta_D=0.
+mS = 750.0
+lambda1 = 4.0
+lambda2 = 1.0
+lambda3 = 1.0
+etaU = 1.0
+Gf = 1.16637e-5
+vev = (2**0.5 * Gf)**(-0.5)
+# Stock SM.fr pole quark masses in GeV; this is a tree-level MFV point.
+mu = 0.00255
+mc = 1.27
+mt = 172.0
+y = 2**0.5 * etaU / vev
+
+operators = {
+    # Mass and kinetic terms
+    'X X†': {'enabled': True, 'coefficient': -mS**2},  # GeV^2
+    'D(X) D(X†)': {'enabled': True, 'coefficient': 1.0},  # dimensionless
+
+    # Higgs interactions
+    'H H† X X†': {'enabled': True, 'coefficient': [-(lambda1+lambda2)/2, lambda2/2]},  # dimensionless; 2 ordered entries: see reference
+    'H X X†^2': {'enabled': False, 'coefficient': [-0.01, -0.01]},  # dimensionless; 2 ordered entries: see reference
+    'H^2 X†^2': {'enabled': True, 'coefficient': -lambda3/2},  # dimensionless
+
+    # Scalar quartic interactions
+    'X^2 X†^2': {'enabled': False, 'coefficient': [-0.01, -0.01, -0.01, -0.01, -0.01, -0.01]},  # dimensionless; 6 ordered entries: see reference
+
+    # Fermion interactions
+    'Q X uc': {'enabled': True, 'coefficient': [y*mu, 0, 0, 0, y*mc, 0, 0, 0, y*mt]},  # dimensionless; 9 ordered entries: see reference
+    'Q X† dc': {'enabled': False, 'coefficient': None},  # dimensionless; 9 ordered entries: see reference; limitations: see reference
+
+}
+
+# Fixed SM vacuum and particle stability
+# Incompatible tadpoles or Higgs mixing must be removed; coefficients are never silently changed.
+model_name = 'mw_colour_octet'
+sm_inputs = {'Gf': 1.16637e-05, 'MZ': 91.1876, 'aEWM1': 127.9}
+stable_particles = []
+
+# Collider, decays and saved results
+collider = {
+    'energy_tev': 13.6, 'max_final': 2, 'max_tree_signatures': 250000, 'new_particles_only': True,
+    'pdf': 'nn23lo1', 'seed': 1, 'accuracy': 0.01, 'ptj': 20.0, 'pta': 20.0, 'ptl': 10.0, 'etaj': 5.0,
+    'etaa': 2.5, 'etal': 2.5, 'drjj': 0.4, 'drjl': 0.4, 'draa': 0.4, 'draj': 0.4, 'dral': 0.4, 'drll': 0.4,
+    'dynamical_scale_choice': 3,
+}
+decays = {'max_body': 2, 'precision': 0.01, 'min_br': 1e-08}
+ranking = {
+    'min_relative_rate': 0.0001, 'max_width_mass_ratio': 0.01, 'threshold_widths': 5.0, 'max_depth': 12,
+    'batch_size': 1000, 'memory_mb': 64, 'max_render_nodes': 10000,
+}
+explicit_decays = {'history_ids': [], 'bwcutoff': 15.0, 'cut_decays': False}
+output = '../output'
+
+# Managed operator details; keep the companion folder with this file.
+_metadata = '.model_metadata/a5e96780a5d7d57b43ed34b0e9b3d25d4dd079c2c0c0767590ab0c9d1cad5e26.json'

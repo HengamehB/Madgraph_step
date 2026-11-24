@@ -17,7 +17,7 @@ from tex_inputs import read_inputs
 
 
 EXAMPLE = ROOT / "input" / "sample_model_sextet.txt"
-REFERENCE = ROOT / "sample_output"
+REFERENCE = ROOT / "output" / "triplet_sextet"
 
 
 class ShippedExampleTests(unittest.TestCase):

@@ -1,0 +1,4 @@
+# Han, Lewis and McElmurry (arXiv:0909.2666), scalar sextet benchmark.
+# Only the charge +4/3 component is integrated for the uu comparison.
+X = {'spin': 'scalar', 'su2': 3, 'su3': '6', 'hypercharge': '1/3', 'boson_kind': 'complex'}
+Y = None

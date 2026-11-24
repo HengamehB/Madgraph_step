@@ -1,0 +1,44 @@
+[
+  {
+    "name": "t",
+    "omitted_probability": 0.0,
+    "pdg": 6,
+    "width_gev": 1.466877
+  },
+  {
+    "name": "z",
+    "omitted_probability": 0.0,
+    "pdg": 23,
+    "width_gev": 2.411596
+  },
+  {
+    "name": "w+",
+    "omitted_probability": 0.0,
+    "pdg": 24,
+    "width_gev": 2.002524
+  },
+  {
+    "name": "h",
+    "omitted_probability": 3.541098e-09,
+    "pdg": 25,
+    "width_gev": 0.006049582
+  },
+  {
+    "name": "x1",
+    "omitted_probability": 2.4225914e-10,
+    "pdg": 9700001,
+    "width_gev": 6.952949
+  },
+  {
+    "name": "x2r",
+    "omitted_probability": 2.94365e-10,
+    "pdg": 9700002,
+    "width_gev": 5.927297
+  },
+  {
+    "name": "x2i",
+    "omitted_probability": 2.449077e-10,
+    "pdg": 9700003,
+    "width_gev": 6.793598
+  }
+]

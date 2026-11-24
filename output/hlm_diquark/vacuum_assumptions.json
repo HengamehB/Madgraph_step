@@ -1,0 +1,24 @@
+{
+  "analysis": "fixed_sm",
+  "assumptions": {
+    "higgs_mass_gev": 125.0,
+    "higgs_mixing": false,
+    "higgs_vev_gev": 246.22056907348588,
+    "lambda_h": 0.12886689630821146,
+    "mu_h_squared": 7812.5,
+    "scalar_vevs": {
+      "X": 0.0
+    }
+  },
+  "boundedness": "not_evaluated",
+  "global_minimum": null,
+  "loop_stability": "not_evaluated",
+  "potential_minimized": false,
+  "schema": "fixed-sm-v1",
+  "search_complete": false,
+  "status": "assumed_fixed_sm",
+  "vacuum_lifetime": "not_evaluated",
+  "warnings": [
+    "The SM electroweak vacuum and zero new-scalar VEVs are assumed; the scalar potential is not minimized. Global stability, boundedness and vacuum lifetime are not established."
+  ]
+}

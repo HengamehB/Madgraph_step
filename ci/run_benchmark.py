@@ -477,7 +477,7 @@ class Benchmark:
         require(manifest['requested_complete'] and not manifest['all_rates_complete'],
                 'Selected calculation completion was reported as all-channel completion')
         require(manifest['discovery_complete'], 'History discovery is incomplete')
-        subprocess.run([sys.executable, str(ROOT / 'sample_output' / 'compare.py'), str(run)],
+        subprocess.run([sys.executable, str(ROOT / 'output' / 'triplet_sextet' / 'compare.py'), str(run)],
                        cwd=ROOT, check=True)
         self.report['ranking'] = before
         self.report['scope'].update(fresh_ufo_export=True, numerical_widths=True, production_integrations=1)

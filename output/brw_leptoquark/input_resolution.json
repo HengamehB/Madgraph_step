@@ -1,0 +1,123 @@
+{
+  "coefficients": {
+    "D(X) D(X†)": {
+      "binding": "e066a06fb5f52b5ef93710c6d09321ef4b9e5546028f308312d0e9382921d656",
+      "enabled": true,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Canonical scalar norm projected onto the displayed invariant basis.",
+      "role": "kinetic",
+      "units": "dimensionless",
+      "value": 1.0
+    },
+    "H H† X X†": {
+      "binding": "897736aad026002a2c4eb8affd02fc2d4efa43201d08373b21485e39226db627",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.",
+      "role": "quartic",
+      "units": "dimensionless",
+      "value": -0.01
+    },
+    "L Q X†": {
+      "binding": "fd065c7cc02f26ca407bb6e6c21e2b33b3387bdeba3ad02c3c4a321a39876709",
+      "enabled": true,
+      "origin": "explicit",
+      "units": "dimensionless",
+      "value": [
+        0.3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "Q^2 X": {
+      "binding": "9f5dc3e43f7ce615850dc52665f8ebd94638fac7d1a1aea23b7af93b9ac729c6",
+      "enabled": false,
+      "origin": "unresolved",
+      "profile": "coefficient-seeds-v1",
+      "reason": "compiler gap: fermion/Lorentz contraction needs an additional lowerer",
+      "role": "interaction",
+      "units": "dimensionless",
+      "value": null
+    },
+    "X X†": {
+      "binding": "f068b226255fdc4db36a083e8ab732a8016df55d720a26dcc93a7a961804e9e0",
+      "enabled": true,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Reference mass 200 GeV before VEV shifts/mixing; actual masses are derived.",
+      "role": "quadratic",
+      "units": "GeV^2",
+      "value": -40000.0
+    },
+    "X dc† uc†": {
+      "binding": "a87c883cf0c540a2032435c5180e7d239ec7d79b58a2ebf1b726415836d7bf01",
+      "enabled": false,
+      "origin": "unresolved",
+      "profile": "coefficient-seeds-v1",
+      "reason": "compiler gap: fermion/Lorentz contraction needs an additional lowerer",
+      "role": "interaction",
+      "units": "dimensionless",
+      "value": null
+    },
+    "X ec uc": {
+      "binding": "ed8101613653bd586a4e87eb31250cb3c22f149d03f7e5ca76494c560a8ca3cf",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small real seed for each independent complex flavour coupling in the stated order.",
+      "role": "dimensionless_interaction",
+      "units": "dimensionless",
+      "value": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ]
+    },
+    "X^2 X†^2": {
+      "binding": "1b33b415bb59c9cb0126701b523d0dd97306f2a590ea1c2ec2a23b32a10f703f",
+      "enabled": false,
+      "origin": "default",
+      "profile": "coefficient-seeds-v1",
+      "reason": "Small Lagrangian quartic seed (L=-V); full boundedness/vacuum still requires resolution.",
+      "role": "quartic",
+      "units": "dimensionless",
+      "value": -0.01
+    }
+  },
+  "defaults": {
+    "sm_inputs": {
+      "Gf": {
+        "origin": "explicit",
+        "value": 1.16637e-05
+      },
+      "MZ": {
+        "origin": "explicit",
+        "value": 91.1876
+      },
+      "aEWM1": {
+        "origin": "explicit",
+        "value": 127.9
+      }
+    },
+    "stable_particles": {
+      "origin": "explicit",
+      "value": []
+    }
+  },
+  "profile": "coefficient-seeds-v1",
+  "schema": "model-input-origins-v1"
+}

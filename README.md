@@ -1,6 +1,8 @@
 # MadFieldRunner
 
-MadFieldRunner takes particle representations and operator coefficients, builds the Lagrangian and UFO, then uses MadGraph to rank production and decay histories by **cross section × branching fraction**. The supplied example pairs a 1,500 GeV colour sextet with a 1,200 GeV colour triplet.
+MadFieldRunner takes particle representations and operator coefficients, builds the Lagrangian and UFO, then uses MadGraph to rank production and decay histories by **cross section × branching fraction**. The walkthrough uses a 1,500 GeV colour sextet and a 1,200 GeV colour triplet.
+
+All six examples have [input files and rerun commands](input/README.md) and [saved results](output/README.md). To view a reference report offline, extract the ZIP and open `output/<example>/report.html`. Each `ranking.csv` includes every discovered history. Blank rates mark production channels without an integration.
 
 ## 1. Set up
 
@@ -57,10 +59,10 @@ The **Run files** line prints the directory for this calculation, under `output/
 From the package directory, replace the entire path between the quotes below with the full directory printed after **Run files**. Keep the quotes so paths containing spaces work.
 
 ```bash
-python sample_output/compare.py "path/to/saved run"
+python output/triplet_sextet/compare.py "path/to/saved run"
 ```
 
-The comparison checks the discovered channels, decay histories, four total widths and ten partial widths. It allows for Monte Carlo integration uncertainty. The reference HTML and CSVs are in [sample_output/](sample_output/).
+The comparison checks the discovered channels, decay histories, four total widths and ten partial widths. It allows for Monte Carlo integration uncertainty. Open the [reference report](output/triplet_sextet/report.html) from the extracted ZIP, or browse its [tables](output/triplet_sextet/).
 
 ## 4. Use your own filenames
 

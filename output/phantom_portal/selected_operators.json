@@ -1,0 +1,94 @@
+[
+  {
+    "coefficient_dimension": 2,
+    "conjugate_content": "X^2",
+    "coupling_parameters": "1 real before derivative relations",
+    "derivatives": 0,
+    "dimension": 2,
+    "factors": [
+      {
+        "count": 2,
+        "name": "X"
+      }
+    ],
+    "field_content": "X^2",
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "id": "O0002",
+    "latex": "\\left[(X)^{2}\\right]_{\\mathbf{1}}",
+    "multiplicity": 1,
+    "notes": "",
+    "operator": "[X^2]_(singlet)",
+    "sector": "X only"
+  },
+  {
+    "coefficient_dimension": 0,
+    "conjugate_content": "H H† X^2",
+    "coupling_parameters": "1 real before derivative relations",
+    "derivatives": 0,
+    "dimension": 4,
+    "factors": [
+      {
+        "count": 1,
+        "name": "H"
+      },
+      {
+        "count": 1,
+        "name": "H†"
+      },
+      {
+        "count": 2,
+        "name": "X"
+      }
+    ],
+    "field_content": "H H† X^2",
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "id": "O0005",
+    "latex": "\\left[H (H)^{\\dagger} (X)^{2}\\right]_{\\mathbf{1}}",
+    "multiplicity": 1,
+    "notes": "",
+    "operator": "[H H† X^2]_(singlet)",
+    "sector": "X ↔ SM"
+  },
+  {
+    "coefficient_dimension": 0,
+    "conjugate_content": "X^4",
+    "coupling_parameters": "1 real before derivative relations",
+    "derivatives": 0,
+    "dimension": 4,
+    "factors": [
+      {
+        "count": 4,
+        "name": "X"
+      }
+    ],
+    "field_content": "X^4",
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "id": "O0006",
+    "latex": "\\left[(X)^{4}\\right]_{\\mathbf{1}}",
+    "multiplicity": 1,
+    "notes": "",
+    "operator": "[X^4]_(singlet)",
+    "sector": "X only"
+  },
+  {
+    "coefficient_dimension": 0,
+    "conjugate_content": "D(X)^2",
+    "coupling_parameters": "1 real before derivative relations",
+    "derivatives": 2,
+    "dimension": 4,
+    "factors": [
+      {
+        "count": 2,
+        "name": "D(X)"
+      }
+    ],
+    "field_content": "D(X)^2",
+    "hc_relation": "self-conjugate field content; choose Hermitian combinations",
+    "id": "O0007",
+    "latex": "\\left[((D X))^{2}\\right]_{\\mathbf{1}}",
+    "multiplicity": 1,
+    "notes": "Local contractions before IBP/Bianchi/EOM; derivative rows can be redundant or total derivatives.",
+    "operator": "[D(X)^2]_(singlet)",
+    "sector": "X only"
+  }
+]

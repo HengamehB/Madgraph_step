@@ -15,7 +15,7 @@ class SourceArchiveTests(unittest.TestCase):
         sampler = 'vendor/MG5_aMC/vendor/DiscreteSampler/'
         stdhep = 'vendor/MG5_aMC/vendor/StdHEP/'
         keep = {'Makefile', sampler + 'makefile', sampler + 'DiscreteSampler.f', sampler + 'tester.f',
-                stdhep + 'mcfio/src/mcfio.h', 'sample_output/compare.py', 'input/sample_model_sextet.txt'}
+                stdhep + 'mcfio/src/mcfio.h', 'output/triplet_sextet/compare.py', 'input/sample_model_sextet.txt'}
         exclude = {'.gitattributes', 'tests/test_example.py', 'ci/run_benchmark.py', sampler + 'check',
                    stdhep + 'CVS/Entries', stdhep + 'mcfio/src/CVS/Root'}
         with tempfile.TemporaryDirectory(prefix='release test ') as tmp:

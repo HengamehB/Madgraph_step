@@ -1,0 +1,3 @@
+# Deshpande and Ma, inert doublet (solution C), Q = T3 + Y.
+X = {'spin': 'scalar', 'su3': '1', 'su2': 2, 'hypercharge': '1/2', 'boson_kind': 'complex'}
+Y = None

@@ -1,0 +1,14 @@
+{
+  "masses": {
+    "H": 125.0,
+    "X": 200.0
+  },
+  "normalization": {
+    "X": 1.0
+  },
+  "scalar_basis": {
+    "masses": [
+      125.0
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "coefficients": {
+    "O0002": -10000.0,
+    "O0003": [
+      -1.266813137468242,
+      0.633406568734121
+    ],
+    "O0006": 0.3167032843670605,
+    "O0010": -0.1,
+    "O0012": 1.0
+  },
+  "compiler_limits": {},
+  "higgs_mass": 125.0,
+  "model_name": "inert_doublet",
+  "model_signature": "operator-inputs-v1:560ae2c0a323433840b847c6d346ad44617da509797b253e4ca30a0a59432b2b",
+  "sm_inputs": {
+    "Gf": 1.16637e-05,
+    "MZ": 91.1876,
+    "aEWM1": 127.9
+  },
+  "sm_scheme": "fixed_sm",
+  "stable_particles": [
+    "x1"
+  ],
+  "vevs": {
+    "X": 0.0
+  },
+  "widths": {
+    "X": 0.0
+  }
+}

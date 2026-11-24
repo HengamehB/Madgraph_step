@@ -1,0 +1,1658 @@
+{
+  "approximation": "Tree-level MadWidth through 2-body decays; 1% adaptive target. Reported modes require BR ≥ 1e-08, without renormalizing their BRs or total widths. Unknown adaptive/body tails remain; total-width accuracy is not guaranteed.",
+  "benchmark_digest": "2ce512af5cbe916e23210ed63f65630eacea6ec9024f38f81bb71c151a398843",
+  "coverage_notices": [
+    "Reported decay rows omit modes below min_br; omitted_probability records their summed BR for each parent. The SLHA card and total widths retain those modes.",
+    "Adaptive precision and the maximum body multiplicity can leave uncomputed contributions. Their probability is unknown; reported BRs use the computed total, not a guaranteed physical total."
+  ],
+  "model_digest": "47dfad6dbbe12c6de0ae210dd01bf7fd4663e2cddc6d71b21640cd034d637220",
+  "modes": [
+    {
+      "branching_ratio": 1.0,
+      "conjugated": false,
+      "daughters": [
+        24,
+        5
+      ],
+      "pdg": 6,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "t > w+ b",
+      "width_gev": 1.466877
+    },
+    {
+      "branching_ratio": 1.0,
+      "conjugated": true,
+      "daughters": [
+        -24,
+        -5
+      ],
+      "pdg": -6,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "t~ > w- b~",
+      "width_gev": 1.466877
+    },
+    {
+      "branching_ratio": 0.1520727,
+      "conjugated": false,
+      "daughters": [
+        1,
+        -1
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > d d~",
+      "width_gev": 0.3667379150292
+    },
+    {
+      "branching_ratio": 0.1520719,
+      "conjugated": false,
+      "daughters": [
+        3,
+        -3
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > s s~",
+      "width_gev": 0.3667359857524
+    },
+    {
+      "branching_ratio": 0.1504304,
+      "conjugated": false,
+      "daughters": [
+        5,
+        -5
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > b b~",
+      "width_gev": 0.36277735091839997
+    },
+    {
+      "branching_ratio": 0.1178265,
+      "conjugated": false,
+      "daughters": [
+        2,
+        -2
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > u u~",
+      "width_gev": 0.284149916094
+    },
+    {
+      "branching_ratio": 0.1177064,
+      "conjugated": false,
+      "daughters": [
+        4,
+        -4
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > c c~",
+      "width_gev": 0.2838602834144
+    },
+    {
+      "branching_ratio": 0.0687849,
+      "conjugated": false,
+      "daughters": [
+        16,
+        -16
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > vt vt~",
+      "width_gev": 0.16588138970039998
+    },
+    {
+      "branching_ratio": 0.0687849,
+      "conjugated": false,
+      "daughters": [
+        14,
+        -14
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > vm vm~",
+      "width_gev": 0.16588138970039998
+    },
+    {
+      "branching_ratio": 0.0687849,
+      "conjugated": false,
+      "daughters": [
+        12,
+        -12
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > ve ve~",
+      "width_gev": 0.16588138970039998
+    },
+    {
+      "branching_ratio": 0.03453867,
+      "conjugated": false,
+      "daughters": [
+        11,
+        -11
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > e- e+",
+      "width_gev": 0.08329331841731999
+    },
+    {
+      "branching_ratio": 0.03453839,
+      "conjugated": false,
+      "daughters": [
+        13,
+        -13
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > mu- mu+",
+      "width_gev": 0.08329264317044
+    },
+    {
+      "branching_ratio": 0.03446033,
+      "conjugated": false,
+      "daughters": [
+        15,
+        -15
+      ],
+      "pdg": 23,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "z > ta- ta+",
+      "width_gev": 0.08310439398667999
+    },
+    {
+      "branching_ratio": 0.3164088,
+      "conjugated": false,
+      "daughters": [
+        2,
+        -1
+      ],
+      "pdg": 24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > u d~",
+      "width_gev": 0.6336162158112001
+    },
+    {
+      "branching_ratio": 0.3164088,
+      "conjugated": true,
+      "daughters": [
+        -2,
+        1
+      ],
+      "pdg": -24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > u~ d",
+      "width_gev": 0.6336162158112001
+    },
+    {
+      "branching_ratio": 0.3162879,
+      "conjugated": false,
+      "daughters": [
+        4,
+        -3
+      ],
+      "pdg": 24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > c s~",
+      "width_gev": 0.6333741106596
+    },
+    {
+      "branching_ratio": 0.3162879,
+      "conjugated": true,
+      "daughters": [
+        -4,
+        3
+      ],
+      "pdg": -24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > c~ s",
+      "width_gev": 0.6333741106596
+    },
+    {
+      "branching_ratio": 0.1111345,
+      "conjugated": false,
+      "daughters": [
+        12,
+        -11
+      ],
+      "pdg": 24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > ve e+",
+      "width_gev": 0.222549503478
+    },
+    {
+      "branching_ratio": 0.1111345,
+      "conjugated": true,
+      "daughters": [
+        -12,
+        11
+      ],
+      "pdg": -24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > ve~ e-",
+      "width_gev": 0.222549503478
+    },
+    {
+      "branching_ratio": 0.1111342,
+      "conjugated": false,
+      "daughters": [
+        14,
+        -13
+      ],
+      "pdg": 24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > vm mu+",
+      "width_gev": 0.22254890272080002
+    },
+    {
+      "branching_ratio": 0.1111342,
+      "conjugated": true,
+      "daughters": [
+        -14,
+        13
+      ],
+      "pdg": -24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > vm~ mu-",
+      "width_gev": 0.22254890272080002
+    },
+    {
+      "branching_ratio": 0.1110519,
+      "conjugated": false,
+      "daughters": [
+        16,
+        -15
+      ],
+      "pdg": 24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > vt ta+",
+      "width_gev": 0.22238409499560002
+    },
+    {
+      "branching_ratio": 0.1110519,
+      "conjugated": true,
+      "daughters": [
+        -16,
+        15
+      ],
+      "pdg": -24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > vt~ ta-",
+      "width_gev": 0.22238409499560002
+    },
+    {
+      "branching_ratio": 0.01699462,
+      "conjugated": false,
+      "daughters": [
+        2,
+        -3
+      ],
+      "pdg": 24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > u s~",
+      "width_gev": 0.03403213442088
+    },
+    {
+      "branching_ratio": 0.01699462,
+      "conjugated": true,
+      "daughters": [
+        -2,
+        3
+      ],
+      "pdg": -24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > u~ s",
+      "width_gev": 0.03403213442088
+    },
+    {
+      "branching_ratio": 0.0169882,
+      "conjugated": false,
+      "daughters": [
+        4,
+        -1
+      ],
+      "pdg": 24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w+ > c d~",
+      "width_gev": 0.0340192782168
+    },
+    {
+      "branching_ratio": 0.0169882,
+      "conjugated": true,
+      "daughters": [
+        -4,
+        1
+      ],
+      "pdg": -24,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "w- > c~ d",
+      "width_gev": 0.0340192782168
+    },
+    {
+      "branching_ratio": 0.8910842,
+      "conjugated": false,
+      "daughters": [
+        5,
+        -5
+      ],
+      "pdg": 25,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > b b~",
+      "width_gev": 0.0053906869368044
+    },
+    {
+      "branching_ratio": 0.06557764,
+      "conjugated": false,
+      "daughters": [
+        4,
+        -4
+      ],
+      "pdg": 25,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > c c~",
+      "width_gev": 0.00039671731054648007
+    },
+    {
+      "branching_ratio": 0.04277048,
+      "conjugated": false,
+      "daughters": [
+        15,
+        -15
+      ],
+      "pdg": 25,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > ta- ta+",
+      "width_gev": 0.00025874352593936
+    },
+    {
+      "branching_ratio": 0.0004150099,
+      "conjugated": false,
+      "daughters": [
+        3,
+        -3
+      ],
+      "pdg": 25,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > s s~",
+      "width_gev": 2.5106364208618002e-06
+    },
+    {
+      "branching_ratio": 0.0001513964,
+      "conjugated": false,
+      "daughters": [
+        13,
+        -13
+      ],
+      "pdg": 25,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > mu- mu+",
+      "width_gev": 9.158849363048001e-07
+    },
+    {
+      "branching_ratio": 1.033424e-06,
+      "conjugated": false,
+      "daughters": [
+        1,
+        -1
+      ],
+      "pdg": 25,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > d d~",
+      "width_gev": 6.251783228768e-09
+    },
+    {
+      "branching_ratio": 2.645439e-07,
+      "conjugated": false,
+      "daughters": [
+        2,
+        -2
+      ],
+      "pdg": 25,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "h > u u~",
+      "width_gev": 1.6003800156498002e-09
+    },
+    {
+      "branching_ratio": 1.0,
+      "conjugated": false,
+      "daughters": [
+        9300002,
+        24
+      ],
+      "pdg": 9300001,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x+ > x1 w+",
+      "width_gev": 0.6596713
+    },
+    {
+      "branching_ratio": 1.0,
+      "conjugated": true,
+      "daughters": [
+        9300002,
+        -24
+      ],
+      "pdg": -9300001,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x- > x1 w-",
+      "width_gev": 0.6596713
+    },
+    {
+      "branching_ratio": 1.0,
+      "conjugated": false,
+      "daughters": [
+        9300002,
+        23
+      ],
+      "pdg": 9300003,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x2 > x1 z",
+      "width_gev": 0.4221478
+    }
+  ],
+  "omitted_probability": {
+    "-24": 0.0,
+    "-6": 0.0,
+    "-9300001": 0.0,
+    "23": 0.0,
+    "24": 0.0,
+    "25": 3.541098e-09,
+    "6": 0.0,
+    "9300001": 0.0,
+    "9300002": 0.0,
+    "9300003": 0.0
+  },
+  "parameter_card": "decays/09a9bac2a3709f45/attempt-901aa504e4/param_card.dat",
+  "particles": {
+    "-1": {
+      "aliases": [
+        "d~"
+      ],
+      "anti_pdg": 1,
+      "antiname": "d",
+      "charge": 0.3333333333333333,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 0.00504,
+      "name": "d~",
+      "pdg": -1,
+      "spin": 2
+    },
+    "-11": {
+      "aliases": [
+        "e+"
+      ],
+      "anti_pdg": 11,
+      "antiname": "e-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.000511,
+      "name": "e+",
+      "pdg": -11,
+      "spin": 2
+    },
+    "-12": {
+      "aliases": [
+        "ve~"
+      ],
+      "anti_pdg": 12,
+      "antiname": "ve",
+      "charge": -0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "ve~",
+      "pdg": -12,
+      "spin": 2
+    },
+    "-13": {
+      "aliases": [
+        "mu+"
+      ],
+      "anti_pdg": 13,
+      "antiname": "mu-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.10566,
+      "name": "mu+",
+      "pdg": -13,
+      "spin": 2
+    },
+    "-14": {
+      "aliases": [
+        "vm~"
+      ],
+      "anti_pdg": 14,
+      "antiname": "vm",
+      "charge": -0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vm~",
+      "pdg": -14,
+      "spin": 2
+    },
+    "-15": {
+      "aliases": [
+        "ta+"
+      ],
+      "anti_pdg": 15,
+      "antiname": "ta-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 1.777,
+      "name": "ta+",
+      "pdg": -15,
+      "spin": 2
+    },
+    "-16": {
+      "aliases": [
+        "vt~"
+      ],
+      "anti_pdg": 16,
+      "antiname": "vt",
+      "charge": -0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vt~",
+      "pdg": -16,
+      "spin": 2
+    },
+    "-2": {
+      "aliases": [
+        "u~"
+      ],
+      "anti_pdg": 2,
+      "antiname": "u",
+      "charge": -0.6666666666666666,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 0.00255,
+      "name": "u~",
+      "pdg": -2,
+      "spin": 2
+    },
+    "-24": {
+      "aliases": [
+        "w-"
+      ],
+      "anti_pdg": 24,
+      "antiname": "w+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 79.82435974619784,
+      "name": "w-",
+      "pdg": -24,
+      "spin": 3
+    },
+    "-3": {
+      "aliases": [
+        "s~"
+      ],
+      "anti_pdg": 3,
+      "antiname": "s",
+      "charge": 0.3333333333333333,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 0.101,
+      "name": "s~",
+      "pdg": -3,
+      "spin": 2
+    },
+    "-4": {
+      "aliases": [
+        "c~"
+      ],
+      "anti_pdg": 4,
+      "antiname": "c",
+      "charge": -0.6666666666666666,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 1.27,
+      "name": "c~",
+      "pdg": -4,
+      "spin": 2
+    },
+    "-5": {
+      "aliases": [
+        "b~"
+      ],
+      "anti_pdg": 5,
+      "antiname": "b",
+      "charge": 0.3333333333333333,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 4.7,
+      "name": "b~",
+      "pdg": -5,
+      "spin": 2
+    },
+    "-6": {
+      "aliases": [
+        "t~"
+      ],
+      "anti_pdg": 6,
+      "antiname": "t",
+      "charge": -0.6666666666666666,
+      "color": -3,
+      "is_new": false,
+      "mass_gev": 172.0,
+      "name": "t~",
+      "pdg": -6,
+      "spin": 2
+    },
+    "-9300001": {
+      "aliases": [
+        "x-"
+      ],
+      "anti_pdg": 9300001,
+      "antiname": "x+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": true,
+      "mass_gev": 220.0,
+      "name": "x-",
+      "pdg": -9300001,
+      "spin": 1
+    },
+    "1": {
+      "aliases": [
+        "d"
+      ],
+      "anti_pdg": -1,
+      "antiname": "d~",
+      "charge": -0.3333333333333333,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 0.00504,
+      "name": "d",
+      "pdg": 1,
+      "spin": 2
+    },
+    "11": {
+      "aliases": [
+        "e-"
+      ],
+      "anti_pdg": -11,
+      "antiname": "e+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.000511,
+      "name": "e-",
+      "pdg": 11,
+      "spin": 2
+    },
+    "12": {
+      "aliases": [
+        "ve"
+      ],
+      "anti_pdg": -12,
+      "antiname": "ve~",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "ve",
+      "pdg": 12,
+      "spin": 2
+    },
+    "13": {
+      "aliases": [
+        "mu-"
+      ],
+      "anti_pdg": -13,
+      "antiname": "mu+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.10566,
+      "name": "mu-",
+      "pdg": 13,
+      "spin": 2
+    },
+    "14": {
+      "aliases": [
+        "vm"
+      ],
+      "anti_pdg": -14,
+      "antiname": "vm~",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vm",
+      "pdg": 14,
+      "spin": 2
+    },
+    "15": {
+      "aliases": [
+        "ta-"
+      ],
+      "anti_pdg": -15,
+      "antiname": "ta+",
+      "charge": -1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 1.777,
+      "name": "ta-",
+      "pdg": 15,
+      "spin": 2
+    },
+    "16": {
+      "aliases": [
+        "vt"
+      ],
+      "anti_pdg": -16,
+      "antiname": "vt~",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "vt",
+      "pdg": 16,
+      "spin": 2
+    },
+    "2": {
+      "aliases": [
+        "u"
+      ],
+      "anti_pdg": -2,
+      "antiname": "u~",
+      "charge": 0.6666666666666666,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 0.00255,
+      "name": "u",
+      "pdg": 2,
+      "spin": 2
+    },
+    "21": {
+      "aliases": [
+        "g"
+      ],
+      "anti_pdg": 21,
+      "antiname": "g",
+      "charge": 0.0,
+      "color": 8,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "g",
+      "pdg": 21,
+      "spin": 3
+    },
+    "22": {
+      "aliases": [
+        "a"
+      ],
+      "anti_pdg": 22,
+      "antiname": "a",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 0.0,
+      "name": "a",
+      "pdg": 22,
+      "spin": 3
+    },
+    "23": {
+      "aliases": [
+        "z"
+      ],
+      "anti_pdg": 23,
+      "antiname": "z",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 91.1876,
+      "name": "z",
+      "pdg": 23,
+      "spin": 3
+    },
+    "24": {
+      "aliases": [
+        "w+"
+      ],
+      "anti_pdg": -24,
+      "antiname": "w-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 79.82435974619784,
+      "name": "w+",
+      "pdg": 24,
+      "spin": 3
+    },
+    "25": {
+      "aliases": [
+        "h"
+      ],
+      "anti_pdg": 25,
+      "antiname": "h",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": false,
+      "mass_gev": 125.0,
+      "name": "h",
+      "pdg": 25,
+      "spin": 1
+    },
+    "3": {
+      "aliases": [
+        "s"
+      ],
+      "anti_pdg": -3,
+      "antiname": "s~",
+      "charge": -0.3333333333333333,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 0.101,
+      "name": "s",
+      "pdg": 3,
+      "spin": 2
+    },
+    "4": {
+      "aliases": [
+        "c"
+      ],
+      "anti_pdg": -4,
+      "antiname": "c~",
+      "charge": 0.6666666666666666,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 1.27,
+      "name": "c",
+      "pdg": 4,
+      "spin": 2
+    },
+    "5": {
+      "aliases": [
+        "b"
+      ],
+      "anti_pdg": -5,
+      "antiname": "b~",
+      "charge": -0.3333333333333333,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 4.7,
+      "name": "b",
+      "pdg": 5,
+      "spin": 2
+    },
+    "6": {
+      "aliases": [
+        "t"
+      ],
+      "anti_pdg": -6,
+      "antiname": "t~",
+      "charge": 0.6666666666666666,
+      "color": 3,
+      "is_new": false,
+      "mass_gev": 172.0,
+      "name": "t",
+      "pdg": 6,
+      "spin": 2
+    },
+    "9300001": {
+      "aliases": [
+        "x+"
+      ],
+      "anti_pdg": -9300001,
+      "antiname": "x-",
+      "charge": 1.0,
+      "color": 1,
+      "is_new": true,
+      "mass_gev": 220.0,
+      "name": "x+",
+      "pdg": 9300001,
+      "spin": 1
+    },
+    "9300002": {
+      "aliases": [
+        "x1"
+      ],
+      "anti_pdg": 9300002,
+      "antiname": "x1",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": true,
+      "mass_gev": 100.0,
+      "name": "x1",
+      "pdg": 9300002,
+      "spin": 1
+    },
+    "9300003": {
+      "aliases": [
+        "x2"
+      ],
+      "anti_pdg": 9300003,
+      "antiname": "x2",
+      "charge": 0.0,
+      "color": 1,
+      "is_new": true,
+      "mass_gev": 220.0,
+      "name": "x2",
+      "pdg": 9300003,
+      "spin": 1
+    }
+  },
+  "run_directory": "decays/09a9bac2a3709f45/attempt-901aa504e4",
+  "settings": {
+    "max_body": 2,
+    "min_br": 1e-08,
+    "precision": 0.01
+  },
+  "source_benchmark_digest": "2ce512af5cbe916e23210ed63f65630eacea6ec9024f38f81bb71c151a398843",
+  "source_parameter_card": "export/fc1d0b82021e6a50/attempt-ac144babb2/madgraph_import/param_card.dat",
+  "source_width_digest": "221b7a629828313c3a3254acc07f0df947a7784a380531d5dab4676a3d7bd747",
+  "total_widths": {
+    "-24": 2.002524,
+    "-6": 1.466877,
+    "-9300001": 0.6596713,
+    "23": 2.411596,
+    "24": 2.002524,
+    "25": 0.006049582,
+    "6": 1.466877,
+    "9300001": 0.6596713,
+    "9300002": 0.0,
+    "9300003": 0.4221478
+  },
+  "two_body": [
+    {
+      "branching_ratio": 1.0,
+      "conjugated": false,
+      "daughters": [
+        9300002,
+        24
+      ],
+      "pdg": 9300001,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x+ > x1 w+",
+      "width_gev": 0.6596713
+    },
+    {
+      "branching_ratio": 1.0,
+      "conjugated": false,
+      "daughters": [
+        9300002,
+        23
+      ],
+      "pdg": 9300003,
+      "primary_provenance": {
+        "matcher": "2d3541b3e7659c1c1537f3ebe2aab1fe9f67858b95d3ad07d81561f670f1b22d",
+        "schema": "madwidth-primary-provenance-v1",
+        "settings": {
+          "max_body": 2,
+          "min_br": 1e-08,
+          "precision": 0.01
+        },
+        "sources": {
+          "VERSION": "572c8faa4254dccbc2c840d7651cdb826e582ae48e4a7997b12d9a708d3428f6",
+          "madgraph/core/base_objects.py": "d7e90eb12003b85d5964078ab6ccd934c5fb406d04ec14abd99e5d01d0f72127",
+          "madgraph/core/diagram_generation.py": "8134f4f15abea78b8f3dc7d208363f18735598b97f6e2c3cb3da02464285b640",
+          "madgraph/interface/madgraph_interface.py": "109f5c131c34a2dc6bf7bdb0f2635f3b32d65d7b14c46e2a258f6f682a219d3c",
+          "mg5decay/decay_objects.py": "18e1ffc56374b05d3c52099dc8fa24f168960f383ed30c9bf2ee14a86ef49191",
+          "models/import_ufo.py": "2d79e6b9018aca678177f302e1fee1876797068b590410afca0755abaf81a3dc",
+          "models/model_reader.py": "f02cc40e3dda46d837850c7ce9d70776edc6082b8029287d927dabedb426fb6d"
+        }
+      },
+      "process": "x2 > x1 z",
+      "width_gev": 0.4221478
+    }
+  ],
+  "ufo": "export/fc1d0b82021e6a50/attempt-ac144babb2/inert_doublet_UFO",
+  "width_digest": "69e79c97c862e0920ebd93877812751bc019dc0942b24ac3454ba980f6d141e5"
+}

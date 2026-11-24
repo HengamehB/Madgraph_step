@@ -1,0 +1,23 @@
+M$ModelName = "phantom_portal";
+M$Information = {Authors -> {"Lagrangian maker"}, Version -> "1.0"};
+M$InteractionOrderHierarchy = {{QCD, 1}, {QED, 2}, {NP, 1}};
+M$ClassesDescription = {
+S[101] == {ClassName -> pmS1, SelfConjugate -> True,
+                Mass -> {pmM1, 50}, Width -> {pmW1, 0},
+                ParticleName -> "x", PDG -> 9000001,
+                PropagatorLabel -> "X", PropagatorType -> D,
+                PropagatorArrow -> None, FullName -> "X mass eigenstate"}
+};
+M$Parameters = {
+pmBareH == {ParameterType -> Internal, Value -> 125, ComplexParameter -> False, Description -> "pmBareH"},
+pmMuH2 == {ParameterType -> Internal, Value -> 7812.5, ComplexParameter -> False, Description -> "pmMuH2"},
+pmR00 == {ParameterType -> Internal, Value -> 1, ComplexParameter -> False, Description -> "pmR00"},
+pmR01 == {ParameterType -> Internal, Value -> 0, ComplexParameter -> False, Description -> "pmR01"},
+pmR10 == {ParameterType -> Internal, Value -> 0, ComplexParameter -> False, Description -> "pmR10"},
+pmR11 == {ParameterType -> Internal, Value -> 1, ComplexParameter -> False, Description -> "pmR11"},
+pmC0002 == {ParameterType -> Internal, Value -> -1098.438578412822, ComplexParameter -> False, InteractionOrder -> {NP, 1}, Description -> "pmC0002"},
+pmC0005 == {ParameterType -> Internal, Value -> -0.005, ComplexParameter -> False, InteractionOrder -> {{NP, 1}, {QED, 2}}, Description -> "pmC0005"},
+pmC0006 == {ParameterType -> Internal, Value -> -0.01, ComplexParameter -> False, InteractionOrder -> {NP, 1}, Description -> "pmC0006"},
+pmC0007 == {ParameterType -> Internal, Value -> 0.5, ComplexParameter -> False, InteractionOrder -> {NP, 1}, Description -> "pmC0007"}
+};
+LNew := Block[{mu}, pmC0002*((pmR11*pmS1))^2 + pmC0005*((vev + (pmR00*H))^2/2)*((pmR11*pmS1))^2 + pmC0006*((pmR11*pmS1))^4 + pmC0007*((pmR11*del[pmS1,mu]))^2];
